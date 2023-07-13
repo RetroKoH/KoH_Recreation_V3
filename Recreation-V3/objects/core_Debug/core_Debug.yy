@@ -1,10 +1,8 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "c_Framework",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-  ],
+  "name": "core_Debug",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
@@ -32,5 +30,5 @@
     "path": "sprites/spr_Controller/spr_Controller.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }
