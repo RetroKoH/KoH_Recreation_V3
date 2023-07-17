@@ -26,4 +26,4 @@ for (var i = 0; i < PAL_LIMIT; i++)
 	index_type_2[i] = 1;
 }
 
-//setup_Palette();
+setup_Palette();

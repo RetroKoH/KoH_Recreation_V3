@@ -1,5 +1,5 @@
 /// @ Called in either Room Start Event or Room Creation Code.
-function PaletteSetup()
+function setup_Palette()
 {
 	switch room 
 	{
@@ -11,8 +11,8 @@ function PaletteSetup()
 		break;*/
 		default:
 		{
-			gfunc_palette_load(PAL_PRIMARY,   noone);
-			gfunc_palette_load(PAL_SECONDARY, noone);
+			gfunc_palette_load(PAL_PRIMARY,   pal_Example_Type1);
+			gfunc_palette_load(PAL_SECONDARY, pal_Example_Type2);
 		}
 	}
 }
