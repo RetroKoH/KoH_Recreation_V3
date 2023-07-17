@@ -23,7 +23,8 @@ function setup_Game(){
 }
 
 function setup_Game_Macros(){
-	
+
+	#macro FONT			global
 	#macro GAMECAM		view_camera[0]
 	#macro TILE_SIZE	16
 	#macro TILE_COUNT	256
@@ -63,6 +64,8 @@ function setup_Game_DebugMode(){
 	global.showsplash = true;	// Flag for showing splash screens
 	global.debuglog = "";		// Debug messages will go here
 	global.debuglog_timer = 0;	// Timer to remove the oldest message
+	
+	FONT.Debug = font_DEBUG;	// Font used for debug elements
 }
 function setup_Game_KeyMap(){
 	#region KeyIndex
@@ -207,7 +210,7 @@ function setup_Game_Screen(){
 	global.win_title = "Recreation Engine";
 	global.win_width = 424;
 	global.win_height = 240;
-	global.win_size = 4;
+	global.win_size = 2;
 	global.scrn_buffer = 8;
 	global.win_start_full = false;		// Flag to start in fullscreen mode
 	

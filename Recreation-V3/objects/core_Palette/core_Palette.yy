@@ -33,5 +33,5 @@
     "path": "sprites/spr_Controller/spr_Controller.yy",
   },
   "spriteMaskId": null,
-  "visible": false,
+  "visible": true,
 }
