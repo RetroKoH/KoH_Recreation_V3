@@ -8,13 +8,13 @@ function setup_Game(){
 	setup_Game_OscValues();
 	setup_Game_SyncAnimTimers();
 
-	instance_create_layer(0, 0, "Core", core_Debug);
-	instance_create_layer(0, 0, "Core", core_Background);
-	instance_create_layer(0, 0, "Core", core_Palette);		
-	instance_create_layer(0, 0, "Core", core_Renderer);
-	instance_create_layer(0, 0, "Core", core_Camera);
-	instance_create_layer(0, 0, "Core", core_Audio);
-	instance_create_layer(0, 0, "Core", core_Input);
+	instance_create_layer(0, -64, "Core", core_Debug);
+	instance_create_layer(0, -64, "Core", core_Background);
+	instance_create_layer(0, -64, "Core", core_Palette);		
+	instance_create_layer(0, -64, "Core", core_Renderer);
+	instance_create_layer(0, -64, "Core", core_Camera);
+	instance_create_layer(0, -64, "Core", core_Audio);
+	instance_create_layer(0, -64, "Core", core_Input);
 
 	// End of setup
 	random_set_seed(randomise());
@@ -28,6 +28,10 @@ function setup_Game_Macros(){
 	#macro TILE_SIZE	16
 	#macro TILE_COUNT	256
 	#macro LOG_TIME		180
+	
+	#macro PAL_LIMIT		64
+	#macro PAL_PRIMARY		0
+	#macro PAL_SECONDARY	1
 	
 	// Keymap array indices
 	enum KEYMAP{
@@ -203,7 +207,7 @@ function setup_Game_Screen(){
 	global.win_title = "Recreation Engine";
 	global.win_width = 424;
 	global.win_height = 240;
-	global.win_size = 1;
+	global.win_size = 4;
 	global.scrn_buffer = 8;
 	global.win_start_full = false;		// Flag to start in fullscreen mode
 	
