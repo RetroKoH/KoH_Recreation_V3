@@ -5,6 +5,7 @@ function setup_Game(){
 	setup_Game_KeyMap();
 	setup_Game_Screen();			// Credit to Orbinaut Framework
 	setup_Game_Collision();			// Uses the same S1 Collision system. Optimized reading credited to Orbinaut Framework
+	setup_Game_Animations();		// My Recreation Animation system. Execution slightly cleaned up thx to Orbinaut.
 	setup_Game_OscValues();
 	setup_Game_SyncAnimTimers();
 	setup_Game_Audio();
@@ -16,6 +17,9 @@ function setup_Game(){
 	instance_create_layer(0, -64, "Core", core_Camera);
 	instance_create_layer(0, -64, "Core", core_Audio);
 	instance_create_layer(0, -64, "Core", core_Input);
+	
+	// Testing Renderer's handling of animated objects
+	instance_create_layer(128, 160, "Instances", obj_Ring);
 
 	// End of setup
 	random_set_seed(randomise());
@@ -294,6 +298,10 @@ function setup_Game_Collision(){
 				global.TileWidths[i][j] = (i * TILE_SIZE < size) ? file_bin_read_byte(file) : 0;
 		file_bin_close(file);
 	}
+}
+function setup_Game_Animations(){
+	global.AnimsIndex = array_create(0);	// Every script below pushes an animation into this index
+	animtable_RINGS();
 }
 function setup_Game_OscValues(){
 	global.osc_active = false;
