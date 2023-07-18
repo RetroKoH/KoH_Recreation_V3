@@ -301,6 +301,7 @@ function setup_Game_Collision(){
 }
 function setup_Game_Animations(){
 	global.AnimsIndex = array_create(0);	// Every script below pushes an animation into this index
+	animtable_BADNIKS();
 	animtable_RINGS();
 }
 function setup_Game_OscValues(){
