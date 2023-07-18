@@ -33,6 +33,8 @@ function setup_Game_Macros(){
 	#macro LOG_TIME		180
 
 	// Audio macros
+	#macro AU_PRIMARY		0	// Primary mode used for most BGMs
+	#macro AU_SECONDARY		1	// Secondary mode used for 1-Ups
 	#macro AUEVENT_IDLE		0
 	#macro AUEVENT_MUTE		1
 	#macro AUEVENT_UNMUTE	2
@@ -321,48 +323,56 @@ function setup_Game_Audio(){
 	
 	global.BGM_list[BGMs.TITLE] = { // Finished
 		ID			: bgm_Title,
+		name		: "Title",
 		loop_start	: -1,	// -1 = No loop
 		loop_end	: 0
 	}
 	// ==================================================================================
-	global.BGM_list[BGMs.LEV_SELECT] = { // Finished(?) - Test the loop
+	global.BGM_list[BGMs.LEV_SELECT] = { // Finished
 		ID			: bgm_LevSel,
+		name		: "Level Select",
 		loop_start	: 0,
 		loop_end	: 38.396
 	}
 	// ==================================================================================
 	global.BGM_list[BGMs.GHZ1] = { // Finished
 		ID			: bgm_GHZ1,
+		name		: "GHZ Act 1",
 		loop_start	: 14.404,
 		loop_end	: 52.804
 	}
 	// ==================================================================================
-	global.BGM_list[BGMs.GHZ2] = { // Finished(?) - Test the loop
+	global.BGM_list[BGMs.GHZ2] = { // Finished
 		ID			: bgm_GHZ2,
+		name		: "GHZ Act 2",
 		loop_start	: 14.414,
 		loop_end	: 52.812
 	}
 	// ==================================================================================
 	global.BGM_list[BGMs.BOSS] = { // Finished
 		ID			: bgm_Boss,
+		name		: "Boss",
 		loop_start	: 00.000,
 		loop_end	: 21.333
 	}
 	// ==================================================================================
 	global.BGM_list[BGMs.ACT_CLEAR] = { // Finished
 		ID			: bgm_ActClear,
+		name		: "Act Clear",
 		loop_start	: -1,	// -1 = No loop
 		loop_end	: 0
 	}
 	// ==================================================================================
 	global.BGM_list[BGMs.INVINC] = { // Finished
 		ID			: bgm_Invinc,
+		name		: "Invincibility",
 		loop_start	: 0.916,
 		loop_end	: 11.883
 	}
 	// ==================================================================================
 	global.BGM_list[BGMs.EXTRA_LIFE] = { // Finished
 		ID			: bgm_1up,
+		name		: "1-Up Jingle",
 		loop_start	: -1,	// -1 = No loop
 		loop_end	: 0
 	}

@@ -1,17 +1,29 @@
-/// @function gfunc_audio_bgm_play(soundid)
-function gfunc_audio_bgm_play(soundid){
-	if (core_Audio.bgm_track)
-	{
-		audio_stop_sound(core_Audio.bgm_track);
-		audio_sound_gain(core_Audio.bgm_track, global.volume_bgm, 0);
-	}
+/// @function gfunc_audio_bgm_play(audio_type, sound_id)
+function gfunc_audio_bgm_play(audio_type, sound_id){
+	if audio_type == AU_PRIMARY {
+		if (core_Audio.bgm_track) {
+			audio_stop_sound(core_Audio.bgm_track);
+			audio_sound_gain(sound_id, global.volume_bgm, 0);
+		}
 
-	// Play track
-	core_Audio.audio_event[0] = AUEVENT_IDLE;
-	var _track = global.BGM_list[soundid].ID;
-	core_Audio.bgm_track = audio_play_sound(_track, 0, false);
+		// Play track
+		core_Audio.audio_event = AUEVENT_IDLE;
+		var _track = global.BGM_list[sound_id].ID;
+		core_Audio.bgm_track = audio_play_sound(_track, 0, false);
 			
-	// Set loopdata
-	core_Audio.loop_points[0] = global.BGM_list[soundid].loop_start;
-	core_Audio.loop_points[1] = global.BGM_list[soundid].loop_end;
+		// Set loopdata
+		core_Audio.loop_start = global.BGM_list[sound_id].loop_start;
+		core_Audio.loop_end = global.BGM_list[sound_id].loop_end;
+	}
+	else { // SECONDARY (1-UP)
+		if (core_Audio.s_bgm_track) {
+			audio_stop_sound(core_Audio.s_bgm_track);
+			audio_sound_gain(sound_id, global.volume_bgm, 0);
+		}
+
+		// Play track
+		core_Audio.s_audio_event = AUEVENT_IDLE;
+		var _track = global.BGM_list[sound_id].ID;
+		core_Audio.s_bgm_track = audio_play_sound(_track, 0, false);
+	}
 }
