@@ -7,6 +7,7 @@ function setup_Game(){
 	setup_Game_Collision();			// Uses the same S1 Collision system. Optimized reading credited to Orbinaut Framework
 	setup_Game_OscValues();
 	setup_Game_SyncAnimTimers();
+	setup_Game_Audio();
 
 	instance_create_layer(0, -64, "Core", core_Debug);
 	instance_create_layer(0, -64, "Core", core_Background);
@@ -24,12 +25,20 @@ function setup_Game(){
 
 function setup_Game_Macros(){
 
+	// Global macros
 	#macro FONT			global
 	#macro GAMECAM		view_camera[0]
 	#macro TILE_SIZE	16
 	#macro TILE_COUNT	256
 	#macro LOG_TIME		180
-	
+
+	// Audio macros
+	#macro AUEVENT_IDLE		0
+	#macro AUEVENT_MUTE		1
+	#macro AUEVENT_UNMUTE	2
+	#macro AUEVENT_STOP		3
+
+	// Palette macros. If you decide to change PAL_LIMIT, do the same with the value in ShaderMain.sfh
 	#macro PAL_LIMIT		64
 	#macro PAL_PRIMARY		0
 	#macro PAL_SECONDARY	1
@@ -56,6 +65,19 @@ function setup_Game_Macros(){
 		MIGHTY,
 		RAY,
 		METAL,
+		TOTAL
+	}
+
+	// BGM indices
+	enum BGMs {
+		TITLE,
+		LEV_SELECT,
+		GHZ1,
+		GHZ2,
+		BOSS,
+		ACT_CLEAR,
+		INVINC,
+		EXTRA_LIFE,
 		TOTAL
 	}
 }
@@ -283,4 +305,65 @@ function setup_Game_SyncAnimTimers(){
 	global.sync2_frame=0;	// Frame number for ???
 	global.sync3_time=0;	// Timer for Lost Rings
 	global.sync3_frame=0;	// Frame number for Lost Rings
+}
+function setup_Game_Audio(){
+	
+	// Default settings
+	global.volume_bgm	= 0.5;
+	global.volume_sfx	= 0.5;
+	
+	// Database of BGM tracks and loop data
+	// All BGM tracks are OGG, with 4 seconds of audio after the end of the loop, to ensure smooth looping.
+	//( FORMERLY: )
+	// All BGM tracks are Stereo, signed 16-bit PCM encoded, 44100Hz WAV audio exported from Audacity.
+	// Files contain 4 seconds of audio after the end of the loop, to ensure smooth looping.
+	global.BGM_list = array_create(BGMs.TOTAL)
+	
+	global.BGM_list[BGMs.TITLE] = { // Finished
+		ID			: bgm_Title,
+		loop_start	: -1,	// -1 = No loop
+		loop_end	: 0
+	}
+	// ==================================================================================
+	global.BGM_list[BGMs.LEV_SELECT] = { // Finished(?) - Test the loop
+		ID			: bgm_LevSel,
+		loop_start	: 0,
+		loop_end	: 38.396
+	}
+	// ==================================================================================
+	global.BGM_list[BGMs.GHZ1] = { // Finished
+		ID			: bgm_GHZ1,
+		loop_start	: 14.404,
+		loop_end	: 52.804
+	}
+	// ==================================================================================
+	global.BGM_list[BGMs.GHZ2] = { // Finished(?) - Test the loop
+		ID			: bgm_GHZ2,
+		loop_start	: 14.414,
+		loop_end	: 52.812
+	}
+	// ==================================================================================
+	global.BGM_list[BGMs.BOSS] = { // Finished
+		ID			: bgm_Boss,
+		loop_start	: 00.000,
+		loop_end	: 21.333
+	}
+	// ==================================================================================
+	global.BGM_list[BGMs.ACT_CLEAR] = { // Finished
+		ID			: bgm_ActClear,
+		loop_start	: -1,	// -1 = No loop
+		loop_end	: 0
+	}
+	// ==================================================================================
+	global.BGM_list[BGMs.INVINC] = { // Finished
+		ID			: bgm_Invinc,
+		loop_start	: 0.916,
+		loop_end	: 11.883
+	}
+	// ==================================================================================
+	global.BGM_list[BGMs.EXTRA_LIFE] = { // Finished
+		ID			: bgm_1up,
+		loop_start	: -1,	// -1 = No loop
+		loop_end	: 0
+	}
 }
