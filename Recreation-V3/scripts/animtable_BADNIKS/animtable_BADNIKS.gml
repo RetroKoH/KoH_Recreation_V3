@@ -5,7 +5,7 @@ function animtable_BADNIKS(){
 	animtable_NEWTRON();
 }
 
-// Database of sprite animations for the buzz bomber object
+// Database of sprite animations for the buzz bomber badnik
 function animtable_BUZZBOMBER(){
 	global.AnimTable_BuzzBomber = [];
 	// ==================================================================================
@@ -34,7 +34,7 @@ function animtable_BUZZBOMBER(){
 	array_push(global.AnimsIndex,global.AnimTable_BuzzBomber);
 }
 
-// Database of sprite animations for the crabmeat object
+// Database of sprite animations for the crabmeat badnik
 function animtable_CRABMEAT(){
 	global.AnimTable_Crabmeat = [];
 	// ==================================================================================
@@ -60,7 +60,29 @@ function animtable_CRABMEAT(){
 	array_push(global.AnimsIndex,global.AnimTable_Crabmeat);
 }
 
-// Database of sprite animations for the motobug object
+// Database of sprite animations for the chopper badnik
+function animtable_CHOPPER(){
+	global.AnimTable_Chopper = [];
+	// ==================================================================================
+	
+	setup_Animation(global.AnimTable_Chopper, "Up", spr_Chopper, spr_Chopper, spr_Chopper, -1, -1, 0, -1);
+
+	var sp = 1/8;
+	setup_AnimationFrame(global.AnimTable_Chopper, 0, sp);
+	setup_AnimationFrame(global.AnimTable_Chopper, 1, sp);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_Chopper, "Peak", spr_Chopper, spr_Chopper, spr_Chopper, -1, -1, 0, -1);
+
+	var sp = 1/4;
+	setup_AnimationFrame(global.AnimTable_Chopper, 0, sp);
+	setup_AnimationFrame(global.AnimTable_Chopper, 1, sp);
+	// ==================================================================================
+
+	array_push(global.AnimsIndex,global.AnimTable_Chopper);
+}
+
+// Database of sprite animations for the motobug badnik
 function animtable_MOTOBUG(){
 	global.AnimTable_Motobug = [];
 	// ==================================================================================
@@ -82,7 +104,7 @@ function animtable_MOTOBUG(){
 	array_push(global.AnimsIndex,global.AnimTable_Motobug);
 }
 
-// Database of sprite animations for the newtron object
+// Database of sprite animations for the newtron badnik
 function animtable_NEWTRON(){
 	global.AnimTable_Newtron = [];
 	// ==================================================================================
