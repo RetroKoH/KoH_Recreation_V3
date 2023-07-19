@@ -32,6 +32,7 @@
     {"name":"til_collision","order":1,"path":"tilesets/til_collision/til_collision.yy",},
     {"name":"core_Audio","order":4,"path":"objects/core_Audio/core_Audio.yy",},
     {"name":"core_Camera","order":3,"path":"objects/core_Camera/core_Camera.yy",},
+    {"name":"setup_Animation","order":2,"path":"scripts/setup_Animation/setup_Animation.yy",},
     {"name":"animtable_BADNIKS","order":1,"path":"scripts/animtable_BADNIKS/animtable_BADNIKS.yy",},
     {"name":"bgm_ActClear","order":3,"path":"sounds/bgm_ActClear/bgm_ActClear.yy",},
     {"name":"font_DEBUG","order":8,"path":"fonts/font_DEBUG/font_DEBUG.yy",},

@@ -7,270 +7,116 @@ function animtable_BADNIKS(){
 
 // Database of sprite animations for the buzz bomber object
 function animtable_BUZZBOMBER(){
-	global.AnimTable_BuzzBomber=array_create(3);
+	global.AnimTable_BuzzBomber = [];
+	// ==================================================================================
+	
+	// Need to add wings to the frames
+	setup_Animation(global.AnimTable_BuzzBomber, "Idle", spr_BuzzBomber, spr_BuzzBomber, spr_BuzzBomber, -1, -1, 0, -1);
 
-	global.AnimTable_BuzzBomber[0] = {
-		name		: "Idle",
-		sprite		: spr_BuzzBomber,
-		mask		: spr_BuzzBomber,
-		mask_l		: spr_BuzzBomber,
-		sub_anim	: -1,
-		loop_times	: -1,
-		loop_frame	: 0,
-		loop_anim	: -1,
-		frames		: [],
-		speeds		: []
-	}
-	// Animation frames
-		array_push(global.AnimTable_BuzzBomber[0].frames, 0);
-		array_push(global.AnimTable_BuzzBomber[0].speeds, 1);
+	setup_AnimationFrame(global.AnimTable_BuzzBomber, 0, 1);
 	// ==================================================================================
 
-	global.AnimTable_BuzzBomber[1] = {
-		name		: "Moving",
-		sprite		: spr_BuzzBomber,
-		mask		: spr_BuzzBomber,
-		mask_l		: spr_BuzzBomber,
-		sub_anim	: -1, // Will use FIRE subanimation
-		loop_times	: -1,
-		loop_frame	: 0,
-		loop_anim	: -1,
-		frames		: [],
-		speeds		: []
-	}
-	// Animation frames
-		array_push(global.AnimTable_BuzzBomber[1].frames, 0);
-		array_push(global.AnimTable_BuzzBomber[1].speeds, 1);
+	// Will use FIRE subanimation (And need to add wings)
+	setup_Animation(global.AnimTable_BuzzBomber, "Moving", spr_BuzzBomber, spr_BuzzBomber, spr_BuzzBomber, -1, -1, 0, -1);
+	
+	setup_AnimationFrame(global.AnimTable_BuzzBomber, 0, 1);
 	// ==================================================================================
+
+	// Will use FIRE subanimation (And need to add wings)
+	setup_Animation(global.AnimTable_BuzzBomber, "Firing", spr_BuzzBomber, spr_BuzzBomber, spr_BuzzBomber, -1, -1, 2, -1);
 
 	var sp=1/2;
-	global.AnimTable_BuzzBomber[2] = {
-		name		: "Firing",
-		sprite		: spr_BuzzBomber,
-		mask		: spr_BuzzBomber,
-		mask_l		: spr_BuzzBomber,
-		sub_anim	: -1, // Will use FIRE subanimation
-		loop_times	: -1,
-		loop_frame	: 2,
-		loop_anim	: -1,
-		frames		: [ 1,  2, 3],	// Animation frames
-		speeds		: [sp, sp, 1]
-	}
-	// Animation frames
-		array_push(global.AnimTable_BuzzBomber[2].frames, 1);
-		array_push(global.AnimTable_BuzzBomber[2].speeds, sp);
-		array_push(global.AnimTable_BuzzBomber[2].frames, 2);
-		array_push(global.AnimTable_BuzzBomber[2].speeds, sp);
-		array_push(global.AnimTable_BuzzBomber[2].frames, 3);
-		array_push(global.AnimTable_BuzzBomber[2].speeds, 1);
+	setup_AnimationFrame(global.AnimTable_BuzzBomber, 1, sp);
+	setup_AnimationFrame(global.AnimTable_BuzzBomber, 2, sp);
+	setup_AnimationFrame(global.AnimTable_BuzzBomber, 3, 1);
 	// ==================================================================================
-	// ==================================================================================
+
 	array_push(global.AnimsIndex,global.AnimTable_BuzzBomber);
 }
 
 // Database of sprite animations for the crabmeat object
 function animtable_CRABMEAT(){
-	global.AnimTable_Crabmeat=array_create(3);
+	global.AnimTable_Crabmeat = [];
+	// ==================================================================================
+	
+	setup_Animation(global.AnimTable_Crabmeat, "Idle", spr_Crabmeat, spr_Crabmeat, spr_Crabmeat, -1, -1, 0, -1);
 
-	global.AnimTable_Crabmeat[0] = {
-		name		: "Idle",
-		sprite		: spr_Crabmeat,
-		mask		: spr_Crabmeat,
-		mask_l		: spr_Crabmeat,
-		sub_anim	: -1,
-		loop_times	: -1,
-		loop_frame	: 0,
-		loop_anim	: -1,
-		frames		: [],
-		speeds		: []
-	}
-	// Animation frames
-		array_push(global.AnimTable_Crabmeat[0].frames, 0);
-		array_push(global.AnimTable_Crabmeat[0].speeds, 1);
+	setup_AnimationFrame(global.AnimTable_Crabmeat, 0, 1);
 	// ==================================================================================
 
+	setup_Animation(global.AnimTable_Crabmeat, "Moving", spr_Crabmeat, spr_Crabmeat, spr_Crabmeat, -1, -1, 0, -1);
+	
 	var sp=1/16;
-	global.AnimTable_Crabmeat[1] = {
-		name		: "Moving",
-		sprite		: spr_Crabmeat,
-		mask		: spr_Crabmeat,
-		mask_l		: spr_Crabmeat,
-		sub_anim	: -1,
-		loop_times	: -1,
-		loop_frame	: 0,
-		loop_anim	: -1,
-		frames		: [],
-		speeds		: []
-	}
-	// Animation frames
-		array_push(global.AnimTable_Crabmeat[1].frames, 1);
-		array_push(global.AnimTable_Crabmeat[1].speeds, sp);
-		array_push(global.AnimTable_Crabmeat[1].frames, 2);
-		array_push(global.AnimTable_Crabmeat[1].speeds, sp);
-		array_push(global.AnimTable_Crabmeat[1].frames, 0);
-		array_push(global.AnimTable_Crabmeat[1].speeds, sp);
+	setup_AnimationFrame(global.AnimTable_Crabmeat, 1, sp);
+	setup_AnimationFrame(global.AnimTable_Crabmeat, 2, sp);
+	setup_AnimationFrame(global.AnimTable_Crabmeat, 0, sp);
 	// ==================================================================================
 
-	var sp=1/16;
-	global.AnimTable_Crabmeat[2] = {
-		name		: "Firing",
-		sprite		: spr_Crabmeat,
-		mask		: spr_Crabmeat,
-		mask_l		: spr_Crabmeat,
-		sub_anim	: -1,
-		loop_times	: -1,
-		loop_frame	: 0,
-		loop_anim	: -1,
-		frames		: [],
-		speeds		: []
-	}
-	// Animation frames
-		array_push(global.AnimTable_Crabmeat[2].frames, 3);
-		array_push(global.AnimTable_Crabmeat[2].speeds, 1);
+	setup_Animation(global.AnimTable_Crabmeat, "Firing", spr_Crabmeat, spr_Crabmeat, spr_Crabmeat, -1, -1, 0, -1);
+
+	setup_AnimationFrame(global.AnimTable_Crabmeat, 3, 1);
 	// ==================================================================================
-	// ==================================================================================
+
 	array_push(global.AnimsIndex,global.AnimTable_Crabmeat);
 }
 
 // Database of sprite animations for the motobug object
 function animtable_MOTOBUG(){
-	global.AnimTable_Motobug=array_create(2);
-
-	global.AnimTable_Motobug[0] = {
-		name		: "Idle",
-		sprite		: spr_Motobug,
-		mask		: spr_Motobug,
-		mask_l		: spr_Motobug,
-		sub_anim	: -1,
-		loop_times	: -1,
-		loop_frame	: 0,
-		loop_anim	: -1,
-		frames		: [],
-		speeds		: []
-	}
-	// Animation frames
-		array_push(global.AnimTable_Motobug[0].frames, 2);
-		array_push(global.AnimTable_Motobug[0].speeds, 1);
+	global.AnimTable_Motobug = [];
 	// ==================================================================================
+	
+	setup_Animation(global.AnimTable_Motobug, "Idle", spr_Motobug, spr_Motobug, spr_Motobug, -1, -1, 0, -1);
+
+	setup_AnimationFrame(global.AnimTable_Motobug, 2, 1);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_Motobug, "Moving", spr_Motobug, spr_Motobug, spr_Motobug, -1, -1, 0, -1);
 
 	var sp=1/6;
-	global.AnimTable_Motobug[1] = {
-		name		: "Moving",
-		sprite		: spr_Motobug,
-		mask		: spr_Motobug,
-		mask_l		: spr_Motobug,
-		sub_anim	: -1,
-		loop_times	: -1,
-		loop_frame	: 0,
-		loop_anim	: -1,
-		frames		: [],
-		speeds		: []
-	}
-	// Animation frames
-		array_push(global.AnimTable_Motobug[1].frames, 0);
-		array_push(global.AnimTable_Motobug[1].speeds, sp);
-		array_push(global.AnimTable_Motobug[1].frames, 1);
-		array_push(global.AnimTable_Motobug[1].speeds, sp);
-		array_push(global.AnimTable_Motobug[1].frames, 0);
-		array_push(global.AnimTable_Motobug[1].speeds, sp);
-		array_push(global.AnimTable_Motobug[1].frames, 2);
-		array_push(global.AnimTable_Motobug[1].speeds, 1/7);
+	setup_AnimationFrame(global.AnimTable_Motobug, 0, sp);
+	setup_AnimationFrame(global.AnimTable_Motobug, 1, sp);
+	setup_AnimationFrame(global.AnimTable_Motobug, 0, sp);
+	setup_AnimationFrame(global.AnimTable_Motobug, 2, 1/7);
 	// ==================================================================================
-	// ==================================================================================
+
 	array_push(global.AnimsIndex,global.AnimTable_Motobug);
 }
 
 // Database of sprite animations for the newtron object
 function animtable_NEWTRON(){
-	global.AnimTable_Newtron=array_create(4);
-	global.AnimTable_Newtron[0] = {
-		name		: "Idle",
-		sprite		: spr_Newtron,
-		mask		: spr_Newtron,
-		mask_l		: spr_Newtron,
-		sub_anim	: -1,
-		loop_times	: -1,
-		loop_frame	: 0,
-		loop_anim	: -1,
-		frames		: [],
-		speeds		: []
-	}
-	// Animation frames
-		array_push(global.AnimTable_Newtron[0].frames, 0);
-		array_push(global.AnimTable_Newtron[0].speeds, 1);
+	global.AnimTable_Newtron = [];
 	// ==================================================================================
+
+	setup_Animation(global.AnimTable_Newtron, "Idle", spr_Newtron, spr_Newtron, spr_Newtron, -1, -1, 0, -1);
+	
+	setup_AnimationFrame(global.AnimTable_Newtron, 0, 1);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_Newtron, "Drop Down", spr_Newtron, spr_Newtron, spr_Newtron, -1, -1, 4, -1);
 
 	var sp = 1/20;
-	global.AnimTable_Newtron[1] = {
-		name		: "Drop Down",
-		sprite		: spr_Newtron,
-		mask		: spr_Newtron,
-		mask_l		: spr_Newtron,
-		sub_anim	: -1,
-		loop_times	: -1,
-		loop_frame	: 4,
-		loop_anim	: -1,
-		frames		: [],
-		speeds		: []
-	}
-	// Animation frames
-		array_push(global.AnimTable_Newtron[1].frames, 0);
-		array_push(global.AnimTable_Newtron[1].speeds, sp);
-		array_push(global.AnimTable_Newtron[1].frames, 0);
-		array_push(global.AnimTable_Newtron[1].speeds, sp);
-		array_push(global.AnimTable_Newtron[1].frames, 2);
-		array_push(global.AnimTable_Newtron[1].speeds, sp);
-		array_push(global.AnimTable_Newtron[1].frames, 3);
-		array_push(global.AnimTable_Newtron[1].speeds, sp);
-		array_push(global.AnimTable_Newtron[1].frames, 4);
-		array_push(global.AnimTable_Newtron[1].speeds, sp);
+	setup_AnimationFrame(global.AnimTable_Newtron, 0, sp);
+	setup_AnimationFrame(global.AnimTable_Newtron, 0, sp);
+	setup_AnimationFrame(global.AnimTable_Newtron, 2, sp);
+	setup_AnimationFrame(global.AnimTable_Newtron, 3, sp);
+	setup_AnimationFrame(global.AnimTable_Newtron, 4, sp);
 	// ==================================================================================
 
+	setup_Animation(global.AnimTable_Newtron, "Fly", spr_Newtron, spr_Newtron, spr_Newtron, -1, -1, 0, -1);
+	
 	sp = 1/3;
-	global.AnimTable_Newtron[2] = {
-		name		: "Fly",
-		sprite		: spr_Newtron,
-		mask		: spr_Newtron,
-		mask_l		: spr_Newtron,
-		sub_anim	: -1,
-		loop_times	: -1,
-		loop_frame	: 0,
-		loop_anim	: -1,
-		frames		: [],	// Animation frames
-		speeds		: []
-	}
-	// Animation frames
-		array_push(global.AnimTable_Newtron[2].frames, 5);
-		array_push(global.AnimTable_Newtron[2].speeds, sp);
-		array_push(global.AnimTable_Newtron[2].frames, 6);
-		array_push(global.AnimTable_Newtron[2].speeds, sp);
+	setup_AnimationFrame(global.AnimTable_Newtron, 5, sp);
+	setup_AnimationFrame(global.AnimTable_Newtron, 6, sp);
 	// ==================================================================================
+
+	setup_Animation(global.AnimTable_Newtron, "Shoot", spr_Newtron, spr_Newtron, spr_Newtron, -1, 0, 0, -1);
 
 	sp = 1/20;
-	global.AnimTable_Newtron[3] = {
-		name		: "Shoot",
-		sprite		: spr_Newtron,
-		mask		: spr_Newtron,
-		mask_l		: spr_Newtron,
-		sub_anim	: -1,
-		loop_times	: 0,
-		loop_frame	: 0,
-		loop_anim	: -1,
-		frames		: [],
-		speeds		: []
-	}
 	// Animation frames
-		repeat(3) {
-			array_push(global.AnimTable_Newtron[3].frames, 0);
-			array_push(global.AnimTable_Newtron[3].speeds, sp);
-		}
-		array_push(global.AnimTable_Newtron[3].frames, 1);
-		array_push(global.AnimTable_Newtron[3].speeds, sp);
-		repeat(3) {
-			array_push(global.AnimTable_Newtron[3].frames, 0);
-			array_push(global.AnimTable_Newtron[3].speeds, sp);
-		}
+		repeat(3) setup_AnimationFrame(global.AnimTable_Newtron, 0, sp);
+		setup_AnimationFrame(global.AnimTable_Newtron, 1, sp);
+		repeat(3) setup_AnimationFrame(global.AnimTable_Newtron, 0, sp);
 	// ==================================================================================
-	// ==================================================================================
+
 	array_push(global.AnimsIndex, global.AnimTable_Newtron);
 }

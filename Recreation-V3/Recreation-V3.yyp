@@ -62,6 +62,7 @@
     {"id":{"name":"core_Audio","path":"objects/core_Audio/core_Audio.yy",},},
     {"id":{"name":"bgm_Boss","path":"sounds/bgm_Boss/bgm_Boss.yy",},},
     {"id":{"name":"core_Camera","path":"objects/core_Camera/core_Camera.yy",},},
+    {"id":{"name":"setup_Animation","path":"scripts/setup_Animation/setup_Animation.yy",},},
     {"id":{"name":"Shader_Main","path":"shaders/Shader_Main/Shader_Main.yy",},},
     {"id":{"name":"animtable_BADNIKS","path":"scripts/animtable_BADNIKS/animtable_BADNIKS.yy",},},
     {"id":{"name":"bgm_ActClear","path":"sounds/bgm_ActClear/bgm_ActClear.yy",},},
