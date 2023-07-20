@@ -10,4 +10,4 @@ but in the Draw GUI End (!) event at the same time. This is exactly what we're d
 surface_reset = true;
 event_perform(ev_gui_end, 0);
 
-
+ready = false;

@@ -11,6 +11,7 @@ function setup_Game(){
 	cAUDIO		= instance_create_layer(0, -64, "Core", core_Audio);
 	cINPUT		= instance_create_layer(0, -64, "Core", core_Input);
 	
+	
 	setup_Game_DebugMode();
 	setup_Game_KeyMap();
 	setup_Game_Screen();			// Credit to Orbinaut Framework
@@ -105,7 +106,7 @@ function setup_Game_DebugMode(){
 	global.debuglog = "";		// Debug messages will go here
 	global.debuglog_timer = 0;	// Timer to remove the oldest message
 	
-	FONT.Debug = font_DEBUG;	// Font used for debug elements
+	FONT.Debug = font_add_sprite(spr_MenuFont, ord("!"), false, 0);	// Font used for debug elements
 }
 function setup_Game_KeyMap(){
 	#region KeyIndex

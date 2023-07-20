@@ -1,6 +1,6 @@
-/// @description Reset
+/// @description Startup
 
-ready			= false;
+if ready exit;
 
 // Animations
 update_anims	= true;

@@ -18,8 +18,8 @@ if surface_exists(surface_low)
 }
 
 // Render second surface
-if surface_exists(surface_high)
-	draw_surface(surface_high, 0, 0);
+//if surface_exists(surface_high)
+	//draw_surface(surface_high, 0, 0);
 
 surface_reset_target();
 application_surface_draw_enable(true);

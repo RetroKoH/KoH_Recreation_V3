@@ -1,9 +1,9 @@
-/// @description Palette Handler Startup
+/// @description Palette Handler Reset
 // Handler courtesy of Orbinaut Framework (Replacing my old system)
-		
-// Startup
-ready = false;
 
+if ready exit;
+
+// Setup executed at the start of each room
 color_set	= [];
 duration	= [];
 swap_time	= [];
@@ -13,7 +13,6 @@ fade_mode	= 1;
 fade_blend	= 0;
 fade_speed	= 0;
 fade_flag	= false;
-depth		= 10000; // This is used to perform Draw event earlier than Background Draw event
 	
 // Initialise palette animation storage
 for (var i = 0; i < PAL_LIMIT; i++)
