@@ -1,6 +1,16 @@
 function setup_Game(){
 	setup_Game_Macros();
 	global.game_start = false;
+
+	globalvar cDEBUG, cBKG, cPALETTE, cRENDER, cCAMERA, cAUDIO, cINPUT;
+	cDEBUG		= instance_create_layer(0, -64, "Core", core_Debug);
+	cBKG		= instance_create_layer(0, -64, "Core", core_Background);
+	cPALETTE	= instance_create_layer(0, -64, "Core", core_Palette);		
+	cRENDER		= instance_create_layer(0, -64, "Core", core_Renderer);
+	cCAMERA		= instance_create_layer(0, -64, "Core", core_Camera);
+	cAUDIO		= instance_create_layer(0, -64, "Core", core_Audio);
+	cINPUT		= instance_create_layer(0, -64, "Core", core_Input);
+	
 	setup_Game_DebugMode();
 	setup_Game_KeyMap();
 	setup_Game_Screen();			// Credit to Orbinaut Framework
@@ -9,17 +19,10 @@ function setup_Game(){
 	setup_Game_OscValues();
 	setup_Game_SyncAnimTimers();
 	setup_Game_Audio();
-
-	instance_create_layer(0, -64, "Core", core_Debug);
-	instance_create_layer(0, -64, "Core", core_Background);
-	instance_create_layer(0, -64, "Core", core_Palette);		
-	instance_create_layer(0, -64, "Core", core_Renderer);
-	instance_create_layer(0, -64, "Core", core_Camera);
-	instance_create_layer(0, -64, "Core", core_Audio);
-	instance_create_layer(0, -64, "Core", core_Input);
+	setup_Game_Shaders();			// Credit to Orbinaut Framework
 	
-	// Testing Renderer's handling of animated objects
-	instance_create_layer(128, 160, "Instances", obj_Ring);
+	instance_create_layer(120,120, "Core", obj_Splash);
+	instance_create_layer(120,120, "Instances", obj_Ring);
 
 	// End of setup
 	random_set_seed(randomise());
@@ -31,6 +34,7 @@ function setup_Game_Macros(){
 
 	// Global macros
 	#macro FONT			global
+	#macro SHADER		global
 	#macro GAMECAM		view_camera[0]
 	#macro TILE_SIZE	16
 	#macro TILE_COUNT	256
@@ -48,6 +52,15 @@ function setup_Game_Macros(){
 	#macro PAL_LIMIT		64
 	#macro PAL_PRIMARY		0
 	#macro PAL_SECONDARY	1
+
+	// Fade macro
+	#macro FADESTATE_ACTIVE	1
+	#macro FADESTATE_MAX	2
+	#macro FADEMODE_INTO	0
+	#macro FADEMODE_FROM	1
+	#macro FADEBLEND_BLACK	0
+	#macro FADEBLEND_WHITE	1
+	#macro FADEBLEND_FLASH	2
 	
 	// Keymap array indices
 	enum KEYMAP{
@@ -385,4 +398,10 @@ function setup_Game_Audio(){
 		loop_start	: -1,	// -1 = No loop
 		loop_end	: 0
 	}
+}
+function setup_Game_Shaders(){
+	// Setup fade module
+	SHADER.pal_fade_value	= shader_get_uniform(sh_Fade, "u_step");
+	SHADER.pal_fade_mode	= shader_get_uniform(sh_Fade, "u_mode");
+	SHADER.pal_fade_color	= shader_get_uniform(sh_Fade, "u_colour");
 }

@@ -5,5 +5,7 @@ if !update_anims
 	return;
 
 // Run all instance animations
-with obj_GameObj
-	gfunc_anims_update();
+with obj_GameObj {
+	if anim_flag
+		gfunc_anims_update();	// Only run animations of objects that have animations
+}

@@ -1,6 +1,9 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Startup
 
-update_anims = true;
+// Animations
+update_anims	= true;
 
-
+// Surfaces
+surface_low		= noone;
+surface_high	= noone;
+surface_reset	= false;

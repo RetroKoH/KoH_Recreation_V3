@@ -1,6 +1,6 @@
 /// @function gfunc_palette_load(palType, list)
 function gfunc_palette_load(palType, list){
-	if object_index != core_Palette
+	if object_index != cPALETTE
 	{
 		show_debug_message("WARNING: palette_load function has been called outside of Palette controller! Skipping...");
 	}

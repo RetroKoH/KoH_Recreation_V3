@@ -1,2 +1,2 @@
-/// @description By default, disable animation
+/// @description Init Ring
 gfunc_anims_init(true, global.AnimTable_Rings, 0);
