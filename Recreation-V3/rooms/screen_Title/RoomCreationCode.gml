@@ -1,0 +1,1 @@
+gfunc_fade_perform(FADEMODE_FROM, FADEBLEND_BLACK, 1);

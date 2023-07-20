@@ -41,6 +41,8 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Zone Objects","folderPath":"folders/Game Objects/Zone Objects.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Monitors","folderPath":"folders/Game Objects/Monitors.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Lamppost","folderPath":"folders/Game Objects/Lamppost.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Init Screen","folderPath":"folders/Screens/Init Screen.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Title Screen","folderPath":"folders/Screens/Title Screen.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -84,7 +86,7 @@
     {"id":{"name":"pal_Example_Type1","path":"sprites/pal_Example_Type1/pal_Example_Type1.yy",},},
     {"id":{"name":"spr_Flicky","path":"sprites/spr_Flicky/spr_Flicky.yy",},},
     {"id":{"name":"core_Audio","path":"objects/core_Audio/core_Audio.yy",},},
-    {"id":{"name":"scr_SEGA","path":"sprites/scr_SEGA/scr_SEGA.yy",},},
+    {"id":{"name":"spr_SEGA","path":"sprites/spr_SEGA/spr_SEGA.yy",},},
     {"id":{"name":"spr_SpindashDust","path":"sprites/spr_SpindashDust/spr_SpindashDust.yy",},},
     {"id":{"name":"bgm_Boss","path":"sounds/bgm_Boss/bgm_Boss.yy",},},
     {"id":{"name":"core_Camera","path":"objects/core_Camera/core_Camera.yy",},},
@@ -95,6 +97,7 @@
     {"id":{"name":"spr_Motobug","path":"sprites/spr_Motobug/spr_Motobug.yy",},},
     {"id":{"name":"spr_DropdashDust","path":"sprites/spr_DropdashDust/spr_DropdashDust.yy",},},
     {"id":{"name":"spr_MonIcon","path":"sprites/spr_MonIcon/spr_MonIcon.yy",},},
+    {"id":{"name":"sfx_SEGA","path":"sounds/sfx_SEGA/sfx_SEGA.yy",},},
     {"id":{"name":"font_DEBUG","path":"fonts/font_DEBUG/font_DEBUG.yy",},},
     {"id":{"name":"spr_CardActs","path":"sprites/spr_CardActs/spr_CardActs.yy",},},
     {"id":{"name":"spr_HUDLives","path":"sprites/spr_HUDLives/spr_HUDLives.yy",},},
@@ -112,6 +115,7 @@
     {"id":{"name":"gfunc_anims_init","path":"scripts/gfunc_anims_init/gfunc_anims_init.yy",},},
     {"id":{"name":"gfunc_debug_log_add","path":"scripts/gfunc_debug_log_add/gfunc_debug_log_add.yy",},},
     {"id":{"name":"spr_Chopper","path":"sprites/spr_Chopper/spr_Chopper.yy",},},
+    {"id":{"name":"screen_Title","path":"rooms/screen_Title/screen_Title.yy",},},
     {"id":{"name":"gfunc_audio_bgm_play","path":"scripts/gfunc_audio_bgm_play/gfunc_audio_bgm_play.yy",},},
     {"id":{"name":"sh_Fade","path":"shaders/sh_Fade/sh_Fade.yy",},},
     {"id":{"name":"core_Debug","path":"objects/core_Debug/core_Debug.yy",},},
@@ -129,6 +133,7 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"screen_INIT","path":"rooms/screen_INIT/screen_INIT.yy",},},
+    {"roomId":{"name":"screen_Title","path":"rooms/screen_Title/screen_Title.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},

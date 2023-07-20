@@ -21,8 +21,7 @@ function setup_Game(){
 	setup_Game_Audio();
 	setup_Game_Shaders();			// Credit to Orbinaut Framework
 	
-	instance_create_layer(120,120, "Core", obj_Splash);
-	instance_create_layer(120,120, "Instances", obj_Ring);
+	instance_create_layer(global.win_width/2,global.win_height/2, "Core", obj_Splash);
 
 	// End of setup
 	random_set_seed(randomise());

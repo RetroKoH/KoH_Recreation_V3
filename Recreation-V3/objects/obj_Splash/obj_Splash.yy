@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Screens",
-    "path": "folders/Screens.yy",
+    "name": "Init Screen",
+    "path": "folders/Screens/Init Screen.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -28,7 +28,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_SEGA",
+    "path": "sprites/spr_SEGA/spr_SEGA.yy",
+  },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }
