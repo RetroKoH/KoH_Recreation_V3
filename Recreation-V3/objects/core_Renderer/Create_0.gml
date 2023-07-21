@@ -1,13 +1,16 @@
-/// @description Reset
+/// @description Startup
 
-ready			= false;
-
-// Animations
-update_anims	= true;
-
-// Surfaces
-surface_low		= noone;
-surface_high	= noone;
+// Initialise variables
+color_set	= [];
+duration	= [];
+swap_time	= [];
+sequence	= [];
+	
+surface_main	= noone;
+surface_overlay	= noone;
 surface_reset	= false;
-
-ready			= true;
+	
+fade_step	= 756;
+fade_mode	= 1;
+fade_blend	= 0;
+fade_speed	= 0;

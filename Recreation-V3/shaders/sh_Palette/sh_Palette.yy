@@ -1,7 +1,7 @@
 {
   "resourceType": "GMShader",
   "resourceVersion": "1.0",
-  "name": "sh_Fade",
+  "name": "sh_Palette",
   "parent": {
     "name": "Shaders",
     "path": "folders/Shaders.yy",

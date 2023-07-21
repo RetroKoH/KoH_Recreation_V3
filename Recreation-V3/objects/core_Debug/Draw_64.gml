@@ -35,15 +35,16 @@ string(cAUDIO.track_pos)+" / "+string(cAUDIO.loop_end)+"\n"+
 "S-Track: "+string(cAUDIO.s_bgm_track)+"\n"+string(cAUDIO.s_track_pos));
 
 // SURFACE RENDERING
-gfunc_debug_draw_text(4,190,	"Val:"+string(cPALETTE.fade_value)+"\n"+
-								"Mode:"+string(cPALETTE.fade_mode)+"\n"+
-								"Blend:"+string(cPALETTE.fade_blend)+"\n"+
-								"Speed:"+string(cPALETTE.fade_speed)+"\n"+
-								"Flag:" + (cPALETTE.fade_flag ? "True" : "False")+"\n"+
-								"Low Surface" + string(cRENDER.surface_low));
+
+gfunc_debug_draw_text(4,190,	"Val:"+string(cRENDER.fade_step)+"\n"+
+								"Mode:"+string(cRENDER.fade_mode)+"\n"+
+								"Blend:"+string(cRENDER.fade_blend)+"\n"+
+								"Speed:"+string(cRENDER.fade_speed)+"\n"+
+								"Scr - Main" + string(cRENDER.surface_main)+"\n"+
+								"Scr - Over" + string(cRENDER.surface_overlay));
 
 draw_rectangle(104, 189, 104+(424*0.2)+4, 189+(240*0.2)+1, false)
-draw_surface_ext(cRENDER.surface_low, 105, 190, 0.2, 0.2, 0, c_red, 0.6);
+draw_surface_ext(cRENDER.surface_main, 105, 190, 0.2, 0.2, 0, c_red, 0.6);
 
 draw_rectangle(196, 189, 196+(424*0.2)+4, 189+(240*0.2)+1, false)
-draw_surface_ext(cRENDER.surface_high, 197, 190, 0.2, 0.2, 0, c_blue, 0.6);
+draw_surface_ext(cRENDER.surface_overlay, 197, 190, 0.2, 0.2, 0, c_blue, 0.6);

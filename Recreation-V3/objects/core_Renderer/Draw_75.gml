@@ -1,11 +1,13 @@
-/// @description Free Surfaces
-	
-// Performed on room end
+/// @description Surface Reset
+
+/* This script will be called on room end */
 if !surface_reset
 	return;
 	
 // Reset surfaces
-if surface_exists(surface_low)
-    surface_free(surface_low);
-if surface_exists(surface_high)
-    surface_free(surface_high);
+if surface_exists(surface_main) 
+    surface_free(surface_main);
+if surface_exists(surface_overlay) 
+    surface_free(surface_overlay);
+
+surface_reset = false;

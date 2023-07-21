@@ -1,29 +1,41 @@
-/// @description Handle Surfaces
+/// @description Rendering
 
-gpu_set_blendenable(false);
-surface_set_target(application_surface);
-
-// Render first surface
-if surface_exists(surface_low)
+// Process fading
+if fade_mode and fade_step < 756
 {
-	shader_set(sh_Fade);
-	{
-		shader_set_uniform_f(SHADER.pal_fade_value,	cPALETTE.fade_blend == FADEBLEND_FLASH ? cPALETTE.fade_value div 3 : cPALETTE.fade_value);
-		shader_set_uniform_i(SHADER.pal_fade_color,	cPALETTE.fade_blend);
-		shader_set_uniform_i(SHADER.pal_fade_mode,	cPALETTE.fade_mode);
-			
-		draw_surface(surface_low, -global.scrn_buffer, 0);
-	}
-	shader_reset();
+	fade_step = min(fade_step + fade_speed, 756);
+}
+else if !fade_mode and fade_step > 0
+{
+	fade_step = max(fade_step - fade_speed, 0);
 }
 
-// Render second surface
-//if surface_exists(surface_high)
-	//draw_surface(surface_high, 0, 0);
+// Draw surfaces
+surface_set_target(application_surface);
+draw_clear_alpha(c_white, 0);
+	
+if surface_exists(surface_main) 
+{
+	// Use shader
+	shader_set(sh_Palette);
+		
+	// Render palette fade
+	shader_set_uniform_f(SHADER.pal_fade_step,  fade_blend == FADEBLEND_FLASH ? fade_step div 3 : fade_step);
+	shader_set_uniform_i(SHADER.pal_fade_color, fade_blend);
+	shader_set_uniform_i(SHADER.pal_fade_mode,  fade_mode);
+
+	// Render main palette surface
+	draw_surface(surface_main, 0, 0);
+	shader_reset();
+}
+	
+// Render overlay palette surface
+if surface_exists(surface_overlay)
+	draw_surface(surface_overlay, 0, 0);
 
 surface_reset_target();
-application_surface_draw_enable(true);
 	
 // Draw application (game) surface
-draw_surface(application_surface, 0, 0); application_surface_draw_enable(false);
-gpu_set_blendenable(true);
+application_surface_draw_enable(true);
+draw_surface(application_surface, 0, 0);
+application_surface_draw_enable(false);

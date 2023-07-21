@@ -7,11 +7,11 @@ function gfunc_fade_perform(_mode, _blend, _speed){
     var _instant = _speed == 0;
 	
 	// Perform fade
-    if _instant or !(cPALETTE.fade_value mod 756)
+    if _instant or !(cRENDER.fade_step mod 756)
     {
-        cPALETTE.fade_value = _instant xor _mode ? 0 : 756; 
-        cPALETTE.fade_mode = _mode; 
+        cRENDER.fade_step = _instant xor _mode ? 0 : 756; 
+        cRENDER.fade_mode = _mode; 
     }
-    cPALETTE.fade_blend = _blend;
-    cPALETTE.fade_speed = _speed;
+    cRENDER.fade_blend = _blend;
+    cRENDER.fade_speed = _speed;
 }

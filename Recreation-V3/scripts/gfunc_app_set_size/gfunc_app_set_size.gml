@@ -3,10 +3,10 @@ function gfunc_app_set_size(_width, _height){
 	// Free surfaces, they'll be re-created in the Pre-Draw Event of Renderer contoller
 	if instance_exists(cRENDER)
 	{
-		if surface_exists(cRENDER.surface_low)
-			surface_free(cRENDER.surface_low);
-		if surface_exists(cRENDER.surface_high)
-			surface_free(cRENDER.surface_high);
+		if surface_exists(cRENDER.surface_main)
+			surface_free(cRENDER.surface_main);
+		if surface_exists(cRENDER.surface_overlay)
+			surface_free(cRENDER.surface_overlay);
 	}
 	surface_resize(application_surface, _width, _height);
 	

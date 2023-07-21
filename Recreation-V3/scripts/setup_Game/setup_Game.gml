@@ -2,10 +2,8 @@ function setup_Game(){
 	setup_Game_Macros();
 	global.game_start = false;
 
-	globalvar cDEBUG, cBKG, cPALETTE, cRENDER, cCAMERA, cAUDIO, cINPUT;
-	cDEBUG		= instance_create_layer(0, -64, "Core", core_Debug);
-	cBKG		= instance_create_layer(0, -64, "Core", core_Background);
-	cPALETTE	= instance_create_layer(0, -64, "Core", core_Palette);		
+	globalvar cDEBUG, cRENDER, cCAMERA, cAUDIO, cINPUT;
+	cDEBUG		= instance_create_layer(0, -64, "Core", core_Debug);	
 	cRENDER		= instance_create_layer(0, -64, "Core", core_Renderer);
 	cCAMERA		= instance_create_layer(0, -64, "Core", core_Camera);
 	cAUDIO		= instance_create_layer(0, -64, "Core", core_Audio);
@@ -22,7 +20,7 @@ function setup_Game(){
 	setup_Game_Audio();
 	setup_Game_Shaders();			// Credit to Orbinaut Framework
 	
-	instance_create_layer(global.win_width/2,global.win_height/2, "Core", obj_Splash);
+	instance_create_layer(room_width/2, room_height/2, "Instances", obj_Splash);
 
 	// End of setup
 	random_set_seed(randomise());
@@ -401,7 +399,7 @@ function setup_Game_Audio(){
 }
 function setup_Game_Shaders(){
 	// Setup fade module
-	SHADER.pal_fade_value	= shader_get_uniform(sh_Fade, "u_step");
-	SHADER.pal_fade_mode	= shader_get_uniform(sh_Fade, "u_mode");
-	SHADER.pal_fade_color	= shader_get_uniform(sh_Fade, "u_colour");
+	SHADER.pal_fade_step	= shader_get_uniform(sh_Palette, "u_step");
+	SHADER.pal_fade_mode	= shader_get_uniform(sh_Palette, "u_mode");
+	SHADER.pal_fade_color	= shader_get_uniform(sh_Palette, "u_colour");
 }
