@@ -2,13 +2,10 @@
 
 // Process fading
 if fade_mode and fade_step < 756
-{
 	fade_step = min(fade_step + fade_speed, 756);
-}
+
 else if !fade_mode and fade_step > 0
-{
 	fade_step = max(fade_step - fade_speed, 0);
-}
 
 // Draw surfaces
 surface_set_target(application_surface);

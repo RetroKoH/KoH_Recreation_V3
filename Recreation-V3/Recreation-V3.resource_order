@@ -59,6 +59,7 @@
     {"name":"animtable_BADNIKS","order":1,"path":"scripts/animtable_BADNIKS/animtable_BADNIKS.yy",},
     {"name":"bgm_ActClear","order":3,"path":"sounds/bgm_ActClear/bgm_ActClear.yy",},
     {"name":"spr_DropdashDust","order":1,"path":"sprites/spr_DropdashDust/spr_DropdashDust.yy",},
+    {"name":"spr_Title","order":2,"path":"sprites/spr_Title/spr_Title.yy",},
     {"name":"spr_MonIcon","order":1,"path":"sprites/spr_MonIcon/spr_MonIcon.yy",},
     {"name":"sfx_SEGA","order":2,"path":"sounds/sfx_SEGA/sfx_SEGA.yy",},
     {"name":"spr_CardActs","order":5,"path":"sprites/spr_CardActs/spr_CardActs.yy",},

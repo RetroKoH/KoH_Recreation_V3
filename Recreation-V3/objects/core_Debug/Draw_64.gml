@@ -1,6 +1,7 @@
 /// @description Debug Info
 
-if !global.debugmode exit
+if !global.debugmode
+	exit;
 
 // INPUT
 var _ax=2, _ay=22;

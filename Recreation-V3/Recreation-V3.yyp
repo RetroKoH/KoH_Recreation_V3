@@ -96,6 +96,7 @@
     {"id":{"name":"bgm_ActClear","path":"sounds/bgm_ActClear/bgm_ActClear.yy",},},
     {"id":{"name":"spr_Motobug","path":"sprites/spr_Motobug/spr_Motobug.yy",},},
     {"id":{"name":"spr_DropdashDust","path":"sprites/spr_DropdashDust/spr_DropdashDust.yy",},},
+    {"id":{"name":"spr_Title","path":"sprites/spr_Title/spr_Title.yy",},},
     {"id":{"name":"spr_MonIcon","path":"sprites/spr_MonIcon/spr_MonIcon.yy",},},
     {"id":{"name":"sfx_SEGA","path":"sounds/sfx_SEGA/sfx_SEGA.yy",},},
     {"id":{"name":"spr_CardActs","path":"sprites/spr_CardActs/spr_CardActs.yy",},},

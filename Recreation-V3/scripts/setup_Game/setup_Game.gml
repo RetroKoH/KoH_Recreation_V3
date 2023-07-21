@@ -9,7 +9,6 @@ function setup_Game(){
 	cAUDIO		= instance_create_layer(0, -64, "Core", core_Audio);
 	cINPUT		= instance_create_layer(0, -64, "Core", core_Input);
 	
-	
 	setup_Game_DebugMode();
 	setup_Game_KeyMap();
 	setup_Game_Screen();			// Credit to Orbinaut Framework
@@ -271,7 +270,6 @@ function setup_Game_Screen(){
 	window_set_caption(global.win_title);
 	
 	// ...and apply some GPU magic that will increase game speed!
-	surface_depth_disable(true);
 	gpu_set_alphatestenable(true);
 	gpu_set_alphatestref(0);
 }
