@@ -44,8 +44,8 @@ gfunc_debug_draw_text(4,190,	"Val:"+string(cRENDER.fade_step)+"\n"+
 								"Scr - Main" + string(cRENDER.surface_main)+"\n"+
 								"Scr - Over" + string(cRENDER.surface_overlay));
 
-draw_rectangle(104, 189, 104+(424*0.2)+4, 189+(240*0.2)+1, false)
+draw_rectangle(104, 189, 104+(424*0.2)+1, 189+(240*0.2)+1, false)
 draw_surface_ext(cRENDER.surface_main, 105, 190, 0.2, 0.2, 0, c_red, 0.6);
 
-draw_rectangle(196, 189, 196+(424*0.2)+4, 189+(240*0.2)+1, false)
+draw_rectangle(196, 189, 196+(424*0.2)+1, 189+(240*0.2)+1, false)
 draw_surface_ext(cRENDER.surface_overlay, 197, 190, 0.2, 0.2, 0, c_blue, 0.6);
