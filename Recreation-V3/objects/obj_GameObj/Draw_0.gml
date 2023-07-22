@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Draw current animation frame
 if (anim_ID != -1)
 	// --- Draw main animation -----------------------------------------------------
 	draw_sprite_ext(anim_sprite, floor(anim_spriteframe), floor(x), floor(y),

@@ -1,5 +1,7 @@
 /// @description Startup
 
+update_anims = true;
+
 // Initialise variables
 color_set	= [];
 duration	= [];

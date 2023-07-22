@@ -17,17 +17,17 @@ switch(routine)
 	break;
 	
 	case 2:		
-		if ++wait_timer == 80 {
+		if ++wait_timer == 95 {
 			routine++;
-			//visible = true;
-			wait_timer = 0;
+			animated = true;
 		}
 	break;
 	
-	case 3:		
-		if ++wait_timer == 10 {
+	case 3:
+		// PSB triggers at the end of initial animation
+		if (psb && !instance_exists(obj_StartMenu)) {
 			routine++;
-			wait_timer = 0;
+			instance_create_layer(room_width/2 - 8, 200, "Instances", obj_StartMenu);
 		}
 	break;
 }
