@@ -2,9 +2,10 @@ function setup_Game(){
 	setup_Game_Macros();
 	global.game_start = false;
 
-	globalvar cDEBUG, cRENDER, cCAMERA, cAUDIO, cINPUT;
+	globalvar cDEBUG, cRENDER, cBKG, cCAMERA, cAUDIO, cINPUT;
 	cDEBUG		= instance_create_layer(0, -64, "Core", core_Debug);	
 	cRENDER		= instance_create_layer(0, -64, "Core", core_Renderer);
+	cBKG		= instance_create_layer(0, -64, "Core", core_Background);
 	cCAMERA		= instance_create_layer(0, -64, "Core", core_Camera);
 	cAUDIO		= instance_create_layer(0, -64, "Core", core_Audio);
 	cINPUT		= instance_create_layer(0, -64, "Core", core_Input);

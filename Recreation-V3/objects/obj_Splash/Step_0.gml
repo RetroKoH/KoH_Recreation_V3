@@ -5,7 +5,7 @@ switch(routine)
 	case 0:
 		if ++wait_timer == 60 {
 			routine++;
-			var _bkg = layer_background_get_id(layer_get_id("bkg_color"));
+			var _bkg = layer_background_get_id(layer_get_id("Background"));
 			layer_background_blend(_bkg, c_white)
 			gfunc_fade_perform(FADEMODE_FROM, FADEBLEND_BLACK, 1);
 		}
