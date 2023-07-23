@@ -399,7 +399,29 @@ function setup_Game_Audio(){
 }
 function setup_Game_Shaders(){
 	// Setup fade module
-	SHADER.pal_fade_step	= shader_get_uniform(sh_Palette, "u_step");
-	SHADER.pal_fade_mode	= shader_get_uniform(sh_Palette, "u_mode");
-	SHADER.pal_fade_color	= shader_get_uniform(sh_Palette, "u_colour");
+	SHADER.pal_fade_step	= shader_get_uniform(sh_Fade, "u_step");
+	SHADER.pal_fade_mode	= shader_get_uniform(sh_Fade, "u_mode");
+	SHADER.pal_fade_color	= shader_get_uniform(sh_Fade, "u_colour");
+
+	// Setup palette module
+	SHADER.pal_bound		= shader_get_uniform(sh_Palette,		"u_bound");
+	SHADER.pal_tex_size_1	= shader_get_uniform(sh_Palette,		"u_texSizeFst");
+	SHADER.pal_UVs_1		= shader_get_uniform(sh_Palette,		"u_UVsFst");
+	SHADER.pal_index_1		= shader_get_uniform(sh_Palette,		"u_indFst");
+	SHADER.pal_tex_1		= shader_get_sampler_index(sh_Palette,	"u_texFst");
+	SHADER.pal_tex_size_2	= shader_get_uniform(sh_Palette,		"u_texSizeSnd");
+	SHADER.pal_UVs_2		= shader_get_uniform(sh_Palette,		"u_UVsSnd");
+	SHADER.pal_index_2		= shader_get_uniform(sh_Palette,		"u_indSnd");
+	SHADER.pal_tex_2		= shader_get_sampler_index(sh_Palette,	"u_texSnd");
+
+	// Setup parallax module
+	SHADER.prl_active		= shader_get_uniform(sh_Palette, "u_parallaxActive");
+	SHADER.prl_pos			= shader_get_uniform(sh_Palette, "u_pos");
+	SHADER.prl_width		= shader_get_uniform(sh_Palette, "u_width");
+	SHADER.prl_height		= shader_get_uniform(sh_Palette, "u_height");
+	SHADER.prl_scaleY		= shader_get_uniform(sh_Palette, "u_scaleY");
+	SHADER.prl_offset		= shader_get_uniform(sh_Palette, "u_offset");
+	SHADER.prl_inc_height	= shader_get_uniform(sh_Palette, "u_ilHeight");
+	SHADER.prl_inc_step		= shader_get_uniform(sh_Palette, "u_ilStep");
+	SHADER.prl_map_size		= shader_get_uniform(sh_Palette, "u_mapSize");
 }

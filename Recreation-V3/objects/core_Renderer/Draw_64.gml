@@ -14,7 +14,7 @@ draw_clear_alpha(c_white, 0);
 if surface_exists(surface_main) 
 {
 	// Use shader
-	shader_set(sh_Palette);
+	shader_set(sh_Fade);
 		
 	// Render palette fade
 	shader_set_uniform_f(SHADER.pal_fade_step,  fade_blend == FADEBLEND_FLASH ? fade_step div 3 : fade_step);

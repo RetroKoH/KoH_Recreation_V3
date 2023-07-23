@@ -70,6 +70,7 @@
     {"name":"spr_MonIcon","order":1,"path":"sprites/spr_MonIcon/spr_MonIcon.yy",},
     {"name":"bkg_ghz_05","order":5,"path":"sprites/bkg_ghz_05/bkg_ghz_05.yy",},
     {"name":"sfx_SEGA","order":2,"path":"sounds/sfx_SEGA/sfx_SEGA.yy",},
+    {"name":"sh_Palette","order":1,"path":"shaders/sh_Palette/sh_Palette.yy",},
     {"name":"spr_CardActs","order":5,"path":"sprites/spr_CardActs/spr_CardActs.yy",},
     {"name":"spr_HUDLives","order":4,"path":"sprites/spr_HUDLives/spr_HUDLives.yy",},
     {"name":"spr_SkidDust","order":3,"path":"sprites/spr_SkidDust/spr_SkidDust.yy",},
