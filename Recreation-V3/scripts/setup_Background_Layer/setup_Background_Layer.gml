@@ -2,7 +2,7 @@
 function setup_Background_Layer(_tex, _x, _y, _scrX, _scrY, _autoXSP, _animSpeed){	
 	// Add data for this layer
 	var _table_entry = {
-		texture			: _tex,			// Texture asset file
+		texture			: _tex,			// Texture sprite
 		pos_x			: _x,			// starting x-position
 		pos_y			: _y,			// starting y-position
 		scroll_x		: _scrX,		// Unused
