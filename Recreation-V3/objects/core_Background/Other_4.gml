@@ -7,7 +7,7 @@ switch(room){
 		setup_Background_Layer(bkg_ghz_02, 0, 40,  0.375, 0, -0.25, 0);
 		setup_Background_Layer(bkg_ghz_03, 0, 56,  0.375, 0, 0,     0);
 		setup_Background_Layer(bkg_ghz_04, 0, 104, 0.5,   0, 0,     0);
-		setup_Background_Layer(bkg_ghz_05, 0, 144, 0.5,   0, 0,     0);
+		setup_Background_Layer(bkg_ghz_05, 0, 144, 0.5,   0, 0,     0,	1, 0.005);
 		active = true;
 	break;
 	
