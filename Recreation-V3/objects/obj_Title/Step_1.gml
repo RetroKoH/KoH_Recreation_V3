@@ -1,5 +1,8 @@
 /// @description Insert description here
 
+// Move with the camera
+x = cCAMERA.view_x + global.win_width / 2;
+
 if animated
 	gfunc_anims_update();
 

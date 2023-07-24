@@ -250,7 +250,7 @@ function setup_Game_Screen(){
 	global.win_title = "Recreation Engine";
 	global.win_width = 424;
 	global.win_height = 240;
-	global.win_size = 2;
+	global.win_size = 3;
 	global.scrn_buffer = 8;
 	global.win_start_full = false;		// Flag to start in fullscreen mode
 	

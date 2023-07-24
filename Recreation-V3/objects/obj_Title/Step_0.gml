@@ -26,12 +26,16 @@ switch(routine)
 	break;
 	
 	case 3:
-		//cCAMERA.pos_x += 2;
+		cCAMERA.pos_x += 2;
 	
 		// PSB triggers at the end of initial animation
 		if (psb && !instance_exists(obj_StartMenu)) {
 			routine++;
-			instance_create_layer(424/2, 200, "Instances", obj_StartMenu);
+			instance_create_layer(424/2, 180, "Instances", obj_StartMenu);
 		}
+	break;
+	
+	case 4:
+		cCAMERA.pos_x += 2;
 	break;
 }
