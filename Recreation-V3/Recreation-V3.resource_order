@@ -32,6 +32,7 @@
     {"name":"Zones","order":2,"path":"folders/Zones.yy",},
     {"name":"GHZ","order":1,"path":"folders/Zones/GHZ.yy",},
     {"name":"Background","order":1,"path":"folders/Zones/GHZ/Background.yy",},
+    {"name":"Player","order":11,"path":"folders/Game Objects/Player.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_CardFont","order":6,"path":"sprites/spr_CardFont/spr_CardFont.yy",},
@@ -50,6 +51,7 @@
     {"name":"spr_HUDNumbers","order":1,"path":"sprites/spr_HUDNumbers/spr_HUDNumbers.yy",},
     {"name":"gfunc_anims_update","order":6,"path":"scripts/gfunc_anims_update/gfunc_anims_update.yy",},
     {"name":"spr_Pocky","order":1,"path":"sprites/spr_Pocky/spr_Pocky.yy",},
+    {"name":"spr_Player","order":1,"path":"sprites/spr_Player/spr_Player.yy",},
     {"name":"spr_CardIcon","order":3,"path":"sprites/spr_CardIcon/spr_CardIcon.yy",},
     {"name":"gfunc_debug_log_delete","order":2,"path":"scripts/gfunc_debug_log_delete/gfunc_debug_log_delete.yy",},
     {"name":"bkg_ghz_01","order":1,"path":"sprites/bkg_ghz_01/bkg_ghz_01.yy",},
@@ -87,6 +89,7 @@
     {"name":"gfunc_debug_log_add","order":1,"path":"scripts/gfunc_debug_log_add/gfunc_debug_log_add.yy",},
     {"name":"gfunc_audio_bgm_play","order":5,"path":"scripts/gfunc_audio_bgm_play/gfunc_audio_bgm_play.yy",},
     {"name":"core_Debug","order":7,"path":"objects/core_Debug/core_Debug.yy",},
+    {"name":"gfunc_anims_draw","order":9,"path":"scripts/gfunc_anims_draw/gfunc_anims_draw.yy",},
     {"name":"bgm_Invinc","order":5,"path":"sounds/bgm_Invinc/bgm_Invinc.yy",},
     {"name":"bgm_1up","order":7,"path":"sounds/bgm_1up/bgm_1up.yy",},
     {"name":"bkg_ghz_02","order":2,"path":"sprites/bkg_ghz_02/bkg_ghz_02.yy",},

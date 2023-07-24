@@ -7,10 +7,10 @@
 		exit;
 
 	// Get target's position relative to camera
-	if follow == cPLAYER
+	if follow == obj_Player
 	{
-		target_x = floor(cPLAYER.pos_x) - pos_x;
-		target_y = floor(cPLAYER.pos_y) - pos_y;
+		target_x = floor(follow.x) - pos_x;
+		target_y = floor(follow.y) - pos_y;
 	}
 	else
 	{
@@ -29,11 +29,11 @@
 		shift_x = 0;
 	
 	// Set vertical shift speed
-	if follow == cPLAYER and cPLAYER.grounded
+	if follow == obj_Player //and cPLAYER.grounded
 	{	
-		if abs(cPLAYER.inertia) >= 8
-			var _limit = shift_y_max;
-		else
+		//if abs(cPLAYER.inertia) >= 8
+		//	var _limit = shift_y_max;
+		//else
 			var _limit = 6;
 
 		shift_y = clamp(target_y - (global.win_height / 2 - 16), -_limit, _limit);
@@ -76,12 +76,12 @@
 	}
 	
 	// Check if we should exit
-	if !enabled or !(instance_exists(follow) and follow == cPLAYER)
+	if !enabled or !(instance_exists(follow) and follow == obj_Player)
 		exit;
 	
 	// Check for overview delay
-	var _shiftDown = (Player.anim_ID == PLANIM_CROUCH);
-	var _shiftUp   = (Player.anim_ID == PLANIM_LOOKUP);
+	var _shiftDown = 0;//= (obj_Player.anim_ID == PLANIM_CROUCH);
+	var _shiftUp   = 0;//= (obj_Player.anim_ID == PLANIM_LOOKUP);
 	
 	if (_shiftUp or _shiftDown)
 		if overview_delay
@@ -114,9 +114,10 @@
 		view_x = pos_x;
 		view_y = pos_y;
 	}
-	view_x += shake_x;
-	view_y += shake_y;
+	//view_x += shake_x;
+	//view_y += shake_y;
 	
 	// Update camera position
 	camera_set_view_pos(GAMECAM, view_x, view_y);
 }
+#endregion

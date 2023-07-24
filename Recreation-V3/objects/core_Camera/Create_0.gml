@@ -1,6 +1,6 @@
 /// @description Initialize Camera
 
-follow			= cPLAYER;
+follow			= obj_Player;
 enabled			= false;
 shift_x_max		= 16;
 shift_y_max		= 16;

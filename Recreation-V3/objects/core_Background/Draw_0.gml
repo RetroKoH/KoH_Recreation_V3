@@ -1,17 +1,24 @@
 /// @description Render background
 
-if !active exit;
+var _len = array_length(layers);
+if !active || !_len return; //if cRENDER.update_anims
 
 shader_set(sh_Palette);
 
-var _len = array_length(layers);
+var _transition_offset = 0;
+var _scr_buffer = global.scrn_buffer;
+
+// Apply parallax
+shader_set_uniform_i(SHADER.prl_active, true);
+
 for (var i = 0; i < _len; i++)
 {
 	var _layer = layers[i];
 	
-	if cRENDER.update_anims
-		_layer.x_offset += _layer.speed_x;
+	// Update ScrollX offset
+	_layer.x_offset += _layer.speed_x;
 	
+	// Get background data
 	var _tex		= _layer.texture;
 	var _x			= _layer.pos_x;
 	var _y			= _layer.pos_y;
@@ -26,24 +33,27 @@ for (var i = 0; i < _len; i++)
 	var _width		= _layer.tex_width;
 	var _texSize	= _layer.tex_size;
 	
-	var _drawX		= cCAMERA.view_x + _x;
-	var _drawY		= floor(cCAMERA.view_x * (1 - _scrY)) + _y;
+	var _drawX		= cCAMERA.view_x + _x - _scr_buffer;
+	var _drawY		= floor(cCAMERA.view_y * (1 - _scrY)) + _y;
 	
 	// Set y-scale mode properties
 	var _Yscale = 1;
-	if _incY and global.stage
-		_Yscale = clamp((0 - _drawY) / _height, -1, 1); // The 0 is Water Level
+	//if _incY and global.stage
+	//	_Yscale = clamp((0 - _drawY) / _height, -1, 1); // The 0 is Water Level
 	
 	// Not animated for now
 	
 	// Transfer data to the shader
 	if _incHeight != 0 
 	{
+		if _incStep < 0
+			shader_set_uniform_f(SHADER.prl_inc_height, abs(_height));
+
 		shader_set_uniform_f(SHADER.prl_inc_step,	_incStep / _scrX);
 		shader_set_uniform_f(SHADER.prl_inc_height,	_incHeight);
 		shader_set_uniform_f(SHADER.prl_scaleY,		_Yscale);
 	}
-	shader_set_uniform_f(SHADER.prl_offset,		(_drawX - _x) * _scrX - _xoffset); //+ TransitionOffset * ScrollX);
+	shader_set_uniform_f(SHADER.prl_offset,		cCAMERA.view_x * _scrX - _xoffset + _transition_offset * _scrX, _scr_buffer);
 	shader_set_uniform_f(SHADER.prl_pos,		_drawX, _drawY);
 	shader_set_uniform_f(SHADER.prl_width,		_width);
 	shader_set_uniform_f(SHADER.prl_map_size,	_texSize);
@@ -57,5 +67,8 @@ for (var i = 0; i < _len; i++)
 	if _incHeight != 0 
 		shader_set_uniform_f(SHADER.prl_inc_height, 0);
 }
+
+// Stop parallax
+shader_set_uniform_i(SHADER.prl_active, false);
 
 shader_reset();
