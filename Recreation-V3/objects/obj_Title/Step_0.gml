@@ -32,7 +32,6 @@ switch(routine)
 		if (psb && !instance_exists(obj_StartMenu)) {
 			routine++;
 			instance_create_layer(424/2, 200, "Instances", obj_StartMenu);
-			cPLAYER = instance_create_layer(10, 210, "Instances", obj_Player);
 		}
 	break;
 }

@@ -3,8 +3,6 @@
 var _len = array_length(layers);
 if !active || !_len return; //if cRENDER.update_anims
 
-shader_set(sh_Palette);
-
 var _transition_offset = 0;
 var _scr_buffer = global.scrn_buffer;
 
@@ -70,5 +68,3 @@ for (var i = 0; i < _len; i++)
 
 // Stop parallax
 shader_set_uniform_i(SHADER.prl_active, false);
-
-shader_reset();
