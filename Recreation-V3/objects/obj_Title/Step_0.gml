@@ -31,7 +31,7 @@ switch(routine)
 		// PSB triggers at the end of initial animation
 		if (psb && !instance_exists(obj_StartMenu)) {
 			routine++;
-			instance_create_layer(424/2, 180, "Instances", obj_StartMenu);
+			instance_create_layer(x, 180, "Instances", obj_StartMenu);
 		}
 	break;
 	

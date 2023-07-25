@@ -1,6 +1,6 @@
 /// @description Draw out the menu
 
-if !menu draw_self();
+if !routine draw_self();
 
 else
 {

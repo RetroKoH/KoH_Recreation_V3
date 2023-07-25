@@ -20,6 +20,7 @@ function setup_Game(){
 	setup_Game_SyncAnimTimers();
 	setup_Game_Audio();
 	setup_Game_Shaders();			// Credit to Orbinaut Framework
+	setup_Game_OptionsMenu();
 	
 	instance_create_layer(room_width/2, room_height/2, "Instances", obj_Splash);
 
@@ -106,6 +107,7 @@ function setup_Game_DebugMode(){
 	global.debuglog_timer = 0;	// Timer to remove the oldest message
 	
 	FONT.Debug = font_add_sprite(spr_MenuFont, ord("!"), false, 0);	// Font used for debug elements
+	FONT.Menu = FONT.Debug;
 }
 function setup_Game_KeyMap(){
 	#region KeyIndex
@@ -425,4 +427,68 @@ function setup_Game_Shaders(){
 	SHADER.prl_inc_height	= shader_get_uniform(sh_Palette, "u_ilHeight");
 	SHADER.prl_inc_step		= shader_get_uniform(sh_Palette, "u_ilStep");
 	SHADER.prl_map_size		= shader_get_uniform(sh_Palette, "u_mapSize");
+}
+function setup_Game_OptionsMenu(){
+	global.str_sections = [
+		"GAMEPLAY",		// Gameplay settings
+		"CONTROLS",		// Control keymapping
+		"VIDEO",		// Video/Screen settings
+		"AUDIO",		// Sound Test and settings
+		"ANIMATIONS",	// Animation Viewer
+		"TILESETS"		// Tileset (& Collision) Viewer
+	]
+
+	global.str_opt_onoff	= ["ON", "OFF"];
+
+	global.str_opt_gameplay = [
+		"PLAYER CHARACTER",		// Sonic, Tails, Knuckles, Amy, Mighty, Ray, Metal
+		"SONIC ABILITIES",		// S1, S2, SCD, S3K, Mania, Ultimate
+		"TAILS FLIGHT CANCEL",	// On/Off
+		"AMY PLAY STYLE",		// S1, Origins, Pink Edition
+		"SHIELD TYPE",			// Blue Shield, Elemental, or Both
+		"STAGE TRANSITIONS",	// If on, transitions are seamless.
+		"CD CAMERA",			// If on, screen scrolls horizontally at high speeds
+		"CD TIMER"				// Toggles milliseconds
+	]
+	
+	global.opt_gameplay = ds_map_create();
+	global.opt_gameplay[? 0] = 0; // Player Mode
+	global.opt_gameplay[? 1] = 0; // Sonic Ability
+	global.opt_gameplay[? 2] = 0; // Tails Ability
+	global.opt_gameplay[? 3] = 0; // Amy Ability
+	global.opt_gameplay[? 4] = 0; // Shield Type
+	global.opt_gameplay[? 5] = 0; // Stage Transitions
+	global.opt_gameplay[? 6] = 0; // CD Camera
+	global.opt_gameplay[? 7] = 0; // CD Timer
+
+	global.str_opt_char		= ["SONIC", "TAILS", "KNUCKLES", "AMY", "MIGHTY", "RAY", "METAL SONIC"];
+	global.str_opt_abil		= ["SONIC 1", "SONIC 2", "SCD", "S3&K", "MANIA", "ALL"];
+	global.str_opt_amy		= ["S1", "ORIGINS", "ADVANCE"];
+	global.str_opt_shld		= ["BLUE", "ELEMENTAL", "COMBINED"];
+
+	global.str_opt_controls = [
+		"UP",
+		"DOWN",
+		"LEFT",
+		"RIGHT",
+		"BUTTON A",
+		"BUTTON B",
+		"BUTTON C",
+		"START"
+	]
+
+	global.str_opt_video = [
+		"FULLSCREEN",
+		"WINDOW SIZE",
+		"RESOLUTION"
+	]
+
+	global.str_opt_audio = [
+		"MUSIC VOLUME",
+		"SOUND VOLUME",
+		"AMBIENT VOLUME",
+		"RING PANNING",
+		"PLAY BGM",
+		"PLAY SFX"
+	]
 }

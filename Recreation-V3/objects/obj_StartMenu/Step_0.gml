@@ -1,35 +1,46 @@
 /// @description Menu Control
 
-// PRESS START BUTTON
-if !menu
+switch(routine)
 {
-	timer--;
-	if !timer
-	{
-		timer = 16;			// Reset timer
-		visible ^= true;	// Toggle true/false
-	}
+	case 0:
+		if !--timer
+		{
+			timer = 16;			// Reset timer
+			visible ^= true;	// Toggle visibility
+		}
 
-	if (cINPUT.k_st_p)
-	{
-		menu=true;
-		timer=16;
-		visible=true;
-	}
-}
-
-// Menu
-else
-{
-	if (cINPUT.k_u_p || cINPUT.k_d_p)
-	{
-		option ^= 1;	// This is fine for only two options
-		audio_play_sound(sfx_Switch,1,false);
-	}
-	/*if (global.k_st_p)
-	{
-		//if option==0	scr_trigger_fade(rm_GHZ1, true);	// Load title card
-		//else			scr_trigger_fade(rm_option);
-		//scr_stop_bgm();	// Stop title screen music
-	}*/
+		if (cINPUT.k_st_p)
+		{
+			routine++;			// Activate menu
+			timer = 16;
+			visible = true;
+		}
+	break;
+	
+	case 1: // Menu
+		if (cINPUT.k_u_p || cINPUT.k_d_p)
+		{
+			option ^= 1;	// This is fine for only two options
+			audio_play_sound(sfx_Switch,1,false);
+		}
+		if (cINPUT.k_st_p)
+		{
+			routine++;
+			timer = 30;
+			gfunc_fade_perform(FADEMODE_INTO, FADEBLEND_BLACK, 1);
+		}
+	break;
+	
+	case 2: // Leaving Title Screen
+		if !--timer
+			switch(option)
+			{
+				case 0:
+					room_restart();
+				break;
+				case 1:
+					room_goto(screen_Options);
+				break;
+			}
+	break;
 }

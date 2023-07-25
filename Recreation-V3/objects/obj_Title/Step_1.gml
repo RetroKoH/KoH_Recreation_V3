@@ -1,6 +1,5 @@
-/// @description Insert description here
+/// @description Move with the camera
 
-// Move with the camera
 x = cCAMERA.view_x + global.win_width / 2;
 
 if animated

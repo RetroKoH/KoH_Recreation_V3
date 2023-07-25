@@ -2,6 +2,6 @@
 
 image_speed	= 0;
 visible		= false;
-menu		= false;	// If true, PSB becomes the Menu
+routine		= 0;
 option		= 0;
 timer		= 16;
