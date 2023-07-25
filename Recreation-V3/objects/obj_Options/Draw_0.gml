@@ -44,13 +44,23 @@ switch(menu)
 	break;
 	
 	case 2: // VIDEO
-		for (var _i = 0; _i < array_length(global.str_opt_video); _i++)
+		for (var _i = 0; _i < array_length(global.str_opt_video); _i++) {
+			var _c = c_white;
+			if _i == submenu_item	_c = #F0F000;
+			if submenu == -1		_c = #A8A8A8;
+			draw_set_color(_c);
 			draw_text(152, menu_y[_i], global.str_opt_video[_i]);
+		}
 	break;
 	
 	case 3: // AUDIO
-		for (var _i = 0; _i < array_length(global.str_opt_audio); _i++)
+		for (var _i = 0; _i < array_length(global.str_opt_audio); _i++) {
+			var _c = c_white;
+			if _i == submenu_item	_c = #F0F000;
+			if submenu == -1		_c = #A8A8A8;
+			draw_set_color(_c);
 			draw_text(152, menu_y[_i], global.str_opt_audio[_i]);
+		}
 	break;
 }
 

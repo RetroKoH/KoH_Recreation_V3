@@ -35,13 +35,15 @@ if (submenu == -1) {
 // Navigating through each submenu
 else switch(submenu) {
 	case 0: // GAMEPLAY
+		var _end = array_length(global.str_opt_gameplay);
+
 		if (cINPUT.k_u_p){
-			submenu_item = gfunc_wrap_value(--submenu_item, 8);
+			submenu_item = gfunc_wrap_value(--submenu_item, _end);
 			audio_play_sound(sfx_Switch,1,false);
 		}
 
 		if (cINPUT.k_d_p){
-			submenu_item = gfunc_wrap_value(++submenu_item, 8);
+			submenu_item = gfunc_wrap_value(++submenu_item, _end);
 			audio_play_sound(sfx_Switch,1,false);
 		}
 	
@@ -70,13 +72,15 @@ else switch(submenu) {
 	
 	case 1: // CONTROLS
 		if !set_control{
+			var _end = array_length(global.str_opt_controls);
+			
 			if (cINPUT.k_u_p){
-				submenu_item = gfunc_wrap_value(--submenu_item, 8);
+				submenu_item = gfunc_wrap_value(--submenu_item, _end);
 				audio_play_sound(sfx_Switch,1,false);
 			}
 		
 			if (cINPUT.k_d_p){
-				submenu_item = gfunc_wrap_value(++submenu_item, 8);
+				submenu_item = gfunc_wrap_value(++submenu_item, _end);
 				audio_play_sound(sfx_Switch,1,false);
 			}
 		
@@ -115,5 +119,44 @@ else switch(submenu) {
 			}
 		}
 	break;
-}
 	
+	case 2: // VIDEO
+		var _end = array_length(global.str_opt_video);
+
+		if (cINPUT.k_u_p){
+			submenu_item = gfunc_wrap_value(--submenu_item, _end);
+			audio_play_sound(sfx_Switch,1,false);
+		}
+
+		if (cINPUT.k_d_p){
+			submenu_item = gfunc_wrap_value(++submenu_item, _end);
+			audio_play_sound(sfx_Switch,1,false);
+		}
+
+		if (cINPUT.k_a_p){
+			submenu = -1;
+			submenu_item = -1;
+			audio_play_sound(sfx_Switch,1,false);
+		}
+	break;
+	
+	case 3: // AUDIO
+		var _end = array_length(global.str_opt_audio);
+
+		if (cINPUT.k_u_p){
+			submenu_item = gfunc_wrap_value(--submenu_item, _end);
+			audio_play_sound(sfx_Switch,1,false);
+		}
+
+		if (cINPUT.k_d_p){
+			submenu_item = gfunc_wrap_value(++submenu_item, _end);
+			audio_play_sound(sfx_Switch,1,false);
+		}
+
+		if (cINPUT.k_a_p){
+			submenu = -1;
+			submenu_item = -1;
+			audio_play_sound(sfx_Switch,1,false);
+		}
+	break;
+}
