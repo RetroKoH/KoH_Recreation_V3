@@ -35,7 +35,6 @@ if (submenu == -1) {
 // Navigating through each submenu
 else switch(submenu) {
 	case 0: // GAMEPLAY
-	{
 		if (cINPUT.k_u_p){
 			submenu_item = gfunc_wrap_value(--submenu_item, 8);
 			audio_play_sound(sfx_Switch,1,false);
@@ -67,8 +66,54 @@ else switch(submenu) {
 			submenu_item = -1;
 			audio_play_sound(sfx_Switch,1,false);
 		}
-	} break;
+	break;
 	
-	
+	case 1: // CONTROLS
+		if !set_control{
+			if (cINPUT.k_u_p){
+				submenu_item = gfunc_wrap_value(--submenu_item, 8);
+				audio_play_sound(sfx_Switch,1,false);
+			}
+		
+			if (cINPUT.k_d_p){
+				submenu_item = gfunc_wrap_value(++submenu_item, 8);
+				audio_play_sound(sfx_Switch,1,false);
+			}
+		
+			if (cINPUT.k_c_p){
+				set_control = true;
+				audio_play_sound(sfx_Switch,1,false);
+			}
+		
+			if (cINPUT.k_a_p){
+				submenu = -1;
+				submenu_item = -1;
+				audio_play_sound(sfx_Switch,1,false);
+			}
+		}
+		else{
+			if keyboard_check_pressed(vk_escape)
+				set_control = false;
+			
+			else {
+				var k = keyboard_key * keyboard_check_pressed(keyboard_key);
+				if k != 0 {
+					var _error = false;
+				
+					for (var i = 0; i<=KEYMAP.START; i++) {
+						if k == global.keymap[i] _error = true;
+					}
+				
+					if !_error
+						if global._fhinputKeys[k] == "N/A" _error = true;
+				
+					if !_error
+						global.keymap[submenu_item] = keyboard_key;
+				
+					set_control = false;
+				}
+			}
+		}
+	break;
 }
 	

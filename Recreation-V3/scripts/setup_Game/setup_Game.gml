@@ -71,8 +71,7 @@ function setup_Game_Macros(){
 		BTN_A,
 		BTN_B,
 		BTN_C,
-		START,
-		MODE
+		START
 	}
 	
 	// Player mode indices
@@ -101,7 +100,7 @@ function setup_Game_Macros(){
 	}
 }
 function setup_Game_DebugMode(){
-	global.debugmode = true;	// Flag for debug UI and functions
+	global.debugmode = false;	// Flag for debug UI and functions
 	global.showsplash = true;	// Flag for showing splash screens
 	global.debuglog = "";		// Debug messages will go here
 	global.debuglog_timer = 0;	// Timer to remove the oldest message
@@ -244,7 +243,6 @@ function setup_Game_KeyMap(){
 	global.keymap[KEYMAP.BTN_B]=ini_read_real("Controls", "KEY_B", ord("S"));
 	global.keymap[KEYMAP.BTN_C]=ini_read_real("Controls", "KEY_C", ord("D"));
 	global.keymap[KEYMAP.START]=ini_read_real("Controls", "KEY_START", vk_enter);
-	global.keymap[KEYMAP.MODE]=ini_read_real("Controls", "KEY_DEBUG", vk_shift);
 	gfunc_debug_log_add("Keymapping Complete");
 	ini_close();
 }
@@ -252,8 +250,8 @@ function setup_Game_Screen(){
 	global.win_title = "Recreation Engine";
 	global.win_width = 424;
 	global.win_height = 240;
-	global.win_size = 3;
-	global.scrn_buffer = 8;
+	global.win_size = 2;
+	global.scrn_buffer = 0;				// Orbinaut sets this to 8 for some reason.
 	global.win_start_full = false;		// Flag to start in fullscreen mode
 	
 	// To be used w/ configurable width and height values.
@@ -464,7 +462,7 @@ function setup_Game_OptionsMenu(){
 		"BUTTON B",
 		"BUTTON C",
 		"START"
-	]; global.opt_controls		= array_create(array_length(global.str_opt_controls));
+	];
 
 	global.str_opt_video = [
 		"FULLSCREEN",

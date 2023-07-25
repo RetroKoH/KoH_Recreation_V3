@@ -2,10 +2,10 @@
 // You can write your code in this editor
 
 routine = 0;
-menu = 0;			// Toggles left menu (Gameplay, Controls, Video, Audio, Anims, Tilesets
-submenu = -1;		// Denotes which submenu we are in (if -1, we are in main menu)
-submenu_item = -1;	// Denotes active item in the current submenu.
-// This last one resets to -1 anytime we exit a submenu.
+menu = 0;				// Toggles left menu (Gameplay, Controls, Video, Audio, Anims, Tilesets
+submenu = -1;			// Denotes which submenu we are in (if -1, we are in main menu)
+submenu_item = -1;		// Denotes active item in the current submenu; resets to -1 when exiting a submenu.
+set_control = false;	// If true, all control is disabled while a keymapping is set.
 
 // Y-positioning of the main menu
 menu_y = []
