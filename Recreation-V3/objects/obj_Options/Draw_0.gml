@@ -21,7 +21,7 @@ switch(menu)
 			draw_set_color(_c);
 			
 			draw_text(152, menu_y[_i], global.str_opt_gameplay[_i]);
-			var _val = ds_map_find_value(global.opt_gameplay, _i);
+			var _val = global.opt_gameplay[_i];
 			var _st = menu_item_game[_i];
 			draw_text(280, menu_y[_i]+8, string(_st[_val]));
 		}

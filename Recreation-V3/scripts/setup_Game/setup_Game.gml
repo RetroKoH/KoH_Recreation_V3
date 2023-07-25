@@ -436,9 +436,7 @@ function setup_Game_OptionsMenu(){
 		"AUDIO",		// Sound Test and settings
 		"ANIMATIONS",	// Animation Viewer
 		"TILESETS"		// Tileset (& Collision) Viewer
-	]
-
-	global.str_opt_onoff	= ["ON", "OFF"];
+	];
 
 	global.str_opt_gameplay = [
 		"PLAYER CHARACTER",		// Sonic, Tails, Knuckles, Amy, Mighty, Ray, Metal
@@ -449,22 +447,13 @@ function setup_Game_OptionsMenu(){
 		"STAGE TRANSITIONS",	// If on, transitions are seamless.
 		"CD CAMERA",			// If on, screen scrolls horizontally at high speeds
 		"CD TIMER"				// Toggles milliseconds
-	]
-	
-	global.opt_gameplay = ds_map_create();
-	global.opt_gameplay[? 0] = 0; // Player Mode
-	global.opt_gameplay[? 1] = 0; // Sonic Ability
-	global.opt_gameplay[? 2] = 0; // Tails Ability
-	global.opt_gameplay[? 3] = 0; // Amy Ability
-	global.opt_gameplay[? 4] = 0; // Shield Type
-	global.opt_gameplay[? 5] = 0; // Stage Transitions
-	global.opt_gameplay[? 6] = 0; // CD Camera
-	global.opt_gameplay[? 7] = 0; // CD Timer
+	]; global.opt_gameplay		= array_create(array_length(global.str_opt_gameplay));
 
 	global.str_opt_char		= ["SONIC", "TAILS", "KNUCKLES", "AMY", "MIGHTY", "RAY", "METAL SONIC"];
 	global.str_opt_abil		= ["SONIC 1", "SONIC 2", "SCD", "S3&K", "MANIA", "ALL"];
 	global.str_opt_amy		= ["S1", "ORIGINS", "ADVANCE"];
 	global.str_opt_shld		= ["BLUE", "ELEMENTAL", "COMBINED"];
+	global.str_opt_onoff	= ["ON", "OFF"];
 
 	global.str_opt_controls = [
 		"UP",
@@ -475,13 +464,13 @@ function setup_Game_OptionsMenu(){
 		"BUTTON B",
 		"BUTTON C",
 		"START"
-	]
+	]; global.opt_controls		= array_create(array_length(global.str_opt_controls));
 
 	global.str_opt_video = [
 		"FULLSCREEN",
 		"WINDOW SIZE",
 		"RESOLUTION"
-	]
+	];
 
 	global.str_opt_audio = [
 		"MUSIC VOLUME",
@@ -490,5 +479,5 @@ function setup_Game_OptionsMenu(){
 		"RING PANNING",
 		"PLAY BGM",
 		"PLAY SFX"
-	]
+	];
 }
