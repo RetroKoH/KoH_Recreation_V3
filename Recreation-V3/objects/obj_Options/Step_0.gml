@@ -11,18 +11,18 @@ if (routine) {
 if (submenu == -1) {
 	if (cINPUT.k_u_p){
 		menu = gfunc_wrap_value(--menu, 6);
-		audio_play_sound(sfx_Switch,1,false);
+		gfunc_audio_sfx_play(sfx_Switch, false);
 	}
 
 	if (cINPUT.k_d_p){
 		menu = gfunc_wrap_value(++menu, 6);
-		audio_play_sound(sfx_Switch,1,false);
+		gfunc_audio_sfx_play(sfx_Switch, false);
 	}
 	
 	if (cINPUT.k_c_p || cINPUT.k_st_p){
 		submenu = menu;
 		submenu_item = 0;
-		audio_play_sound(sfx_Switch,1,false);
+		gfunc_audio_sfx_play(sfx_Switch, false);
 	}
 	
 	if (cINPUT.k_a_p){
@@ -39,12 +39,12 @@ else switch(submenu) {
 
 		if (cINPUT.k_u_p){
 			submenu_item = gfunc_wrap_value(--submenu_item, _end);
-			audio_play_sound(sfx_Switch,1,false);
+			gfunc_audio_sfx_play(sfx_Switch, false);
 		}
 
 		if (cINPUT.k_d_p){
 			submenu_item = gfunc_wrap_value(++submenu_item, _end);
-			audio_play_sound(sfx_Switch,1,false);
+			gfunc_audio_sfx_play(sfx_Switch, false);
 		}
 	
 		var _item = submenu_item;
@@ -54,19 +54,19 @@ else switch(submenu) {
 		if (cINPUT.k_l_p){
 			_val = gfunc_wrap_value(--_val, _limit);
 			global.opt_gameplay[_item] = _val;
-			audio_play_sound(sfx_Switch,1,false);
+			gfunc_audio_sfx_play(sfx_Switch, false);
 		}
 
 		if (cINPUT.k_r_p){
 			_val = gfunc_wrap_value(++_val, _limit);
 			global.opt_gameplay[_item] = _val;
-			audio_play_sound(sfx_Switch,1,false);
+			gfunc_audio_sfx_play(sfx_Switch, false);
 		}
 		
 		if (cINPUT.k_a_p){
 			submenu = -1;
 			submenu_item = -1;
-			audio_play_sound(sfx_Switch,1,false);
+			gfunc_audio_sfx_play(sfx_Switch, false);
 		}
 	break;
 	
@@ -76,23 +76,23 @@ else switch(submenu) {
 			
 			if (cINPUT.k_u_p){
 				submenu_item = gfunc_wrap_value(--submenu_item, _end);
-				audio_play_sound(sfx_Switch,1,false);
+				gfunc_audio_sfx_play(sfx_Switch, false);
 			}
 		
 			if (cINPUT.k_d_p){
 				submenu_item = gfunc_wrap_value(++submenu_item, _end);
-				audio_play_sound(sfx_Switch,1,false);
+				gfunc_audio_sfx_play(sfx_Switch, false);
 			}
 		
 			if (cINPUT.k_c_p){
 				set_control = true;
-				audio_play_sound(sfx_Switch,1,false);
+				gfunc_audio_sfx_play(sfx_Switch, false);
 			}
 		
 			if (cINPUT.k_a_p){
 				submenu = -1;
 				submenu_item = -1;
-				audio_play_sound(sfx_Switch,1,false);
+				gfunc_audio_sfx_play(sfx_Switch, false);
 			}
 		}
 		else{
@@ -125,18 +125,40 @@ else switch(submenu) {
 
 		if (cINPUT.k_u_p){
 			submenu_item = gfunc_wrap_value(--submenu_item, _end);
-			audio_play_sound(sfx_Switch,1,false);
+			gfunc_audio_sfx_play(sfx_Switch, false);
 		}
 
 		if (cINPUT.k_d_p){
 			submenu_item = gfunc_wrap_value(++submenu_item, _end);
-			audio_play_sound(sfx_Switch,1,false);
+			gfunc_audio_sfx_play(sfx_Switch, false);
+		}
+		
+		if (cINPUT.k_l_p or cINPUT.k_r_p){
+			switch(submenu_item)
+			{
+				case 0:
+					window_set_fullscreen(!window_get_fullscreen()); 
+					gfunc_audio_sfx_play(sfx_Switch, false);
+				break;
+				case 1:
+					var _dir = cINPUT.k_r_p - cINPUT.k_l_p;
+					global.win_size = clamp(global.win_size+_dir, 1, 4);
+					gfunc_audio_sfx_play(sfx_Switch, false);
+					window_set_size(global.win_width * global.win_size, global.win_height * global.win_size);
+				break;
+				case 2:
+					if (global.win_width == 424)	global.win_width = 320;
+					else							global.win_width = 424;
+					window_set_size(global.win_width * global.win_size, global.win_height * global.win_size);
+					gfunc_app_set_size(global.win_width, global.win_height);
+				break;
+			}
 		}
 
 		if (cINPUT.k_a_p){
 			submenu = -1;
 			submenu_item = -1;
-			audio_play_sound(sfx_Switch,1,false);
+			gfunc_audio_sfx_play(sfx_Switch, false);
 		}
 	break;
 	
@@ -145,18 +167,47 @@ else switch(submenu) {
 
 		if (cINPUT.k_u_p){
 			submenu_item = gfunc_wrap_value(--submenu_item, _end);
-			audio_play_sound(sfx_Switch,1,false);
+			gfunc_audio_sfx_play(sfx_Switch, false);
 		}
 
 		if (cINPUT.k_d_p){
 			submenu_item = gfunc_wrap_value(++submenu_item, _end);
-			audio_play_sound(sfx_Switch,1,false);
+			gfunc_audio_sfx_play(sfx_Switch, false);
+		}
+		
+		if (cINPUT.k_l_p or cINPUT.k_r_p){
+			var _dir = cINPUT.k_r_p - cINPUT.k_l_p;
+			switch(submenu_item){
+				case 0:
+					_dir *= 0.1;
+					global.volume_bgm = clamp(global.volume_bgm+_dir, 0, 1);
+					audio_sound_gain(bgm_LevSel, global.volume_bgm, 0);
+					gfunc_audio_sfx_play(sfx_Switch, false);
+				break;
+				
+				case 1:
+					_dir *= 0.1;
+					global.volume_sfx = clamp(global.volume_sfx+_dir, 0, 1);
+					gfunc_audio_sfx_play(sfx_Switch, false);
+				break;
+				
+				case 2:
+					_dir *= 0.1;
+					global.volume_amb = clamp(global.volume_amb+_dir, 0, 1);
+					gfunc_audio_sfx_play(sfx_Switch, false);
+				break;
+				
+				case 3:
+					global.ring_panning^=true;
+					gfunc_audio_sfx_play(sfx_Switch, false);
+				break;
+			}
 		}
 
 		if (cINPUT.k_a_p){
 			submenu = -1;
 			submenu_item = -1;
-			audio_play_sound(sfx_Switch,1,false);
+			gfunc_audio_sfx_play(sfx_Switch, false);
 		}
 	break;
 }

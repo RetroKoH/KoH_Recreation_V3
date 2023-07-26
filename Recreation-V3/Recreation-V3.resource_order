@@ -35,6 +35,7 @@
     {"name":"GHZ","order":1,"path":"folders/Zones/GHZ.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"gfunc_audio_sfx_play","order":11,"path":"scripts/gfunc_audio_sfx_play/gfunc_audio_sfx_play.yy",},
     {"name":"spr_CardFont","order":6,"path":"sprites/spr_CardFont/spr_CardFont.yy",},
     {"name":"obj_Splash","order":1,"path":"objects/obj_Splash/obj_Splash.yy",},
     {"name":"bgm_Title","order":4,"path":"sounds/bgm_Title/bgm_Title.yy",},

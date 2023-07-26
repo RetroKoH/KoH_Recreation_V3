@@ -332,8 +332,11 @@ function setup_Game_SyncAnimTimers(){
 function setup_Game_Audio(){
 	
 	// Default settings
-	global.volume_bgm	= 0.5;
-	global.volume_sfx	= 0.5;
+	global.volume_bgm		= 0.5;	// Background music
+	global.volume_sfx		= 0.5;	// Sound Effects
+	global.volume_amb		= 0.5;	// Ambient Noise
+	global.ring_panning		= true;	// Ring sounds pan left and right if true. Stereo if false.
+	// Sound Test values are stored in the Options Menu object
 	
 	// Database of BGM tracks and loop data
 	// All BGM tracks are OGG, with 4 seconds of audio after the end of the loop, to ensure smooth looping.
@@ -462,7 +465,7 @@ function setup_Game_OptionsMenu(){
 		"BUTTON B",
 		"BUTTON C",
 		"START"
-	];
+	]; // Opt controls is already located above at keymap.
 
 	global.str_opt_video = [
 		"FULLSCREEN",

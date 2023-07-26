@@ -50,6 +50,14 @@ switch(menu)
 			if submenu == -1		_c = #A8A8A8;
 			draw_set_color(_c);
 			draw_text(152, menu_y[_i], global.str_opt_video[_i]);
+			
+			if _i == 0 draw_text(280, menu_y[0]+8, window_get_fullscreen() ? "ON" : "OFF");
+			if _i == 1 draw_text(280, menu_y[1]+8, string(global.win_size));
+			
+			if _i == 2 {
+				var _st = "STANDARD"; if (global.win_width == 424) _st = "WIDESCREEN";
+				draw_text(280, menu_y[2]+8, _st);
+			}
 		}
 	break;
 	
@@ -60,6 +68,11 @@ switch(menu)
 			if submenu == -1		_c = #A8A8A8;
 			draw_set_color(_c);
 			draw_text(152, menu_y[_i], global.str_opt_audio[_i]);
+			
+			if _i == 0 draw_text(280, menu_y[0]+8, string(round(global.volume_bgm*100))+"%");
+			if _i == 1 draw_text(280, menu_y[1]+8, string(round(global.volume_sfx*100))+"%");
+			if _i == 2 draw_text(280, menu_y[2]+8, string(round(global.volume_amb*100))+"%");
+			if _i == 3 draw_text(280, menu_y[3]+8, global.ring_panning ? "ON" : "OFF");
 		}
 	break;
 }

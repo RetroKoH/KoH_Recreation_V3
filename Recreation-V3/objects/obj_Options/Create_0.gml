@@ -7,6 +7,10 @@ submenu = -1;			// Denotes which submenu we are in (if -1, we are in main menu)
 submenu_item = -1;		// Denotes active item in the current submenu; resets to -1 when exiting a submenu.
 set_control = false;	// If true, all control is disabled while a keymapping is set.
 
+// Sound Test
+sndTest_BGM = 0;
+sndTest_SFX = 0;
+
 // Y-positioning of the main menu
 menu_y = []
 for (var _i = 0; _i < 9; _i++){
