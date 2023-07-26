@@ -348,6 +348,7 @@ function setup_Game_Audio(){
 	global.BGM_list[BGMs.TITLE] = { // Finished
 		ID			: bgm_Title,
 		name		: "Title",
+		audio_type	: AU_PRIMARY,
 		loop_start	: -1,	// -1 = No loop
 		loop_end	: 0
 	}
@@ -355,6 +356,7 @@ function setup_Game_Audio(){
 	global.BGM_list[BGMs.LEV_SELECT] = { // Finished
 		ID			: bgm_LevSel,
 		name		: "Level Select",
+		audio_type	: AU_PRIMARY,
 		loop_start	: 0,
 		loop_end	: 38.396
 	}
@@ -362,6 +364,7 @@ function setup_Game_Audio(){
 	global.BGM_list[BGMs.GHZ1] = { // Finished
 		ID			: bgm_GHZ1,
 		name		: "GHZ Act 1",
+		audio_type	: AU_PRIMARY,
 		loop_start	: 14.404,
 		loop_end	: 52.804
 	}
@@ -369,6 +372,7 @@ function setup_Game_Audio(){
 	global.BGM_list[BGMs.GHZ2] = { // Finished
 		ID			: bgm_GHZ2,
 		name		: "GHZ Act 2",
+		audio_type	: AU_PRIMARY,
 		loop_start	: 14.414,
 		loop_end	: 52.812
 	}
@@ -376,6 +380,7 @@ function setup_Game_Audio(){
 	global.BGM_list[BGMs.BOSS] = { // Finished
 		ID			: bgm_Boss,
 		name		: "Boss",
+		audio_type	: AU_PRIMARY,
 		loop_start	: 00.000,
 		loop_end	: 21.333
 	}
@@ -383,6 +388,7 @@ function setup_Game_Audio(){
 	global.BGM_list[BGMs.ACT_CLEAR] = { // Finished
 		ID			: bgm_ActClear,
 		name		: "Act Clear",
+		audio_type	: AU_PRIMARY,
 		loop_start	: -1,	// -1 = No loop
 		loop_end	: 0
 	}
@@ -390,6 +396,7 @@ function setup_Game_Audio(){
 	global.BGM_list[BGMs.INVINC] = { // Finished
 		ID			: bgm_Invinc,
 		name		: "Invincibility",
+		audio_type	: AU_PRIMARY,
 		loop_start	: 0.916,
 		loop_end	: 11.883
 	}
@@ -397,9 +404,13 @@ function setup_Game_Audio(){
 	global.BGM_list[BGMs.EXTRA_LIFE] = { // Finished
 		ID			: bgm_1up,
 		name		: "1-Up Jingle",
+		audio_type	: AU_SECONDARY,
 		loop_start	: -1,	// -1 = No loop
 		loop_end	: 0
 	}
+
+// This array will only be used for the Sound Test
+	global.SFX_list = array_create();
 }
 function setup_Game_Shaders(){
 	// Setup fade module

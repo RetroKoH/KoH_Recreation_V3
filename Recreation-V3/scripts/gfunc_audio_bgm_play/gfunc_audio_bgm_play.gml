@@ -1,9 +1,9 @@
 /// @function gfunc_audio_bgm_play(audio_type, sound_id)
-function gfunc_audio_bgm_play(audio_type, sound_id){
+function gfunc_audio_bgm_play(sound_id){
 	
-	if !sound_id	exit;
+	if sound_id < 0		exit;
 	
-	if audio_type == AU_PRIMARY {
+	if global.BGM_list[sound_id].audio_type == AU_PRIMARY {
 		audio_stop_sound(cAUDIO.bgm_track);
 
 		// Play track

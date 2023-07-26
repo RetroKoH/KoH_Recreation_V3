@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-default_track	= BGMs.TITLE;
 ring_pan = 0;	// Alternates between 0 (left) and 1 (right);
 
 /* Value Table Reference

@@ -21,7 +21,7 @@ switch(routine)
 			routine++;
 			animated = true;
 			cCAMERA.enabled = true;
-			gfunc_audio_bgm_play(AU_PRIMARY, BGMs.TITLE);
+			gfunc_audio_bgm_play(BGMs.TITLE);
 		}
 	break;
 	
