@@ -21,7 +21,7 @@ switch(routine)
 		if (cINPUT.k_u_p || cINPUT.k_d_p)
 		{
 			option ^= 1;	// This is fine for only two options
-			gfunc_audio_sfx_play(sfx_Switch, false);
+			gfunc_audio_sfx_play(SFXs.SWITCH);
 		}
 		if (cINPUT.k_st_p)
 		{

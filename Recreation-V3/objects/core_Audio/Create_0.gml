@@ -1,7 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Init Audio Handler
 
-ring_pan = 0;	// Alternates between 0 (left) and 1 (right);
+ring_pan = 0;		// Alternates between 0 (left) and 1 (right);
+sfx_played = [];	// This allows us to control the volume of sfx as they play
 
 /* Value Table Reference
 ------------------------

@@ -36,7 +36,8 @@ string(cAUDIO.track_pos)+" / "+string(cAUDIO.loop_end)+"\n"+
 "Loop Start: "+string(cAUDIO.loop_start)+"\n"+
 	
 "S-Event: "+string(cAUDIO.s_audio_event)+"\n"+
-"S-Track: "+string(cAUDIO.s_bgm_track)+"\n"+string(cAUDIO.s_track_pos));
+"S-Track: "+string(cAUDIO.s_bgm_track)+"\n"+string(cAUDIO.s_track_pos)+"\n"+
+"SFX List: "+string(array_length(cAUDIO.sfx_played)));
 
 // SURFACE RENDERING
 _ax=302;

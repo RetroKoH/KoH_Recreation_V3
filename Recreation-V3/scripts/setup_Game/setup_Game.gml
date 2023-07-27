@@ -136,7 +136,7 @@ function setup_Game_Macros(){
 		SHIELD_BLU,			// Blue Shield Get
 		SHIELD_FL,			// Flame Shield Get
 		SHIELD_FL2,			// Flame Shield Attack
-		SHIELD_FL3,			// Flame Shield Dissipated
+//		SHIELD_FL3,			// Flame Shield Dissipated
 		SHIELD_LT,			// Lightning Shield Get
 		SHIELD_LT2,			// Lightning Shield Attack
 		SHIELD_LT3,			// Lightning Shield Dissipate
@@ -163,7 +163,8 @@ function setup_Game_Macros(){
 		RED_RING,			// Red Ring
 		CONTINUE,			// Continue Jingle
 		ACHIEVEMENT,		// Achievement Unlocked
-		ERROR
+		ERROR,				// Error sound
+		TOTAL
 	}
 }
 function setup_Game_DebugMode(){

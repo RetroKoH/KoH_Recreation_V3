@@ -9,8 +9,8 @@ function gfunc_audio_bgm_play(sound_id){
 		// Play track
 		cAUDIO.audio_event = AUEVENT_IDLE;
 		var _track = global.BGM_list[sound_id].ID;
-		audio_sound_gain(_track, global.volume_bgm, 0);
 		cAUDIO.bgm_track = audio_play_sound(_track, 0, false);
+		audio_sound_gain(cAUDIO.bgm_track, global.volume_bgm, 0);
 			
 		// Set loopdata
 		cAUDIO.loop_start = global.BGM_list[sound_id].loop_start;
@@ -22,7 +22,7 @@ function gfunc_audio_bgm_play(sound_id){
 		// Play track
 		cAUDIO.s_audio_event = AUEVENT_IDLE;
 		var _track = global.BGM_list[sound_id].ID;
-		audio_sound_gain(_track, global.volume_bgm, 0);
 		cAUDIO.s_bgm_track = audio_play_sound(_track, 0, false);
+		audio_sound_gain(cAUDIO.s_bgm_track, global.volume_bgm, 0);
 	}
 }

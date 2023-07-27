@@ -73,6 +73,8 @@ switch(menu)
 			if _i == 1 draw_text(280, menu_y[1]+8, string(round(global.volume_sfx*100))+"%");
 			if _i == 2 draw_text(280, menu_y[2]+8, string(round(global.volume_amb*100))+"%");
 			if _i == 3 draw_text(280, menu_y[3]+8, global.ring_panning ? "ON" : "OFF");
+			if _i == 4 draw_text(280, menu_y[4]+8, string(sndTest_BGM));
+			if _i == 5 draw_text(280, menu_y[5]+8, string(sndTest_SFX));
 		}
 	break;
 }

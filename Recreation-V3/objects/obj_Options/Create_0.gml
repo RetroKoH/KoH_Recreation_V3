@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Init Options Menu
 
 routine = 0;
 menu = 0;				// Toggles left menu (Gameplay, Controls, Video, Audio, Anims, Tilesets
