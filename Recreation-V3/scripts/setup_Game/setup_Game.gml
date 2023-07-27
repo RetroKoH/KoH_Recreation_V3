@@ -98,6 +98,73 @@ function setup_Game_Macros(){
 		EXTRA_LIFE,
 		TOTAL
 	}
+	
+	// SFX Indices
+	enum SFXs {
+		JUMP,				// Jumping
+		HURT,				// Hurt/Death
+		SKID,				// Skidding to a halt
+		ROLL,				// Rolling into a ball
+		SPINDASH_REV,		// Revving spindash (need to raise pitch)
+		SPINDASH_REL,		// Releasing spindash/SBZ Teleporter
+		PEELOUT_REV,		// Revving peelout / Metal Spindash
+		PEELOUT_REL,		// Releasing Peelout
+		DROPDASH_REV,		// Sonic Dropdash Revving
+		DROPDASH_REL,		// Sonic Dropdash Releasing
+		FLYING,				// Tails Flying
+		FLY_TIRED,			// Tails Tired of Flying
+		GLIDE_GRAB,			// Grabbing Walls, or Grabbing Tails
+		GLIDE_LAND,			// Knuckles landing from a glide
+		GLIDE_SLIDE,		// Knuckles sliding on the ground
+		
+		// Add Amy's sfx here
+		
+		HAMMER_DROP,		// Mighty's Hammer Drop
+		HAMMER_THUD,		// Mighty's Hammer Drop after landing
+		SHELL_DEFLECT,		// Mighty's shell deflecting projectiles
+		SHELL_SPIKED,		// Mighty uncurling when hitting spikes
+		RAY_DIVE,
+		RAY_SWOOP,
+		METAL_DASH,			// Taken from S1FEP (S1 Forever Expansion)
+		SPIKED,				// Death by Spikes
+		PUSH,				// Pushing blocks
+		SPLASH,				// Hit water surface
+		AIR_BUBBLE,			// Collect Air bubble
+		UW_CHIME,			// Underwater Alert Chime
+		DROWN,				// Drown underwater
+		INSTASHIELD,		// Sonic's Instashield
+		SHIELD_BLU,			// Blue Shield Get
+		SHIELD_FL,			// Flame Shield Get
+		SHIELD_FL2,			// Flame Shield Attack
+		SHIELD_FL3,			// Flame Shield Dissipated
+		SHIELD_LT,			// Lightning Shield Get
+		SHIELD_LT2,			// Lightning Shield Attack
+		SHIELD_LT3,			// Lightning Shield Dissipate
+		SHIELD_BB,			// Bubble Shield Get
+		SHIELD_BB2,			// Bubble Shield Attack
+		RING_R,				// Ring, panned right
+		RING_L,				// Ring, panned left
+		RING_S,				// Ring, in stereo
+		LAMPPOST,			// Checkpoint
+		LAMPPOST_MEGA,		// Mega Checkpoint (Naean)
+		SPIKES_MOVE,		// Spikes moving up and down
+		SPRING,				// Spring being hit
+		SWITCH,				// Switch button being hit
+		CRUMBLING,			// Crumbling Cliffs and Blocks
+		BUMPER,				// Bumper
+		EXPLOSION,			// Monitor/Badnik Explosion
+		BIG_EXPLOSION,		// Boss/Bomb Explosion
+		BOSS_HIT,			// Boss hit
+		SIGNPOST,			// End of Act Signpost
+		HIDDEN_PTS,			// Hidden Point Flag
+		SCORE_TALLY,		// Cha-Ching Score Tally
+		RING_LOSS,			// Scattered Rings
+		GIANT_RING,			// Giant Ring
+		RED_RING,			// Red Ring
+		CONTINUE,			// Continue Jingle
+		ACHIEVEMENT,		// Achievement Unlocked
+		ERROR
+	}
 }
 function setup_Game_DebugMode(){
 	global.debugmode = false;	// Flag for debug UI and functions
@@ -343,74 +410,79 @@ function setup_Game_Audio(){
 	//( FORMERLY: )
 	// All BGM tracks are Stereo, signed 16-bit PCM encoded, 44100Hz WAV audio exported from Audacity.
 	// Files contain 4 seconds of audio after the end of the loop, to ensure smooth looping.
-	global.BGM_list = array_create(BGMs.TOTAL)
+	global.BGM_list = [];
 	
-	global.BGM_list[BGMs.TITLE] = { // Finished
-		ID			: bgm_Title,
-		name		: "Title",
-		audio_type	: AU_PRIMARY,
-		loop_start	: -1,	// -1 = No loop
-		loop_end	: 0
-	}
-	// ==================================================================================
-	global.BGM_list[BGMs.LEV_SELECT] = { // Finished
-		ID			: bgm_LevSel,
-		name		: "Level Select",
-		audio_type	: AU_PRIMARY,
-		loop_start	: 0,
-		loop_end	: 38.396
-	}
-	// ==================================================================================
-	global.BGM_list[BGMs.GHZ1] = { // Finished
-		ID			: bgm_GHZ1,
-		name		: "GHZ Act 1",
-		audio_type	: AU_PRIMARY,
-		loop_start	: 14.404,
-		loop_end	: 52.804
-	}
-	// ==================================================================================
-	global.BGM_list[BGMs.GHZ2] = { // Finished
-		ID			: bgm_GHZ2,
-		name		: "GHZ Act 2",
-		audio_type	: AU_PRIMARY,
-		loop_start	: 14.414,
-		loop_end	: 52.812
-	}
-	// ==================================================================================
-	global.BGM_list[BGMs.BOSS] = { // Finished
-		ID			: bgm_Boss,
-		name		: "Boss",
-		audio_type	: AU_PRIMARY,
-		loop_start	: 00.000,
-		loop_end	: 21.333
-	}
-	// ==================================================================================
-	global.BGM_list[BGMs.ACT_CLEAR] = { // Finished
-		ID			: bgm_ActClear,
-		name		: "Act Clear",
-		audio_type	: AU_PRIMARY,
-		loop_start	: -1,	// -1 = No loop
-		loop_end	: 0
-	}
-	// ==================================================================================
-	global.BGM_list[BGMs.INVINC] = { // Finished
-		ID			: bgm_Invinc,
-		name		: "Invincibility",
-		audio_type	: AU_PRIMARY,
-		loop_start	: 0.916,
-		loop_end	: 11.883
-	}
-	// ==================================================================================
-	global.BGM_list[BGMs.EXTRA_LIFE] = { // Finished
-		ID			: bgm_1up,
-		name		: "1-Up Jingle",
-		audio_type	: AU_SECONDARY,
-		loop_start	: -1,	// -1 = No loop
-		loop_end	: 0
-	}
+	setup_Sound_BGM(bgm_Title,		"Title",			AU_PRIMARY,		-1);
+	setup_Sound_BGM(bgm_LevSel,		"Level Select",		AU_PRIMARY,		0,		38.396);	// Maybe adjust loop_end
+	setup_Sound_BGM(bgm_GHZ1,		"GHZ Act 1",		AU_PRIMARY,		14.404,	52.804);
+	setup_Sound_BGM(bgm_GHZ2,		"GHZ Act 2",		AU_PRIMARY,		14.414,	52.812);
+	setup_Sound_BGM(bgm_Boss,		"Boss",				AU_PRIMARY,		0,		21.333);
+	setup_Sound_BGM(bgm_ActClear,	"Act Clear",		AU_PRIMARY,		-1);
+	setup_Sound_BGM(bgm_Invinc,		"Invincibility",	AU_PRIMARY,		0.916,	11.883);
+	setup_Sound_BGM(bgm_1up,		"1-Up Jingle",		AU_SECONDARY,	-1);
 
 // This array will only be used for the Sound Test
-	global.SFX_list = array_create();
+	global.SFX_list = [];
+	setup_Sound_SFX(sfx_Jump,						"Jump");
+	setup_Sound_SFX(sfx_Hurt,						"Hurt");
+	setup_Sound_SFX(sfx_Skid,						"Skid");
+	setup_Sound_SFX(sfx_Roll,						"Roll");
+	setup_Sound_SFX(sfx_SpindashRev,				"Spindash Rev");
+	setup_Sound_SFX(sfx_SpindashRelease,			"Spindash Release");
+	setup_Sound_SFX(sfx_PeeloutCharge,				"Peelout Charge");
+	setup_Sound_SFX(sfx_PeeloutRelease,				"Peelout Release");
+	setup_Sound_SFX(sfx_DropdashRev,				"Spindash Rev");
+	setup_Sound_SFX(sfx_DropdashRelease,			"Spindash Release");
+	setup_Sound_SFX(sfx_TailsFlying,				"Flying");
+	setup_Sound_SFX(sfx_TailsFlyTired,				"Flying Tired");
+	setup_Sound_SFX(sfx_Grab,						"Grabbing");
+	setup_Sound_SFX(sfx_KnuxLand,					"Land From Glide");
+	setup_Sound_SFX(sfx_KnuxSlide,					"Slide From Glide");
+	setup_Sound_SFX(sfx_MightyDrop,					"Hammer Drop");
+	setup_Sound_SFX(sfx_MightyLand,					"Hammer Drop Impact");
+	setup_Sound_SFX(sfx_MightyDeflect,				"Shell Deflection");
+	setup_Sound_SFX(sfx_MightyUnspin,				"Spike Uncurling");
+	setup_Sound_SFX(sfx_RayDive,					"Air Glide Dive");
+	setup_Sound_SFX(sfx_RaySwoop,					"Air Glide Swoop");
+	setup_Sound_SFX(sfx_MetalDash,					"Metal Air Dash");
+	setup_Sound_SFX(sfx_HitSpikes,					"Hurt by Spikes");
+	setup_Sound_SFX(sfx_PushBlock,					"Push Blocks");
+	setup_Sound_SFX(sfx_WaterSplash,				"Water Splash");
+	setup_Sound_SFX(sfx_AirBubble,					"Air Bubble");
+	setup_Sound_SFX(sfx_UnderwaterChime,			"Underwater Chime");
+	setup_Sound_SFX(sfx_Drown,						"Drowning");
+	setup_Sound_SFX(sfx_Instashield,				"Instashield");
+	setup_Sound_SFX(sfx_ShieldBlue,					"Blue Shield");
+	setup_Sound_SFX(sfx_ShieldFlame,				"Flame Shield");
+	setup_Sound_SFX(sfx_ShieldFlameDash,			"Flame Shield Dash");
+//	setup_Sound_SFX(sfx_ShieldFlameDissipate,		"Flame Shield Dissipate");
+	setup_Sound_SFX(sfx_ShieldLightning,			"Lightning Shield");
+	setup_Sound_SFX(sfx_ShieldLightningJump,		"Lightning Shield Jump");
+	setup_Sound_SFX(sfx_ShieldLightningDissipate,	"Lightning Shield Dissipate");
+	setup_Sound_SFX(sfx_ShieldBubble,				"Bubble Shield");
+	setup_Sound_SFX(sfx_ShieldBubbleBounce,			"Bubble Shield Bounce");
+	setup_Sound_SFX(sfx_RingRight,					"Ring (Right)");
+	setup_Sound_SFX(sfx_RingLeft,					"Ring (Left)");
+	setup_Sound_SFX(sfx_RingBox,					"Ring (Stereo)");
+	setup_Sound_SFX(sfx_Lamppost,					"Lamppost");
+	setup_Sound_SFX(sfx_LamppostMega,				"Mega Lamppost");
+	setup_Sound_SFX(sfx_SpikesMove,					"Spikes Moving");
+	setup_Sound_SFX(sfx_Spring,						"Spring Hit");
+	setup_Sound_SFX(sfx_Switch,						"Switch Button Hit");
+	setup_Sound_SFX(sfx_CrumblingLedge,				"Crumbling Ledge");
+	setup_Sound_SFX(sfx_Bumper,						"Bumper");
+	setup_Sound_SFX(sfx_BreakOpen,					"Small Explosion");
+	setup_Sound_SFX(sfx_BigExplosion,				"Big Explosion");
+	setup_Sound_SFX(sfx_BossHit,					"Boss Hit");
+	setup_Sound_SFX(sfx_Signpost,					"Signpost");
+	setup_Sound_SFX(sfx_HiddenPts,					"Hidden Points Flag");
+	setup_Sound_SFX(sfx_EndTally,					"End-of-Level Score Tally");
+	setup_Sound_SFX(sfx_RingLoss,					"Scattered Rings");
+	setup_Sound_SFX(sfx_GiantRing,					"Giant Ring");
+	setup_Sound_SFX(sfx_RedRing,					"Red Ring");
+	setup_Sound_SFX(sfx_Continue,					"Continue Jingle");
+	setup_Sound_SFX(sfx_Achievement,				"Achievement");
+	setup_Sound_SFX(sfx_Error,						"Error");
 }
 function setup_Game_Shaders(){
 	// Setup fade module
