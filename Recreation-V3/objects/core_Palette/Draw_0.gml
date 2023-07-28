@@ -27,13 +27,13 @@ if _boundary < global.win_height and color_set[PAL_PRIMARY] != false {
 	
 // Update flag
 if fade_step == 0
-	fade_blend = FADESTATE_MAX;
+	fade_flag = FADESTATE_MAX;
 
 else if fade_step < 756
-	fade_blend = FADESTATE_ACTIVE;
+	fade_flag = FADESTATE_ACTIVE;
 
 else
-	fade_blend = false;
+	fade_flag = false;
 
 // Update value
 if fade_mode and fade_step < 756

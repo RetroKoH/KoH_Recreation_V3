@@ -5,11 +5,6 @@ duration	= [];
 swap_time	= [];
 sequence	= [];
 
-fade_step	= 756;
-fade_mode	= FADEMODE_FROM;
-fade_blend	= FADEBLEND_BLACK;
-fade_speed	= 0;
-
 // Reset palette animation storage
 for (var i = 0; i < PAL_LIMIT; i++)
 {
