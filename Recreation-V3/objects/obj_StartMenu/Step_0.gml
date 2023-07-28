@@ -36,7 +36,7 @@ switch(routine)
 			switch(option)
 			{
 				case 0:
-					room_restart();
+					room_goto(stage_GHZ1);
 				break;
 				case 1:
 					room_goto(screen_Options);

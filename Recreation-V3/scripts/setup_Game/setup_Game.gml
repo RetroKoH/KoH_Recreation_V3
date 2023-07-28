@@ -174,8 +174,9 @@ function setup_Game_DebugMode(){
 	global.debuglog = "";		// Debug messages will go here
 	global.debuglog_timer = 0;	// Timer to remove the oldest message
 	
-	FONT.Debug = font_add_sprite(spr_MenuFont, ord("!"), false, 0);	// Font used for debug elements
-	FONT.Menu = FONT.Debug;
+	FONT.Debug		= font_add_sprite(spr_MenuFont, ord("!"), false, 0);	// Font used for debug elements
+	FONT.Menu		= FONT.Debug;											// Used in Options Menu
+	FONT.TitleCard	= font_add_sprite(spr_CardFont, ord("A"), true, 1);		// Used for Title Cards
 }
 function setup_Game_KeyMap(){
 	#region KeyIndex
