@@ -50,6 +50,6 @@ switch(routine)
 	
 	case 6:	
 		if ++wait_timer == 60
-			room_goto(screen_Options);
+			room_goto(screen_Title);
 	break;
 }

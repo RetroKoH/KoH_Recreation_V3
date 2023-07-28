@@ -27,6 +27,7 @@ switch(routine)
 	
 	case 3:
 		cCAMERA.pos_x += 2;
+		gfunc_palette_handle_range(PAL_PRIMARY, 0, 3, 4, 1, 6);
 	
 		// PSB triggers at the end of initial animation
 		if (psb && !instance_exists(obj_StartMenu)) {
@@ -37,5 +38,6 @@ switch(routine)
 	
 	case 4:
 		cCAMERA.pos_x += 2;
+		gfunc_palette_handle_range(PAL_PRIMARY, 0, 3, 4, 1, 6);
 	break;
 }

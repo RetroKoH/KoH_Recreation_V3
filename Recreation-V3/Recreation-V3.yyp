@@ -90,6 +90,7 @@
     {"id":{"name":"sfx_ssexit","path":"sounds/sfx_ssexit/sfx_ssexit.yy",},},
     {"id":{"name":"gfunc_app_set_size","path":"scripts/gfunc_app_set_size/gfunc_app_set_size.yy",},},
     {"id":{"name":"sfx_MightyDeflect","path":"sounds/sfx_MightyDeflect/sfx_MightyDeflect.yy",},},
+    {"id":{"name":"pal_Title","path":"sprites/pal_Title/pal_Title.yy",},},
     {"id":{"name":"gfunc_fade_perform","path":"scripts/gfunc_fade_perform/gfunc_fade_perform.yy",},},
     {"id":{"name":"spr_PalViewer","path":"sprites/spr_PalViewer/spr_PalViewer.yy",},},
     {"id":{"name":"spr_LevSelIcons","path":"sprites/spr_LevSelIcons/spr_LevSelIcons.yy",},},

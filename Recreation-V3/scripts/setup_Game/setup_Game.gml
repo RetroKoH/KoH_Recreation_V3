@@ -169,7 +169,7 @@ function setup_Game_Macros(){
 	}
 }
 function setup_Game_DebugMode(){
-	global.debugmode = true;	// Flag for debug UI and functions
+	global.debugmode = false;	// Flag for debug UI and functions
 	global.showsplash = true;	// Flag for showing splash screens
 	global.debuglog = "";		// Debug messages will go here
 	global.debuglog_timer = 0;	// Timer to remove the oldest message
@@ -320,7 +320,7 @@ function setup_Game_Screen(){
 	global.win_width = 424;
 	global.win_height = 240;
 	global.win_size = 2;
-	global.scrn_buffer = 0;				// Orbinaut sets this to 8 for some reason.
+	global.scrn_buffer = 8;				// Orbinaut sets this to 8 for some reason.
 	global.win_start_full = false;		// Flag to start in fullscreen mode
 	
 	// To be used w/ configurable width and height values.

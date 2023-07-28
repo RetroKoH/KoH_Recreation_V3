@@ -23,6 +23,10 @@ switch(room){
 		gfunc_palette_load(PAL_PRIMARY,   pal_SEGA);
 		gfunc_palette_load(PAL_SECONDARY, noone);
 	break;
+	case screen_Title:
+		gfunc_palette_load(PAL_PRIMARY,   pal_Title);
+		gfunc_palette_load(PAL_SECONDARY, noone);
+	break;
 	default:
 		gfunc_palette_load(PAL_PRIMARY,   pal_Example_Type1);
 		gfunc_palette_load(PAL_SECONDARY, pal_Example_Type2);

@@ -62,6 +62,7 @@
     {"name":"sfx_EndTally","order":55,"path":"sounds/sfx_EndTally/sfx_EndTally.yy",},
     {"name":"sfx_ssexit","order":29,"path":"sounds/sfx_ssexit/sfx_ssexit.yy",},
     {"name":"sfx_MightyDeflect","order":46,"path":"sounds/sfx_MightyDeflect/sfx_MightyDeflect.yy",},
+    {"name":"pal_Title","order":3,"path":"sprites/pal_Title/pal_Title.yy",},
     {"name":"gfunc_fade_perform","order":8,"path":"scripts/gfunc_fade_perform/gfunc_fade_perform.yy",},
     {"name":"spr_PalViewer","order":9,"path":"sprites/spr_PalViewer/spr_PalViewer.yy",},
     {"name":"spr_LevSelIcons","order":9,"path":"sprites/spr_LevSelIcons/spr_LevSelIcons.yy",},
