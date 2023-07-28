@@ -23,9 +23,15 @@ if instance_exists(cPLAYER)
 
 // PALETTE
 _ax=78;
+
+
 gfunc_debug_draw_text(_ax,_ay-18,"Palette");
-draw_sprite_general(spr_PalViewer,0,0,0,16,64,_ax,_ay,6,6,0,c_white,c_white,c_white,c_white,1);
-draw_rectangle(_ax,_ay,_ax+(16*6)-1,_ay+(4*6)-1,true);
+gfunc_debug_draw_text(_ax, _ay, "COL: "+string(gfunc_palette_get_col(PAL_PRIMARY, 0))+"\n"+
+								"FADING"+"\n"+
+								"Step: "+string(cPAL.fade_step)+"\n"+
+								"Mode: "+fademodes[cPAL.fade_mode]+"\n"+
+								"Blend: "+fadeblends[cPAL.fade_blend]+"\n"+
+								"Speed: "+string(cPAL.fade_speed));
 
 // AUDIO
 _ax=180;
@@ -48,9 +54,5 @@ gfunc_debug_draw_text(_ax,_ay-18,"Rendering");
 draw_rectangle(_ax, _ay-9, _xf+1, _ay-9+(240*0.2)+1, false)
 draw_surface_ext(cRENDER.surface_main, _ax+1, _ay-8, 0.2, 0.2, 0, c_red, 0.6);
 
-gfunc_debug_draw_text(_xf+7, _ay-8,	string(cRENDER.fade_step)+"\n"+
-									string(cRENDER.fade_mode)+"\n"+
-									string(cRENDER.fade_blend)+"\n"+
-									string(cRENDER.fade_speed)+"\n"+
-									string(cRENDER.surface_main)+"\n"+
+gfunc_debug_draw_text(_xf+7, _ay-8,	string(cRENDER.surface_main)+"\n"+
 									string(cRENDER.surface_overlay));

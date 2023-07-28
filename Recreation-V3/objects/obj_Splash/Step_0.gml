@@ -6,7 +6,7 @@ switch(routine)
 		if ++wait_timer == 60 {
 			routine++;
 			var _bkg = layer_background_get_id(layer_get_id("Background_Color"));
-			layer_background_blend(_bkg, c_white)
+			layer_background_blend(_bkg, #F0F0F0);
 			gfunc_fade_perform(FADEMODE_FROM, FADEBLEND_BLACK, 1);
 		}
 	break;
@@ -15,16 +15,16 @@ switch(routine)
 		if ++wait_timer == 80 {
 			routine++;
 			visible = true;
-			image_speed = 1;
 		}
 	break;
 	
+	// Palette Cycling
 	case 2:
-		if image_index == image_number-1 {
-			routine++;
-			wait_timer = 0;
-			image_speed = 0;
-		}
+		var _col = gfunc_palette_get_col(PAL_PRIMARY, 0);
+		if  _col < 58
+			gfunc_palette_handle_range(PAL_PRIMARY, 0, 51, 58, 58, 1);
+
+		else {routine++; wait_timer=0}
 	break;
 	
 	case 3:		

@@ -2,9 +2,10 @@ function setup_Game(){
 	setup_Game_Macros();
 	global.game_start = false;
 
-	globalvar cPLAYER, cDEBUG, cRENDER, cBKG, cCAMERA, cAUDIO, cINPUT;
+	globalvar cPLAYER, cDEBUG, cPAL, cRENDER, cBKG, cCAMERA, cAUDIO, cINPUT;
 	cPLAYER		= noone;
-	cDEBUG		= instance_create_layer(0, -64, "Core", core_Debug);	
+	cDEBUG		= instance_create_layer(0, -64, "Core", core_Debug);
+	cPAL		= instance_create_layer(0, -64, "Core", core_Palette);
 	cRENDER		= instance_create_layer(0, -64, "Core", core_Renderer);
 	cBKG		= instance_create_layer(0, -64, "Core", core_Background);
 	cCAMERA		= instance_create_layer(0, -64, "Core", core_Camera);
@@ -168,7 +169,7 @@ function setup_Game_Macros(){
 	}
 }
 function setup_Game_DebugMode(){
-	global.debugmode = false;	// Flag for debug UI and functions
+	global.debugmode = true;	// Flag for debug UI and functions
 	global.showsplash = true;	// Flag for showing splash screens
 	global.debuglog = "";		// Debug messages will go here
 	global.debuglog_timer = 0;	// Timer to remove the oldest message
