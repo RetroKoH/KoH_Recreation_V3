@@ -1,9 +1,15 @@
 /// @description In-Game UI
 
+// Target the high plane
 surface_set_target(cRENDER.surface_overlay);
 draw_clear_alpha(c_white, 0);
 
 // =========================
+
+// HUD Drawing
+if HUD_enabled {
+	
+}
 
 // Title Card Drawing
 if tcard_routine < TCARD_FINISHED {
@@ -114,4 +120,5 @@ if tcard_routine < TCARD_FINISHED {
 
 // =========================
 
+// Reset target surface
 surface_reset_target();

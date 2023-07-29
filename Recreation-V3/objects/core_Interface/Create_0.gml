@@ -1,7 +1,7 @@
 /// @description Initialise variables
 
 // Overlay setup
-enabled = true;
+HUD_enabled = true;
 offset_x = 0;
 offset_y = 0;
 
