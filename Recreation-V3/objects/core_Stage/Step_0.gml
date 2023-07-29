@@ -3,7 +3,7 @@
 // Process stage time
 if time_enabled
 {
-	while game_time < 36000
+	if game_time < 36000
 		game_time++;
 //	if (++game_time) == 36000
 //		player_damage(false, false, true);

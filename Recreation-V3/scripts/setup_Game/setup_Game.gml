@@ -24,6 +24,7 @@ function setup_Game(){
 	setup_Game_Animations();		// My Recreation Animation system. Execution slightly cleaned up thx to Orbinaut.
 	setup_Game_OscValues();
 	setup_Game_SyncAnimTimers();
+	setup_Game_GameVars();
 	
 	instance_create_layer(room_width/2, room_height/2, "Instances", obj_Splash);
 
@@ -597,4 +598,15 @@ function setup_Game_SyncAnimTimers(){
 	global.sync2_frame=0;	// Frame number for ???
 	global.sync3_time=0;	// Timer for Lost Rings
 	global.sync3_frame=0;	// Frame number for Lost Rings
+}
+function setup_Game_GameVars(){
+	global.p_score = 0;
+	global.p_rings = 0;
+	global.p_lives = 0;
+	global.p_frames = 0;		// Total frame count.
+	global.p_scorelife=50000;	// Amount of points needed for an extra life
+	global.p_ringlife=0;		// Counter for extra lives per rings
+
+	for (var i = 0; i < 60; i++)
+		global.centiseconds[i] = floor(i / 3 * 5); //round(100*(i/60)); < Same result, except flooring instead of rounding
 }
