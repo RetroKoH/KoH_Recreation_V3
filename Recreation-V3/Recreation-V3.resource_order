@@ -99,6 +99,7 @@
     {"name":"sfx_RingBox","order":12,"path":"sounds/sfx_RingBox/sfx_RingBox.yy",},
     {"name":"sfx_Emerald","order":61,"path":"sounds/sfx_Emerald/sfx_Emerald.yy",},
     {"name":"spr_SEGA","order":3,"path":"sprites/spr_SEGA/spr_SEGA.yy",},
+    {"name":"spr_LivesNumbers","order":10,"path":"sprites/spr_LivesNumbers/spr_LivesNumbers.yy",},
     {"name":"sfx_Signpost","order":22,"path":"sounds/sfx_Signpost/sfx_Signpost.yy",},
     {"name":"spr_StartMenu","order":3,"path":"sprites/spr_StartMenu/spr_StartMenu.yy",},
     {"name":"sfx_GiantRing","order":53,"path":"sounds/sfx_GiantRing/sfx_GiantRing.yy",},

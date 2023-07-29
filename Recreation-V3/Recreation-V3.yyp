@@ -134,6 +134,7 @@
     {"id":{"name":"sfx_RingBox","path":"sounds/sfx_RingBox/sfx_RingBox.yy",},},
     {"id":{"name":"sfx_Emerald","path":"sounds/sfx_Emerald/sfx_Emerald.yy",},},
     {"id":{"name":"spr_SEGA","path":"sprites/spr_SEGA/spr_SEGA.yy",},},
+    {"id":{"name":"spr_LivesNumbers","path":"sprites/spr_LivesNumbers/spr_LivesNumbers.yy",},},
     {"id":{"name":"Chunks_GHZ_Low","path":"sprites/Chunks_GHZ_Low/Chunks_GHZ_Low.yy",},},
     {"id":{"name":"sfx_Signpost","path":"sounds/sfx_Signpost/sfx_Signpost.yy",},},
     {"id":{"name":"spr_StartMenu","path":"sprites/spr_StartMenu/spr_StartMenu.yy",},},

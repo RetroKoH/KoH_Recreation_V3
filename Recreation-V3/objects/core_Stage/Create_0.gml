@@ -11,7 +11,7 @@ switch(room){
 
 // Initialise variables
 boss_flag		= -1;
-time			=  0;
+game_time		=  0;
 time_enabled	=  0;
 restart_timer	=  0;
 restart_event	=  0;

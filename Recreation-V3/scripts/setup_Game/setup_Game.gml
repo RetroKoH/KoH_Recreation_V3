@@ -190,9 +190,11 @@ function setup_Game_DebugMode(){
 	global.debuglog = "";		// Debug messages will go here
 	global.debuglog_timer = 0;	// Timer to remove the oldest message
 	
-	FONT.Debug		= font_add_sprite(spr_MenuFont, ord("!"), false, 0);	// Font used for debug elements
-	FONT.Menu		= FONT.Debug;											// Used in Options Menu
-	FONT.TitleCard	= font_add_sprite(spr_CardFont, ord("A"), true, 1);		// Used for Title Cards
+	FONT.Debug		= font_add_sprite(spr_MenuFont, ord("!"), false, 0);				// Font used for debug elements
+	FONT.Menu		= FONT.Debug;														// Used in Options Menu
+	FONT.TitleCard	= font_add_sprite(spr_CardFont, ord("A"), true, 1);					// Used for Title Cards
+	FONT.HUDNum		= font_add_sprite_ext(spr_HUDNumbers, "0123456789:';", false, 1);	// Used for HUD Timer
+	FONT.LivesNum	= font_add_sprite_ext(spr_LivesNumbers, "0123456789", false, 1);	// Used for HUD Lives
 }
 function setup_Game_KeyMap(){
 	#region KeyIndex
@@ -537,7 +539,7 @@ function setup_Game_OptionsMenu(){
 	global.str_opt_abil		= ["SONIC 1", "SONIC 2", "SCD", "S3&K", "MANIA", "ALL"];
 	global.str_opt_amy		= ["S1", "ORIGINS", "ADVANCE"];
 	global.str_opt_shld		= ["BLUE", "ELEMENTAL", "COMBINED"];
-	global.str_opt_onoff	= ["ON", "OFF"];
+	global.str_opt_onoff	= ["OFF", "ON"];
 
 	global.str_opt_controls = [
 		"UP",

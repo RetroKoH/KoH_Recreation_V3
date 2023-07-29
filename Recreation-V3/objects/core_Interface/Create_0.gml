@@ -1,9 +1,9 @@
 /// @description Initialise variables
 
 // Overlay setup
-HUD_enabled = true;
-offset_x = 0;
-offset_y = 0;
+HUD_enabled = false;
+HUD_offset_x = -102; // Scrolls to 18
+HUD_offset_y = 10;
 
 // =========================
 

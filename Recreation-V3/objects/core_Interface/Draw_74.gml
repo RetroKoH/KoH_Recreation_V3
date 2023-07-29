@@ -9,7 +9,46 @@ draw_clear_alpha(c_white, 0);
 // HUD Drawing
 if HUD_enabled {
 	
+	if HUD_offset_x < 18 {
+		HUD_offset_x += 4;
+	}
+	
+	// Get position for overlay
+	var _xx = HUD_offset_x;
+	var _yy = HUD_offset_y;
+	
+	// Handle game time
+	var _time = core_Stage.game_time;
+	var _min, _sec, _milli;
+
+	if _time < 35999 {
+		_min	= _time div 3600;
+		_sec	= (_time - _min * 3600) div 60;
+		_milli	= floor(_time mod 60 / 3 * 5);
+	}
+	else {
+		_min	= 9;
+		_sec	= 59;
+		_milli	= 99;
+	}
+	
+	// SCORE TIME RINGS
+	draw_sprite(spr_HUD, 0, _xx, _yy); // SCORE
+	draw_sprite(spr_HUD, 1, _xx, _yy + 16); // TIME
+	draw_sprite(spr_HUD, 2, _xx, _yy + 32); // RINGS
+	
+	draw_set_font(FONT.HUDNum);	draw_set_halign(fa_right);
+	var _time_str = string(_min) + ":" + (_sec > 9 ? string(_sec) : "0" + string(_sec));
+	if global.opt_gameplay[7]
+		_time_str = string(_min) + "'" + (_sec > 9 ? string(_sec) : "0" + string(_sec)) +
+					";" + (_milli > 9 ? string(_milli) : "0" + string(_milli));
+
+	draw_text(_xx + 96, _yy, "0000000");	// Draw out score
+	draw_text(_xx + 96, _yy + 16, _time_str);	// Draw out time
+	draw_text(_xx + 96, _yy + 32,  "999");		// Draw out rings
 }
+
+// =========================
 
 // Title Card Drawing
 if tcard_routine < TCARD_FINISHED {
@@ -76,6 +115,7 @@ if tcard_routine < TCARD_FINISHED {
 		case TCARD_FADEIN:
 		{
 			if !gfunc_fade_check(FADESTATE_ACTIVE) {
+				HUD_enabled				= true;
 				cRENDER.update_anims	= true;
 				core_Stage.time_enabled	= true;
 				core_Stage.run_objects	= true;

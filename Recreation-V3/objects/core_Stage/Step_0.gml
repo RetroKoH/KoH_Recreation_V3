@@ -3,9 +3,9 @@
 // Process stage time
 if time_enabled
 {
-	while time < 36000
-		time++;
-//	if (++time) == 36000
+	while game_time < 36000
+		game_time++;
+//	if (++game_time) == 36000
 //		player_damage(false, false, true);
 }
 
@@ -17,7 +17,7 @@ if !gfunc_fade_check(FADESTATE_ACTIVE) {
 	// Update left boundary
 	if bound_left < target_bound_left
 	{
-		if cCAMERA.ViewX >= target_bound_left
+		if cCAMERA.view_x >= target_bound_left
 			bound_left = target_bound_left;
 
 		else
