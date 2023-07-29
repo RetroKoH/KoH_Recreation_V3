@@ -1,6 +1,13 @@
 /// @description Init current level
 
-setup_Stage(room);
+switch(room){
+	case stage_GHZ1:
+		setup_Stage(ZONE.GHZ, 0, false, 0, BGMs.GHZ1, 0, 0, room_width, 988);
+	break;
+	case stage_GHZ2:
+		setup_Stage(ZONE.GHZ, 1, false, 0, BGMs.GHZ2, 0, 0, room_width, 988);
+	break;
+}
 
 // Initialise variables
 boss_flag		= -1;

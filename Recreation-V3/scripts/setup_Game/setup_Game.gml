@@ -16,12 +16,14 @@ function setup_Game(){
 	setup_Game_KeyMap();
 	setup_Game_Screen();			// Credit to Orbinaut Framework
 	setup_Game_Collision();			// Uses the same S1 Collision system. Optimized reading credited to Orbinaut Framework
+	setup_Game_Audio();
+	setup_Game_Shaders();			// Credit to Orbinaut Framework
+	setup_Game_OptionsMenu();		// Partial Credit to Orbinaut Framework
+
+	setup_Game_TitleCards();
 	setup_Game_Animations();		// My Recreation Animation system. Execution slightly cleaned up thx to Orbinaut.
 	setup_Game_OscValues();
 	setup_Game_SyncAnimTimers();
-	setup_Game_Audio();
-	setup_Game_Shaders();			// Credit to Orbinaut Framework
-	setup_Game_OptionsMenu();
 	
 	instance_create_layer(room_width/2, room_height/2, "Instances", obj_Splash);
 
@@ -63,6 +65,14 @@ function setup_Game_Macros(){
 	#macro FADEBLEND_WHITE	1
 	#macro FADEBLEND_FLASH	2
 	
+	// Title card routine macro
+	#macro TCARD_INIT		0
+	#macro TCARD_ENTER		1
+	#macro TCARD_WAIT		2
+	#macro TCARD_FADEIN		3
+	#macro TCARD_LEAVE		4
+	#macro TCARD_FINISHED	5
+	
 	// Keymap array indices
 	enum KEYMAP{
 		UP,
@@ -84,6 +94,12 @@ function setup_Game_Macros(){
 		MIGHTY,
 		RAY,
 		METAL,
+		TOTAL
+	}
+	
+	// Zone indices
+	enum ZONE{
+		GHZ,
 		TOTAL
 	}
 
@@ -380,25 +396,6 @@ function setup_Game_Collision(){
 		file_bin_close(file);
 	}
 }
-function setup_Game_Animations(){
-	global.AnimsIndex = [];	// Every script below pushes an animation into this index
-	animtable_TITLESONIC();
-	animtable_BADNIKS();
-	animtable_RINGS();
-}
-function setup_Game_OscValues(){
-	global.osc_active = false;
-}
-function setup_Game_SyncAnimTimers(){
-	global.sync0_time=0;	// Timer for GHZ Spiked Log
-	global.sync0_frame=0;	// Frame number for GHZ Spiked Log
-	global.sync1_time=0;	// Timer for Rings & Giant Rings
-	global.sync1_frame=0;	// Frame number for Rings & Giant Rings
-	global.sync2_time=0;	// Timer for ???
-	global.sync2_frame=0;	// Frame number for ???
-	global.sync3_time=0;	// Timer for Lost Rings
-	global.sync3_frame=0;	// Frame number for Lost Rings
-}
 function setup_Game_Audio(){
 	
 	// Default settings
@@ -567,4 +564,35 @@ function setup_Game_OptionsMenu(){
 		"PLAY BGM",
 		"PLAY SFX"
 	];
+}
+function setup_Game_TitleCards(){
+	global.TtlCard_ConData = array_create(ZONE.TOTAL);
+	global.TtlCard_ItemY = [80, 100, 102, 76]; // Zone name, ZONE, Act X, Oval
+	
+	global.TtlCard_ConData[ZONE.GHZ] = {
+		zone_name	: "GREEN HILL",
+		name_mainx	:	 136,
+		zone_mainx	:	 208,
+		acts_mainx	:	 244,
+		oval_mainx	:	 236
+	}
+}
+function setup_Game_Animations(){
+	global.AnimsIndex = [];	// Every script below pushes an animation into this index
+	animtable_TITLESONIC();
+	animtable_BADNIKS();
+	animtable_RINGS();
+}
+function setup_Game_OscValues(){
+	global.osc_active = false;
+}
+function setup_Game_SyncAnimTimers(){
+	global.sync0_time=0;	// Timer for GHZ Spiked Log
+	global.sync0_frame=0;	// Frame number for GHZ Spiked Log
+	global.sync1_time=0;	// Timer for Rings & Giant Rings
+	global.sync1_frame=0;	// Frame number for Rings & Giant Rings
+	global.sync2_time=0;	// Timer for ???
+	global.sync2_frame=0;	// Frame number for ???
+	global.sync3_time=0;	// Timer for Lost Rings
+	global.sync3_frame=0;	// Frame number for Lost Rings
 }

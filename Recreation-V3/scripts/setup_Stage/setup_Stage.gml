@@ -1,54 +1,15 @@
-/// @function setup_Stage(_zone)
-function setup_Stage(_zone){
-	switch room 
-	{	
-		case stage_GHZ1:
-		{
-			zone_name		= "GREEN HILL";
-			zone_ID			= 0;
-			act_ID			= 0;
-			water_flag		= false;
-			water_level		= 0;
-			stage_BGM		= BGMs.GHZ1;
-			bound_left		= 0;
-			bound_top		= 0;
-			bound_right		= room_width;
-			bound_bottom	= 992;
-			animals	 		= noone; //[AN_FLICKY, AN_RICKY];
-			next			= stage_GHZ2;
+/// @function setup_Stage(zoneID, actID, waterFlag, waterLevel, BGM, boundL, boundT, boundR, boundB)
+function setup_Stage(_zone, _act, _waterFlag, _waterLevel, _BGM, _left, _top, _right, _bottom){
+	if instance_exists(core_Stage)
+		with (core_Stage){
+			zone_ID			= _zone;
+			act_ID			= _act;
+			water_flag		= _waterFlag;
+			water_level		= _waterLevel;
+			stage_BGM		= _BGM;
+			bound_left		= _left;
+			bound_top		= _top;
+			bound_right		= _right;
+			bound_bottom	= _bottom;
 		}
-		break;
-		case stage_GHZ2:
-		{
-			zone_name		= "GREEN HILL";
-			zone_ID			= 0;
-			act_ID			= 1;
-			water_flag		= false;
-			water_level		= 0;
-			stage_BGM		= BGMs.GHZ1;
-			bound_left		= 2048;
-			bound_top		= 0;
-			bound_right		= room_width;
-			bound_bottom	= 480;
-			animals	 		= noone; //[AN_FLICKY, AN_RICKY];
-			next			= screen_Title;
-		}
-		break;
-		default:
-		{
-			zone_name		= "UNKNOWN";
-			zone_ID			= 0;
-			act_ID			= 0;
-			water_flag		= false;
-			water_level		= 0;
-			stage_BGM		= noone;
-			bound_left		= 0;
-			bound_top		= 0;
-			bound_right		= room_width;
-			bound_bottom	= room_height;
-			animals	 		= noone;
-			next			= screen_Title;
-		}
-		break;
-	}
 }
