@@ -28,7 +28,7 @@ switch(room){
 		gfunc_palette_load(PAL_SECONDARY, noone);
 	break;
 	default:
-		gfunc_palette_load(PAL_PRIMARY,   pal_Example_Type1);
-		gfunc_palette_load(PAL_SECONDARY, pal_Example_Type2);
+		gfunc_palette_load(PAL_PRIMARY,   pal_GHZ);
+		gfunc_palette_load(PAL_SECONDARY, noone);
 	break;
 }

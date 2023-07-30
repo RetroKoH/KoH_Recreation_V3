@@ -1,10 +1,10 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "pal_Example_Type2",
-  "bbox_bottom": 63,
+  "name": "pal_GHZ",
+  "bbox_bottom": 15,
   "bbox_left": 0,
-  "bbox_right": 21,
+  "bbox_right": 23,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"24569376-a5ce-46c8-9f09-0135a139db06",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"335af138-9a5b-4b44-a08f-e31f5c893703",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 64,
+  "height": 16,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"6a5fdf10-feb3-484c-96f6-68b8b0f0392b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"67d46739-cfc5-4737-bb27-1eabe32a6e8e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "pal_Example_Type2",
+    "name": "pal_GHZ",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"24569376-a5ce-46c8-9f09-0135a139db06","path":"sprites/pal_Example_Type2/pal_Example_Type2.yy",},},},"Disabled":false,"id":"f1a92e09-a61c-4342-a408-cce370822736","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"335af138-9a5b-4b44-a08f-e31f5c893703","path":"sprites/pal_GHZ/pal_GHZ.yy",},},},"Disabled":false,"id":"421a7a97-6f65-4529-9a9f-9d48087c5bcd","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 22,
+  "width": 24,
 }
