@@ -6,6 +6,7 @@ switch(routine)
 		if ++wait_timer == 10 {
 			routine++;
 			gfunc_fade_perform(FADEMODE_INTO, FADEBLEND_BLACK, 0);
+			gfunc_palette_set_color_range(PAL_PRIMARY, 0, 59, 1);		// Set everything to palette line 1.
 		}
 	break;
 	
@@ -27,7 +28,7 @@ switch(routine)
 	
 	case 3:
 		cCAMERA.pos_x += 2;
-		gfunc_palette_handle_range(PAL_PRIMARY, 0, 3, 4, 1, 6);
+		gfunc_palette_handle_range(PAL_PRIMARY, 37, 40, 4, 1, 6);
 	
 		// PSB triggers at the end of initial animation
 		if (psb && !instance_exists(obj_StartMenu)) {
@@ -38,6 +39,6 @@ switch(routine)
 	
 	case 4:
 		cCAMERA.pos_x += 2;
-		gfunc_palette_handle_range(PAL_PRIMARY, 0, 3, 4, 1, 6);
+		gfunc_palette_handle_range(PAL_PRIMARY, 37, 40, 4, 1, 6);
 	break;
 }
