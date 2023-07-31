@@ -3,7 +3,7 @@ function animtable_TITLESONIC(){
 	global.AnimTable_TitleSonic = [];
 	// ==================================================================================
 
-	setup_Animation(global.AnimTable_TitleSonic, "Anim", spr_Title, spr_Title, spr_Title, -1, -1, 16, -1);
+	setup_Animation(global.AnimTable_TitleSonic, "Anim", spr_Title_Sonic, spr_Title_Sonic, spr_Title_Sonic, -1, -1, 16, -1);
 
 	var sp = 1/2;
 	for (var i = 0; i < 10; i++)

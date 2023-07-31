@@ -18,6 +18,7 @@ for (var i = 0; i < PAL_LIMIT; i++)
 	index_2[i] = 1;
 }
 
+// Set palette(s)
 switch(room){
 	case screen_INIT:
 		gfunc_palette_load(PAL_PRIMARY,   pal_SEGA);

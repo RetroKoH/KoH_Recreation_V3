@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "pal_Title",
-  "bbox_bottom": 19,
+  "bbox_bottom": 59,
   "bbox_left": 0,
   "bbox_right": 5,
   "bbox_top": 0,
@@ -15,9 +15,9 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"5f48d8ac-6b1f-4fcc-92c1-eab734cd540a",},
   ],
-  "gridX": 0,
-  "gridY": 0,
-  "height": 20,
+  "gridX": 1,
+  "gridY": 15,
+  "height": 60,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"c7cceecc-4c4a-4e62-b519-95517b6fa114","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 6,
+  "width": 7,
 }

@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_Title",
-    "path": "sprites/spr_Title/spr_Title.yy",
+    "name": "spr_Title_Copy",
+    "path": "sprites/spr_Title_Copy/spr_Title_Copy.yy",
   },
   "spriteMaskId": null,
   "visible": true,
