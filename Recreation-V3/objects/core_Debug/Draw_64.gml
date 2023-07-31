@@ -24,8 +24,8 @@ if instance_exists(cPLAYER)
 // PALETTE
 _ax=78;
 
-
 gfunc_debug_draw_text(_ax,_ay-18,"Palette");
+//draw_sprite_ext(spr_PalViewer, 0, _ax, _ay, 5, 5, 0, c_white, 1);
 gfunc_debug_draw_text(_ax, _ay, "COL: "+string(gfunc_palette_get_col(PAL_PRIMARY, 0))+"\n"+
 								"FADING"+"\n"+
 								"Step: "+string(cPAL.fade_step)+"\n"+
@@ -51,7 +51,7 @@ var _xf = _ax+(424*0.2);
 
 gfunc_debug_draw_text(_ax,_ay-18,"Rendering");
 
-draw_rectangle(_ax, _ay-9, _xf+1, _ay-9+(240*0.2)+1, false)
+draw_rectangle(_ax, _ay-9, _xf+4, _ay-9+(240*0.2)+1, false)
 draw_surface_ext(cRENDER.surface_main, _ax+1, _ay-8, 0.2, 0.2, 0, c_red, 0.6);
 
 gfunc_debug_draw_text(_xf+7, _ay-8,	string(cRENDER.surface_main)+"\n"+
