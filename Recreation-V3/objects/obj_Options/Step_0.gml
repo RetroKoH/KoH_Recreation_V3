@@ -226,7 +226,16 @@ else switch(submenu) {
 		if (cINPUT.k_a_p){
 			submenu = -1;
 			submenu_item = -1;
-			gfunc_audio_sfx_play(SFXs_SWITCH);
+			gfunc_audio_sfx_play(SFXs.SWITCH);
+		}
+	break;
+	
+	case 4:
+	case 5:
+		if (cINPUT.k_a_p){
+			submenu = -1;
+			submenu_item = -1;
+			gfunc_audio_sfx_play(SFXs.SWITCH);
 		}
 	break;
 }
