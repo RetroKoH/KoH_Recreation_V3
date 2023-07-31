@@ -12,6 +12,10 @@ if time_enabled
 // Object bounds handling
 //if run_objects
 
+// Process DLEs (Changing of boundaries)
+	if script_exists(level_events)
+		script_execute(level_events);
+
 // Process boundaries
 if !gfunc_fade_check(FADESTATE_ACTIVE) {
 	// Update left boundary

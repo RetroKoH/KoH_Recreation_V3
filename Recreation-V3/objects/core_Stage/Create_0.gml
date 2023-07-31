@@ -9,11 +9,13 @@ restart_event	=  0;
 finished		=  0;
 paused			=  0;
 run_objects		=  false;
+level_events	=  noone;
 
 // Set up stage
 switch(room){
 	case stage_GHZ1:
 		setup_Stage(ZONE.GHZ, 0, false, 0, BGMs.GHZ1, 0, 0, room_width, 988);
+		level_events = dle_GHZ1;
 	break;
 	case stage_GHZ2:
 		setup_Stage(ZONE.GHZ, 1, false, 0, BGMs.GHZ2, 0, 0, room_width, 988);

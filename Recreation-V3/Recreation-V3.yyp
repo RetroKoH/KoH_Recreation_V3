@@ -50,6 +50,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Background","folderPath":"folders/Zones/GHZ/Background.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Foreground","folderPath":"folders/Zones/GHZ/Foreground.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Zones/GHZ/Tilesets.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dynamic Level Events","folderPath":"folders/Zones/GHZ/Dynamic Level Events.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -148,6 +149,7 @@
     {"id":{"name":"gfunc_palette_get_col","path":"scripts/gfunc_palette_get_col/gfunc_palette_get_col.yy",},},
     {"id":{"name":"core_Stage","path":"objects/core_Stage/core_Stage.yy",},},
     {"id":{"name":"sfx_Switch","path":"sounds/sfx_Switch/sfx_Switch.yy",},},
+    {"id":{"name":"dle_GHZ1","path":"scripts/dle_GHZ1/dle_GHZ1.yy",},},
     {"id":{"name":"core_Camera","path":"objects/core_Camera/core_Camera.yy",},},
     {"id":{"name":"sfx_RaySwoop","path":"sounds/sfx_RaySwoop/sfx_RaySwoop.yy",},},
     {"id":{"name":"sfx_ShieldBubbleBounce","path":"sounds/sfx_ShieldBubbleBounce/sfx_ShieldBubbleBounce.yy",},},
