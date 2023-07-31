@@ -101,21 +101,21 @@
 }
 #endregion
 
-#region Set Camera Position
+#region Update Camera Position
 {
 	// Calculate final view position
-	/*if instance_exists(Stage)
+	if instance_exists(core_Stage)
 	{
-		ViewX = clamp(PosX + ExtendedOffset, Stage.LeftBoundary, Stage.RightBoundary  - Game.Width);
-		ViewY = clamp(PosY + OverviewOffset, Stage.TopBoundary,  Stage.BottomBoundary - Game.Height);
+		view_x = clamp(pos_x + offset_ext,		core_Stage.bound_left, core_Stage.bound_right  - global.win_width);
+		view_y = clamp(pos_y + offset_overview, core_Stage.bound_top,  core_Stage.bound_bottom - global.win_height);
 	}
-	else*/
+	else
 	{
 		view_x = pos_x;
 		view_y = pos_y;
 	}
-	//view_x += shake_x;
-	//view_y += shake_y;
+	view_x += shake_x;
+	view_y += shake_y;
 	
 	// Update camera position
 	camera_set_view_pos(GAMECAM, view_x - global.scrn_buffer, view_y);
