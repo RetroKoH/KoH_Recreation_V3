@@ -39,14 +39,14 @@ gfunc_debug_draw_text(_ax,_ay-18,"Audio"+"\n"+
 "Event: "+string(cAUDIO.audio_event)+"\n"+
 "Track: "+string(cAUDIO.bgm_track)+"\n"+
 string(cAUDIO.track_pos)+" / "+string(cAUDIO.loop_end)+"\n"+
-"Loop Start: "+string(cAUDIO.loop_start)+"\n"+
+"Loop: "+string(cAUDIO.loop_start)+"\n"+
 	
 "S-Event: "+string(cAUDIO.s_audio_event)+"\n"+
 "S-Track: "+string(cAUDIO.s_bgm_track)+"\n"+string(cAUDIO.s_track_pos)+"\n"+
 "SFX List: "+string(array_length(cAUDIO.sfx_played)));
 
 // SURFACE RENDERING
-_ax=302;
+_ax=310;
 var _xf = _ax+(424*0.2);
 
 gfunc_debug_draw_text(_ax,_ay-18,"Rendering");
