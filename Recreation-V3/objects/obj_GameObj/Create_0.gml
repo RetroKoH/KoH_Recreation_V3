@@ -7,5 +7,6 @@ routine	= 0;		// Action routine counter.
 xsp		= 0;		// X-movement speed (Not used by all)
 ysp		= 0;		// Y-movement speed (Not used by all)
 
-// Child Sprite ID table (Not used by all)
-child_sprites = [];
+child_sprites	= [];				// Child Sprite ID table (Not used by all)
+
+debug_name		= "Game Object";	// Name displayed when being observed

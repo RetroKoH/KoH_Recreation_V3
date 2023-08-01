@@ -24,7 +24,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d1204468-44d7-4ae8-bd2a-71a81ecfab9a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 4,
+  "origin": 9,
   "parent": {
     "name": "Chopper",
     "path": "folders/Game Objects/Badniks/Chopper.yy",
@@ -72,5 +72,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 32,
+  "width": 30,
 }

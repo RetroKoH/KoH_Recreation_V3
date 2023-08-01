@@ -10,3 +10,5 @@ can_harm	= true;		// Denotes that enemy can harm on contact
 // Variables applied w/ mini Sonic
 hp			= 1;		// HP (Only really applies w/ mini Sonic)
 flash		= 0;		// Flashing invulnerability frames. (Only really applies w/ mini Sonic)
+
+debug_name	= "Badnik";	// Name displayed when being observed

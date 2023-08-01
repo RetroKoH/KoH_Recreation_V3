@@ -83,6 +83,7 @@
     {"name":"gfunc_anims_update","order":6,"path":"scripts/gfunc_anims_update/gfunc_anims_update.yy",},
     {"name":"sfx_Drown","order":56,"path":"sounds/sfx_Drown/sfx_Drown.yy",},
     {"name":"sfx_Achievement","order":1,"path":"sounds/sfx_Achievement/sfx_Achievement.yy",},
+    {"name":"gfunc_debug_draw_box","order":19,"path":"scripts/gfunc_debug_draw_box/gfunc_debug_draw_box.yy",},
     {"name":"spr_Pocky","order":1,"path":"sprites/spr_Pocky/spr_Pocky.yy",},
     {"name":"spr_Player","order":1,"path":"sprites/spr_Player/spr_Player.yy",},
     {"name":"spr_CardOval","order":3,"path":"sprites/spr_CardOval/spr_CardOval.yy",},

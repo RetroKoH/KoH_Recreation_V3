@@ -112,6 +112,7 @@
     {"id":{"name":"gfunc_anims_update","path":"scripts/gfunc_anims_update/gfunc_anims_update.yy",},},
     {"id":{"name":"sfx_Drown","path":"sounds/sfx_Drown/sfx_Drown.yy",},},
     {"id":{"name":"sfx_Achievement","path":"sounds/sfx_Achievement/sfx_Achievement.yy",},},
+    {"id":{"name":"gfunc_debug_draw_box","path":"scripts/gfunc_debug_draw_box/gfunc_debug_draw_box.yy",},},
     {"id":{"name":"spr_Pocky","path":"sprites/spr_Pocky/spr_Pocky.yy",},},
     {"id":{"name":"spr_Player","path":"sprites/spr_Player/spr_Player.yy",},},
     {"id":{"name":"spr_CardOval","path":"sprites/spr_CardOval/spr_CardOval.yy",},},
