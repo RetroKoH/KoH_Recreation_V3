@@ -10,7 +10,87 @@ if time_enabled
 }
 
 // Object bounds handling
-//if run_objects
+if run_objects {
+	// Get active bounds
+	var _left  = (cCAMERA.view_x - 128) & -128;
+	var _right = _left + (((global.win_width + 128) & -128) + 256);
+	
+	with obj_GameObj {
+		switch (oob_type) {
+			case OOB_DESTROY:
+			{
+				if x < _left or x > _right or y > core_Stage.bound_bottom or y < core_Stage.bound_top {
+					var _len = array_length(child_sprites);
+					if  _len {
+						for (var i = 0; i < _len; i++)				
+							instance_destroy(child_sprites[i]);
+						child_sprites = [];
+					}
+					instance_destroy();
+				}
+			}
+			break;
+			
+			case OOB_PAUSE:
+			{
+				if x < _left or x > _right
+				{
+					var _len = array_length(child_sprites);
+					if  _len {
+						for (var i = 0; i < _len; i++)				
+							instance_destroy(child_sprites[i]);
+						child_sprites = [];
+					}
+					instance_deactivate_object(id);
+				}
+			}
+			break;
+			
+			case OOB_RESET:
+			{
+				if (x < _left or x > _right) and (oob_data[0] < _left or oob_data[0] > _right)
+				{
+					var _len = array_length(child_sprites);
+					if  _len {
+						for (var i = 0; i < _len; i++)				
+							instance_destroy(child_sprites[i]);
+						child_sprites = [];
+					}
+		
+					// Reset data
+					x			 = oob_data[0];
+					y			 = oob_data[1];
+					image_xscale = oob_data[2];
+					image_yscale = oob_data[3];
+					image_index  = oob_data[4];
+					sprite_index = oob_data[5];
+					visible      = oob_data[6];
+							
+					// Reset animation data
+					//image_duration = 0;
+					//image_timer    = 0;
+									
+					// Re-initialize variables
+					routine = 0;
+							
+					// Deactivate object
+					if  _len {
+						for (var i = 0; i < _len; i++)
+							instance_deactivate_object(child_sprites[i]);
+					}
+					instance_deactivate_object(id);
+				}
+			}
+			break;
+			
+			default:
+			break;
+		}
+	}
+}
+
+// Activate objects (object's that were unloaded this frame before WON'T be activated)
+gfunc_gameobj_activate_range(cCAMERA.view_x);
 
 // Process DLEs (Changing of boundaries)
 	if script_exists(level_events)

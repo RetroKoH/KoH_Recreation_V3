@@ -74,6 +74,11 @@ function setup_Game_Macros(){
 	#macro TCARD_LEAVE		4
 	#macro TCARD_FINISHED	5
 	
+	// Out-of-bounds Game Object macro
+	#macro OOB_DESTROY		0
+	#macro OOB_PAUSE		1
+	#macro OOB_RESET		2
+	
 	// Keymap array indices
 	enum KEYMAP{
 		UP,

@@ -24,7 +24,10 @@ if instance_exists(cPLAYER)
 // PALETTE
 _ax=78;
 
-gfunc_debug_draw_text(_ax,_ay-18,"Palette");
+gfunc_debug_draw_text(_ax,_ay-18,"Active Obj: ");
+gfunc_debug_draw_text(_ax,_ay,string(instance_number(obj_GameObj)));
+
+/*gfunc_debug_draw_text(_ax,_ay-18,"Palette");
 //draw_sprite_ext(spr_PalViewer, 0, _ax, _ay, 5, 5, 0, c_white, 1);
 gfunc_debug_draw_text(_ax, _ay, "COL: "+string(gfunc_palette_get_col(PAL_PRIMARY, 0))+"\n"+
 								"FADING"+"\n"+
@@ -32,7 +35,7 @@ gfunc_debug_draw_text(_ax, _ay, "COL: "+string(gfunc_palette_get_col(PAL_PRIMARY
 								"Mode: "+fademodes[cPAL.fade_mode]+"\n"+
 								"Blend: "+fadeblends[cPAL.fade_blend]+"\n"+
 								"Speed: "+string(cPAL.fade_speed));
-
+*/
 // AUDIO
 _ax=180;
 gfunc_debug_draw_text(_ax,_ay-18,"Audio"+"\n"+
