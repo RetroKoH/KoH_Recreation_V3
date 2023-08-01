@@ -1,5 +1,8 @@
 /// @description Set target for observation
 
+if !global.debugmode
+	exit;
+
 var _scrX1 = bbox_left - cCAMERA.view_x, _scrX2 = bbox_right - cCAMERA.view_x;
 var _scrY1 = bbox_top - cCAMERA.view_y, _scrY2 = bbox_bottom - cCAMERA.view_y;
 
