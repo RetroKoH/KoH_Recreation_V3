@@ -27,8 +27,8 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Characters",
-    "path": "folders/Characters.yy",
+    "name": "2. Tails",
+    "path": "folders/Game Objects/Player/2. Tails.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -69,8 +69,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "tgTails",
-    "path": "texturegroups/tgTails",
+    "name": "Default",
+    "path": "texturegroups/Default",
   },
   "type": 0,
   "VTile": false,
