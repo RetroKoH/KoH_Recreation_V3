@@ -14,6 +14,7 @@ draw_set_color(c_white);
 switch(menu)
 {
 	case 0: // GAMEPLAY
+	{
 		for (var _i = 0; _i < array_length(global.str_opt_gameplay); _i++) {
 			var _c = c_white;
 			if _i == submenu_item	_c = #F0F000;
@@ -25,9 +26,11 @@ switch(menu)
 			var _st = menu_item_game[_i];
 			draw_text(280, menu_y[_i]+8, string(_st[_val]));
 		}
+	}
 	break;
 	
 	case 1: // CONTROLS
+	{
 		for (var _i = 0; _i < array_length(global.str_opt_controls); _i++) {
 			var _c = c_white;
 			if _i == submenu_item	_c = #F0F000;
@@ -39,11 +42,12 @@ switch(menu)
 			var _st = global._fhinputKeys[_val];
 			draw_text(280, menu_y[_i]+8, _st);
 		}
-			
 		draw_sprite_ext(spr_gamepad, submenu_item+1, 248, menu_y[7]+56, 0.75, 0.75, 0, c_white, 1);
+	}
 	break;
 	
 	case 2: // VIDEO
+	{
 		for (var _i = 0; _i < array_length(global.str_opt_video); _i++) {
 			var _c = c_white;
 			if _i == submenu_item	_c = #F0F000;
@@ -59,9 +63,11 @@ switch(menu)
 				draw_text(280, menu_y[2]+8, _st);
 			}
 		}
+	}
 	break;
 	
 	case 3: // AUDIO
+	{
 		for (var _i = 0; _i < array_length(global.str_opt_audio); _i++) {
 			var _c = c_white;
 			if _i == submenu_item	_c = #F0F000;
@@ -76,6 +82,19 @@ switch(menu)
 			if _i == 4 draw_text(280, menu_y[4]+8, string(sndTest_BGM));
 			if _i == 5 draw_text(280, menu_y[5]+8, string(sndTest_SFX));
 		}
+	}
+	break;
+
+	case 5: // TILESET
+	{
+		draw_text(152, menu_y[0], "TILESET: GREEN HILL");
+		draw_rectangle_color(_X1, _Y1, _X2, _Y2, c_lime, c_lime, c_lime, c_lime, true);
+		draw_tile(TILE_GHZ_LOW, tile_index, 0, _X1, _Y1);
+		
+		draw_text(152, _Y2+8,  "CHUNK #"+string(tile_index)+" of "+string(max_index));
+		draw_text(152, _Y2+16, "SOLIDITY: " + (view_solids ? "YES" : "NO"));
+		draw_text(152, _Y2+24, "SPRITES: " + (view_sprites ? "YES" : "NO"));
+	}
 	break;
 }
 
