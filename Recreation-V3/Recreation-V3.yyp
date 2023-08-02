@@ -48,9 +48,9 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"GHZ","folderPath":"folders/Zones/GHZ.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Animated Art","folderPath":"folders/Zones/GHZ/Animated Art.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Background","folderPath":"folders/Zones/GHZ/Background.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dynamic Level Events","folderPath":"folders/Zones/GHZ/Dynamic Level Events.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Foreground","folderPath":"folders/Zones/GHZ/Foreground.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Zones/GHZ/Tilesets.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dynamic Level Events","folderPath":"folders/Zones/GHZ/Dynamic Level Events.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},

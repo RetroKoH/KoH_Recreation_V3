@@ -34,9 +34,9 @@
     {"name":"Zones","order":2,"path":"folders/Zones.yy",},
     {"name":"GHZ","order":1,"path":"folders/Zones/GHZ.yy",},
     {"name":"Animated Art","order":5,"path":"folders/Zones/GHZ/Animated Art.yy",},
+    {"name":"Dynamic Level Events","order":7,"path":"folders/Zones/GHZ/Dynamic Level Events.yy",},
     {"name":"Foreground","order":2,"path":"folders/Zones/GHZ/Foreground.yy",},
     {"name":"Tilesets","order":4,"path":"folders/Zones/GHZ/Tilesets.yy",},
-    {"name":"Dynamic Level Events","order":7,"path":"folders/Zones/GHZ/Dynamic Level Events.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"gfunc_audio_sfx_play","order":11,"path":"scripts/gfunc_audio_sfx_play/gfunc_audio_sfx_play.yy",},

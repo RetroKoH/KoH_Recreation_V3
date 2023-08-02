@@ -1,8 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-anim_ID = -1;
+/// @description Init player
 
-
-
-
-
+event_inherited();
