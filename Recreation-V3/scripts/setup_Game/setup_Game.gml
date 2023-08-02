@@ -370,6 +370,11 @@ function setup_Game_Screen(){
 	gpu_set_alphatestref(0);
 }
 function setup_Game_Collision(){
+	global.map_id = array_create(2, -1);
+	global.spr_id = -1;
+	global.chunks_id = -1;
+	global.chunks_count = 0;
+	
 	global.TileAngle   = [];
 	global.TileHeights = [];
 	global.TileWidths  = [];
