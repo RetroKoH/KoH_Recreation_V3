@@ -191,7 +191,7 @@
     {"name":"sfx_AirBubble","order":2,"path":"sounds/sfx_AirBubble/sfx_AirBubble.yy",},
     {"name":"obj_Ring","order":1,"path":"objects/obj_Ring/obj_Ring.yy",},
     {"name":"spr_Explosion","order":2,"path":"sprites/spr_Explosion/spr_Explosion.yy",},
-    {"name":"gfunc_palette_handle_range","order":13,"path":"scripts/gfunc_palette_handle_range/gfunc_palette_handle_range.yy",},
+    {"name":"gfunc_palette_handle","order":13,"path":"scripts/gfunc_palette_handle/gfunc_palette_handle.yy",},
     {"name":"sfx_ssentry","order":28,"path":"sounds/sfx_ssentry/sfx_ssentry.yy",},
     {"name":"spr_Controller","order":6,"path":"sprites/spr_Controller/spr_Controller.yy",},
   ],

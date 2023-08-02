@@ -246,7 +246,7 @@
     {"id":{"name":"spr_Explosion","path":"sprites/spr_Explosion/spr_Explosion.yy",},},
     {"id":{"name":"spr_Crabmeat","path":"sprites/spr_Crabmeat/spr_Crabmeat.yy",},},
     {"id":{"name":"setup_Game","path":"scripts/setup_Game/setup_Game.yy",},},
-    {"id":{"name":"gfunc_palette_handle_range","path":"scripts/gfunc_palette_handle_range/gfunc_palette_handle_range.yy",},},
+    {"id":{"name":"gfunc_palette_handle","path":"scripts/gfunc_palette_handle/gfunc_palette_handle.yy",},},
     {"id":{"name":"sfx_ssentry","path":"sounds/sfx_ssentry/sfx_ssentry.yy",},},
     {"id":{"name":"spr_Controller","path":"sprites/spr_Controller/spr_Controller.yy",},},
   ],
