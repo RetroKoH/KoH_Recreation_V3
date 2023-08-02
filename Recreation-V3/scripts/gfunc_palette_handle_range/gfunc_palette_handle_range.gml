@@ -1,6 +1,6 @@
 /// @function gfunc_palette_handle_range(palType,iCol1,iCol2,rCol1,rCol2,duration)
 function gfunc_palette_handle_range(palType,iCol1,iCol2,rCol1,rCol2,duration){
-	if cPAL.color_set[palType] == false// or !cPAL.update_anims
+	if cPAL.color_set[palType] == false or !cRENDER.update_anims
 		exit;
 	
 	// Get unique ID for this palette sequence
