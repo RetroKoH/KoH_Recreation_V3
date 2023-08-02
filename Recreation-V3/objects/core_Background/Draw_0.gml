@@ -14,7 +14,8 @@ for (var i = 0; i < _len; i++)
 	var _layer = layers[i];
 	
 	// Update ScrollX offset
-	_layer.x_offset += _layer.speed_x;
+	if cRENDER.update_anims
+		_layer.x_offset += _layer.speed_x;
 	
 	// Get background data
 	var _tex		= _layer.texture;
