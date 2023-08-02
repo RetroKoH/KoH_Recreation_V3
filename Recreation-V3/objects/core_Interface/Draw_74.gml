@@ -9,6 +9,7 @@ draw_clear_alpha(c_white, 0);
 // HUD Drawing
 if HUD_enabled {
 	
+	// It seems that if this is disabled, controls don't unlock
 	if HUD_offset_x < 18 {
 		HUD_offset_x += 6;
 	}
@@ -32,20 +33,23 @@ if HUD_enabled {
 		_centi	= 99;
 	}
 	
-	// SCORE TIME RINGS
-	draw_sprite(spr_HUD, 0, _xx, _yy); // SCORE
-	draw_sprite(spr_HUD, 1, _xx, _yy + 16); // TIME
-	draw_sprite(spr_HUD, 2, _xx, _yy + 32); // RINGS
+	if !global.debugmode
+	{
+		// SCORE TIME RINGS
+		draw_sprite(spr_HUD, 0, _xx, _yy); // SCORE
+		draw_sprite(spr_HUD, 1, _xx, _yy + 16); // TIME
+		draw_sprite(spr_HUD, 2, _xx, _yy + 32); // RINGS
 	
-	draw_set_font(FONT.HUDNum);	draw_set_halign(fa_right);
-	var _time_str = string(_min) + ":" + (_sec > 9 ? string(_sec) : "0" + string(_sec));
-	if global.opt_gameplay[7]
-		_time_str = string(_min) + "'" + (_sec > 9 ? string(_sec) : "0" + string(_sec)) +
-					";" + (_centi > 9 ? string(_centi) : "0" + string(_centi));
+		draw_set_font(FONT.HUDNum);	draw_set_halign(fa_right);
+		var _time_str = string(_min) + ":" + (_sec > 9 ? string(_sec) : "0" + string(_sec));
+		if global.opt_gameplay[7]
+			_time_str = string(_min) + "'" + (_sec > 9 ? string(_sec) : "0" + string(_sec)) +
+						";" + (_centi > 9 ? string(_centi) : "0" + string(_centi));
 
-	draw_text(_xx + 96, _yy,	  string(global.p_score));	// Draw out score
-	draw_text(_xx + 96, _yy + 16, _time_str);				// Draw out time
-	draw_text(_xx + 96, _yy + 32, string(global.p_rings));	// Draw out rings
+		draw_text(_xx + 96, _yy,	  string(global.p_score));	// Draw out score
+		draw_text(_xx + 96, _yy + 16, _time_str);				// Draw out time
+		draw_text(_xx + 96, _yy + 32, string(global.p_rings));	// Draw out rings
+	}
 }
 
 // =========================

@@ -31,7 +31,7 @@ gfunc_debug_draw_text(_ax, _ay, "Current: "+string(target)+"\n"+
 								"("+string(target_type)+")");
 
 // Surface Rendering
-_ax=320;
+_ax=316;
 var _xf = _ax+(424*0.2);
 
 gfunc_debug_draw_text(_ax,_ay-18,"Rendering");
