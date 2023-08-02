@@ -31,7 +31,7 @@
   "origin": 9,
   "parent": {
     "name": "Super Sonic",
-    "path": "folders/Game Objects/Player/Sonic/Super Sonic.yy",
+    "path": "folders/Game Objects/Player/1. Sonic/Super Sonic.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

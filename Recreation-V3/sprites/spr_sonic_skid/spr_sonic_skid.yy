@@ -30,8 +30,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Sonic",
-    "path": "folders/Game Objects/Player/Sonic.yy",
+    "name": "1. Sonic",
+    "path": "folders/Game Objects/Player/1. Sonic.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
