@@ -38,7 +38,7 @@ if paused
 else if cINPUT.k_st_p
 {
 	// If we pressed start button and are allowed to pause, then pause!
-	if (core_Interface.tcard_routine >= TCARD_LEAVE or time_enabled) // and !Stage.IsFinished and !Player.Death
+	if can_pause //(core_Interface.tcard_routine >= TCARD_LEAVE or time_enabled) // and !Stage.IsFinished and !Player.Death
 	{			
 		cRENDER.update_anims	= false;
 		run_objects				= false;

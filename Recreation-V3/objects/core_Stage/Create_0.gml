@@ -8,6 +8,7 @@ restart_timer	=  0;
 restart_event	=  0;
 finished		=  0;
 paused			=  0;
+can_pause		=  false;
 run_objects		=  false;
 level_events	=  noone;
 

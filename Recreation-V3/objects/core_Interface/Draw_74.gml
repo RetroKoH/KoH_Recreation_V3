@@ -126,7 +126,8 @@ if tcard_routine < TCARD_FINISHED {
 			}
 			if HUD_offset_x == 18 and !core_Stage.time_enabled {
 				core_Stage.time_enabled	= true;
-				cINPUT.ignore_input		= false;
+				core_Stage.can_pause = true;
+				//cINPUT.ignore_input		= false; Change to player.ignore_input = false;
 			}
 			if --tcard_timer == 0 {
 				tcard_routine++;
