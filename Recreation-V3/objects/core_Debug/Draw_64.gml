@@ -24,11 +24,13 @@ if instance_exists(cPLAYER)
 // Objects
 _ax=78;
 
-gfunc_debug_draw_text(_ax,_ay-18,"Active Obj: "+string(instance_number(obj_GameObj))+"\n"+
-						string(point_x)+", "+string(point_y));
-
-gfunc_debug_draw_text(_ax, _ay, "Current: "+string(target)+"\n"+
-								"("+string(target_type)+")");
+if instance_exists(core_Stage)
+	gfunc_debug_draw_text(_ax,_ay-18,
+	"Active Obj: "+string(instance_number(obj_GameObj))+"\n"+
+	"Current: "+string(target)+"\n"+
+	"("+string(target_type)+")"+"\n"+
+	string(core_Stage.paused ? "PAUSED" : "ACTIVE") +"\n"+
+	"OB: "+string(core_Stage.run_objects)+", ANI: "+string(cRENDER.update_anims));
 
 // Surface Rendering
 _ax=316;
