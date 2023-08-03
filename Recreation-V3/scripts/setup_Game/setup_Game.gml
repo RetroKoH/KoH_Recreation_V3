@@ -75,9 +75,19 @@ function setup_Game_Macros(){
 	#macro TCARD_FINISHED	5
 	
 	// Out-of-bounds Game Object macro
+	#macro OOB_PLAYER		-1
 	#macro OOB_DESTROY		0
 	#macro OOB_PAUSE		1
 	#macro OOB_RESET		2
+	
+	// Player Sizes
+	#macro HEIGHT_MAIN $13	// Standard height
+	#macro HEIGHT_SHORT $F	// Tails' standing height
+	#macro HEIGHT_ROLL $E	// Rolling height
+	#macro HEIGHT_GLIDE $A	// Gliding height
+	#macro WIDTH_MAIN 9		// Standard Width
+	#macro WIDTH_ROLL 7		// Rolling Width
+	#macro WIDTH_GLIDE $A	// Gliding Width
 	
 	// Keymap array indices
 	enum KEYMAP{
