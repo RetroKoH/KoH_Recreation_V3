@@ -389,6 +389,7 @@
     {"id":{"name":"spr_supersonic_walk","path":"sprites/spr_supersonic_walk/spr_supersonic_walk.yy",},},
     {"id":{"name":"gfunc_anims_draw","path":"scripts/gfunc_anims_draw/gfunc_anims_draw.yy",},},
     {"id":{"name":"spr_Ring","path":"sprites/spr_Ring/spr_Ring.yy",},},
+    {"id":{"name":"ctrl_Player_ResetAngle","path":"scripts/ctrl_Player_ResetAngle/ctrl_Player_ResetAngle.yy",},},
     {"id":{"name":"spr_ray_walk","path":"sprites/spr_ray_walk/spr_ray_walk.yy",},},
     {"id":{"name":"stage_GHZ1","path":"rooms/stage_GHZ1/stage_GHZ1.yy",},},
     {"id":{"name":"bgm_Invinc","path":"sounds/bgm_Invinc/bgm_Invinc.yy",},},

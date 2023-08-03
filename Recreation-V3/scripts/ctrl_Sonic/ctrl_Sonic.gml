@@ -34,4 +34,6 @@ function ctrl_Sonic_InAir() {
 	ctrl_Player_MoveInAir();			// Move through the air and apply air drag.
 	ctrl_Player_LevelBound();			// Interact with screen boundaries.
 	gfunc_gameobj_apply_speed(true);	// Apply speed with gravity.
+	if (in_water) ysp -= .15625;		// Underwater gravity (Integrate with ObjectFall)
+	ctrl_Player_ResetAngle(col_angle);	// Reset angle in mid-air
 }
