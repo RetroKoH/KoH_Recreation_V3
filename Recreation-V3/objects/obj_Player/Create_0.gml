@@ -12,7 +12,7 @@ height_def	= HEIGHT_MAIN;	// Default Tile collision height
 flipped		= false;	// if true, facing left.
 in_air		= false;	// if true, in the air.
 spinning	= false;	// if true, spinning in a ball.
-ob_obj		= false;	// if true, not grounded, but should not fall.
+on_obj		= false;	// if true, not grounded, but should not fall.
 // Removing roll jump lock
 pushing		= false;	// if true, pushing against something
 in_water	= false;	// if true, underwater.
@@ -29,7 +29,11 @@ spindash_flag			= false;
 spindash_pitch			= 1;
 dash_timer				= 0;
 
+convex = false;
+move_lock = false;
+
 control_modes			= ctrl_Sonic;
+double_jump				= -1;
 gfunc_player_set_speed();
 jmp_spd					= 6.5;		// Default jump velocity
 
