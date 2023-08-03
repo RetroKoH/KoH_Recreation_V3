@@ -188,7 +188,7 @@ else {
 				switch(submenu_item){
 					case 0:
 						_dir *= 0.1;
-						global.volume_bgm = clamp(global.volume_bgm+_dir, 0, 1);
+						global.volume_bgm = clamp(global.volume_bgm + _dir, 0, 1);
 						audio_sound_gain(cAUDIO.bgm_track, global.volume_bgm, 0);
 						audio_sound_gain(cAUDIO.s_bgm_track, global.volume_bgm, 0);
 						gfunc_audio_sfx_play(SFXs.SWITCH);
@@ -196,7 +196,7 @@ else {
 				
 					case 1:
 						_dir *= 0.1;
-						global.volume_sfx = clamp(global.volume_sfx+_dir, 0, 1);
+						global.volume_sfx = clamp(global.volume_sfx + _dir, 0, 1);
 						for (var _i = 0; _i < array_length(cAUDIO.sfx_played); _i++)
 							audio_sound_gain(cAUDIO.sfx_played[_i], global.volume_sfx, 0);
 						gfunc_audio_sfx_play(SFXs.SWITCH);
@@ -204,7 +204,7 @@ else {
 				
 					case 2:
 						_dir *= 0.1;
-						global.volume_amb = clamp(global.volume_amb+_dir, 0, 1);
+						global.volume_amb = clamp(global.volume_amb + _dir, 0, 1);
 						gfunc_audio_sfx_play(SFXs.SWITCH);
 					break;
 				
@@ -241,10 +241,37 @@ else {
 	
 		case 4: // ANIMATIONS
 		{
-			if (cINPUT.k_a_p){
-				submenu = -1;
-				submenu_item = -1;
-				gfunc_audio_sfx_play(SFXs.SWITCH);
+			if anim_playing
+			{
+				if (cINPUT.k_a_p) {
+					anim_playing = false;
+				}
+			}
+			
+			else {
+				if cINPUT.k_u_p or cINPUT.k_d_p {
+					var _dir = cINPUT.k_d_p - cINPUT.k_u_p;
+					anim_set = clamp(anim_set + _dir, 0, total_anims - 1);
+					anim_index = 0;							// Reset index
+					event_user(0);							// Reset data for new set
+					max_index = array_length(anim_table);	// Get the total number of animations in the set
+				}
+				
+				if cINPUT.k_l_p or cINPUT.k_r_p {
+					var _dir = cINPUT.k_r_p - cINPUT.k_l_p;
+					anim_index = clamp(anim_index + _dir, 0, max_index - 1);
+					event_user(0);	// Reset data for new index
+				}
+				
+				if (cINPUT.k_c_p || cINPUT.k_st_p) {
+					anim_playing = true;
+				}
+				
+				if (cINPUT.k_a_p) {
+					submenu = -1;
+					submenu_item = -1;
+					gfunc_audio_sfx_play(SFXs.SWITCH);
+				}
 			}
 		}
 		break;

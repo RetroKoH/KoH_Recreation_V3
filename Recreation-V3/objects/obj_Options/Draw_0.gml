@@ -84,6 +84,19 @@ switch(menu)
 		}
 	}
 	break;
+	
+	case 4: // ANIMATIONS
+	{
+		draw_sprite_ext(anim_sprite, anim_spriteframe, 240, menu_y[6], 1, 1, 0, c_white, 1);
+
+		draw_text(152, _Y2+8,
+							"Animation: "+anim_name+"\n"+
+							"Anim Set: "+string(anim_set)+"/"+string(total_anims-1)+"\n"+
+							"Anim Index: "+string(anim_index)+"/"+string(max_index-1)+"\n"+
+							string(anim_playing ? "PLAYING" : "PAUSED")+"\n"+
+							"Frame: "+string(floor(anim_frame))+" of "+string(anim_framecount-1));
+	}
+	break;
 
 	case 5: // TILESET
 	{

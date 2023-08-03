@@ -51,7 +51,7 @@ function animtable_SONIC() {
 	global.AnimTable_PlayerSonic = [];
 	// ==================================================================================
 	
-	setup_Animation(global.AnimTable_PlayerSonic, "Idle", spr_sonic_idle, spr_sonic_mask, spr_sonic_maskL, -1, -1, 3, -1);
+	setup_Animation(global.AnimTable_PlayerSonic, "Idle", spr_sonic_idle, spr_sonic_mask, spr_sonic_maskL, -1, -1, 16, -1);
 	
 	var sp = 1/24;
 	repeat(12) setup_AnimationFrame(global.AnimTable_PlayerSonic, 0, sp);
@@ -175,4 +175,6 @@ function animtable_SONIC() {
 	}
 	setup_AnimationFrame(global.AnimTable_PlayerSonic, 1, sp);
 	// ==================================================================================
+	
+	array_push(global.AnimsIndex, global.AnimTable_PlayerSonic);
 }

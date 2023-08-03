@@ -29,6 +29,18 @@ menu_item_game = [
 	global.str_opt_onoff
 ];
 
+
+// Set up the animations viewer
+anim_set		= 0;		// The animation structure index to load scripts from (up/down)
+anim_index		= 0;		// The animation script index to play (left/right)
+anim_playing	= false;	// If true, that means an animation is being played.
+
+total_anims = array_length(global.AnimsIndex);		// Total number of animations to play
+gfunc_anims_init(true, global.AnimsIndex[0], 0);	// Establish vars for first animation
+anim_name = anim_table[anim_ID].name;				// Load text name for animation
+max_index = array_length(anim_table);
+
+
 // Set up layer IDs for chunk viewer
 var layer_id = layer_get_id("Collision_A");
 global.map_id[0] = layer_tilemap_get_id(layer_id);
