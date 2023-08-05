@@ -1,0 +1,15 @@
+Angles in this engine are done in hex, meaning that there are 256 divisions of a circle, instead of 360.
+This means that all floor angles range from 0-255. 
+
+Each angle = hex_angle * (360/256); or hex_angle * 1.40625. A table is constructed at the start to convert
+every hex angle to an actual angle usable by the engine, along with the corresponding sine, cosine, and
+floor mode quadrant. This will remove constant calculation from runtime of the game. This table is found at
+the end of setup_Game_Collision()
+
+All collision data used in this game is pulled from Sonic 1. This means that not only are angles in hex,
+as noted above, but that angles are inverted (They run clockwise). To counter that, each angle loaded is
+subtracted from 256 in order to get the proper hex angle.
+
+Two functions have also been added to allow for value wrapping. A specialized one for angles is also
+included. These functions come courtesy of Ralakimus, and the SoniC C port engine. They are found in
+Scripts>Game Functions>gfunc_wrap.

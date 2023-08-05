@@ -194,14 +194,15 @@ function setup_Game_KeyMap(){
 	ini_close();
 }
 function setup_Game_Collision(){
-	global.map_id = array_create(2, -1);
-	global.spr_id = -1;
-	global.chunks_id = -1;
-	global.chunks_count = 0;
+	global.map_id		= array_create(2, -1);
+	global.spr_id		= -1;
+	global.chunks_id	= -1;
+	global.chunks_count	= 0;
 	
-	global.TileAngle   = [];
-	global.TileHeights = [];
-	global.TileWidths  = [];
+	global.tile_angles	= [];
+	global.tile_heights = [];
+	global.tile_widths  = [];
+	global.angle_data	= [];
 
 	// Load Collision Data Files
 	// Angles
@@ -209,7 +210,7 @@ function setup_Game_Collision(){
 	var size = file_bin_size(file);
 	if (file){
 		for (var i = 0; i <= TILE_COUNT; i++) 
-			global.TileAngle[i] = i < size ? (256 - file_bin_read_byte(file)) * 360 / 256 : 0;
+			global.tile_angles[i] = i < size ? (256 - file_bin_read_byte(file)) : 0;
 		file_bin_close(file);
 	}
 	
@@ -219,7 +220,7 @@ function setup_Game_Collision(){
 	if (file){
 		for (var i = 0; i <= TILE_COUNT; i++)
 			for (var j = 0; j < TILE_SIZE; j++) 
-				global.TileHeights[i][j] = (i * TILE_SIZE < size) ? file_bin_read_byte(file) : 0;
+				global.tile_heights[i][j] = (i * TILE_SIZE < size) ? file_bin_read_byte(file) : 0;
 		file_bin_close(file);
 	}
 	
@@ -229,8 +230,21 @@ function setup_Game_Collision(){
 	if (file){
 		for (var i = 0; i <= TILE_COUNT; i++)
 			for (var j = 0; j < TILE_SIZE; j++) 
-				global.TileWidths[i][j] = (i * TILE_SIZE < size) ? file_bin_read_byte(file) : 0;
+				global.tile_widths[i][j] = (i * TILE_SIZE < size) ? file_bin_read_byte(file) : 0;
 		file_bin_close(file);
+	}
+	
+	// Angle Data
+	var _factor = 360/256;
+	for (var i = 0; i <= 256; i++) {
+		var _ang = i * _factor;
+		var _dat = {
+			angle		: _ang,
+			sine		: dsin(_ang),
+			cosine		: dcos(_ang),
+			quadrant	: floor(gfunc_wrap_angle((_ang + ((_ang >= 180) ? 1.40625 : 0)) + 43.59375) / 90)
+		}
+		global.angle_data[i] = _dat;
 	}
 }
 function setup_Game_Animations(){

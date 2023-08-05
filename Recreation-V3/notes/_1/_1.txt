@@ -10,7 +10,7 @@ Sonic has the following variables
 
 The width and height variables are for tile collision, not for object collision. Sonic's tile collision
 radii will be set using prepared constant values, allowing for easy switching, and reducing the likelihood
-of errors when coding the object. These macros are found in Scripts>Setup>setup_Game>setup_Macros()
+of errors when coding the object. These macros are found in Scripts>Setup>setup_Game>setup_Game_Macros()
 
 Collision masks are assigned to each animation, getting rid of the visual bug of appearing one pixel off
 when facing left instead of right. These are found in Game Objects>Player>0. Masks.
