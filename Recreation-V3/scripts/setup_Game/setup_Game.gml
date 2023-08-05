@@ -27,19 +27,25 @@ function setup_Game_Macros(){
 	#macro TILE_COUNT	256
 	
 	// Out-of-bounds Game Object macro
-	#macro OOB_PLAYER		-1
-	#macro OOB_DESTROY		0
-	#macro OOB_PAUSE		1
-	#macro OOB_RESET		2
+	#macro OOB_PLAYER	-1
+	#macro OOB_DESTROY	0
+	#macro OOB_PAUSE	1
+	#macro OOB_RESET	2
 	
 	// Player Sizes
-	#macro HEIGHT_MAIN $13	// Standard height
+	#macro HEIGHT_MAIN	$13	// Standard height
 	#macro HEIGHT_SHORT $F	// Tails' standing height
-	#macro HEIGHT_ROLL $E	// Rolling height
+	#macro HEIGHT_ROLL	$E	// Rolling height
 	#macro HEIGHT_GLIDE $A	// Gliding height
-	#macro WIDTH_MAIN 9		// Standard Width
-	#macro WIDTH_ROLL 7		// Rolling Width
-	#macro WIDTH_GLIDE $A	// Gliding Width
+	#macro WIDTH_MAIN	9	// Standard Width
+	#macro WIDTH_ROLL	7	// Rolling Width
+	#macro WIDTH_GLIDE	$A	// Gliding Width
+	
+	// Collision Mode macro
+	#macro COL_FLOOR	0
+	#macro COL_WALL_R	1
+	#macro COL_CEILING	2
+	#macro COL_WALL_L	3
 	
 	// Keymap array indices
 	enum KEYMAP{
