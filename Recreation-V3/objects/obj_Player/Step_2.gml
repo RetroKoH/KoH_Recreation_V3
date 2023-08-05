@@ -1,4 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Post-Object handling
 
 gfunc_anims_update();

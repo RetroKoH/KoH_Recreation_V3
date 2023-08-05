@@ -1,0 +1,25 @@
+Sonic has the following variables
+	X			The X-coordinate of the object's centre. (built-in)
+	Y			The Y-coordinate of the object's centre. (built-in)
+	xsp			The speed at which the object is moving horizontally.
+	ysp			The speed at which the object is moving vertically.
+	inertia		The speed at which the object is moving on the ground.
+	angle		The object's angle, or angle on the ground.
+	width		The object's width from the origin pixel, left and right.
+	height		The object's height from the origin pixel, up and down.
+
+The width and height variables are for tile collision, not for object collision. Sonic's tile collision
+radii will be set using prepared constant values, allowing for easy switching, and reducing the likelihood
+of errors when coding the object. These macros are found in Scripts>Setup>setup_Game>setup_Macros()
+
+Collision masks are assigned to each animation, getting rid of the visual bug of appearing one pixel off
+when facing left instead of right. These are found in Game Objects>Player>0. Masks.
+
+Sonic also has a routine counter. Every in-game object will have a routine counter, and specific code
+will run based on its current routine. This will pause when the game is paused, and when an object is
+reset, the routine will reset to 0, allowing for quicker/easier re-initialization instead of re-running
+its Create Event.
+
+Adopted from Orbinaut Framework is the fact that Sonic's routine code will run in the Begin Step Event,
+instead of the Step Event like all other in-game objects, ensuring that the player's control operates
+first, just like in the classic games.

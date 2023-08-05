@@ -26,6 +26,7 @@
     {"name":"Dynamic Level Events","order":7,"path":"folders/Zones/GHZ/Dynamic Level Events.yy",},
     {"name":"Foreground","order":2,"path":"folders/Zones/GHZ/Foreground.yy",},
     {"name":"Tilesets","order":4,"path":"folders/Zones/GHZ/Tilesets.yy",},
+    {"name":"Dev Log","order":21,"path":"folders/Dev Log.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -109,7 +110,6 @@
     {"name":"spr_knux_hurt","order":6,"path":"sprites/spr_knux_hurt/spr_knux_hurt.yy",},
     {"name":"spr_knux_hover","order":5,"path":"sprites/spr_knux_hover/spr_knux_hover.yy",},
     {"name":"spr_knux_lookup","order":10,"path":"sprites/spr_knux_lookup/spr_knux_lookup.yy",},
-    {"name":"Dev Log","order":20,"path":"notes/Dev Log/Dev Log.yy",},
     {"name":"spr_supersonic_dash","order":4,"path":"sprites/spr_supersonic_dash/spr_supersonic_dash.yy",},
     {"name":"spr_sonic_skid","order":13,"path":"sprites/spr_sonic_skid/spr_sonic_skid.yy",},
     {"name":"sfx_UnderwaterChime","order":33,"path":"sounds/sfx_UnderwaterChime/sfx_UnderwaterChime.yy",},
@@ -263,6 +263,7 @@
     {"name":"spr_supersonic_breathe","order":1,"path":"sprites/spr_supersonic_breathe/spr_supersonic_breathe.yy",},
     {"name":"spr_sonic_dash","order":1,"path":"sprites/spr_sonic_dash/spr_sonic_dash.yy",},
     {"name":"sfx_ssentry","order":28,"path":"sounds/sfx_ssentry/sfx_ssentry.yy",},
+    {"name":"_1","order":1,"path":"notes/_1/_1.yy",},
     {"name":"spr_mighty_duck","order":4,"path":"sprites/spr_mighty_duck/spr_mighty_duck.yy",},
     {"name":"spr_knux_actclear","order":19,"path":"sprites/spr_knux_actclear/spr_knux_actclear.yy",},
     {"name":"spr_Controller","order":6,"path":"sprites/spr_Controller/spr_Controller.yy",},

@@ -23,42 +23,8 @@ function setup_Game(){
 function setup_Game_Macros(){
 
 	// Global macros
-	#macro FONT			global
-	#macro SHADER		global
-	#macro GAMECAM		view_camera[0]
 	#macro TILE_SIZE	16
 	#macro TILE_COUNT	256
-	#macro LOG_TIME		180
-
-	// Audio macros
-	#macro AU_PRIMARY		0	// Primary mode used for most BGMs
-	#macro AU_SECONDARY		1	// Secondary mode used for 1-Ups
-	#macro AUEVENT_IDLE		0
-	#macro AUEVENT_MUTE		1
-	#macro AUEVENT_UNMUTE	2
-	#macro AUEVENT_STOP		3
-
-	// Palette macros. If you decide to change PAL_LIMIT, do the same with the value in ShaderMain.sfh
-	#macro PAL_LIMIT		64
-	#macro PAL_PRIMARY		0
-	#macro PAL_SECONDARY	1
-
-	// Fade macro
-	#macro FADESTATE_ACTIVE	1
-	#macro FADESTATE_MAX	2
-	#macro FADEMODE_INTO	0
-	#macro FADEMODE_FROM	1
-	#macro FADEBLEND_BLACK	0
-	#macro FADEBLEND_WHITE	1
-	#macro FADEBLEND_FLASH	2
-	
-	// Title card routine macro
-	#macro TCARD_INIT		0
-	#macro TCARD_ENTER		1
-	#macro TCARD_WAIT		2
-	#macro TCARD_FADEIN		3
-	#macro TCARD_LEAVE		4
-	#macro TCARD_FINISHED	5
 	
 	// Out-of-bounds Game Object macro
 	#macro OOB_PLAYER		-1
@@ -85,105 +51,6 @@ function setup_Game_Macros(){
 		BTN_B,
 		BTN_C,
 		START
-	}
-	
-	// Player mode indices
-	enum PLMODE{
-		SONIC,
-		TAILS,
-		KNUCKLES,
-		AMY,
-		MIGHTY,
-		RAY,
-		METAL,
-		TOTAL
-	}
-	
-	// Zone indices
-	enum ZONE{
-		GHZ,
-		TOTAL
-	}
-
-	// BGM indices
-	enum BGMs {
-		TITLE,
-		LEV_SELECT,
-		GHZ1,
-		GHZ2,
-		BOSS,
-		ACT_CLEAR,
-		INVINC,
-		EXTRA_LIFE,
-		TOTAL
-	}
-	
-	// SFX Indices
-	enum SFXs {
-		JUMP,				// Jumping
-		HURT,				// Hurt/Death
-		SKID,				// Skidding to a halt
-		ROLL,				// Rolling into a ball
-		SPINDASH_REV,		// Revving spindash (need to raise pitch)
-		SPINDASH_REL,		// Releasing spindash/SBZ Teleporter
-		PEELOUT_REV,		// Revving peelout / Metal Spindash
-		PEELOUT_REL,		// Releasing Peelout
-		DROPDASH_REV,		// Sonic Dropdash Revving
-		DROPDASH_REL,		// Sonic Dropdash Releasing
-		FLYING,				// Tails Flying
-		FLY_TIRED,			// Tails Tired of Flying
-		GLIDE_GRAB,			// Grabbing Walls, or Grabbing Tails
-		GLIDE_LAND,			// Knuckles landing from a glide
-		GLIDE_SLIDE,		// Knuckles sliding on the ground
-		
-		// Add Amy's sfx here
-		
-		HAMMER_DROP,		// Mighty's Hammer Drop
-		HAMMER_THUD,		// Mighty's Hammer Drop after landing
-		SHELL_DEFLECT,		// Mighty's shell deflecting projectiles
-		SHELL_SPIKED,		// Mighty uncurling when hitting spikes
-		RAY_DIVE,
-		RAY_SWOOP,
-		METAL_DASH,			// Taken from S1FEP (S1 Forever Expansion)
-		SPIKED,				// Death by Spikes
-		PUSH,				// Pushing blocks
-		SPLASH,				// Hit water surface
-		AIR_BUBBLE,			// Collect Air bubble
-		UW_CHIME,			// Underwater Alert Chime
-		DROWN,				// Drown underwater
-		INSTASHIELD,		// Sonic's Instashield
-		SHIELD_BLU,			// Blue Shield Get
-		SHIELD_FL,			// Flame Shield Get
-		SHIELD_FL2,			// Flame Shield Attack
-//		SHIELD_FL3,			// Flame Shield Dissipated
-		SHIELD_LT,			// Lightning Shield Get
-		SHIELD_LT2,			// Lightning Shield Attack
-		SHIELD_LT3,			// Lightning Shield Dissipate
-		SHIELD_BB,			// Bubble Shield Get
-		SHIELD_BB2,			// Bubble Shield Attack
-		RING_R,				// Ring, panned right
-		RING_L,				// Ring, panned left
-		RING_S,				// Ring, in stereo
-		LAMPPOST,			// Checkpoint
-		LAMPPOST_MEGA,		// Mega Checkpoint (Naean)
-		SPIKES_MOVE,		// Spikes moving up and down
-		SPRING,				// Spring being hit
-		SWITCH,				// Switch button being hit
-		CRUMBLING,			// Crumbling Cliffs and Blocks
-		BUMPER,				// Bumper
-		EXPLOSION,			// Monitor/Badnik Explosion
-		BIG_EXPLOSION,		// Boss/Bomb Explosion
-		BOSS_HIT,			// Boss hit
-		SIGNPOST,			// End of Act Signpost
-		HIDDEN_PTS,			// Hidden Point Flag
-		SCORE_TALLY,		// Cha-Ching Score Tally
-		RING_LOSS,			// Scattered Rings
-		GIANT_RING,			// Giant Ring
-		RED_RING,			// Red Ring
-		CONTINUE,			// Continue Jingle
-		ACHIEVEMENT,		// Achievement Unlocked
-		ERROR,				// Error sound
-		TOTAL
 	}
 }
 function setup_Game_DebugMode(){
