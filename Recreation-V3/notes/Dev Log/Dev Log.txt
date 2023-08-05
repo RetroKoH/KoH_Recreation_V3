@@ -1,0 +1,6 @@
+Engine stripped down to only the parts essential for the following:
+	Input handler
+	Sonic and his animations
+	A small level with space for a few chunks
+	The chunk builder
+	Relevant Macros

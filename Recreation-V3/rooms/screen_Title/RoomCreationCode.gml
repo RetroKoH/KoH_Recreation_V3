@@ -1,1 +1,0 @@
-instance_create_layer(global.win_width / 2, 128, "Instances", obj_Title);

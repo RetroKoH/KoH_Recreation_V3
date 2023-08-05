@@ -2,31 +2,17 @@ function setup_Game(){
 	setup_Game_Macros();
 	global.game_start = false;
 
-	globalvar cPLAYER, cDEBUG, cPAL, cRENDER, cBKG, cCAMERA, cAUDIO, cINPUT;
+	globalvar cPLAYER, cINPUT;
 	cPLAYER		= noone;
-	cDEBUG		= instance_create_layer(0, -64, "Core", core_Debug);
-	cPAL		= instance_create_layer(0, -64, "Core", core_Palette);
-	cRENDER		= instance_create_layer(0, -64, "Core", core_Renderer);
-	cBKG		= instance_create_layer(0, -64, "Core", core_Background);
-	cCAMERA		= instance_create_layer(0, -64, "Core", core_Camera);
-	cAUDIO		= instance_create_layer(0, -64, "Core", core_Audio);
 	cINPUT		= instance_create_layer(0, -64, "Core", core_Input);
 	
 	setup_Game_DebugMode();
 	setup_Game_KeyMap();
-	setup_Game_Screen();			// Credit to Orbinaut Framework
 	setup_Game_Collision();			// Uses the same S1 Collision system. Optimized reading credited to Orbinaut Framework
-	setup_Game_Audio();
-	setup_Game_Shaders();			// Credit to Orbinaut Framework
-	setup_Game_OptionsMenu();		// Partial Credit to Orbinaut Framework
-
-	setup_Game_TitleCards();
 	setup_Game_Animations();		// My Recreation Animation system. Execution slightly cleaned up thx to Orbinaut.
 	setup_Game_OscValues();
 	setup_Game_SyncAnimTimers();
 	setup_Game_GameVars();
-	
-	instance_create_layer(room_width/2, room_height/2, "Instances", obj_Splash);
 
 	// End of setup
 	random_set_seed(randomise());
@@ -205,12 +191,6 @@ function setup_Game_DebugMode(){
 	global.showsplash = true;	// Flag for showing splash screens
 	global.debuglog = "";		// Debug messages will go here
 	global.debuglog_timer = 0;	// Timer to remove the oldest message
-	
-	FONT.Debug		= font_add_sprite(spr_MenuFont, ord("!"), false, 0);				// Font used for debug elements
-	FONT.Menu		= FONT.Debug;														// Used in Options Menu
-	FONT.TitleCard	= font_add_sprite(spr_CardFont, ord("A"), true, 1);					// Used for Title Cards
-	FONT.HUDNum		= font_add_sprite_ext(spr_HUDNumbers, "0123456789:';", false, 1);	// Used for HUD Timer
-	FONT.LivesNum	= font_add_sprite_ext(spr_LivesNumbers, "0123456789", false, 1);	// Used for HUD Lives
 }
 function setup_Game_KeyMap(){
 	#region KeyIndex
@@ -319,9 +299,7 @@ function setup_Game_KeyMap(){
 	#endregion
 
 	// If the controls file doesn't exist, it'll be created automatically here
-	if !file_exists("settings.ini") gfunc_debug_log_add("Settings File Not Found. A new one will be created.");
 	ini_open("settings.ini");
-	gfunc_debug_log_add("Controls Loaded from: " + "settings.ini");
 	
 	// Initialize defaults if need be.
 	if !ini_section_exists("Controls")
@@ -335,7 +313,6 @@ function setup_Game_KeyMap(){
 		ini_write_real("Controls", "KEY_C",		ord("D"));
 		ini_write_real("Controls", "KEY_START",	vk_enter);
 		ini_write_real("Controls", "KEY_DEBUG",	vk_shift);
-		gfunc_debug_log_add("Default Controls Initialized");
 	}
 
 	// Keymapping (Defaults will be set if file is present but values are missing
@@ -347,37 +324,7 @@ function setup_Game_KeyMap(){
 	global.keymap[KEYMAP.BTN_B]=ini_read_real("Controls", "KEY_B", ord("S"));
 	global.keymap[KEYMAP.BTN_C]=ini_read_real("Controls", "KEY_C", ord("D"));
 	global.keymap[KEYMAP.START]=ini_read_real("Controls", "KEY_START", vk_enter);
-	gfunc_debug_log_add("Keymapping Complete");
 	ini_close();
-}
-function setup_Game_Screen(){
-	global.win_title = "Recreation Engine";
-	global.win_width = 424;
-	global.win_height = 240;
-	global.win_size = 2;
-	global.scrn_buffer = 8;				// Orbinaut sets this to 8 for some reason.
-	global.win_start_full = false;		// Flag to start in fullscreen mode
-	
-	// To be used w/ configurable width and height values.
-	if (global.win_width / 2) mod 2 or (global.win_height / 2) mod 2 != 0
-		show_message("UNSUPPORTED RESOLUTION! \nHalved width or height isn't an even value. You may experience some issues because of that");
-
-	// Update application and camera size to game resolution
-	gfunc_app_set_size(global.win_width, global.win_height);
-	
-	// Set window properties
-	var Width  = global.win_width  * global.win_size;
-	var Height = global.win_height * global.win_size;	
-	
-	window_set_position( (display_get_width() - Width) / 2, (display_get_height() - Height) / 2 );
-	window_set_size(Width, Height);
-	
-	window_set_fullscreen(global.win_start_full);
-	window_set_caption(global.win_title);
-	
-	// ...and apply some GPU magic that will increase game speed!
-	gpu_set_alphatestenable(true);
-	gpu_set_alphatestref(0);
 }
 function setup_Game_Collision(){
 	global.map_id = array_create(2, -1);
@@ -419,193 +366,9 @@ function setup_Game_Collision(){
 		file_bin_close(file);
 	}
 }
-function setup_Game_Audio(){
-	
-	// Default settings
-	global.volume_bgm		= 0.5;	// Background music
-	global.volume_sfx		= 0.5;	// Sound Effects
-	global.volume_amb		= 0.5;	// Ambient Noise
-	global.ring_panning		= true;	// Ring sounds pan left and right if true. Stereo if false.
-	// Sound Test values are stored in the Options Menu object
-	
-	// Database of BGM tracks and loop data
-	// All BGM tracks are OGG, with 4 seconds of audio after the end of the loop, to ensure smooth looping.
-	//( FORMERLY: )
-	// All BGM tracks are Stereo, signed 16-bit PCM encoded, 44100Hz WAV audio exported from Audacity.
-	// Files contain 4 seconds of audio after the end of the loop, to ensure smooth looping.
-	global.BGM_list = [];
-	
-	setup_Sound_BGM(bgm_Title,		"Title",			AU_PRIMARY,		-1);
-	setup_Sound_BGM(bgm_LevSel,		"Level Select",		AU_PRIMARY,		0,		38.396);	// Maybe adjust loop_end
-	setup_Sound_BGM(bgm_GHZ1,		"GHZ Act 1",		AU_PRIMARY,		14.404,	52.804);
-	setup_Sound_BGM(bgm_GHZ2,		"GHZ Act 2",		AU_PRIMARY,		14.414,	52.812);
-	setup_Sound_BGM(bgm_Boss,		"Boss",				AU_PRIMARY,		0,		21.333);
-	setup_Sound_BGM(bgm_ActClear,	"Act Clear",		AU_PRIMARY,		-1);
-	setup_Sound_BGM(bgm_Invinc,		"Invincibility",	AU_PRIMARY,		0.916,	11.883);
-	setup_Sound_BGM(bgm_1up,		"1-Up Jingle",		AU_SECONDARY,	-1);
-
-// This array will only be used for the Sound Test
-	global.SFX_list = [];
-	setup_Sound_SFX(sfx_Jump,						"Jump");
-	setup_Sound_SFX(sfx_Hurt,						"Hurt");
-	setup_Sound_SFX(sfx_Skid,						"Skid");
-	setup_Sound_SFX(sfx_Roll,						"Roll");
-	setup_Sound_SFX(sfx_SpindashRev,				"Spindash Rev");
-	setup_Sound_SFX(sfx_SpindashRelease,			"Spindash Release");
-	setup_Sound_SFX(sfx_PeeloutCharge,				"Peelout Charge");
-	setup_Sound_SFX(sfx_PeeloutRelease,				"Peelout Release");
-	setup_Sound_SFX(sfx_DropdashRev,				"Spindash Rev");
-	setup_Sound_SFX(sfx_DropdashRelease,			"Spindash Release");
-	setup_Sound_SFX(sfx_TailsFlying,				"Flying");
-	setup_Sound_SFX(sfx_TailsFlyTired,				"Flying Tired");
-	setup_Sound_SFX(sfx_Grab,						"Grabbing");
-	setup_Sound_SFX(sfx_KnuxLand,					"Land From Glide");
-	setup_Sound_SFX(sfx_KnuxSlide,					"Slide From Glide");
-	setup_Sound_SFX(sfx_MightyDrop,					"Hammer Drop");
-	setup_Sound_SFX(sfx_MightyLand,					"Hammer Drop Impact");
-	setup_Sound_SFX(sfx_MightyDeflect,				"Shell Deflection");
-	setup_Sound_SFX(sfx_MightyUnspin,				"Spike Uncurling");
-	setup_Sound_SFX(sfx_RayDive,					"Air Glide Dive");
-	setup_Sound_SFX(sfx_RaySwoop,					"Air Glide Swoop");
-	setup_Sound_SFX(sfx_MetalDash,					"Metal Air Dash");
-	setup_Sound_SFX(sfx_HitSpikes,					"Hurt by Spikes");
-	setup_Sound_SFX(sfx_PushBlock,					"Push Blocks");
-	setup_Sound_SFX(sfx_WaterSplash,				"Water Splash");
-	setup_Sound_SFX(sfx_AirBubble,					"Air Bubble");
-	setup_Sound_SFX(sfx_UnderwaterChime,			"Underwater Chime");
-	setup_Sound_SFX(sfx_Drown,						"Drowning");
-	setup_Sound_SFX(sfx_Instashield,				"Instashield");
-	setup_Sound_SFX(sfx_ShieldBlue,					"Blue Shield");
-	setup_Sound_SFX(sfx_ShieldFlame,				"Flame Shield");
-	setup_Sound_SFX(sfx_ShieldFlameDash,			"Flame Shield Dash");
-//	setup_Sound_SFX(sfx_ShieldFlameDissipate,		"Flame Shield Dissipate");
-	setup_Sound_SFX(sfx_ShieldLightning,			"Lightning Shield");
-	setup_Sound_SFX(sfx_ShieldLightningJump,		"Lightning Shield Jump");
-	setup_Sound_SFX(sfx_ShieldLightningDissipate,	"Lightning Shield Dissipate");
-	setup_Sound_SFX(sfx_ShieldBubble,				"Bubble Shield");
-	setup_Sound_SFX(sfx_ShieldBubbleBounce,			"Bubble Shield Bounce");
-	setup_Sound_SFX(sfx_RingRight,					"Ring (Right)");
-	setup_Sound_SFX(sfx_RingLeft,					"Ring (Left)");
-	setup_Sound_SFX(sfx_RingBox,					"Ring (Stereo)");
-	setup_Sound_SFX(sfx_Lamppost,					"Lamppost");
-	setup_Sound_SFX(sfx_LamppostMega,				"Mega Lamppost");
-	setup_Sound_SFX(sfx_SpikesMove,					"Spikes Moving");
-	setup_Sound_SFX(sfx_Spring,						"Spring Hit");
-	setup_Sound_SFX(sfx_Switch,						"Switch Button Hit");
-	setup_Sound_SFX(sfx_CrumblingLedge,				"Crumbling Ledge");
-	setup_Sound_SFX(sfx_Bumper,						"Bumper");
-	setup_Sound_SFX(sfx_BreakOpen,					"Small Explosion");
-	setup_Sound_SFX(sfx_BigExplosion,				"Big Explosion");
-	setup_Sound_SFX(sfx_BossHit,					"Boss Hit");
-	setup_Sound_SFX(sfx_Signpost,					"Signpost");
-	setup_Sound_SFX(sfx_HiddenPts,					"Hidden Points Flag");
-	setup_Sound_SFX(sfx_EndTally,					"End-of-Level Score Tally");
-	setup_Sound_SFX(sfx_RingLoss,					"Scattered Rings");
-	setup_Sound_SFX(sfx_GiantRing,					"Giant Ring");
-	setup_Sound_SFX(sfx_RedRing,					"Red Ring");
-	setup_Sound_SFX(sfx_Continue,					"Continue Jingle");
-	setup_Sound_SFX(sfx_Achievement,				"Achievement");
-	setup_Sound_SFX(sfx_Error,						"Error");
-}
-function setup_Game_Shaders(){
-	// Setup fade module
-	SHADER.pal_fade_step	= shader_get_uniform(sh_Fade, "u_step");
-	SHADER.pal_fade_mode	= shader_get_uniform(sh_Fade, "u_mode");
-	SHADER.pal_fade_color	= shader_get_uniform(sh_Fade, "u_colour");
-
-	// Setup palette module
-	SHADER.pal_bound		= shader_get_uniform(sh_Palette,		"u_bound");
-	SHADER.pal_tex_size_1	= shader_get_uniform(sh_Palette,		"u_texSizeFst");
-	SHADER.pal_UVs_1		= shader_get_uniform(sh_Palette,		"u_UVsFst");
-	SHADER.pal_index_1		= shader_get_uniform(sh_Palette,		"u_indFst");
-	SHADER.pal_tex_1		= shader_get_sampler_index(sh_Palette,	"u_texFst");
-	SHADER.pal_tex_size_2	= shader_get_uniform(sh_Palette,		"u_texSizeSnd");
-	SHADER.pal_UVs_2		= shader_get_uniform(sh_Palette,		"u_UVsSnd");
-	SHADER.pal_index_2		= shader_get_uniform(sh_Palette,		"u_indSnd");
-	SHADER.pal_tex_2		= shader_get_sampler_index(sh_Palette,	"u_texSnd");
-
-	// Setup parallax module
-	SHADER.prl_active		= shader_get_uniform(sh_Palette, "u_parallaxActive");
-	SHADER.prl_pos			= shader_get_uniform(sh_Palette, "u_pos");
-	SHADER.prl_width		= shader_get_uniform(sh_Palette, "u_width");
-	SHADER.prl_height		= shader_get_uniform(sh_Palette, "u_height");
-	SHADER.prl_scaleY		= shader_get_uniform(sh_Palette, "u_scaleY");
-	SHADER.prl_offset		= shader_get_uniform(sh_Palette, "u_offset");
-	SHADER.prl_inc_height	= shader_get_uniform(sh_Palette, "u_ilHeight");
-	SHADER.prl_inc_step		= shader_get_uniform(sh_Palette, "u_ilStep");
-	SHADER.prl_map_size		= shader_get_uniform(sh_Palette, "u_mapSize");
-}
-function setup_Game_OptionsMenu(){
-	global.str_sections = [
-		"GAMEPLAY",		// Gameplay settings
-		"CONTROLS",		// Control keymapping
-		"VIDEO",		// Video/Screen settings
-		"AUDIO",		// Sound Test and settings
-		"ANIMATIONS",	// Animation Viewer
-		"TILESETS"		// Tileset (& Collision) Viewer
-	];
-
-	global.str_opt_gameplay = [
-		"PLAYER CHARACTER",		// Sonic, Tails, Knuckles, Amy, Mighty, Ray, Metal
-		"SONIC ABILITIES",		// S1, S2, SCD, S3K, Mania, Ultimate
-		"TAILS FLIGHT CANCEL",	// On/Off
-		"AMY PLAY STYLE",		// S1, Origins, Pink Edition
-		"SHIELD TYPE",			// Blue Shield, Elemental, or Both
-		"STAGE TRANSITIONS",	// If on, transitions are seamless.
-		"CD CAMERA",			// If on, screen scrolls horizontally at high speeds
-		"CD TIMER"				// Toggles milliseconds
-	]; global.opt_gameplay		= array_create(array_length(global.str_opt_gameplay));
-
-	global.str_opt_char		= ["SONIC", "TAILS", "KNUCKLES", "AMY", "MIGHTY", "RAY", "METAL SONIC"];
-	global.str_opt_abil		= ["SONIC 1", "SONIC 2", "SCD", "S3&K", "MANIA", "ALL"];
-	global.str_opt_amy		= ["S1", "ORIGINS", "ADVANCE"];
-	global.str_opt_shld		= ["BLUE", "ELEMENTAL", "COMBINED"];
-	global.str_opt_onoff	= ["OFF", "ON"];
-
-	global.str_opt_controls = [
-		"UP",
-		"DOWN",
-		"LEFT",
-		"RIGHT",
-		"BUTTON A",
-		"BUTTON B",
-		"BUTTON C",
-		"START"
-	]; // Opt controls is already located above at keymap.
-
-	global.str_opt_video = [
-		"FULLSCREEN",
-		"WINDOW SIZE",
-		"RESOLUTION"
-	];
-
-	global.str_opt_audio = [
-		"MUSIC VOLUME",
-		"SOUND VOLUME",
-		"AMBIENT VOLUME",
-		"RING PANNING",
-		"PLAY BGM",
-		"PLAY SFX"
-	];
-}
-function setup_Game_TitleCards(){
-	global.TtlCard_ConData = array_create(ZONE.TOTAL);
-	global.TtlCard_ItemY = [80, 100, 102, 76]; // Zone name, ZONE, Act X, Oval
-	
-	global.TtlCard_ConData[ZONE.GHZ] = {
-		zone_name	: "GREEN HILL",
-		name_mainx	:	 136,
-		zone_mainx	:	 208,
-		acts_mainx	:	 244,
-		oval_mainx	:	 236
-	}
-}
 function setup_Game_Animations(){
 	global.AnimsIndex = [];	// Every script below pushes an animation into this index
-	animtable_PLAYERS();
-	animtable_TITLESONIC();
-	animtable_BADNIKS();
-	animtable_RINGS();
+	animtable_SONIC();
 }
 function setup_Game_OscValues(){
 	global.osc_active = false;
