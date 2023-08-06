@@ -1,4 +1,4 @@
-function ctrl_Player_MoveGround(){
+function ctrl_Player_MoveGround() {
 	var _dir = (cINPUT.k_r_h - cINPUT.k_l_h);	// Movement based on directional input.
 
 	// Movement
@@ -32,6 +32,7 @@ function ctrl_Player_MoveGround(){
 				}
 			}
 		}
+
 		// Moving right
 		else if (_dir == 1) {	
 			if (inertia < 0)	// If moving left?
@@ -61,6 +62,7 @@ function ctrl_Player_MoveGround(){
 				}
 			}
 		}
+
 		// If Sonic is on Floor angles, and not moving
 		else if ((global.angle_data[angle].quadrant == COL_FLOOR) and inertia == 0) {
 			pushing = false;
@@ -88,7 +90,7 @@ function ctrl_Player_MoveGround(){
 
 	// Friction (Formula per Sonic Retro Physics Guide)
 	if (_dir == 0)
-		inertia -= min(abs(inertia),accel_run) * sign(inertia);
+		inertia -= min(abs(inertia), accel_run) * sign(inertia);
 
 	// Apply to x and y speeds using the acquired inertia.
 	xsp = inertia *  global.angle_data[angle].cosine;

@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "gfunc_gobj_apply_speed",
+  "name": "ctrl_Player_LevelBound",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Game Functions",
-    "path": "folders/Scripts/Game Functions.yy",
+    "name": "Control",
+    "path": "folders/Game Objects/Player/Control.yy",
   },
 }
