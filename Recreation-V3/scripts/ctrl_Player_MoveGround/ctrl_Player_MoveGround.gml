@@ -1,8 +1,7 @@
 function ctrl_Player_MoveGround() {
-	var _dir = (cINPUT.k_r_h - cINPUT.k_l_h);	// Movement based on directional input.
-
-	// Movement
 	if !move_lock {
+		var _dir = (cINPUT.k_r_h - cINPUT.k_l_h);	// Movement based on directional input.
+
 		// Moving left
 		if (_dir == -1)	{
 			if (inertia > 0)	// If moving right?

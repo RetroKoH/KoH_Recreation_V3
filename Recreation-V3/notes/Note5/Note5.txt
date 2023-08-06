@@ -1,3 +1,0 @@
-Speed Application is now enabled for all control modes, even though only one mode is currently accessible.
-
-The player is now confined within the left and right borders of the room, within 16 pixels.

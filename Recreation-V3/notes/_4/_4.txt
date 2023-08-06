@@ -1,0 +1,29 @@
+Speed Application is now enabled for all control modes, even though only one mode is currently accessible.
+The player is now confined within the left and right borders of the room, within 16 pixels.
+
+Rolling has been added, and it works slightly differently to running. First, you cannot actively accelerate.
+Secondly, the speeds that are applied are also different:
+
+Running:
+accel_speed		0.046875
+decel_speed		0.5
+friction_speed	0.046875
+top_speed		6
+
+Rolling:
+decel_speed		0.125		(Friction is applied WITH deceleration while rolling)
+friction_speed	0.0234375	(Hardcoded to be half of the running friction speed)
+
+Top Speed
+X Speed is capped at 16 while rolling. Inertia and Y Speed are NOT capped, though the angle is adjusted with
+proper floor collision, so the player is never misaligned.
+
+Starting a roll (S&K Behavior):
+the Player can't begin to roll unless absolute inertia is greater than or equal to 1, in order to crouch
+while their absolute inertia is below 1, so they can Spindash without needing to come to a full stop.
+
+To combat the anomaly associated with turning around while rolling, the Player unrolls if absolute inertia
+falls below 0.5. If inertia happens to be 0 when they try to initiate a roll, (S-Tunnels, etc), inertia
+will be set to 2, in the direction that the player was last moving in.
+
+Rolling Jump behavior has been removed, as mentioned in Note _3.
