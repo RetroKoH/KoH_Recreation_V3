@@ -18,7 +18,8 @@ function ctrl_Sonic_Normal() {
 	ctrl_Player_Roll();					// Check for starting a roll.
 	ctrl_Player_LevelBound();			// Interact with screen boundaries.
 	gfunc_gameobj_apply_speed(false);	// Apply speed without gravity.
-//	ctrl_Player_AnglePos();				// Floor collision and angle check occurs.
+	ctrl_Player_GroundCheckWalls();		// Wall collision.
+//	ctrl_Player_GroundCheckFloor();		// Floor collision and angle check.
 //	ctrl_Player_SlopeRepel();			// Push down slopes and fall from loops.
 }
 

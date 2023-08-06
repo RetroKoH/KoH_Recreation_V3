@@ -248,9 +248,41 @@ function setup_Game_Collision(){
 			angle		: _ang,
 			sine		: dsin(_ang),
 			cosine		: dcos(_ang),
-			quadrant	: floor(gfunc_wrap_angle((_ang + ((_ang >= 180) ? 1.40625 : 0)) + 43.59375) / 90)
+			quad_floor	: setup_Game_Quadrants(0, i),
+			quad_wall	: setup_Game_Quadrants(1, i)
 		}
 		global.angle_data[i] = _dat;
+	}
+}
+function setup_Game_Quadrants(_val, _ang){
+	// WALL MODES
+	if _val {
+		if _ang <= 31 or _ang >= 225		// 0-44; 316-360
+			return COL_FLOOR;
+
+		else if _ang >= 32 and _ang <= 96	// 45-135
+			return COL_WALL_R;
+
+		else if _ang >= 97 and _ang <= 159	// 136-224
+			return COL_CEILING;
+
+		else if _ang >= 160 and _ang <= 224	// 225-315
+			return COL_WALL_L;
+	}
+	
+	// FLOOR MODES
+	else {
+		if _ang <= 32 or _ang >= 224		// 0-45; 315-360
+			return COL_FLOOR;
+
+		else if _ang >= 33 and _ang <= 95	// 46-134
+			return COL_WALL_R;
+
+		else if _ang >= 96 and _ang <= 160	// 135-225
+			return COL_CEILING;
+
+		else if _ang >= 161 and _ang <= 223	// 226-314
+			return COL_WALL_L;
 	}
 }
 function setup_Game_Animations(){
@@ -281,3 +313,4 @@ function setup_Game_GameVars(){
 	for (var i = 0; i < 60; i++)
 		global.centiseconds[i] = floor(i / 3 * 5); //round(100*(i/60)); < Same result, except flooring instead of rounding
 }
+

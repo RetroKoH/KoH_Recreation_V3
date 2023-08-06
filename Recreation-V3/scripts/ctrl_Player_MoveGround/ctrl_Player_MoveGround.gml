@@ -7,7 +7,7 @@ function ctrl_Player_MoveGround() {
 			if (inertia > 0)	// If moving right?
 			{
 				inertia -= decel_run;	// Decelerate if moving right.
-				if (global.angle_data[angle].quadrant == COL_FLOOR) and inertia >= 4 {
+				if (global.angle_data[angle].quad_floor == COL_FLOOR) and inertia >= 4 {
 					// If character is on Floor angles, and inertia is at/above 4, skid.
 					if anim_ID != ANI_PLAYER.SKID {
 						anim_ID = ANI_PLAYER.SKID;
@@ -37,7 +37,7 @@ function ctrl_Player_MoveGround() {
 			if (inertia < 0)	// If moving left?
 			{
 				inertia += decel_run;	// Decelerate if moving left.
-				if (global.angle_data[angle].quadrant == COL_FLOOR) and inertia <= -4 {
+				if (global.angle_data[angle].quad_floor == COL_FLOOR) and inertia <= -4 {
 					// If character is on Floor angles, and inertia is at/above 4, skid.
 					if anim_ID != ANI_PLAYER.SKID {
 						anim_ID = ANI_PLAYER.SKID;
@@ -63,7 +63,7 @@ function ctrl_Player_MoveGround() {
 		}
 
 		// If Sonic is on Floor angles, and not moving
-		else if ((global.angle_data[angle].quadrant == COL_FLOOR) and inertia == 0) {
+		else if ((global.angle_data[angle].quad_floor == COL_FLOOR) and inertia == 0) {
 			pushing = false;
 			anim_ID = ANI_PLAYER.IDLE;
 

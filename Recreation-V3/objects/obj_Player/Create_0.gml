@@ -22,6 +22,7 @@ in_water	= false;
 
 ctrl_Player_SetSpeeds();
 
+col_layer	= 0;
 move_lock	= false;
 forced_roll	= false;
 control		= ctrl_Sonic;

@@ -1,0 +1,34 @@
+Functionality has been added to make Sonic push against walls when running. Unlike my previous engine,
+this function not called as part of the CheckFloor function, found in: ctrl_Player_GroundCheckWalls.
+
+The function takes elements from my previous implementation, as well as that of Orbinaut Framework. To that
+end, I noticed that quadrants for wall pushing is SLIGHTLY different than quadrants for floor collision,
+and to that end, I seem to have floor quadrants slightly incorrect as well. Here are the sets of quadrants
+according to the Physics Guide:
+
+Ground Sensor Mode		Angle Range
+Floor Mode				0° (255) to 45° (224)
+						and mirrored: 315° (32) to 360° (0)
+Right Wall Mode			46° (223) to 134° (161)
+Ceiling Mode			135° (160) to 225° (96)
+Left Wall Mode			226° (95) to 314° (33)
+
+Push Sensor Mode		Angle Range
+Floor Mode				0° (255) to 44° (225)
+						and mirrored: 316° (31) to 360° (0)
+Right Wall Mode			45° (224) to 135° (160)
+Ceiling Mode			136° (159) to 224° (97)
+Left Wall Mode			225° (96) to 315° (32)
+
+This function provides Sonic with Push Sensors E and F, and these sensors work as follows:
+
+Push Sensors E and F only activate when the Player is walking left or right, respectively. However this is
+not always the case, as they aren't active when the Player's Ground Angle is outside of a 0 to 90 and
+270 to 360 degree range, meaning when you running around a loop, the Push Sensors will vanish for the
+top half of the loop. In S3K however, Push Sensors will also appear when the angle is a multiple of 90°,
+in addition to the normal angle ranges. This engine emulates the S3K behavior.
+
+The anchors of the push sensors are located at x +/- width. on this note, here are Sonic's radii:
+When standing, Sonic's width is 9 and height is 19($13), resulting in 19 pixels wide and 39 pixels tall.
+When spinning, his width is 7 and his height is 14($E), resulting in 15 pixels wide and 29 pixels tall.
+
