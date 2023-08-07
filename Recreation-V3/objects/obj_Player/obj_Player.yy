@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Player",
-    "path": "folders/Game Objects/Player.yy",
+    "name": "Recreation-V3",
+    "path": "Recreation-V3.yyp",
   },
   "parentObjectId": null,
   "persistent": false,
