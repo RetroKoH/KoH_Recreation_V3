@@ -1,12 +1,14 @@
 {
   "FolderOrderSettings": [
     {"name":"Collision","order":2,"path":"folders/Collision.yy",},
+    {"name":"Dev Log","order":9,"path":"folders/Dev Log.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"scr_setup_collision","order":3,"path":"scripts/scr_setup_collision/scr_setup_collision.yy",},
     {"name":"spr_sonic_idle","order":7,"path":"sprites/spr_sonic_idle/spr_sonic_idle.yy",},
+    {"name":"spr_col_maps","order":2,"path":"sprites/spr_col_maps/spr_col_maps.yy",},
     {"name":"stage_Test","order":5,"path":"rooms/stage_Test/stage_Test.yy",},
-    {"name":"til_collision","order":3,"path":"tilesets/til_collision/til_collision.yy",},
+    {"name":"til_collision","order":1,"path":"tilesets/til_collision/til_collision.yy",},
     {"name":"obj_Player","order":6,"path":"objects/obj_Player/obj_Player.yy",},
-    {"name":"spr_collision","order":2,"path":"sprites/spr_collision/spr_collision.yy",},
   ],
 }

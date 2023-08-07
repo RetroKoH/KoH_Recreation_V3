@@ -12,6 +12,7 @@
   "defaultScriptType": 1,
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Collision","folderPath":"folders/Collision.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dev Log","folderPath":"folders/Dev Log.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -24,10 +25,13 @@
     "IDEVersion": "2023.6.0.89",
   },
   "resources": [
+    {"id":{"name":"scr_setup_collision","path":"scripts/scr_setup_collision/scr_setup_collision.yy",},},
     {"id":{"name":"spr_sonic_idle","path":"sprites/spr_sonic_idle/spr_sonic_idle.yy",},},
+    {"id":{"name":"spr_col_maps","path":"sprites/spr_col_maps/spr_col_maps.yy",},},
     {"id":{"name":"stage_Test","path":"rooms/stage_Test/stage_Test.yy",},},
     {"id":{"name":"til_collision","path":"tilesets/til_collision/til_collision.yy",},},
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
+    {"id":{"name":"_0","path":"notes/_0/_0.yy",},},
     {"id":{"name":"spr_collision","path":"sprites/spr_collision/spr_collision.yy",},},
   ],
   "RoomOrderNodes": [
