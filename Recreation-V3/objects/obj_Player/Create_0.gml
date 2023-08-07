@@ -7,9 +7,10 @@ y_spd		= 0;			// The speed at which the object is moving vertically.
 inertia		= 0;			// The speed at which the object is moving on the ground.
 angle		= 0;			// The object's angle, or angle on the ground.
 
+// Tile collision
 width		= WIDTH_MAIN;	// The object's width from the origin pixel, left and right.
 height		= HEIGHT_MAIN;	// ($13) The object's height from the origin pixel, up and down.
 height_def	= height;		// Default height used for transitioning to and from ball form.
 
-hit_width	= 8;
-hit_height	= height - 3;
+// Object Collision (X1, Y1, X2, Y2)
+hitbox		= [floor(x_pos - 8), floor(y_pos - height + 3), floor(x_pos + 8), floor(y_pos + height - 3)]

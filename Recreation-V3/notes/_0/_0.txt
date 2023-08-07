@@ -1,0 +1,36 @@
+x_pos		The X-coordinate of the object's centre.
+y_pos		The Y-coordinate of the object's centre.
+x_spd		The speed at which the object is moving horizontally.
+y_spd		The speed at which the object is moving vertically.
+inertia		The speed at which the object is moving on the ground.
+angle		The object's angle, or angle on the ground.
+width		The object's width from the origin pixel, left and right.
+height		The object's height from the origin pixel, up and down.
+
+Two values define size for tile collision. width and height.
+
+Any object/tile collision typically only concerns itself with any object's whole pixel position,
+ignoring any subpixel amount. Collision calculations can just use a floored position instead of
+the real position.
+
+Collision tile data uses angles in hex, 0 through 255, meaning that there are only 256 divisions
+of a circle, not 360. In addition, there are no fractional angles between these values.
+
+Each angle value (0-255) in this engine is equivalent to angle * 360/256 (angle * 1.40625).
+Sines, Cosines, and Collision modes are precalculated into a table for the angles.
+
+Tile Collision Radii
+For all characters, their Push Radius is always 10.
+When standing, Sonic's Width Radius is 9 and his Height Radius is 19
+	resulting in 19 pixels wide and 39 pixels tall.
+When spinning, his Width Radius is 7 and his Height Radius is 14
+	resulting in 15 pixels wide and 29 pixels tall.
+
+Object Hitbox Radii (Stored in array hitbox[])
+Sonic's object hitbox has an Object Width of 8.
+The Object Height is always 3 pixels shorter than the tile height radius, updated regularly.
+Sonic's Y Position and Height Radius don't change while crouching. So the game manually updates
+the hitbox's size and position while Sonic crouches, where 12 pixels is added to the hitbox's
+Y position, and the hitbox's height radius is set to 10. 
+
+Changes to these hitboxes are not yet implemented.
