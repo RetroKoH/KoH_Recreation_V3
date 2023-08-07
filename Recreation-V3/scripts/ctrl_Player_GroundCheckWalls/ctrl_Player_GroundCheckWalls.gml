@@ -79,6 +79,7 @@ function ctrl_Player_GroundCheckWalls(){
 				var _dist = gfunc_gameobj_find_tile(x + width, y + sen_y, col_layer, 1, _quadrant, true)[0];
 				if  _dist < 0
 				{	
+					// Push player to the left
 					x		+= _dist;
 					xsp		= 0;
 					inertia	= 0;
