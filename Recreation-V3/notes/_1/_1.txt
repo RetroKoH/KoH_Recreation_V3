@@ -1,0 +1,18 @@
+Each Solid Tile has a corresponding array of 16 height values ranging from 0 to 16 pixels, inclusive.
+They also have a width array for horizontal collisions, used when a horizontal sensor is checks the tile.
+
+Each height value determines a pixel height from the bottom of the tile to the top.
+Negative height values determine a height from the top of the tile to the bottom.
+
+Each width value determines a pixel width from the right side of the tile to the left.
+Negative width values determine a width from the left side of the tile to the right.
+
+Solid Tiles contain a value which represents the angle of the slope that the Height Array creates.
+If the angle value of the tile is 255, it is a flagged tile. Player objects will not set their
+angle to the tile's angle, instead setting the angle to the Player's current angle snapped to the
+nearest cardinal angle (0, 90, 180, or 270 degrees):
+snapped_angle = (round(angle / 90) mod 4) * 90;
+This flag applies commonly to full Block Solid Tiles (filled squares).
+
+Some tiles are top-solid only, while others are fully solid. More will be added to this engine later.
+

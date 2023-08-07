@@ -13,4 +13,4 @@ height		= HEIGHT_MAIN;	// ($13) The object's height from the origin pixel, up an
 height_def	= height;		// Default height used for transitioning to and from ball form.
 
 // Object Collision (X1, Y1, X2, Y2)
-hitbox		= [floor(x_pos - 8), floor(y_pos - height + 3), floor(x_pos + 8), floor(y_pos + height - 3)]
+hitbox		= [floor(x - 8), floor(y - height + 3), floor(x + 8), floor(y + height - 3)]
