@@ -22,8 +22,8 @@ draw_sprite_ext(spr_debug_line, 0, x, y,  10,1,0, c_red,1);					// Sensor F
 draw_sprite(spr_debug_line, 0, x+10, y);
 
 // Object Collision Hitbox
-var _c = c_purple; draw_set_alpha(0.75);
-draw_rectangle_color(hitbox[0],hitbox[1],hitbox[2],hitbox[3],_c,_c,_c,_c,false);
-draw_set_alpha(1);
+//var _c = c_purple; draw_set_alpha(0.75);
+//draw_rectangle_color(hitbox[0],hitbox[1],hitbox[2],hitbox[3],_c,_c,_c,_c,false);
+//draw_set_alpha(1);
 
 draw_sprite(spr_debug_origin, 0, x, y);

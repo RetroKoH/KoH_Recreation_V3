@@ -2,10 +2,11 @@
 
 x_pos		= 0;			// The X-coordinate of the object's centre.
 y_pos		= 0;			// The Y-coordinate of the object's centre.
-x_spd		= 0;			// The speed at which the object is moving horizontally.
-y_spd		= 0;			// The speed at which the object is moving vertically.
+xsp			= 0;			// The speed at which the object is moving horizontally.
+ysp			= 0;			// The speed at which the object is moving vertically.
 inertia		= 0;			// The speed at which the object is moving on the ground.
 angle		= 0;			// The object's angle, or angle on the ground.
+col_layer	= 0;
 
 // Tile collision
 width		= WIDTH_MAIN;	// The object's width from the origin pixel, left and right.

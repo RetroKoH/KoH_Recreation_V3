@@ -2,10 +2,12 @@
   "FolderOrderSettings": [
     {"name":"Collision","order":2,"path":"folders/Collision.yy",},
     {"name":"Dev Log","order":9,"path":"folders/Dev Log.yy",},
+    {"name":"Control","order":13,"path":"folders/Control.yy",},
+    {"name":"Game Functions","order":14,"path":"folders/Game Functions.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_debug_line","order":11,"path":"sprites/spr_debug_line/spr_debug_line.yy",},
-    {"name":"scr_setup_collision","order":3,"path":"scripts/scr_setup_collision/scr_setup_collision.yy",},
+    {"name":"setup_Collision","order":3,"path":"scripts/setup_Collision/setup_Collision.yy",},
     {"name":"spr_sonic_idle","order":7,"path":"sprites/spr_sonic_idle/spr_sonic_idle.yy",},
     {"name":"Sprite6","order":12,"path":"sprites/Sprite6/Sprite6.yy",},
     {"name":"spr_debug_origin","order":10,"path":"sprites/spr_debug_origin/spr_debug_origin.yy",},
@@ -14,5 +16,6 @@
     {"name":"til_collision","order":1,"path":"tilesets/til_collision/til_collision.yy",},
     {"name":"obj_Player","order":6,"path":"objects/obj_Player/obj_Player.yy",},
     {"name":"_1","order":1,"path":"notes/_1/_1.yy",},
+    {"name":"gfunc_tile_get_data","order":1,"path":"scripts/gfunc_tile_get_data/gfunc_tile_get_data.yy",},
   ],
 }

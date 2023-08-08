@@ -1,5 +1,5 @@
-///@function scr_setup_collision
-function scr_setup_collision() {
+///@function setup_Collision
+function setup_Collision() {
 	#macro TILE_SIZE	16
 	#macro TILE_COUNT	256
 	

@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "scr_setup_collision",
+  "name": "ctrl_Player_GroundCheckWalls",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Collision",
-    "path": "folders/Collision.yy",
+    "name": "Control",
+    "path": "folders/Control.yy",
   },
 }
