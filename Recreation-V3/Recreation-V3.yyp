@@ -12,8 +12,8 @@
   "defaultScriptType": 1,
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Collision","folderPath":"folders/Collision.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dev Log","folderPath":"folders/Dev Log.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Control","folderPath":"folders/Control.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dev Log","folderPath":"folders/Dev Log.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Game Functions","folderPath":"folders/Game Functions.yy",},
   ],
   "IncludedFiles": [

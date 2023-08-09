@@ -9,23 +9,19 @@ function ctrl_Player_GroundCheckWalls() {
 	// Get collision quadrant
 	var _quadrant	= global.angle_data[angle].quad_wall;
 	var _dir		= sign(inertia);
-	var _x			= floor(x);
-	var _y			= floor(y);
+	var _x			= (x);
+	var _y			= (y);
 	
 	switch(_quadrant) {
 		case COL_FLOOR:
 		{
 			// Lower wall sensors by 8 pixels on a flat-ish floor
 			var _sen_y	= (_angle < 11.25 || _angle > 348.75) ? 8 : 0;
-			var _dist	= gfunc_gameobj_find_tile(_x + width * _dir, _y + _sen_y, col_layer, _dir, _quadrant, true)[0];
-						//gfunc_gameobj_find_tile(_x - width,        _y + _sen_y, col_layer,   -1, _quadrant, true)[0]; LEFT (dir = -1)
-						//gfunc_gameobj_find_tile(_x + width,        _y + _sen_y, col_layer,    1, _quadrant, true)[0]; RIGHT (dir = 1)
+			var _dist	= gfunc_gameobj_find_tile(_x + push * _dir, _y + _sen_y, col_layer, _dir, _quadrant, true)[0];
 			
 			if _dist < 0 {
 				// Push the player out of the wall.
-				x		+= _dist * _dir;	// left: x += _dist; right: x -= _dist
-				// x += -9 * -1 = x+=9 (LEFT)
-				// x += -9 * 1 = x-=9 (RIGHT)
+				x		+= _dist * _dir;
 				xsp		= 0;
 				inertia	= 0;
 			}
@@ -35,15 +31,10 @@ function ctrl_Player_GroundCheckWalls() {
 		
 		case COL_WALL_R:
 		{
-			var _dist	= gfunc_gameobj_find_tile(_x, _y - width * _dir, col_layer, -_dir, _quadrant, true)[0];
-						//gfunc_gameobj_find_tile(_x, _y + width,        col_layer,     1, _quadrant, true)[0]; LEFT (dir = -1)
-						//gfunc_gameobj_find_tile(_x, _y - width,        col_layer,    -1, _quadrant, true)[0]; RIGHT (dir = 1)
-			
+			var _dist	= gfunc_gameobj_find_tile(_x, _y - push * _dir, col_layer, -_dir, _quadrant, true)[0];
 			if _dist < 0 {
 				// Push the player out of the wall.
-				y		-= _dist * _dir;	// left: y += _dist; right: y -= _dist
-				// y -= -9 * -1 = y-=9 (LEFT)
-				// y -= -9 * 1 = y+=9 (RIGHT)
+				y		-= _dist * _dir;
 				ysp		= 0;
 				inertia	= 0;
 			}
@@ -52,15 +43,11 @@ function ctrl_Player_GroundCheckWalls() {
 		
 		case COL_CEILING:
 		{
-			var _dist	= gfunc_gameobj_find_tile(_x - width * _dir, _y, col_layer, -_dir, _quadrant, true)[0];
-						//gfunc_gameobj_find_tile(_x + width,        _y, col_layer,     1, _quadrant, true)[0]; LEFT (dir = -1)
-						//gfunc_gameobj_find_tile(_x - width,        _y, col_layer,    -1, _quadrant, true)[0]; RIGHT (dir = 1)
+			var _dist	= gfunc_gameobj_find_tile(_x - push * _dir, _y, col_layer, -_dir, _quadrant, true)[0];
 			
 			if _dist < 0 {
 				// Push the player out of the wall.
-				x		-= _dist * _dir;	// left: x += _dist; right: x += _dist
-				// x -= -9 * -1 = x-=9 (LEFT)
-				// x -= -9 * 1 = x+=9 (RIGHT)
+				x		-= _dist * _dir;
 				xsp		= 0;
 				inertia	= 0;
 			}
@@ -68,15 +55,11 @@ function ctrl_Player_GroundCheckWalls() {
 		break;
 		
 		case COL_WALL_L:
-			var _dist	= gfunc_gameobj_find_tile(_x, _y + width * _dir, col_layer, _dir, _quadrant, true)[0];
-						//gfunc_gameobj_find_tile(_x, _y - width,        col_layer,    -1, _quadrant, true)[0]; LEFT (dir = -1)
-						//gfunc_gameobj_find_tile(_x, _y + width,        col_layer,     1, _quadrant, true)[0]; RIGHT (dir = 1)
+			var _dist	= gfunc_gameobj_find_tile(_x, _y + push * _dir, col_layer, _dir, _quadrant, true)[0];
 				
 			if _dist < 0 {
 				// Push the player out of the wall.
-				y		+= _dist * _dir;	// left: y += _dist; right: y -= _dist
-				// y += -9 * -1 = y+=9 (LEFT)
-				// y += -9 * 1 = y-=9 (RIGHT)
+				y		+= _dist * _dir;
 				ysp		= 0;
 				inertia	= 0;
 			}

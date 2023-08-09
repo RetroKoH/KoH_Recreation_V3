@@ -57,9 +57,9 @@ function gfunc_gameobj_find_tile(_sensor_x, _sensor_y, _col_layer, _dir, _quadra
 	if (_index>=$100 && _full_solid)
 		return [32, noone];
 	
-	// Calculate distance to edge of the found tile??? I thought we had distance already?
+	// Calculate distance to edge of the found tile
 	var _dist;
-	
+
 	// L/R WALL MODE CHECK
 	if _quadrant mod 2 {
 		if _dir == 1

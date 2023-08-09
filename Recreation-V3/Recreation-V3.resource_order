@@ -1,8 +1,8 @@
 {
   "FolderOrderSettings": [
     {"name":"Collision","order":2,"path":"folders/Collision.yy",},
-    {"name":"Dev Log","order":9,"path":"folders/Dev Log.yy",},
     {"name":"Control","order":13,"path":"folders/Control.yy",},
+    {"name":"Dev Log","order":9,"path":"folders/Dev Log.yy",},
     {"name":"Game Functions","order":14,"path":"folders/Game Functions.yy",},
   ],
   "ResourceOrderSettings": [

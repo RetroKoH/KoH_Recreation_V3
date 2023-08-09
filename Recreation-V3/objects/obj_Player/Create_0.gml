@@ -10,6 +10,7 @@ col_layer	= 0;
 
 // Tile collision
 width		= WIDTH_MAIN;	// The object's width from the origin pixel, left and right.
+push		= WIDTH_MAIN+1;	// Object's push width. Always 10px.
 height		= HEIGHT_MAIN;	// ($13) The object's height from the origin pixel, up and down.
 height_def	= height;		// Default height used for transitioning to and from ball form.
 
