@@ -12,6 +12,11 @@ if (index > 0) {
 				line = 16 - 1 - line;
 
 		length = global.tile_heights[index&$FF][line];
+		
+		if dir == 1
+			dist = (mouse_y & -16) + (16 - length - 1) - mouse_y;
+		else
+			dist = mouse_y - ((mouse_y & -16) + (16 + length)) + 16;
 	}
 
 	// Walls
@@ -21,6 +26,11 @@ if (index > 0) {
 				line = 16 - 1 - line;
 	
 		length = global.tile_widths[index&$FF][line];
+		
+		if dir == 1
+			dist = (mouse_x & -16) + (16 - length - 1) - mouse_x;
+		else
+			dist = mouse_x - ((mouse_x & -16) + (16 + length)) + 16;
 	}
 }
 

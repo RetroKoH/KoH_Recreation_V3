@@ -1,20 +1,22 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Initialize object
 
 tile = 0;			// Tile drawn on screen
 index = 0;			// Index of detected tile (0 if not detected by mouse)
 line = 0;			// Line in which tile is being interacted with
 length = 0;			// Length at current tile
+dist = 0;			// Distance of cursor to/within the tile
 angle = global.tile_angles[tile];
 
 dir = 1;
 mode = COL_FLOOR;
+mirrored = false;
+flipped = false;
 
 tile_x = 9;
 tile_y = 6;
 
-mirrored = false;
-flipped = false;
+alpha = 1;
+osc_dir = -1;
 
 tilemap_set(global.map_id[0], tile, tile_x, tile_y);
 

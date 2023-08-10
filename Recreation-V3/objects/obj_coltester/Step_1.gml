@@ -41,3 +41,7 @@ if keyboard_check_pressed(vk_down) {
 	if mode > 3
 		mode = 0;
 }
+
+if mouse_check_button_pressed(mb_left) {
+	dir *= -1;
+}
