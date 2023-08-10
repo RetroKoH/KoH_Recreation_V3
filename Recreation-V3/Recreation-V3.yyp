@@ -42,6 +42,7 @@
     {"id":{"name":"_0","path":"notes/_0/_0.yy",},},
     {"id":{"name":"_1","path":"notes/_1/_1.yy",},},
     {"id":{"name":"gfunc_tile_get_data","path":"scripts/gfunc_tile_get_data/gfunc_tile_get_data.yy",},},
+    {"id":{"name":"spr_col_line","path":"sprites/spr_col_line/spr_col_line.yy",},},
     {"id":{"name":"ctrl_Player_GroundCheckWalls","path":"scripts/ctrl_Player_GroundCheckWalls/ctrl_Player_GroundCheckWalls.yy",},},
     {"id":{"name":"spr_collision","path":"sprites/spr_collision/spr_collision.yy",},},
   ],

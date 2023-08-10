@@ -18,5 +18,6 @@
     {"name":"til_collision","order":1,"path":"tilesets/til_collision/til_collision.yy",},
     {"name":"_1","order":1,"path":"notes/_1/_1.yy",},
     {"name":"gfunc_tile_get_data","order":1,"path":"scripts/gfunc_tile_get_data/gfunc_tile_get_data.yy",},
+    {"name":"spr_col_line","order":4,"path":"sprites/spr_col_line/spr_col_line.yy",},
   ],
 }
