@@ -16,7 +16,7 @@ if (index > 0) {
 		if dir == 1
 			dist = (mouse_y & -16) + (16 - length - 1) - mouse_y;
 		else
-			dist = mouse_y - ((mouse_y & -16) + (16 + length)) + 16;
+			dist = mouse_y - ((mouse_y & -16) + (16 + length)) + 16; // Works for flipped tiles, not opposite direction
 	}
 
 	// Walls
