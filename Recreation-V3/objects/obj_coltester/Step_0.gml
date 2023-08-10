@@ -16,7 +16,9 @@ if (index > 0) {
 		if dir == 1
 			dist = (mouse_y & -16) + (16 - length - 1) - mouse_y;
 		else
-			dist = mouse_y - ((mouse_y & -16) + (16 + length)) + 16; // Works for flipped tiles, not opposite direction
+			//		108 - 112
+			dist = mouse_y - ((mouse_y & -16) + 16);
+			//dist = mouse_y - ((mouse_y & -16) + (16 + length)) + 16; // Works for flipped tiles, not opposite direction
 	}
 
 	// Walls
@@ -30,7 +32,7 @@ if (index > 0) {
 		if dir == 1
 			dist = (mouse_x & -16) + (16 - length - 1) - mouse_x;
 		else
-			dist = mouse_x - ((mouse_x & -16) + (16 + length)) + 16;
+			dist = mouse_x - ((mouse_x & -16) + (16 + length)) + 16; // Works for mirrored tiles, not opposite direction
 	}
 }
 
