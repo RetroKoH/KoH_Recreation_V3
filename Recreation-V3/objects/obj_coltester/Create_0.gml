@@ -2,6 +2,10 @@
 // You can write your code in this editor
 
 tile = 0;
+index = 0;
+length = 0;
+angle = global.tile_angles[tile];
+
 dir = 1;
 mode = COL_FLOOR;
 

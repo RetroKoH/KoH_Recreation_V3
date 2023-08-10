@@ -44,14 +44,19 @@ function setup_Collision() {
 	_file = file_bin_open("tiledata/anglemap.bin", 0);
 	_size = file_bin_size(_file);
 	if (_file) {
-		for (var _i = 0; _i < TILE_COUNT; _i++) 
-			global.tile_angles[_i] = _i < _size ? (256 - file_bin_read_byte(_file)) * _factor : 0;
+		for (var _i = 0; _i < TILE_COUNT; _i++) {
+			var _byte = _i < _size ? file_bin_read_byte(_file) : 0;
+			if _byte == $FF
+				global.tile_angles[_i] = 0;
+			else
+				global.tile_angles[_i] = 256 - _byte;
+		}
 		file_bin_close(_file);
 	}
 	
 	// Angle Data
 	for (var _i = 0; _i < 256; _i++) {
-		var _ang = _i * 1.40625;
+		var _ang = _i * _factor;
 		global.angle_data[_i] = {
 			angle		: _ang,
 			sine		: dsin(_ang),
