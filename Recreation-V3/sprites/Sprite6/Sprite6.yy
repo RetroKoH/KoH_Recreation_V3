@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Recreation-V3",
-    "path": "Recreation-V3.yyp",
+    "name": "Player",
+    "path": "folders/Player.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

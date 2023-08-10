@@ -15,6 +15,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Control","folderPath":"folders/Control.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dev Log","folderPath":"folders/Dev Log.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Game Functions","folderPath":"folders/Game Functions.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Player.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -27,6 +28,7 @@
     "IDEVersion": "2023.6.0.89",
   },
   "resources": [
+    {"id":{"name":"obj_coltester","path":"objects/obj_coltester/obj_coltester.yy",},},
     {"id":{"name":"spr_debug_line","path":"sprites/spr_debug_line/spr_debug_line.yy",},},
     {"id":{"name":"setup_Collision","path":"scripts/setup_Collision/setup_Collision.yy",},},
     {"id":{"name":"gfunc_gameobj_find_tile","path":"scripts/gfunc_gameobj_find_tile/gfunc_gameobj_find_tile.yy",},},
