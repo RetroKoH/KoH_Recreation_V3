@@ -39,6 +39,7 @@
     {"id":{"name":"stage_Test","path":"rooms/stage_Test/stage_Test.yy",},},
     {"id":{"name":"til_collision","path":"tilesets/til_collision/til_collision.yy",},},
     {"id":{"name":"obj_Player","path":"objects/obj_Player/obj_Player.yy",},},
+    {"id":{"name":"spr_blank","path":"sprites/spr_blank/spr_blank.yy",},},
     {"id":{"name":"gfunc_get_tile_dist","path":"scripts/gfunc_get_tile_dist/gfunc_get_tile_dist.yy",},},
     {"id":{"name":"spr_col_line","path":"sprites/spr_col_line/spr_col_line.yy",},},
     {"id":{"name":"spr_collision","path":"sprites/spr_collision/spr_collision.yy",},},

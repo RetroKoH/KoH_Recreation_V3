@@ -28,9 +28,7 @@ function ctrl_Player_CheckWalls() {
 	if (_dist < 0)
 	{
 		switch(floor(gfunc_wrap_angle(_chk_angle + $20) / $40))
-		{
-			// Not sure why, but if I don't accomodate for 1, it pops in and out of the wall.
-			
+		{			
 			// Running downwards
 			case 0:
 				y_pos += _dist+1;

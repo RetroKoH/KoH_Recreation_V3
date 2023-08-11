@@ -26,8 +26,7 @@ function gfunc_get_tile_dist(_x, _y, _quadrant, _full_solid) {
 	if (_len == 0) // 0 length (Empty)
 		return scr_get_tile_dist_adj(_sensor_x, _sensor_y, _quadrant, 1, _full_solid) + TILE_SIZE;
 
-	else if (_len < 0)
-	{
+	else if (_len < 0) {
 		// Negative length
 		if (_len + (_anchor & _size_mask) >= 0)
 			return scr_get_tile_dist_adj(_sensor_x, _sensor_y, _quadrant, 1, _full_solid) + TILE_SIZE;

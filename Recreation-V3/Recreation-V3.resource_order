@@ -16,6 +16,7 @@
     {"name":"spr_col_maps","order":2,"path":"sprites/spr_col_maps/spr_col_maps.yy",},
     {"name":"stage_Test","order":5,"path":"rooms/stage_Test/stage_Test.yy",},
     {"name":"til_collision","order":1,"path":"tilesets/til_collision/til_collision.yy",},
+    {"name":"spr_blank","order":5,"path":"sprites/spr_blank/spr_blank.yy",},
     {"name":"spr_col_line","order":4,"path":"sprites/spr_col_line/spr_col_line.yy",},
   ],
 }

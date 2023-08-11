@@ -1,9 +1,12 @@
 /// @description Draw Sprite
 
-x	= floor(x_pos);
-y	= floor(y_pos);
-
 draw_self();
+
+var _tile = tilemap_get(global.map_id[0],mouse_x div TILE_SIZE,mouse_y div TILE_SIZE);
+if _tile {
+	var _x = mouse_x & -TILE_SIZE, _y = mouse_y & -TILE_SIZE;
+	draw_rectangle(_x, _y, _x + TILE_SIZE-1, _y + TILE_SIZE-1, true);
+}
 
 // Ceiling sensors (Always at x +/- width, y - height)
 draw_sprite_ext(spr_debug_line, 0, x-width, y, 1,-height,0, #0088EE,1);		// Sensor A

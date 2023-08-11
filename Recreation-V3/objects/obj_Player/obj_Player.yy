@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_sonic_idle",
-    "path": "sprites/spr_sonic_idle/spr_sonic_idle.yy",
+    "name": "spr_blank",
+    "path": "sprites/spr_blank/spr_blank.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -24,4 +24,3 @@ Sonic's Y is at 130.
 Tile is located at cell (22,8) > (352,128)
 Tile has a width of -8. (Mirrored, it's a width of 8).
 
-At our current position, if we nudge forward, we SHOULD 
