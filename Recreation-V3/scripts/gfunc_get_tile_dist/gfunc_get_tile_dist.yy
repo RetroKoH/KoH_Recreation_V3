@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "gfunc_tile_get_data",
+  "name": "gfunc_get_tile_dist",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

@@ -2,13 +2,13 @@
   "FolderOrderSettings": [
     {"name":"Collision","order":2,"path":"folders/Collision.yy",},
     {"name":"Control","order":13,"path":"folders/Control.yy",},
-    {"name":"Dev Log","order":9,"path":"folders/Dev Log.yy",},
     {"name":"Game Functions","order":14,"path":"folders/Game Functions.yy",},
     {"name":"Player","order":15,"path":"folders/Player.yy",},
   ],
   "ResourceOrderSettings": [
-    {"name":"obj_coltester","order":16,"path":"objects/obj_coltester/obj_coltester.yy",},
     {"name":"spr_debug_line","order":1,"path":"sprites/spr_debug_line/spr_debug_line.yy",},
+    {"name":"gfunc_wrap_value","order":1,"path":"scripts/gfunc_wrap_value/gfunc_wrap_value.yy",},
+    {"name":"ctrl_Player_Move","order":1,"path":"scripts/ctrl_Player_Move/ctrl_Player_Move.yy",},
     {"name":"setup_Collision","order":3,"path":"scripts/setup_Collision/setup_Collision.yy",},
     {"name":"spr_sonic_idle","order":3,"path":"sprites/spr_sonic_idle/spr_sonic_idle.yy",},
     {"name":"Sprite6","order":4,"path":"sprites/Sprite6/Sprite6.yy",},
@@ -16,8 +16,6 @@
     {"name":"spr_col_maps","order":2,"path":"sprites/spr_col_maps/spr_col_maps.yy",},
     {"name":"stage_Test","order":5,"path":"rooms/stage_Test/stage_Test.yy",},
     {"name":"til_collision","order":1,"path":"tilesets/til_collision/til_collision.yy",},
-    {"name":"_1","order":1,"path":"notes/_1/_1.yy",},
-    {"name":"gfunc_tile_get_data","order":1,"path":"scripts/gfunc_tile_get_data/gfunc_tile_get_data.yy",},
     {"name":"spr_col_line","order":4,"path":"sprites/spr_col_line/spr_col_line.yy",},
   ],
 }

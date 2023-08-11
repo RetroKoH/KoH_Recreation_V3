@@ -1,5 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Draw Sprite
+
+x	= floor(x_pos);
+y	= floor(y_pos);
 
 draw_self();
 
@@ -16,10 +18,12 @@ draw_sprite_ext(spr_debug_line, 0, x+width, y, 1,height,0, c_teal,1);		// Sensor
 draw_sprite(spr_debug_line, 0, x+width, y+height);
 
 // Push sensors (Always at x +/- 10px, y (or y + 8))
-draw_sprite_ext(spr_debug_line, 0, x, y, -10,1,0, c_fuchsia,1);				// Sensor E
-draw_sprite(spr_debug_line, 0, x-10, y);
-draw_sprite_ext(spr_debug_line, 0, x, y,  10,1,0, c_red,1);					// Sensor F
-draw_sprite(spr_debug_line, 0, x+10, y);
+var _y = y + ((angle < 8 or angle > $F8) ? (spinning ? 3 : 8) : 0);
+
+draw_sprite_ext(spr_debug_line, 0, x, _y, -10,1,0, c_fuchsia,1);			// Sensor E
+draw_sprite(spr_debug_line, 0, x-10, _y);
+draw_sprite_ext(spr_debug_line, 0, x, _y,  10,1,0, c_red,1);				// Sensor F
+draw_sprite(spr_debug_line, 0, x+10, _y);
 
 // Object Collision Hitbox
 //var _c = c_purple; draw_set_alpha(0.75);
