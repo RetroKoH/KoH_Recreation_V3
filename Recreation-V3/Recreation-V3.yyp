@@ -416,6 +416,7 @@
     {"id":{"name":"spr_ray_run","path":"sprites/spr_ray_run/spr_ray_run.yy",},},
     {"id":{"name":"spr_mighty_dash","path":"sprites/spr_mighty_dash/spr_mighty_dash.yy",},},
     {"id":{"name":"spr_HUD","path":"sprites/spr_HUD/spr_HUD.yy",},},
+    {"id":{"name":"ctrl_Player_Roll","path":"scripts/ctrl_Player_Roll/ctrl_Player_Roll.yy",},},
     {"id":{"name":"obj_Ring","path":"objects/obj_Ring/obj_Ring.yy",},},
     {"id":{"name":"spr_metal_spring","path":"sprites/spr_metal_spring/spr_metal_spring.yy",},},
     {"id":{"name":"animtable_RINGS","path":"scripts/animtable_RINGS/animtable_RINGS.yy",},},

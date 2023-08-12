@@ -22,16 +22,19 @@ in_water	= false;	// if true, underwater.
 path		= 0;		// Collision has two paths
 angle		= 0;		// The angle at which you are moving. (0-$100*) < 360 degrees divided by 256.
 
+// Control Restriction Variables
+move_lock	= 0;
+convex		= false;
+forced_roll	= false;
+
 jump					= false;
 double_jump_flag		= false;
 double_jump_property	= 0;
 dash_flag				= false; // Variables used for Spindash, Peelout, and Drop Dash
 spindash_flag			= false;
+spindash_rev			= -1;
 spindash_pitch			= 1;
 dash_timer				= 0;
-
-move_lock = 0;
-convex = false;
 
 control_modes			= ctrl_Sonic;
 double_jump				= -1;

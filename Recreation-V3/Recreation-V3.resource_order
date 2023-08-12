@@ -350,6 +350,7 @@
     {"name":"spr_sonic_dropdash","order":3,"path":"sprites/spr_sonic_dropdash/spr_sonic_dropdash.yy",},
     {"name":"spr_ray_run","order":11,"path":"sprites/spr_ray_run/spr_ray_run.yy",},
     {"name":"spr_mighty_dash","order":1,"path":"sprites/spr_mighty_dash/spr_mighty_dash.yy",},
+    {"name":"ctrl_Player_Roll","order":11,"path":"scripts/ctrl_Player_Roll/ctrl_Player_Roll.yy",},
     {"name":"obj_Ring","order":1,"path":"objects/obj_Ring/obj_Ring.yy",},
     {"name":"spr_metal_spring","order":11,"path":"sprites/spr_metal_spring/spr_metal_spring.yy",},
     {"name":"spr_Explosion","order":2,"path":"sprites/spr_Explosion/spr_Explosion.yy",},
