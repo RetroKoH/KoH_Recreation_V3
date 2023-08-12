@@ -140,7 +140,7 @@ function ctrl_Player_CheckFloor(){
 		}
 		break;
 		
-		case COL_CEILING:	// Mostly upward (Was bugged in the old version)
+		case COL_CEILING:	// Mostly upward (Slightly Bugged)
 		{
 			// Check left wall collision (Wall Sensor E)
 			_wall_dist = gfunc_collide_dist_leftwall(-width_push, 0, COL_FLOOR)[0];
