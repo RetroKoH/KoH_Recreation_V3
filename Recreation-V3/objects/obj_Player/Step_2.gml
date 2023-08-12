@@ -8,8 +8,7 @@ if pushing
 	anim_ID = ANI_PLAYER.PUSH;
 
 // Manage Animation Speed, and switch running animations
-switch(anim_ID)
-{
+switch(anim_ID) {
     case ANI_PLAYER.WALK:
 	case ANI_PLAYER.JOG:
     case ANI_PLAYER.RUN:
@@ -33,6 +32,19 @@ switch(anim_ID)
 			anim_ID = ANI_PLAYER.FALL;
 
 	default:
-        anim_speedmod=1;
+        anim_speedmod = 1;
 }
 
+// Manage Animation Angle
+switch(anim_ID)
+{
+	case ANI_PLAYER.WALK:
+	case ANI_PLAYER.JOG:
+	case ANI_PLAYER.RUN:
+	case ANI_PLAYER.DASH:
+		anim_angle = global.angle_data[angle].angle;
+	break;
+	default:
+		anim_angle = 0;
+	break;
+} anim_angle = (anim_angle div 15)*15;
