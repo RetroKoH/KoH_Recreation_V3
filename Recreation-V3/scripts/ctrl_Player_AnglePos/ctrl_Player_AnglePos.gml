@@ -45,7 +45,7 @@ function ctrl_Player_AnglePos() {
  
             if (_dist_real > fall_dist)
             {
-			    //in_air = true; // Set air flag
+			    in_air = true; // Set air flag
 			    //angle = 0; //scrSetAngle(gravity_angle); Remove this to allow player to rotate in air
             }
             else

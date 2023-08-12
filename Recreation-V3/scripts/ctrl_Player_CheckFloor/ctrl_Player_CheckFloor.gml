@@ -8,9 +8,9 @@ function ctrl_Player_CheckFloor(){
 	else
 		_dir = ysp > 0 ? COL_FLOOR : COL_CEILING;
 	
-	var _wall_dist, _floor_dist, _dist_real, _angle_real;
+	var _wall_dist, _dist_real, _angle_real;
 	switch(_dir) {
-		case COL_FLOOR:
+		case COL_FLOOR:		// Mostly downward
 		{
 			// Check left wall collision (Wall Sensor E)
 			_wall_dist = gfunc_collide_dist_leftwall(-width_push, 0, COL_FLOOR)[0];
@@ -18,12 +18,14 @@ function ctrl_Player_CheckFloor(){
 				x -= _wall_dist;
 				xsp = 0;			// stop Sonic since he hit a wall
 			}
+
 			// Check right wall collision (Wall Sensor F)
 			_wall_dist = gfunc_collide_dist_rightwall(width_push, 0, COL_FLOOR)[0];
 			if (_wall_dist < 0) {
 				x += _wall_dist;
 				xsp = 0;			// stop Sonic since he hit a wall
 			}
+
 			// Check floor collision (Floor Sensors A/B)
 			var _tile_left	= gfunc_collide_dist_floor(-width, height, COL_FLOOR);
 			var _tile_right	= gfunc_collide_dist_floor(width, height, COL_FLOOR);
@@ -70,10 +72,75 @@ function ctrl_Player_CheckFloor(){
 		}
 		break;
 		
-		case COL_WALL_R:
+		case COL_WALL_R:	// Mostly right
+		{
+			// Check right wall collision
+			_wall_dist = gfunc_collide_dist_rightwall(width_push, 0, COL_FLOOR)[0];
+			if (_wall_dist < 0) {
+				x += _wall_dist;
+				xsp = 0;
+				inertia = ysp;
+			}
+			else {
+				// Collide with the ceiling (Ceiling Sensors C/D)
+				var _tile_left	= gfunc_collide_dist_ceiling(-width, -height, COL_FLOOR);
+				var _tile_right	= gfunc_collide_dist_ceiling(width, -height, COL_FLOOR);
+				
+				// Compare distances and pick one.
+				if _tile_left[0] <= _tile_right[0] {
+					_dist_real	= _tile_left[0];
+					_angle_real	= _tile_left[1];
+				}
+				else {
+					_dist_real	= _tile_right[0];
+					_angle_real	= _tile_right[1];
+				}
+
+				if (_dist_real < 0) {
+					// Orbinaut doesn't emulate much of this. Need to double-check.
+					if (_dist_real > -20) {
+						// Only hit the ceiling if we aren't too deep into it
+						y -= _dist_real;
+						if (ysp < 0) ysp = 0;
+					}
+					else {
+						// Check left wall collision
+						_wall_dist = gfunc_collide_dist_leftwall(-width_push, 0, COL_FLOOR)[0];
+						if (_wall_dist < 0) {
+							x -= _wall_dist;
+							xsp = 0;
+						}
+					}
+				}
+
+				else if ysp > 0 {
+					// Check floor collision (Floor Sensors A/B)
+					var _tile_left	= gfunc_collide_dist_floor(-width, height, COL_FLOOR);
+					var _tile_right	= gfunc_collide_dist_floor(width, height, COL_FLOOR);
+			
+					// Compare distances and pick one.
+					if _tile_left[0] <= _tile_right[0] {
+						_dist_real	= _tile_left[0];
+						_angle_real	= _tile_left[1];
+					}
+					else {
+						_dist_real	= _tile_right[0];
+						_angle_real	= _tile_right[1];
+					}
+					
+					if (_dist_real < 0) {
+						y += _dist_real;
+						angle = _angle_real;
+						ysp = 0;
+						inertia = xsp;
+						ctrl_Player_AcquireFloor();
+					}
+				}
+			}
+		}
 		break;
 		
-		case COL_CEILING:
+		case COL_CEILING:	// Mostly upward
 		break;
 		
 		case COL_WALL_L:
