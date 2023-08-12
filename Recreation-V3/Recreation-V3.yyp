@@ -112,6 +112,7 @@
     {"id":{"name":"sfx_wallsmash","path":"sounds/sfx_wallsmash/sfx_wallsmash.yy",},},
     {"id":{"name":"sfx_SpikesMove","path":"sounds/sfx_SpikesMove/sfx_SpikesMove.yy",},},
     {"id":{"name":"obj_StartMenu","path":"objects/obj_StartMenu/obj_StartMenu.yy",},},
+    {"id":{"name":"spr_debug_line","path":"sprites/spr_debug_line/spr_debug_line.yy",},},
     {"id":{"name":"sfx_DropdashRev","path":"sounds/sfx_DropdashRev/sfx_DropdashRev.yy",},},
     {"id":{"name":"sfx_ShieldLightningJump","path":"sounds/sfx_ShieldLightningJump/sfx_ShieldLightningJump.yy",},},
     {"id":{"name":"sfx_Bumper","path":"sounds/sfx_Bumper/sfx_Bumper.yy",},},

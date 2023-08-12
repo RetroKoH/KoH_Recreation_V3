@@ -84,6 +84,7 @@
     {"name":"sfx_wallsmash","order":34,"path":"sounds/sfx_wallsmash/sfx_wallsmash.yy",},
     {"name":"sfx_SpikesMove","order":24,"path":"sounds/sfx_SpikesMove/sfx_SpikesMove.yy",},
     {"name":"obj_StartMenu","order":4,"path":"objects/obj_StartMenu/obj_StartMenu.yy",},
+    {"name":"spr_debug_line","order":8,"path":"sprites/spr_debug_line/spr_debug_line.yy",},
     {"name":"sfx_DropdashRev","order":9,"path":"sounds/sfx_DropdashRev/sfx_DropdashRev.yy",},
     {"name":"sfx_ShieldLightningJump","order":68,"path":"sounds/sfx_ShieldLightningJump/sfx_ShieldLightningJump.yy",},
     {"name":"sfx_Bumper","order":73,"path":"sounds/sfx_Bumper/sfx_Bumper.yy",},
