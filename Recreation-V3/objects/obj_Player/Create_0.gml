@@ -30,8 +30,8 @@ spindash_flag			= false;
 spindash_pitch			= 1;
 dash_timer				= 0;
 
+move_lock = 0;
 convex = false;
-move_lock = false;
 
 control_modes			= ctrl_Sonic;
 double_jump				= -1;

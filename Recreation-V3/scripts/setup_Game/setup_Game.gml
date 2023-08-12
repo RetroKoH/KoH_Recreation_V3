@@ -455,31 +455,31 @@ function setup_Game_Collision(){
 function setup_Game_AngleQuadrants(_mode, _angle){
 	// WALL MODES
 	if _mode {
-		if _angle < 32 or _angle >= 225			// 0-44; 316-360
+		if _angle < $20 or _angle >= $E1		// 0-44; 316-360
 			return COL_FLOOR;
 
-		else if _angle >= 32 and _angle <= 96	// 45-135
+		else if _angle >= $20 and _angle <= $60	// 45-135
 			return COL_WALL_R;
 
-		else if _angle >= 97 and _angle <= 159	// 136-224
+		else if _angle >= $61 and _angle <= $9F	// 136-224
 			return COL_CEILING;
 
-		else if _angle >= 160 and _angle <= 224	// 225-315
+		else if _angle >= $A0 and _angle <= $E0	// 225-315
 			return COL_WALL_L;
 	}
 	
 	// FLOOR MODES
 	else {
-		if _angle <= 32 or _angle >= 224		// 0-45; 315-360
+		if _angle <= $20 or _angle >= $E0		// 0-45; 315-360
 			return COL_FLOOR;
 
-		else if _angle >= 33 and _angle <= 95	// 46-134
+		else if _angle >= $21 and _angle <= $5F	// 46-134
 			return COL_WALL_R;
 
-		else if _angle >= 96 and _angle <= 160	// 135-225
+		else if _angle >= $60 and _angle <= $A0	// 135-225
 			return COL_CEILING;
 
-		else if _angle >= 161 and _angle <= 223	// 226-314
+		else if _angle >= $A1 and _angle <= $DF	// 226-314
 			return COL_WALL_L;
 	}
 }
