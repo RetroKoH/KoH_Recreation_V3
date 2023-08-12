@@ -18,26 +18,32 @@ function gfunc_collide_dist(_x, _y, _quadrant, _full_solid) {
 	
 	// If no tile, or if tile is top-solid when we need fully solid
     if (!_tile || (_index >= $100 and _full_solid))
-        return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, 1, _full_solid) + TILE_SIZE;
+        return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, 1, _full_solid);// + TILE_SIZE;
 	
 	var _len = gfunc_tile_get_length(_tile, _index, _sensor_x, _sensor_y, _quadrant);
 	
 	// Check length
 	if (_len == 0) // 0 length (Empty)
-		return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, 1, _full_solid) + TILE_SIZE;
+		return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, 1, _full_solid);// + TILE_SIZE;
 
 	else if (_len < 0) {
 		// Negative length
 		if (_len + (_anchor & _size_mask) >= 0)
-			return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, 1, _full_solid) + TILE_SIZE;
-		return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, -1, _full_solid) - TILE_SIZE;
+			return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, 1, _full_solid);// + TILE_SIZE;
+		return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, -1, _full_solid);// - TILE_SIZE;
 	}
 
 	else if (_len == TILE_SIZE) // Max length
-		return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, -1, _full_solid) - TILE_SIZE;
+		return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, -1, _full_solid);// - TILE_SIZE;
 
 	// Normal length
-    return _size_mask - (_len + (_anchor & _size_mask));
+    var _distance = _size_mask - (_len + (_anchor & _size_mask));
+	
+	// Acquire Angle
+	var _angle = gfunc_tile_get_angle(_tile, _index);
+	
+	// RETURNS Length and Angle in an array (Orbinaut)
+	return [_distance, _angle];
 }
 
 function gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, _dir, _full_solid) {
@@ -69,7 +75,7 @@ function gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, _dir, _full_sol
 
 	// If no tile, or if tile is top-solid when we need fully solid
     if (!_tile || (_index>=$100 && _full_solid))
-        return _size_mask - (_anchor & _size_mask);
+        return [_size_mask - (_anchor & _size_mask) + (TILE_SIZE * _dir), 0];
 
     var _len = gfunc_tile_get_length(_tile, _index, _sensor_x, _sensor_y, _quadrant);
  
@@ -77,7 +83,7 @@ function gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, _dir, _full_sol
     if (_len == 0)
     {
         // 0 length
-        return _size_mask - (_anchor & _size_mask);
+        return [_size_mask - (_anchor & _size_mask) + (TILE_SIZE * _dir), 0];
     }
     else if (_len < 0)
     {
@@ -85,13 +91,21 @@ function gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, _dir, _full_sol
         var _neg_dist = _len + (_anchor & _size_mask);
 
         if (_neg_dist >= 0)
-            return _size_mask - (_anchor & _size_mask);
-        else
-            return ~_neg_dist;
+            return [_size_mask - (_anchor & _size_mask) + (TILE_SIZE * _dir), 0];
+        else {
+			var _angle = gfunc_tile_get_angle(_tile, _index);	// Is this correct?
+            return [~_neg_dist + (TILE_SIZE * _dir), _angle];
+		}
     }
  
     // Normal length
-    return _size_mask - (_len + (_anchor & _size_mask));
+    var _distance = _size_mask - (_len + (_anchor & _size_mask));
+	
+	// Acquire Angle
+	var _angle = gfunc_tile_get_angle(_tile, _index);
+	
+	// RETURNS Length and Angle in an array (Orbinaut)
+	return [_distance + (TILE_SIZE * _dir), _angle];
 }
 
 function gfunc_collide_dist_floor(_sensor_x, _sensor_y, _quadrant) {
@@ -183,13 +197,13 @@ function gfunc_tile_get_height(_tile, _index, _column) {
 }
 
 function gfunc_tile_get_angle(_tile, _index){
-    var ang = global.tile_angles[_index&$FF];
+    var _ang = global.tile_angles[_index&$FF];
 
     if tile_get_mirror(_tile)
-        ang = gfunc_wrap_angle(-ang);
+        _ang = gfunc_wrap_angle(-_ang);
     
     if tile_get_flip(_tile)
-        ang = gfunc_wrap_angle(-(ang - $40) + $40);
+        _ang = gfunc_wrap_angle(-(_ang - $40) + $40);
 
-    return ang;
+    return _ang;
 }

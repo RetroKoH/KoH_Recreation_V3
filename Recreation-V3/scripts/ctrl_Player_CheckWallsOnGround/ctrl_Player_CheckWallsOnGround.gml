@@ -12,14 +12,14 @@ function ctrl_Player_CheckWallsOnGround(){
 	if (inertia > 0)
 	{
 		_angle_check = angle - $40;
-		_dist = gfunc_collide_dist_rightwall(width_push, _off_y, _quadrant);
+		_dist = gfunc_collide_dist_rightwall(width_push, _off_y, _quadrant)[0];
 	}
 	
 	// If moving left, find walls to your left.
 	else if (inertia < 0)
 	{
 		_angle_check = angle + $40;
-		_dist = gfunc_collide_dist_leftwall(-width_push, _off_y, _quadrant);
+		_dist = gfunc_collide_dist_leftwall(-width_push, _off_y, _quadrant)[0];
 	}
 	
 	// If player is within a wall
@@ -30,13 +30,15 @@ function ctrl_Player_CheckWallsOnGround(){
 			case 0:
 				y += _dist;
 				ysp = 0;
-				inertia = 0;		// Fixes wall grinding bug
+				inertia = 0;	// Fixes wall grinding bug
+				y = floor(y);	// Round position down to integer (The original games do not do this!)
 			break;
 			// Running left
 			case 1:
 				x -= _dist;
 				xsp = 0;
 				inertia = 0;
+				x = floor(x);	// Round position down to integer (The original games do not do this!)
 				
 				pushing = true;
 			break;
@@ -44,13 +46,15 @@ function ctrl_Player_CheckWallsOnGround(){
 			case 2:
 				y -= _dist;
 				ysp = 0;
-				inertia = 0;		// Fixes wall grinding bug
+				inertia = 0;	// Fixes wall grinding bug
+				y = floor(y);	// Round position down to integer (The original games do not do this!)
 			break;
 			// Running right
 			case 3:
 				x += _dist;
 				xsp = 0;
 				inertia = 0;
+				x = floor(x);	// Round position down to integer (The original games do not do this!)
 				
 				pushing = true;
 			break;

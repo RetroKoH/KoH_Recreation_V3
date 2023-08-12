@@ -36,7 +36,10 @@ if instance_exists(core_Stage)
 _ax=240;
 if instance_exists(obj_Player)
 {
-	gfunc_debug_draw_text(_ax,_ay-18,string(floor(obj_Player.x))+","+string(floor(obj_Player.y)))
+	var _a = obj_Player.angle;
+	gfunc_debug_draw_text(_ax,_ay-18,	string(obj_Player.x)+","+string(obj_Player.y)+"\n"+
+										+"$"+string(_a)+" ("+string(global.angle_data[_a].angle)+")"+"\n"+
+										"X-Speed: "+string(obj_Player.xsp));
 }
 
 

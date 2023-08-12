@@ -19,7 +19,7 @@ function ctrl_Sonic_Normal() {
 	ctrl_Player_LevelBound();			// Interact with screen boundaries.
 	gfunc_gameobj_apply_speed(false);	// Apply speed without gravity.
 	ctrl_Player_CheckWallsOnGround();	// Check for walls along the ground. (Moved to here to circumvent jittering bug)
-//	ctrl_Player_AnglePos();				// Floor collision and angle check occurs.
+	ctrl_Player_AnglePos();				// Floor collision and angle check occurs.
 //	ctrl_Player_SlopeRepel();			// Push down slopes and fall from loops.
 }
 
