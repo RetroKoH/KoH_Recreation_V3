@@ -26,8 +26,10 @@ function ctrl_Player_MoveRoll(){
 	// The following is applied constantly throughout rolling.
 	if inertia < 0
 		inertia = (inertia <= -_fric) ? inertia + _fric : 0;	// Friction when rolling left
+
 	else if inertia > 0
 		inertia = (inertia >= _fric) ? inertia - _fric : 0;		// Friction when rolling right
+
 	if inertia == 0
 	{
 		spinning	=  false;

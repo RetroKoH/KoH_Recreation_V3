@@ -215,6 +215,7 @@
     {"name":"spr_ray_duck","order":3,"path":"sprites/spr_ray_duck/spr_ray_duck.yy",},
     {"name":"setup_Animation","order":2,"path":"scripts/setup_Animation/setup_Animation.yy",},
     {"name":"spr_glide_mask","order":2,"path":"sprites/spr_glide_mask/spr_glide_mask.yy",},
+    {"name":"To-Do","order":2,"path":"notes/To-Do/To-Do.yy",},
     {"name":"sfx_MightyDrop","order":45,"path":"sounds/sfx_MightyDrop/sfx_MightyDrop.yy",},
     {"name":"spr_sonic_balance_turn","order":20,"path":"sprites/spr_sonic_balance_turn/spr_sonic_balance_turn.yy",},
     {"name":"spr_tails_duck","order":3,"path":"sprites/spr_tails_duck/spr_tails_duck.yy",},

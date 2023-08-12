@@ -1,0 +1,5 @@
+Implement 30 frame move_lock in various movement subroutines.
+Check where to apply the forced +- 2 to inertia when rolling.
+Double check wall collision since we've circumvented jittering bug.
+
+Re-Add mid-air ground collision

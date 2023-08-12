@@ -264,6 +264,7 @@
     {"id":{"name":"spr_ray_duck","path":"sprites/spr_ray_duck/spr_ray_duck.yy",},},
     {"id":{"name":"setup_Animation","path":"scripts/setup_Animation/setup_Animation.yy",},},
     {"id":{"name":"spr_glide_mask","path":"sprites/spr_glide_mask/spr_glide_mask.yy",},},
+    {"id":{"name":"To-Do","path":"notes/To-Do/To-Do.yy",},},
     {"id":{"name":"sfx_MightyDrop","path":"sounds/sfx_MightyDrop/sfx_MightyDrop.yy",},},
     {"id":{"name":"spr_sonic_balance_turn","path":"sprites/spr_sonic_balance_turn/spr_sonic_balance_turn.yy",},},
     {"id":{"name":"spr_tails_duck","path":"sprites/spr_tails_duck/spr_tails_duck.yy",},},
