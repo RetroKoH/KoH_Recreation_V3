@@ -19,7 +19,7 @@ pushing		= false;	// if true, pushing against something
 in_water	= false;	// if true, underwater.
 
 // Collision related
-path		= 0;		// Collision has two paths
+path		= LAYER_A;	// Collision has two paths
 angle		= 0;		// The angle at which you are moving. (0-$100*) < 360 degrees divided by 256.
 
 // Control Restriction Variables

@@ -80,11 +80,15 @@ function setup_Game_Macros(){
 	#macro OOB_PAUSE		1
 	#macro OOB_RESET		2
 	
+	// Layer macro
+	#macro LAYER_A			0
+	#macro LAYER_B			1
+	
 	// Collision Quadrant macro
-	#macro COL_FLOOR	0
-	#macro COL_WALL_R	1
-	#macro COL_CEILING	2
-	#macro COL_WALL_L	3
+	#macro COL_FLOOR		0
+	#macro COL_WALL_R		1
+	#macro COL_CEILING		2
+	#macro COL_WALL_L		3
 	
 	// Player Size macro
 	#macro HEIGHT_MAIN $13	// Standard height

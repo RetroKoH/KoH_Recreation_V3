@@ -50,6 +50,7 @@
     {"name":"Dynamic Level Events","order":7,"path":"folders/Zones/GHZ/Dynamic Level Events.yy",},
     {"name":"Foreground","order":2,"path":"folders/Zones/GHZ/Foreground.yy",},
     {"name":"Tilesets","order":4,"path":"folders/Zones/GHZ/Tilesets.yy",},
+    {"name":"Path Swappers","order":12,"path":"folders/Game Objects/Path Swappers.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -223,6 +224,7 @@
     {"name":"spr_metal_hurt","order":3,"path":"sprites/spr_metal_hurt/spr_metal_hurt.yy",},
     {"name":"sfx_ShieldFlame","order":18,"path":"sounds/sfx_ShieldFlame/sfx_ShieldFlame.yy",},
     {"name":"sfx_TailsFlyTired","order":31,"path":"sounds/sfx_TailsFlyTired/sfx_TailsFlyTired.yy",},
+    {"name":"obj_PathSwapperV","order":1,"path":"objects/obj_PathSwapperV/obj_PathSwapperV.yy",},
     {"name":"sfx_WaterSplash","order":36,"path":"sounds/sfx_WaterSplash/sfx_WaterSplash.yy",},
     {"name":"spr_tails_tail_hidden","order":1,"path":"sprites/spr_tails_tail_hidden/spr_tails_tail_hidden.yy",},
     {"name":"spr_amy_roll","order":4,"path":"sprites/spr_amy_roll/spr_amy_roll.yy",},
@@ -256,6 +258,7 @@
     {"name":"Chunks_GHZ_High","order":1,"path":"sprites/Chunks_GHZ_High/Chunks_GHZ_High.yy",},
     {"name":"pal_GHZ","order":2,"path":"sprites/pal_GHZ/pal_GHZ.yy",},
     {"name":"spr_amy_hammerhover","order":11,"path":"sprites/spr_amy_hammerhover/spr_amy_hammerhover.yy",},
+    {"name":"gfunc_gameobj_triggerbox_set","order":24,"path":"scripts/gfunc_gameobj_triggerbox_set/gfunc_gameobj_triggerbox_set.yy",},
     {"name":"spr_metal_push","order":7,"path":"sprites/spr_metal_push/spr_metal_push.yy",},
     {"name":"sfx_Spring","order":27,"path":"sounds/sfx_Spring/sfx_Spring.yy",},
     {"name":"TILE_GHZ_HIGH","order":1,"path":"tilesets/TILE_GHZ_HIGH/TILE_GHZ_HIGH.yy",},
