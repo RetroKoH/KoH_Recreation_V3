@@ -26,6 +26,7 @@
     {"name":"5. Mighty","order":6,"path":"folders/Game Objects/Player/5. Mighty.yy",},
     {"name":"6. Ray","order":7,"path":"folders/Game Objects/Player/6. Ray.yy",},
     {"name":"7. Metal","order":8,"path":"folders/Game Objects/Player/7. Metal.yy",},
+    {"name":"Control Scripts","order":10,"path":"folders/Game Objects/Player/Control Scripts.yy",},
     {"name":"Rings","order":1,"path":"folders/Game Objects/Rings.yy",},
     {"name":"Signpost","order":5,"path":"folders/Game Objects/Signpost.yy",},
     {"name":"Zone Objects","order":7,"path":"folders/Game Objects/Zone Objects.yy",},
@@ -49,7 +50,6 @@
     {"name":"Dynamic Level Events","order":7,"path":"folders/Zones/GHZ/Dynamic Level Events.yy",},
     {"name":"Foreground","order":2,"path":"folders/Zones/GHZ/Foreground.yy",},
     {"name":"Tilesets","order":4,"path":"folders/Zones/GHZ/Tilesets.yy",},
-    {"name":"Control Scripts","order":10,"path":"folders/Game Objects/Player/Control Scripts.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -223,6 +223,7 @@
     {"name":"spr_amy_roll","order":4,"path":"sprites/spr_amy_roll/spr_amy_roll.yy",},
     {"name":"sfx_MightyUnspin","order":43,"path":"sounds/sfx_MightyUnspin/sfx_MightyUnspin.yy",},
     {"name":"animtable_BADNIKS","order":1,"path":"scripts/animtable_BADNIKS/animtable_BADNIKS.yy",},
+    {"name":"ctrl_Player_CheckWalls","order":7,"path":"scripts/ctrl_Player_CheckWalls/ctrl_Player_CheckWalls.yy",},
     {"name":"sfx_RingLeft","order":57,"path":"sounds/sfx_RingLeft/sfx_RingLeft.yy",},
     {"name":"sfx_BigExplosion","order":3,"path":"sounds/sfx_BigExplosion/sfx_BigExplosion.yy",},
     {"name":"spr_tails_fall","order":4,"path":"sprites/spr_tails_fall/spr_tails_fall.yy",},

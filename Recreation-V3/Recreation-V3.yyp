@@ -37,6 +37,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"5. Mighty","folderPath":"folders/Game Objects/Player/5. Mighty.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"6. Ray","folderPath":"folders/Game Objects/Player/6. Ray.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"7. Metal","folderPath":"folders/Game Objects/Player/7. Metal.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Control Scripts","folderPath":"folders/Game Objects/Player/Control Scripts.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rings","folderPath":"folders/Game Objects/Rings.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Signpost","folderPath":"folders/Game Objects/Signpost.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Zone Objects","folderPath":"folders/Game Objects/Zone Objects.yy",},
@@ -63,7 +64,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dynamic Level Events","folderPath":"folders/Zones/GHZ/Dynamic Level Events.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Foreground","folderPath":"folders/Zones/GHZ/Foreground.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Zones/GHZ/Tilesets.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Control Scripts","folderPath":"folders/Game Objects/Player/Control Scripts.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -273,6 +273,7 @@
     {"id":{"name":"spr_amy_roll","path":"sprites/spr_amy_roll/spr_amy_roll.yy",},},
     {"id":{"name":"sfx_MightyUnspin","path":"sounds/sfx_MightyUnspin/sfx_MightyUnspin.yy",},},
     {"id":{"name":"animtable_BADNIKS","path":"scripts/animtable_BADNIKS/animtable_BADNIKS.yy",},},
+    {"id":{"name":"ctrl_Player_CheckWalls","path":"scripts/ctrl_Player_CheckWalls/ctrl_Player_CheckWalls.yy",},},
     {"id":{"name":"aniart_GHZ1","path":"sprites/aniart_GHZ1/aniart_GHZ1.yy",},},
     {"id":{"name":"sfx_RingLeft","path":"sounds/sfx_RingLeft/sfx_RingLeft.yy",},},
     {"id":{"name":"sfx_BigExplosion","path":"sounds/sfx_BigExplosion/sfx_BigExplosion.yy",},},
