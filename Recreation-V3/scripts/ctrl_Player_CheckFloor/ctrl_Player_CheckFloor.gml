@@ -16,14 +16,14 @@ function ctrl_Player_CheckFloor(){
 			_wall_dist = gfunc_collide_dist_leftwall(-width_push, 0, COL_FLOOR)[0];
 			if (_wall_dist < 0) {
 				x -= _wall_dist;
-				xsp = 0;			// stop Sonic since he hit a wall
+				xsp = 0;			// stop the player hitting a wall
 			}
 
 			// Check right wall collision (Wall Sensor F)
 			_wall_dist = gfunc_collide_dist_rightwall(width_push, 0, COL_FLOOR)[0];
 			if (_wall_dist < 0) {
 				x += _wall_dist;
-				xsp = 0;			// stop Sonic since he hit a wall
+				xsp = 0;			// stop the player hitting a wall
 			}
 
 			// Check floor collision (Floor Sensors A/B)
@@ -140,7 +140,49 @@ function ctrl_Player_CheckFloor(){
 		}
 		break;
 		
-		case COL_CEILING:	// Mostly upward
+		case COL_CEILING:	// Mostly upward (Was bugged in the old version)
+		{
+			// Check left wall collision (Wall Sensor E)
+			_wall_dist = gfunc_collide_dist_leftwall(-width_push, 0, COL_FLOOR)[0];
+			if (_wall_dist < 0) {
+				x -= _wall_dist;
+				xsp = 0;			// stop the player hitting a wall
+			}
+
+			// Check right wall collision (Wall Sensor F)
+			_wall_dist = gfunc_collide_dist_rightwall(width_push, 0, COL_FLOOR)[0];
+			if (_wall_dist < 0) {
+				x += _wall_dist;
+				xsp = 0;			// stop the player hitting a wall
+			}
+			
+			// Collide with the ceiling (Ceiling Sensors C/D)
+			var _tile_left	= gfunc_collide_dist_ceiling(-width, -height, COL_FLOOR);
+			var _tile_right	= gfunc_collide_dist_ceiling(width, -height, COL_FLOOR);
+				
+			// Compare distances and pick one.
+			if _tile_left[0] <= _tile_right[0] {
+				_dist_real	= _tile_left[0];
+				_angle_real	= _tile_left[1];
+			}
+			else {
+				_dist_real	= _tile_right[0];
+				_angle_real	= _tile_right[1];
+			}
+			
+			if _dist_real < 0 {				
+				if (_angle_real > $40 and _angle_real <= $61) or (_angle_real > $A0 and _angle_real <= $BF) {
+					// Land if the angle is steep enough
+					angle	= _angle_real;
+					inertia	= _angle_real < $80 ? -ysp : ysp;
+					ctrl_Player_AcquireFloor();
+				}
+				else
+					ysp = 0;
+				
+				y -= _dist_real;
+			}
+		}
 		break;
 		
 		case COL_WALL_L:	// Mostly left
