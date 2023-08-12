@@ -32,7 +32,15 @@ if instance_exists(core_Stage)
 	string(core_Stage.paused ? "PAUSED" : "ACTIVE") +"\n"+
 	"OB: "+string(core_Stage.run_objects)+", ANI: "+string(cRENDER.update_anims));
 
-// Surface Rendering
+// Draw object data
+_ax=240;
+if instance_exists(obj_Player)
+{
+	gfunc_debug_draw_text(_ax,_ay-18,string(floor(obj_Player.x))+","+string(floor(obj_Player.y)))
+}
+
+
+/* Surface Rendering
 _ax=316;
 var _xf = _ax+(424*0.2);
 

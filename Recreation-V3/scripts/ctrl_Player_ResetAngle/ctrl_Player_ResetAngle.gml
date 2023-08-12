@@ -2,10 +2,10 @@
 function ctrl_Player_ResetAngle(_angle){
 	if _angle == 0	exit;
 	
-	if (_angle < 180)
+	if (_angle < $80)
 		_angle = max(_angle - 4, 0);
 	else
-		_angle = gfunc_wrap_angle(min(_angle + 4, 360));
+		_angle = gfunc_wrap_angle(min(_angle + 4, $100));
 	
-	col_angle = _angle; // Set Angle
+	angle = _angle; // Set Angle
 }

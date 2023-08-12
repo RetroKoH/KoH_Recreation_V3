@@ -15,7 +15,7 @@ function ctrl_Sonic_Normal() {
 	if ctrl_Player_Jump()		exit;	// *** Check for starting a jump.
 //	ctrl_Player_SlopeResist();			// Adjust inertia based on collision angle.
 	ctrl_Player_MoveGround();			// Move along the ground and apply friction/deceleration.
-	ctrl_Player_CheckWalls();			// Check for walls along the ground.
+	ctrl_Player_CheckWallsOnGround();	// Check for walls along the ground. (Perhaps move to before movement check?)
 //	ctrl_Player_Roll();					// Check for starting a roll.
 	ctrl_Player_LevelBound();			// Interact with screen boundaries.
 	gfunc_gameobj_apply_speed(false);	// Apply speed without gravity.
@@ -36,5 +36,5 @@ function ctrl_Sonic_InAir() {
 	ctrl_Player_LevelBound();			// Interact with screen boundaries.
 	gfunc_gameobj_apply_speed(true);	// Apply speed with gravity.
 	if (in_water) ysp -= .15625;		// Underwater gravity (Integrate with ObjectFall)
-	ctrl_Player_ResetAngle(col_angle);	// Reset angle in mid-air
+	ctrl_Player_ResetAngle(angle);		// Reset angle in mid-air
 }

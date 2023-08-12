@@ -38,9 +38,10 @@ function ctrl_Player_MoveRoll(){
 	}
 
 	// Apply to x and y speeds using the acquired gsp. Rolling has a speed cap of 16 pixels/step.
-	ysp		= inertia * -dsin(col_angle);
-	var xv	= inertia * dcos(col_angle);
-	if xv > 16		xsp = 16;
-	else if xv<-16	xsp = -16;
-	else			xsp = xv;
+	ysp		= inertia * -global.angle_data[angle].sine;
+	var _xv	= inertia *	global.angle_data[angle].cosine;
+
+	if _xv > 16		xsp = 16;
+	else if _xv<-16	xsp = -16;
+	else			xsp = _xv;
 }

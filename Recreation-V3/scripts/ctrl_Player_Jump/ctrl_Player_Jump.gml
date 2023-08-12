@@ -6,8 +6,8 @@ function ctrl_Player_Jump(){
 		if !jump_flag						// Check ceiling collision with a line.
 		{
 			var jmp = jmp_spd; //- 3 * in_water;	// Alter gravity depending on whether underwater or not 
-			xsp -= jmp * dsin(col_angle);
-			ysp -= jmp * dcos(col_angle);
+			xsp -= jmp * global.angle_data[angle].sine;
+			ysp -= jmp * global.angle_data[angle].cosine;
 			in_air = true;
 			pushing = false;
 			on_obj = false;

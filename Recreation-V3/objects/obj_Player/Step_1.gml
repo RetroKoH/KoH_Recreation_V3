@@ -7,8 +7,9 @@ switch(routine) {
 	case 0:
 	{
 		routine++;
-		height	= height_def;
-		width	= WIDTH_MAIN;
+		height		= height_def;
+		width		= WIDTH_MAIN;
+		width_push	= width + 1;
 	}
 	break;
 	

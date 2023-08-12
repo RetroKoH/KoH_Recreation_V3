@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "ctrl_Player_CheckWalls",
+  "name": "ctrl_Player_CheckWallsOnGround",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

@@ -80,7 +80,13 @@ function setup_Game_Macros(){
 	#macro OOB_PAUSE		1
 	#macro OOB_RESET		2
 	
-	// Player Sizes
+	// Collision Quadrant macro
+	#macro COL_FLOOR	0
+	#macro COL_WALL_R	1
+	#macro COL_CEILING	2
+	#macro COL_WALL_L	3
+	
+	// Player Size macro
 	#macro HEIGHT_MAIN $13	// Standard height
 	#macro HEIGHT_SHORT $F	// Tails' standing height
 	#macro HEIGHT_ROLL $E	// Rolling height
@@ -380,43 +386,101 @@ function setup_Game_Screen(){
 	gpu_set_alphatestref(0);
 }
 function setup_Game_Collision(){
-	global.map_id = array_create(2, -1);
-	global.spr_id = -1;
-	global.chunks_id = -1;
-	global.chunks_count = 0;
+	global.map_id		= array_create(2, -1);
+	global.spr_id		= -1;
+	global.chunks_id	= -1;
+	global.chunks_count	= 0;
 	
-	global.TileAngle   = [];
-	global.TileHeights = [];
-	global.TileWidths  = [];
+	global.TileAngle	= [];
+	global.TileHeights	= [];
+	global.TileWidths	= [];
+	global.angle_data	= [];
+	var _factor			= 360/256;
 
 	// Load Collision Data Files
-	// Angles
-	var file = file_bin_open("tiledata/anglemap.bin",0);
-	var size = file_bin_size(file);
-	if (file){
-		for (var i = 0; i <= TILE_COUNT; i++) 
-			global.TileAngle[i] = i < size ? (256 - file_bin_read_byte(file)) * 360 / 256 : 0;
-		file_bin_close(file);
-	}
-	
 	// Heights
-	file = file_bin_open("tiledata/heightmap.bin",0);
-	size = file_bin_size(file);
-	if (file){
-		for (var i = 0; i <= TILE_COUNT; i++)
-			for (var j = 0; j < TILE_SIZE; j++) 
-				global.TileHeights[i][j] = (i * TILE_SIZE < size) ? file_bin_read_byte(file) : 0;
-		file_bin_close(file);
+	var _file = file_bin_open("tiledata/heightmap.bin", 0);
+	var _size = file_bin_size(_file);
+	if (_file) {
+		for (var _i = 0; _i < TILE_COUNT; _i++)
+			for (var _j = 0; _j < TILE_SIZE; _j++) {
+				var _byte = (_i * TILE_SIZE < _size) ? file_bin_read_byte(_file) : 0;
+				if (_byte >= $80)	_byte = -($100 - _byte);
+				_byte = min(abs(_byte), TILE_SIZE) * sign(_byte);
+				global.tile_heights[_i][_j] = _byte;
+			}
+		file_bin_close(_file);
 	}
 	
 	// Widths
-	file = file_bin_open("tiledata/widthmap.bin",0);
-	size = file_bin_size(file);
-	if (file){
-		for (var i = 0; i <= TILE_COUNT; i++)
-			for (var j = 0; j < TILE_SIZE; j++) 
-				global.TileWidths[i][j] = (i * TILE_SIZE < size) ? file_bin_read_byte(file) : 0;
-		file_bin_close(file);
+	_file = file_bin_open("tiledata/widthmap.bin", 0);
+	_size = file_bin_size(_file);
+	if (_file) {
+		for (var _i = 0; _i < TILE_COUNT; _i++)
+			for (var _j = 0; _j < TILE_SIZE; _j++) {
+				var _byte = (_i * TILE_SIZE < _size) ? file_bin_read_byte(_file) : 0;
+				if (_byte >= $80)	_byte = -($100 - _byte);
+				_byte = min(abs(_byte), TILE_SIZE) * sign(_byte);
+				global.tile_widths[_i][_j] = _byte;
+			}
+		file_bin_close(_file);
+	}
+
+	// Angles
+	_file = file_bin_open("tiledata/anglemap.bin", 0);
+	_size = file_bin_size(_file);
+	if (_file) {
+		for (var _i = 0; _i < TILE_COUNT; _i++) {
+			var _byte = _i < _size ? file_bin_read_byte(_file) : 0;
+			if _byte == $FF
+				global.tile_angles[_i] = 0;
+			else
+				global.tile_angles[_i] = $100 - _byte;
+		}
+		file_bin_close(_file);
+	}
+	
+	// Angle Data
+	for (var _i = 0; _i < 256; _i++) {
+		var _ang = _i * _factor;
+		global.angle_data[_i] = {
+			angle		: _ang,
+			sine		: dsin(_ang),
+			cosine		: dcos(_ang),
+			quad_floor	: setup_Game_AngleQuadrants(0, _i),
+			quad_wall	: setup_Game_AngleQuadrants(1, _i)
+		}
+	}
+}
+function setup_Game_AngleQuadrants(_mode, _angle){
+	// WALL MODES
+	if _mode {
+		if _angle < 32 or _angle >= 225			// 0-44; 316-360
+			return COL_FLOOR;
+
+		else if _angle >= 32 and _angle <= 96	// 45-135
+			return COL_WALL_R;
+
+		else if _angle >= 97 and _angle <= 159	// 136-224
+			return COL_CEILING;
+
+		else if _angle >= 160 and _angle <= 224	// 225-315
+			return COL_WALL_L;
+	}
+	
+	// FLOOR MODES
+	else {
+		if _angle <= 32 or _angle >= 224		// 0-45; 315-360
+			return COL_FLOOR;
+
+		else if _angle >= 33 and _angle <= 95	// 46-134
+			return COL_WALL_R;
+
+		else if _angle >= 96 and _angle <= 160	// 135-225
+			return COL_CEILING;
+
+		else if _angle >= 161 and _angle <= 223	// 226-314
+			return COL_WALL_L;
 	}
 }
 function setup_Game_Audio(){

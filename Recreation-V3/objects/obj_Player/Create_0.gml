@@ -6,6 +6,7 @@ event_inherited();
 inertia		= 0;			// Inertia for movement physics
 height		= 0;			// Tile collision height
 width		= 0;			// Tile collision width
+width_push	= 0;
 height_def	= HEIGHT_MAIN;	// Default Tile collision height
 
 // Status Variables (NO LONGER A BITFIELD)
@@ -18,8 +19,8 @@ pushing		= false;	// if true, pushing against something
 in_water	= false;	// if true, underwater.
 
 // Collision related
-col_path	= 0;		// Collision has two paths
-col_angle	= 0;		// The angle at which you are moving. (0-360*)
+path		= 0;		// Collision has two paths
+angle		= 0;		// The angle at which you are moving. (0-$100*) < 360 degrees divided by 256.
 
 jump					= false;
 double_jump_flag		= false;
