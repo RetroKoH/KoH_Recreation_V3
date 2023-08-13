@@ -21,8 +21,7 @@ function ctrl_Player_AnglePos() {
 			_dist_real	= _tile_right[0];
 			_angle_real	= _tile_right[1];
 		}
-		
-		// FINISH THIS:
+
 		// Check wall latching and set angle (Use lookup table??)
         if (abs(gfunc_get_signed_angle(gfunc_wrap_angle(_angle_real - angle))) >= $20)
             angle = floor(gfunc_wrap_angle(angle + $20) / $40) * $40;
@@ -51,7 +50,7 @@ function ctrl_Player_AnglePos() {
         }
         
 		
-		else if (_dist_real < 0 and _dist_real > -14)
+		else if (_dist_real < 0) //and _dist_real > -14)
 			collided = true;
 		
 		// Check if we should align with the floor

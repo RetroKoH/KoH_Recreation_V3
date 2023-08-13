@@ -90,8 +90,10 @@ function gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, _dir, _full_sol
         // Negative length
         var _neg_dist = _len + (_anchor & _size_mask);
 
-        if (_neg_dist >= 0)
-            return [_size_mask - (_anchor & _size_mask) + (TILE_SIZE * _dir), 0];
+        if (_neg_dist >= 0) {
+			var _angle = gfunc_tile_get_angle(_tile, _index, _quadrant);	// Is this correct?
+            return [_size_mask - (_anchor & _size_mask) + (TILE_SIZE * _dir), _angle];
+		}
         else {
 			var _angle = gfunc_tile_get_angle(_tile, _index, _quadrant);	// Is this correct?
 			return [~_neg_dist + (TILE_SIZE * _dir), _angle];

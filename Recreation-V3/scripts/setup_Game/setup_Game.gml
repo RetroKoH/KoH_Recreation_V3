@@ -35,14 +35,13 @@ function setup_Game(){
 }
 
 function setup_Game_Macros(){
-
 	// Global macros
-	#macro FONT			global
-	#macro SHADER		global
-	#macro GAMECAM		view_camera[0]
-	#macro TILE_SIZE	16
-	#macro TILE_COUNT	256
-	#macro LOG_TIME		180
+	#macro FONT				global
+	#macro SHADER			global
+	#macro GAMECAM			view_camera[0]
+	#macro TILE_SIZE		16
+	#macro TILE_COUNT		256
+	#macro LOG_TIME			180
 
 	// Audio macros
 	#macro AU_PRIMARY		0	// Primary mode used for most BGMs

@@ -10,6 +10,8 @@ function animtable_PLAYERS() {
 		DUCK,
 		ROLL,
 		SKID,
+		BALANCE,
+		BALANCE_2,
 		PUSH,
 		SPRING,
 		FALL,
@@ -120,7 +122,19 @@ function animtable_SONIC() {
 	for (var i = 0; i < 6; i++)
 		setup_AnimationFrame(global.AnimTable_PlayerSonic, i, sp);
 	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerSonic, "Balance", spr_sonic_balance, spr_sonic_mask, spr_sonic_mask, -1, -1, 0, -1);
+
+	sp = 1/12;
+	for (var i = 0; i < 4; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerSonic, i, sp);
+	// ==================================================================================
 	
+	setup_Animation(global.AnimTable_PlayerSonic, "Balance Flip", spr_sonic_balance_flip, spr_sonic_mask, spr_sonic_mask, -1, -1, 0, -1);
+
+	for (var i = 0; i < 4; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerSonic, i, sp);
+	// ==================================================================================
 	setup_Animation(global.AnimTable_PlayerSonic, "Push", spr_sonic_push, spr_sonic_mask, spr_sonic_mask, -1, -1, 0, -1);
 
 	sp = 1/16;

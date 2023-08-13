@@ -15,6 +15,7 @@ function ctrl_Sonic_Normal() {
 	if ctrl_Player_Jump()		exit;	// *** Check for starting a jump.
 	ctrl_Player_SlopeResist(false);		// Adjust inertia based on collision angle.
 	ctrl_Player_MoveGround();			// Move along the ground and apply friction/deceleration.
+	ctrl_Player_Balance();				// Check for balancing
 	ctrl_Player_Roll();					// Check for starting a roll.
 	ctrl_Player_LevelBound();			// Interact with screen boundaries.
 	gfunc_gameobj_apply_speed(false);	// Apply speed without gravity.
