@@ -94,7 +94,7 @@ function gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, _dir, _full_sol
             return [_size_mask - (_anchor & _size_mask) + (TILE_SIZE * _dir), 0];
         else {
 			var _angle = gfunc_tile_get_angle(_tile, _index);	// Is this correct?
-            return [~_neg_dist + (TILE_SIZE * _dir), _angle];
+			return [~_neg_dist + (TILE_SIZE * _dir), _angle];
 		}
     }
  
@@ -196,7 +196,7 @@ function gfunc_tile_get_height(_tile, _index, _column) {
 	return _height;
 }
 
-function gfunc_tile_get_angle(_tile, _index){
+function gfunc_tile_get_angle(_tile, _index, _quadrant) {
     var _ang = global.tile_angles[_index&$FF];
 
     if tile_get_mirror(_tile)
@@ -204,6 +204,14 @@ function gfunc_tile_get_angle(_tile, _index){
     
     if tile_get_flip(_tile)
         _ang = gfunc_wrap_angle(-(_ang - $40) + $40);
+	
+	if _ang == 0
+		switch(_quadrant) {
+			case COL_FLOOR:		_ang = $00; break;
+			case COL_WALL_R:	_ang = $40; break;
+			case COL_CEILING:	_ang = $80; break;
+			case COL_WALL_L:	_ang = $C0; break;
+		}
 
     return _ang;
 }
