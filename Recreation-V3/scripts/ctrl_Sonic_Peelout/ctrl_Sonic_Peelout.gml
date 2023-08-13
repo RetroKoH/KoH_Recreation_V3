@@ -1,4 +1,4 @@
-function ctrl_Sonic_Peelout(){
+function ctrl_Sonic_Peelout() {
 	if cINPUT.k_u_h {
 		if peelout_timer == -1 {
 			if anim_ID == ANI_PLAYER.LOOK_UP and cINPUT.k_abc_p {

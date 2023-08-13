@@ -30,7 +30,6 @@ forced_roll	= false;
 jump					= false;
 double_jump_flag		= false;
 double_jump_property	= 0;
-spindash_flag			= false;
 spindash_rev			= -1;
 spindash_pitch			= 1;
 peelout_timer			= -1;

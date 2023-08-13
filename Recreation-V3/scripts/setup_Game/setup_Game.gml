@@ -453,6 +453,7 @@ function setup_Game_Collision(){
 			quad_floor	: setup_Game_AngleQuadrants(0, _i),
 			quad_wall	: setup_Game_AngleQuadrants(1, _i)
 		}
+		show_debug_message(string(_ang)+" "+string(dsin(_ang))+" "+string(dcos(_ang)));
 	}
 }
 function setup_Game_AngleQuadrants(_mode, _angle){

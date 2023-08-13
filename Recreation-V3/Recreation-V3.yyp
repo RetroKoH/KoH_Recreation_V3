@@ -344,6 +344,7 @@
     {"id":{"name":"spr_supersonic_transform","path":"sprites/spr_supersonic_transform/spr_supersonic_transform.yy",},},
     {"id":{"name":"spr_Missile","path":"sprites/spr_Missile/spr_Missile.yy",},},
     {"id":{"name":"spr_amy_lookup","path":"sprites/spr_amy_lookup/spr_amy_lookup.yy",},},
+    {"id":{"name":"ctrl_Player_Spindash","path":"scripts/ctrl_Player_Spindash/ctrl_Player_Spindash.yy",},},
     {"id":{"name":"spr_sonic_roll","path":"sprites/spr_sonic_roll/spr_sonic_roll.yy",},},
     {"id":{"name":"spr_SkidDust","path":"sprites/spr_SkidDust/spr_SkidDust.yy",},},
     {"id":{"name":"stage_GHZ2","path":"rooms/stage_GHZ2/stage_GHZ2.yy",},},

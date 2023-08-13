@@ -286,6 +286,7 @@
     {"name":"sfx_Roll","order":14,"path":"sounds/sfx_Roll/sfx_Roll.yy",},
     {"name":"spr_supersonic_transform","order":11,"path":"sprites/spr_supersonic_transform/spr_supersonic_transform.yy",},
     {"name":"spr_amy_lookup","order":6,"path":"sprites/spr_amy_lookup/spr_amy_lookup.yy",},
+    {"name":"ctrl_Player_Spindash","order":16,"path":"scripts/ctrl_Player_Spindash/ctrl_Player_Spindash.yy",},
     {"name":"spr_sonic_roll","order":11,"path":"sprites/spr_sonic_roll/spr_sonic_roll.yy",},
     {"name":"spr_SkidDust","order":3,"path":"sprites/spr_SkidDust/spr_SkidDust.yy",},
     {"name":"stage_GHZ2","order":6,"path":"rooms/stage_GHZ2/stage_GHZ2.yy",},

@@ -4,7 +4,7 @@ function ctrl_Player_SlopeResist(_rolling) {
 	if global.angle_data[angle].quad_floor == COL_CEILING
 		return;
 	
-	var _sine =  global.angle_data[angle].sine;
+	var _sine = global.angle_data[angle].sine;
 
 	/*	gsp-=.078125*a;	// if rolling uphill
 		gsp-=.3125*a;	// if rolling downhill*/
