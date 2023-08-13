@@ -91,6 +91,7 @@
     {"name":"sfx_ShieldLightningJump","order":68,"path":"sounds/sfx_ShieldLightningJump/sfx_ShieldLightningJump.yy",},
     {"name":"sfx_Bumper","order":73,"path":"sounds/sfx_Bumper/sfx_Bumper.yy",},
     {"name":"spr_MotobugSmoke","order":1,"path":"sprites/spr_MotobugSmoke/spr_MotobugSmoke.yy",},
+    {"name":"ctrl_Sonic_Peelout","order":15,"path":"scripts/ctrl_Sonic_Peelout/ctrl_Sonic_Peelout.yy",},
     {"name":"spr_amy_hurt","order":9,"path":"sprites/spr_amy_hurt/spr_amy_hurt.yy",},
     {"name":"spr_spin_mask","order":6,"path":"sprites/spr_spin_mask/spr_spin_mask.yy",},
     {"name":"sfx_supertransform","order":30,"path":"sounds/sfx_supertransform/sfx_supertransform.yy",},

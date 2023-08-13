@@ -30,11 +30,10 @@ forced_roll	= false;
 jump					= false;
 double_jump_flag		= false;
 double_jump_property	= 0;
-dash_flag				= false; // Variables used for Spindash, Peelout, and Drop Dash
 spindash_flag			= false;
 spindash_rev			= -1;
 spindash_pitch			= 1;
-dash_timer				= 0;
+peelout_timer			= -1;
 
 control_modes			= ctrl_Sonic;
 double_jump				= -1;

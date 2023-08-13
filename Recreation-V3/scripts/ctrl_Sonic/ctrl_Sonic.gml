@@ -10,7 +10,7 @@ function ctrl_Sonic() {
 }
 
 function ctrl_Sonic_Normal() {
-//	if ctrl_Sonic_Peelout()		exit;	// *** Check for starting a peelout.
+	if ctrl_Sonic_Peelout()		exit;	// *** Check for starting a peelout.
 //	if ctrl_Player_Spindash()	exit;	// *** Check for starting a spin dash.
 	if ctrl_Player_Jump()		exit;	// *** Check for starting a jump.
 	ctrl_Player_SlopeResist(false);		// Adjust inertia based on collision angle.

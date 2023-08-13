@@ -119,6 +119,7 @@
     {"id":{"name":"sfx_ShieldLightningJump","path":"sounds/sfx_ShieldLightningJump/sfx_ShieldLightningJump.yy",},},
     {"id":{"name":"sfx_Bumper","path":"sounds/sfx_Bumper/sfx_Bumper.yy",},},
     {"id":{"name":"spr_MotobugSmoke","path":"sprites/spr_MotobugSmoke/spr_MotobugSmoke.yy",},},
+    {"id":{"name":"ctrl_Sonic_Peelout","path":"scripts/ctrl_Sonic_Peelout/ctrl_Sonic_Peelout.yy",},},
     {"id":{"name":"spr_amy_hurt","path":"sprites/spr_amy_hurt/spr_amy_hurt.yy",},},
     {"id":{"name":"spr_supersonic_balance","path":"sprites/spr_supersonic_balance/spr_supersonic_balance.yy",},},
     {"id":{"name":"spr_spin_mask","path":"sprites/spr_spin_mask/spr_spin_mask.yy",},},
