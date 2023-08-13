@@ -33,25 +33,25 @@ function ctrl_Player_AnglePos() {
 		var collided = false;
         if (_dist_real > 0)
         {
-			var fall_dist;
+			// S2 Floor Collision
+			var _fall_dist;
 			if ((_quadrant & 1) == 0)
-				fall_dist = abs(xsp) + 4;
-			
+				_fall_dist = min(abs(xsp) + 4, 14); // FLOOR and CEILING
+
 			else
-				fall_dist = abs(ysp) + 4;
-            
-			if (fall_dist > 14)
-                fall_dist = 14;
+				_fall_dist = min(abs(ysp) + 4, 14); // WALLS
  
-            if (_dist_real > fall_dist)
-            {
-			    in_air = true; // Set air flag
-			    //angle = 0; //scrSetAngle(gravity_angle); Remove this to allow player to rotate in air
-            }
+			if (_dist_real > _fall_dist) {
+				in_air = true;		// Put into the air
+				pushing = false;
+			}
+
             else
 				collided = true;
         }
-        else if (_dist_real < 0) // && dist_real > -14) <- Disabling this fixes a bug with angles
+        
+		
+		else if (_dist_real < 0 and _dist_real > -14)
 			collided = true;
 		
 		// Check if we should align with the floor
@@ -59,6 +59,7 @@ function ctrl_Player_AnglePos() {
 		{
 			if ((_quadrant & 1) == 0)
 				y += _dist_real * ((_quadrant > 1) ? -1 : 1);
+
 			else
 				x += _dist_real * ((_quadrant > 1) ? -1 : 1);
 		}
