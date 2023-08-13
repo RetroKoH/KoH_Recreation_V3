@@ -18,7 +18,7 @@ function gfunc_collide_dist(_x, _y, _quadrant, _full_solid) {
 	
 	// If no tile, or if tile is top-solid when we need fully solid
     if (!_tile || (_index >= $100 and _full_solid))
-        return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, 1, _full_solid);// + TILE_SIZE;
+        return gfunc_collide_dist_adj(_sensor_x, _sensor_y, _quadrant, 1, _full_solid);	// + TILE_SIZE;
 	
 	var _len = gfunc_tile_get_length(_tile, _index, _sensor_x, _sensor_y, _quadrant);
 	

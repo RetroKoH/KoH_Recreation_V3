@@ -47,9 +47,10 @@ function ctrl_Player_CheckFloor(){
 			if _dist_real < 0 and (_tile_left[0] >= _dist_chk or _tile_right[0] >= _dist_chk) {
 				// Only hit the floor if we aren't too deep into it
 				// (Allows us to fall through top solid blocks if we haven't quite cleared them)
+				show_debug_message("Caught Floor "+t_dir+" in Floor Mode: "+string(y+height));
+					
 				y += _dist_real;
 				angle = _angle_real;
-					
 				// This section recoded courtesy of Orbinaut Framework
 				if (global.angle_data[angle].quad_floor != COL_FLOOR) {
 					// Steep slope (If floor is greater than 45 degrees, use full vertical velocity (capped at 15.75))
@@ -67,9 +68,7 @@ function ctrl_Player_CheckFloor(){
 					ysp = 0;
 					inertia = xsp;	
 				}
-
 				ctrl_Player_AcquireFloor();
-				show_debug_message("Caught Floor "+t_dir+" in Floor Mode: "+string(y-_dist_real));
 			}
 		}
 		break;
@@ -117,8 +116,8 @@ function ctrl_Player_CheckFloor(){
 
 				else if ysp > 0 {
 					// Check floor collision (Floor Sensors A/B)
-					var _tile_left	= gfunc_collide_dist_floor(-width, height, COL_FLOOR);
-					var _tile_right	= gfunc_collide_dist_floor(width, height, COL_FLOOR);
+					_tile_left	= gfunc_collide_dist_floor(-width, height, COL_FLOOR);
+					_tile_right	= gfunc_collide_dist_floor(width, height, COL_FLOOR);
 					var t_dir;
 			
 					// Compare distances and pick one.
@@ -134,12 +133,12 @@ function ctrl_Player_CheckFloor(){
 					}
 					
 					if (_dist_real < 0) {
+						show_debug_message("Caught Floor "+t_dir+" in R.Wall Mode: "+string(y+height));
 						y += _dist_real;
 						angle = _angle_real;
 						ysp = 0;
 						inertia = xsp;
 						ctrl_Player_AcquireFloor();
-						show_debug_message("Caught Floor "+t_dir+" in R.Wall Mode: "+string(y-_dist_real));
 					}
 				}
 			}
@@ -179,19 +178,19 @@ function ctrl_Player_CheckFloor(){
 				t_dir = "to the right";
 			}
 			
-			if _dist_real < 0 {				
-				y -= _dist_real;
-
+			if _dist_real < 0 {
 				if (_angle_real > $40 and _angle_real <= $61) or (_angle_real > $A0 and _angle_real <= $BF) {
 					// Land if the angle is steep enough
+					show_debug_message("Caught Ceiling "+t_dir+" in Ceiling Mode: "+string(y-height));
+					y -= _dist_real;
 					angle	= _angle_real;
 					inertia	= _angle_real < $80 ? -ysp : ysp;
 					ctrl_Player_AcquireFloor();
-					show_debug_message("Caught Floor "+t_dir+" in Ceiling Mode: "+string(y+_dist_real));
 				}
 				else {
+					show_debug_message("Bumped the Ceiling "+t_dir+" in Ceiling Mode: "+string(y-height));
+					y -= _dist_real;
 					ysp = 0;
-					show_debug_message("Bumped the Floor "+t_dir+" in Ceiling Mode: "+string(y+_dist_real));
 				}
 			}
 		}
@@ -256,12 +255,12 @@ function ctrl_Player_CheckFloor(){
 					}
 					
 					if (_dist_real < 0) {
+						show_debug_message("Caught Floor "+t_dir+" in L.Wall Mode: "+string(y-_dist_real));
 						y += _dist_real;
 						angle = _angle_real;
 						ysp = 0;
 						inertia = xsp;
 						ctrl_Player_AcquireFloor();
-						show_debug_message("Caught Floor "+t_dir+" in L.Wall Mode: "+string(y-_dist_real));
 					}
 				}
 			}

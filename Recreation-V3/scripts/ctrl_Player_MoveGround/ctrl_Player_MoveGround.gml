@@ -1,5 +1,5 @@
 function ctrl_Player_MoveGround(){
-	var _dir = (cINPUT.k_r_h - cINPUT.k_l_h);	// Movement based on key control.
+	var _dir = (cINPUT.k_r_h - cINPUT.k_l_h) * (move_lock == 0);	// Movement based on key control.
 	
 	// If pressing left
 	if _dir == -1 {
@@ -62,20 +62,16 @@ function ctrl_Player_MoveGround(){
 		pushing = false;			// Player is not pushing.
 		anim_ID = ANI_PLAYER.IDLE;	// Set idle animation.
 		
-		// Looking up and down
-		if cINPUT.k_u_h
-		{
+		// Looking up and down (Camera Shifting handled in core_Camera)
+		if cINPUT.k_u_h and !move_lock
 			anim_ID = ANI_PLAYER.LOOK_UP;
-			//if (v_lookshift > -88) v_lookshift-=2;
-		}
-		else if cINPUT.k_d_h
-		{
+
+		else if cINPUT.k_d_h and !move_lock
 			anim_ID = ANI_PLAYER.DUCK;
-			//if (v_lookshift < 88) v_lookshift+=2;
-		}
+
 	}
 	
-	// Friction - Formula per the Sonic PHysics Guide
+	// Friction - Formula per the Sonic Physics Guide
 	if (_dir == 0)
 		inertia -= min(abs(inertia), accel_run) * sign(inertia);
 	

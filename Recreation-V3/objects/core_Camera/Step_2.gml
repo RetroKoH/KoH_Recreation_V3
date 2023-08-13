@@ -28,11 +28,11 @@
 			shift_x = 0;
 	
 		// Set vertical shift speed
-		if follow == obj_Player //and cPLAYER.grounded
+		if follow == obj_Player and !obj_Player.in_air
 		{	
-			//if abs(cPLAYER.inertia) >= 8
-			//	var _limit = shift_y_max;
-			//else
+			if abs(follow.inertia) >= 8
+				var _limit = shift_y_max;
+			else
 				var _limit = 6;
 
 			shift_y = clamp(target_y - (global.win_height / 2 - 16), -_limit, _limit);
@@ -79,12 +79,14 @@
 	if enabled and instance_exists(follow) and follow == obj_Player
 	{
 		// Check for overview delay
-		var _shiftDown = 0;//= (obj_Player.anim_ID == PLANIM_CROUCH);
-		var _shiftUp   = 0;//= (obj_Player.anim_ID == PLANIM_LOOKUP);
+		var _shiftDown = (obj_Player.anim_ID == ANI_PLAYER.DUCK);
+		var _shiftUp   = (obj_Player.anim_ID == ANI_PLAYER.LOOK_UP);
 	
-		if (_shiftUp or _shiftDown)
+		if (_shiftUp or _shiftDown) {
 			if overview_delay
 				overview_delay--;
+		}
+		else overview_delay = 120;
 	
 		// Offset vertically
 		if (_shiftUp or _shiftDown) and !overview_delay
