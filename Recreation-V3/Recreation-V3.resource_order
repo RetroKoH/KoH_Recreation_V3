@@ -15,6 +15,7 @@
     {"name":"Effects","order":3,"path":"folders/Game Objects/Effects.yy",},
     {"name":"Lamppost","order":9,"path":"folders/Game Objects/Lamppost.yy",},
     {"name":"Monitors","order":8,"path":"folders/Game Objects/Monitors.yy",},
+    {"name":"Path Swappers","order":12,"path":"folders/Game Objects/Path Swappers.yy",},
     {"name":"Player","order":11,"path":"folders/Game Objects/Player.yy",},
     {"name":"0. Masks","order":9,"path":"folders/Game Objects/Player/0. Masks.yy",},
     {"name":"1. Sonic","order":2,"path":"folders/Game Objects/Player/1. Sonic.yy",},
@@ -50,7 +51,6 @@
     {"name":"Dynamic Level Events","order":7,"path":"folders/Zones/GHZ/Dynamic Level Events.yy",},
     {"name":"Foreground","order":2,"path":"folders/Zones/GHZ/Foreground.yy",},
     {"name":"Tilesets","order":4,"path":"folders/Zones/GHZ/Tilesets.yy",},
-    {"name":"Path Swappers","order":12,"path":"folders/Game Objects/Path Swappers.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},

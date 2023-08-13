@@ -26,6 +26,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Effects","folderPath":"folders/Game Objects/Effects.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Lamppost","folderPath":"folders/Game Objects/Lamppost.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Monitors","folderPath":"folders/Game Objects/Monitors.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Path Swappers","folderPath":"folders/Game Objects/Path Swappers.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Player","folderPath":"folders/Game Objects/Player.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"0. Masks","folderPath":"folders/Game Objects/Player/0. Masks.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"1. Sonic","folderPath":"folders/Game Objects/Player/1. Sonic.yy",},
@@ -64,7 +65,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dynamic Level Events","folderPath":"folders/Zones/GHZ/Dynamic Level Events.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Foreground","folderPath":"folders/Zones/GHZ/Foreground.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Zones/GHZ/Tilesets.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Path Swappers","folderPath":"folders/Game Objects/Path Swappers.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
