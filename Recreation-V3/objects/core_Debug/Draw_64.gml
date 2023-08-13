@@ -30,7 +30,8 @@ if instance_exists(core_Stage)
 	"Current: "+string(target)+"\n"+
 	"("+string(target_type)+")"+"\n"+
 	string(core_Stage.paused ? "PAUSED" : "ACTIVE") +"\n"+
-	"OB: "+string(core_Stage.run_objects)+", ANI: "+string(cRENDER.update_anims));
+	"OB: "+string(core_Stage.run_objects)+", ANI: "+string(cRENDER.update_anims)+"\n"+
+	string(cCAMERA.view_x+point_x)+", "+string(cCAMERA.view_y+point_y));
 
 // Draw object data
 _ax=240;

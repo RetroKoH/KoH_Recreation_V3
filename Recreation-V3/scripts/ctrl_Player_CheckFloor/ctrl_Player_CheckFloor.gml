@@ -29,15 +29,18 @@ function ctrl_Player_CheckFloor(){
 			// Check floor collision (Floor Sensors A/B)
 			var _tile_left	= gfunc_collide_dist_floor(-width, height, COL_FLOOR);
 			var _tile_right	= gfunc_collide_dist_floor(width, height, COL_FLOOR);
+			var _dir;
 			
 			// This time we need both distances.
 			if _tile_left[0] <= _tile_right[0] {
 				_dist_real	= _tile_left[0];
 				_angle_real	= _tile_left[1];
+				_dir = "to the left";
 			}
 			else {
 				_dist_real	= _tile_right[0];
 				_angle_real	= _tile_right[1];
+				_dir = "to the right";
 			}
 			
 			if (_dist_real < 0) {
@@ -67,6 +70,7 @@ function ctrl_Player_CheckFloor(){
 					}
 
 					ctrl_Player_AcquireFloor();
+					show_debug_message("Caught Floor "+_dir+" in Floor Mode: "+string(y-_dist_real));
 				}
 			}
 		}
@@ -117,15 +121,18 @@ function ctrl_Player_CheckFloor(){
 					// Check floor collision (Floor Sensors A/B)
 					var _tile_left	= gfunc_collide_dist_floor(-width, height, COL_FLOOR);
 					var _tile_right	= gfunc_collide_dist_floor(width, height, COL_FLOOR);
+					var _dir;
 			
 					// Compare distances and pick one.
 					if _tile_left[0] <= _tile_right[0] {
 						_dist_real	= _tile_left[0];
 						_angle_real	= _tile_left[1];
+						_dir = "to the left";
 					}
 					else {
 						_dist_real	= _tile_right[0];
 						_angle_real	= _tile_right[1];
+						_dir = "to the right";
 					}
 					
 					if (_dist_real < 0) {
@@ -134,6 +141,7 @@ function ctrl_Player_CheckFloor(){
 						ysp = 0;
 						inertia = xsp;
 						ctrl_Player_AcquireFloor();
+						show_debug_message("Caught Floor "+_dir+" in R.Wall Mode: "+string(y-_dist_real));
 					}
 				}
 			}
@@ -159,28 +167,34 @@ function ctrl_Player_CheckFloor(){
 			// Collide with the ceiling (Ceiling Sensors C/D)
 			var _tile_left	= gfunc_collide_dist_ceiling(-width, -height, COL_FLOOR);
 			var _tile_right	= gfunc_collide_dist_ceiling(width, -height, COL_FLOOR);
+			var _dir;
 				
 			// Compare distances and pick one.
 			if _tile_left[0] <= _tile_right[0] {
 				_dist_real	= _tile_left[0];
 				_angle_real	= _tile_left[1];
+				_dir = "to the left";
 			}
 			else {
 				_dist_real	= _tile_right[0];
 				_angle_real	= _tile_right[1];
+				_dir = "to the right";
 			}
 			
 			if _dist_real < 0 {				
+				y -= _dist_real;
+
 				if (_angle_real > $40 and _angle_real <= $61) or (_angle_real > $A0 and _angle_real <= $BF) {
 					// Land if the angle is steep enough
 					angle	= _angle_real;
 					inertia	= _angle_real < $80 ? -ysp : ysp;
 					ctrl_Player_AcquireFloor();
+					show_debug_message("Caught Floor "+_dir+" in Ceiling Mode: "+string(y+_dist_real));
 				}
-				else
+				else {
 					ysp = 0;
-				
-				y -= _dist_real;
+					show_debug_message("Bumped the Floor "+_dir+" in Ceiling Mode: "+string(y+_dist_real));
+				}
 			}
 		}
 		break;
@@ -229,15 +243,18 @@ function ctrl_Player_CheckFloor(){
 					// Check floor collision (Floor Sensors A/B)
 					var _tile_left	= gfunc_collide_dist_floor(-width, height, COL_FLOOR);
 					var _tile_right	= gfunc_collide_dist_floor(width, height, COL_FLOOR);
+					var _dir;
 			
 					// Compare distances and pick one.
 					if _tile_left[0] <= _tile_right[0] {
 						_dist_real	= _tile_left[0];
 						_angle_real	= _tile_left[1];
+						_dir = "to the left";
 					}
 					else {
 						_dist_real	= _tile_right[0];
 						_angle_real	= _tile_right[1];
+						_dir = "to the right";
 					}
 					
 					if (_dist_real < 0) {
@@ -246,6 +263,7 @@ function ctrl_Player_CheckFloor(){
 						ysp = 0;
 						inertia = xsp;
 						ctrl_Player_AcquireFloor();
+						show_debug_message("Caught Floor "+_dir+" in L.Wall Mode: "+string(y-_dist_real));
 					}
 				}
 			}
