@@ -29,49 +29,47 @@ function ctrl_Player_CheckFloor(){
 			// Check floor collision (Floor Sensors A/B)
 			var _tile_left	= gfunc_collide_dist_floor(-width, height, COL_FLOOR);
 			var _tile_right	= gfunc_collide_dist_floor(width, height, COL_FLOOR);
-			var _dir;
+			var t_dir;
 			
 			// This time we need both distances.
 			if _tile_left[0] <= _tile_right[0] {
 				_dist_real	= _tile_left[0];
 				_angle_real	= _tile_left[1];
-				_dir = "to the left";
+				t_dir = "to the left";
 			}
 			else {
 				_dist_real	= _tile_right[0];
 				_angle_real	= _tile_right[1];
-				_dir = "to the right";
+				t_dir = "to the right";
 			}
 			
-			if (_dist_real < 0) {
+			var _dist_chk = -(ysp + 8);
+			if _dist_real < 0 and (_tile_left[0] >= _dist_chk or _tile_right[0] >= _dist_chk) {
 				// Only hit the floor if we aren't too deep into it
 				// (Allows us to fall through top solid blocks if we haven't quite cleared them)
-				var _dist_chk = -(ysp + 8);
-				if _dist_real < 0 and (_tile_left[0] >= _dist_chk or _tile_right[0] >= _dist_chk) {
-					y += _dist_real;
-					angle = _angle_real;
+				y += _dist_real;
+				angle = _angle_real;
 					
-					// This section recoded courtesy of Orbinaut Framework
-					if (global.angle_data[angle].quad_floor != COL_FLOOR) {
-						// Steep slope (If floor is greater than 45 degrees, use full vertical velocity (capped at 15.75))
-						if ysp > 15.75
-							ysp = 15.75;
-						xsp = 0;
-						inertia = angle < $80 ? -ysp : ysp;
-					}
-					else if angle > $10 and angle < $F0 {
-						// Shallow slope (If floor is greater than 22.5 degrees, use halved vertical velocity)
-						inertia = angle < $80 ? -ysp / 2 : ysp / 2;
-					}
-					else {
-						// Flat floor (If floor is within 22.5 degrees, use horizontal velocity)
-						ysp = 0;
-						inertia = xsp;	
-					}
-
-					ctrl_Player_AcquireFloor();
-					show_debug_message("Caught Floor "+_dir+" in Floor Mode: "+string(y-_dist_real));
+				// This section recoded courtesy of Orbinaut Framework
+				if (global.angle_data[angle].quad_floor != COL_FLOOR) {
+					// Steep slope (If floor is greater than 45 degrees, use full vertical velocity (capped at 15.75))
+					if ysp > 15.75
+						ysp = 15.75;
+					xsp = 0;
+					inertia = angle < $80 ? -ysp : ysp;
 				}
+				else if angle > $10 and angle < $F0 {
+					// Shallow slope (If floor is greater than 22.5 degrees, use halved vertical velocity)
+					inertia = angle < $80 ? -ysp / 2 : ysp / 2;
+				}
+				else {
+					// Flat floor (If floor is within 22.5 degrees, use horizontal velocity)
+					ysp = 0;
+					inertia = xsp;	
+				}
+
+				ctrl_Player_AcquireFloor();
+				show_debug_message("Caught Floor "+t_dir+" in Floor Mode: "+string(y-_dist_real));
 			}
 		}
 		break;
@@ -121,18 +119,18 @@ function ctrl_Player_CheckFloor(){
 					// Check floor collision (Floor Sensors A/B)
 					var _tile_left	= gfunc_collide_dist_floor(-width, height, COL_FLOOR);
 					var _tile_right	= gfunc_collide_dist_floor(width, height, COL_FLOOR);
-					var _dir;
+					var t_dir;
 			
 					// Compare distances and pick one.
 					if _tile_left[0] <= _tile_right[0] {
 						_dist_real	= _tile_left[0];
 						_angle_real	= _tile_left[1];
-						_dir = "to the left";
+						t_dir = "to the left";
 					}
 					else {
 						_dist_real	= _tile_right[0];
 						_angle_real	= _tile_right[1];
-						_dir = "to the right";
+						t_dir = "to the right";
 					}
 					
 					if (_dist_real < 0) {
@@ -141,7 +139,7 @@ function ctrl_Player_CheckFloor(){
 						ysp = 0;
 						inertia = xsp;
 						ctrl_Player_AcquireFloor();
-						show_debug_message("Caught Floor "+_dir+" in R.Wall Mode: "+string(y-_dist_real));
+						show_debug_message("Caught Floor "+t_dir+" in R.Wall Mode: "+string(y-_dist_real));
 					}
 				}
 			}
@@ -167,18 +165,18 @@ function ctrl_Player_CheckFloor(){
 			// Collide with the ceiling (Ceiling Sensors C/D)
 			var _tile_left	= gfunc_collide_dist_ceiling(-width, -height, COL_FLOOR);
 			var _tile_right	= gfunc_collide_dist_ceiling(width, -height, COL_FLOOR);
-			var _dir;
+			var t_dir;
 				
 			// Compare distances and pick one.
 			if _tile_left[0] <= _tile_right[0] {
 				_dist_real	= _tile_left[0];
 				_angle_real	= _tile_left[1];
-				_dir = "to the left";
+				t_dir = "to the left";
 			}
 			else {
 				_dist_real	= _tile_right[0];
 				_angle_real	= _tile_right[1];
-				_dir = "to the right";
+				t_dir = "to the right";
 			}
 			
 			if _dist_real < 0 {				
@@ -189,11 +187,11 @@ function ctrl_Player_CheckFloor(){
 					angle	= _angle_real;
 					inertia	= _angle_real < $80 ? -ysp : ysp;
 					ctrl_Player_AcquireFloor();
-					show_debug_message("Caught Floor "+_dir+" in Ceiling Mode: "+string(y+_dist_real));
+					show_debug_message("Caught Floor "+t_dir+" in Ceiling Mode: "+string(y+_dist_real));
 				}
 				else {
 					ysp = 0;
-					show_debug_message("Bumped the Floor "+_dir+" in Ceiling Mode: "+string(y+_dist_real));
+					show_debug_message("Bumped the Floor "+t_dir+" in Ceiling Mode: "+string(y+_dist_real));
 				}
 			}
 		}
@@ -243,18 +241,18 @@ function ctrl_Player_CheckFloor(){
 					// Check floor collision (Floor Sensors A/B)
 					var _tile_left	= gfunc_collide_dist_floor(-width, height, COL_FLOOR);
 					var _tile_right	= gfunc_collide_dist_floor(width, height, COL_FLOOR);
-					var _dir;
+					var t_dir;
 			
 					// Compare distances and pick one.
 					if _tile_left[0] <= _tile_right[0] {
 						_dist_real	= _tile_left[0];
 						_angle_real	= _tile_left[1];
-						_dir = "to the left";
+						t_dir = "to the left";
 					}
 					else {
 						_dist_real	= _tile_right[0];
 						_angle_real	= _tile_right[1];
-						_dir = "to the right";
+						t_dir = "to the right";
 					}
 					
 					if (_dist_real < 0) {
@@ -263,13 +261,11 @@ function ctrl_Player_CheckFloor(){
 						ysp = 0;
 						inertia = xsp;
 						ctrl_Player_AcquireFloor();
-						show_debug_message("Caught Floor "+_dir+" in L.Wall Mode: "+string(y-_dist_real));
+						show_debug_message("Caught Floor "+t_dir+" in L.Wall Mode: "+string(y-_dist_real));
 					}
 				}
 			}
 		}
 		break;
 	}
-	
-	//// If landed, update floor mode (Orbinaut Framework Addition)
 }
