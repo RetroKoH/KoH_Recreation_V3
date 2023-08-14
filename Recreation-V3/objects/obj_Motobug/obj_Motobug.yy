@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_DropdashDust",
+  "name": "obj_Motobug",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
@@ -9,12 +9,12 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Drop Dash",
-    "path": "folders/Game Objects/Effects/Drop Dash.yy",
+    "name": "Motobug",
+    "path": "folders/Game Objects/Badniks/Motobug.yy",
   },
   "parentObjectId": {
-    "name": "obj_GOEffect",
-    "path": "objects/obj_GOEffect/obj_GOEffect.yy",
+    "name": "obj_GOBadnik",
+    "path": "objects/obj_GOBadnik/obj_GOBadnik.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_DropdashDust",
-    "path": "sprites/spr_DropdashDust/spr_DropdashDust.yy",
+    "name": "spr_Motobug",
+    "path": "sprites/spr_Motobug/spr_Motobug.yy",
   },
   "spriteMaskId": null,
   "visible": true,

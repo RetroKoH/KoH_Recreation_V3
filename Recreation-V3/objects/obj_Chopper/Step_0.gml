@@ -2,8 +2,8 @@
 
 switch(routine) {
 	case 0:
-	// Object initialization & resetting
 	{
+		// Object initialization & resetting
 		routine++;
 		ysp			= -7;	// Choppers jump up at a speed of 7
 		origin_y	= y;	// Store the starting y position
@@ -11,8 +11,8 @@ switch(routine) {
 	break;
 	
 	case 1:
-	// Choppers simply swim up and down, popping up and coming back down again.
 	{
+		// Choppers simply swim up and down, popping up and coming back down again.
 		y+=ysp;			// Apply speed to the badnik's y-position
 		ysp+=.09375;	// Reduce speed
 		

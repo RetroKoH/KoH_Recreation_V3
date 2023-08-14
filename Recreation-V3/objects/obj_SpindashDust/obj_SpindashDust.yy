@@ -14,8 +14,8 @@
     "path": "folders/Game Objects/Effects/Spindash.yy",
   },
   "parentObjectId": {
-    "name": "obj_GameObj",
-    "path": "objects/obj_GameObj/obj_GameObj.yy",
+    "name": "obj_GOEffect",
+    "path": "objects/obj_GOEffect/obj_GOEffect.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

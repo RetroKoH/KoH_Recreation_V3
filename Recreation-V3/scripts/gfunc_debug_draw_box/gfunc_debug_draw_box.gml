@@ -1,5 +1,5 @@
-///@function gfunc_debug_draw_box(type,color)
-function gfunc_debug_draw_box(_type,_col){
+///@function gfunc_debug_draw_box(type, [color])
+function gfunc_debug_draw_box(_type, _col=c_white){
 // Draw collision box information. The box will display the object's bounding box.
 	/* The color of the bounding box will tell what type of object it is.
 	   White   - Solid
@@ -45,7 +45,17 @@ function gfunc_debug_draw_box(_type,_col){
 	                        (floor(y)+((sprite_height-sprite_height)+(floor(bbox_bottom)-floor(y)))),
 	                        _col,_col,_col,_col,true);
 	}
-
+	
+	// Some objects (effects) simply use a bare outline
+	if (_type == 2)
+	{
+		draw_rectangle_color(
+	                        (floor(x)-((sprite_width-sprite_width)+(floor(x)-floor(bbox_left)))),
+	                        (floor(y)-((sprite_height-sprite_height)+(floor(y)-floor(bbox_top)))),
+	                        (floor(x)+((sprite_width-sprite_width)+(floor(bbox_right)-floor(x)))),
+	                        (floor(y)+((sprite_height-sprite_height)+(floor(bbox_bottom)-floor(y)))),
+	                        c_white,c_white,c_white,c_white,true);
+	}
 	// Draw origin
-	//draw_sprite(spr_debug_center,0,floor(x),floor(y));
+	draw_sprite(spr_debug_center,0,floor(x),floor(y));
 }

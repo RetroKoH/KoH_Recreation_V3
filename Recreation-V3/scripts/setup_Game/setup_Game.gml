@@ -65,6 +65,10 @@ function setup_Game_Macros(){
 	#macro FADEBLEND_WHITE	1
 	#macro FADEBLEND_FLASH	2
 	
+	// Act macro
+	#macro ACT_1			0
+	#macro ACT_2			1
+	
 	// Title card routine macro
 	#macro TCARD_INIT		0
 	#macro TCARD_ENTER		1
