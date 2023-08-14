@@ -27,6 +27,7 @@ function ctrl_Player_Spindash() {
 			spinning		= true;
 
 			inertia = (8 + (floor(spindash_rev) / 2)) * (flipped ? -1 : 1);
+			gfunc_audio_sfx_stop(SFXs.SPINDASH_REV);
 			gfunc_audio_sfx_play(SFXs.SPINDASH_REL);
 			spindash_rev	= -1;
 		

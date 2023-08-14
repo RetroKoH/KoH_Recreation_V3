@@ -24,6 +24,7 @@ function ctrl_Sonic_Peelout() {
 			inertia			= flipped ? -12 : 12;
 			anim_ID			= ANI_PLAYER.WALK;
 			peelout_timer	= -1;
+			gfunc_audio_sfx_stop(SFXs.PEELOUT_REV);
 			gfunc_audio_sfx_play(SFXs.PEELOUT_REL);
 			
 			// Prevent jumping straight upward
