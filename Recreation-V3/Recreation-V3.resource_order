@@ -253,6 +253,7 @@
     {"name":"obj_Chopper","order":1,"path":"objects/obj_Chopper/obj_Chopper.yy",},
     {"name":"gfunc_wrap_value","order":10,"path":"scripts/gfunc_wrap_value/gfunc_wrap_value.yy",},
     {"name":"sfx_MightyLand","order":44,"path":"sounds/sfx_MightyLand/sfx_MightyLand.yy",},
+    {"name":"obj_SpindashDust","order":5,"path":"objects/obj_SpindashDust/obj_SpindashDust.yy",},
     {"name":"spr_MonIcon","order":1,"path":"sprites/spr_MonIcon/spr_MonIcon.yy",},
     {"name":"setup_Sounds","order":4,"path":"scripts/setup_Sounds/setup_Sounds.yy",},
     {"name":"bkg_ghz_05","order":5,"path":"sprites/bkg_ghz_05/bkg_ghz_05.yy",},

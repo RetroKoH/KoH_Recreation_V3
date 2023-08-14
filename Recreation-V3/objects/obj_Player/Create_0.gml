@@ -3,30 +3,30 @@
 event_inherited();
 
 // Player variables
-inertia		= 0;			// Inertia for movement physics
-height		= 0;			// Tile collision height
-width		= 0;			// Tile collision width
-width_push	= 0;
-height_def	= HEIGHT_MAIN;	// Default Tile collision height
+inertia					= 0;			// Inertia for movement physics
+height					= 0;			// Tile collision height
+width					= 0;			// Tile collision width
+width_push				= 0;
+height_def				= HEIGHT_MAIN;	// Default Tile collision height
 
 // Status Variables (NO LONGER A BITFIELD)
-flipped		= false;	// if true, facing left.
-in_air		= false;	// if true, in the air.
-spinning	= false;	// if true, spinning in a ball.
-on_obj		= false;	// if true, not grounded, but should not fall.
-// Removing roll jump lock
-pushing		= false;	// if true, pushing against something
-in_water	= false;	// if true, underwater.
+flipped					= false;	// if true, facing left.
+in_air					= false;	// if true, in the air.
+spinning				= false;	// if true, spinning in a ball.
+on_obj					= false;	// if true, not grounded, but should not fall.
+roll_jump				= false;	// if true, control is locked
+pushing					= false;	// if true, pushing against something
+in_water				= false;	// if true, underwater.
 
 // Collision related
-path		= LAYER_A;					// Collision has two paths
-angle		= 0;						// The angle at which you are moving. (0-$100*) < 360 degrees divided by 256.
-angle_data	= global.angle_data[angle];	// Poll the current angle on each frame.
+path					= LAYER_A;					// Collision has two paths
+angle					= 0;						// The angle at which you are moving. (0-$100*) < 360 degrees divided by 256.
+angle_data				= global.angle_data[angle];	// Poll the current angle on each frame.
 
 // Control Restriction Variables
-move_lock	= 0;
-convex		= false;
-forced_roll	= false;
+move_lock				= 0;
+convex					= false;
+forced_roll				= false;
 
 jump					= false;
 double_jump_flag		= false;

@@ -9,6 +9,10 @@ function ctrl_Player_Spindash() {
 			gfunc_audio_sfx_play(SFXs.SPINDASH_REV);
 			ctrl_Player_LevelBound();
 			ctrl_Player_AnglePos();
+			
+			// Create dust effect
+			var _dust = instance_create_layer(x, y + height + 1, "Instances", obj_SpindashDust);
+			_dust.parent = id;
 			return true;	// Skip the rest of the Normal Mode Routine
 		}
 	}
