@@ -3,7 +3,7 @@ function ctrl_Player_Balance() {
 		exit;
 	
 	if !on_obj {
-		if cINPUT.k_d_h or global.angle_data[angle].quad_floor
+		if cINPUT.k_d_h or angle_data.quad_floor
 			exit;
 		
 		var _floor	= gfunc_collide_dist_floor(0, height, COL_FLOOR)[0];
@@ -28,8 +28,6 @@ function ctrl_Player_Balance() {
 }
 
 function ctrl_Player_BalanceLeft() {
-	show_debug_message("Balancing Left");
-	
 	if flipped
 		anim_ID = ANI_PLAYER.BALANCE;
 
@@ -37,9 +35,7 @@ function ctrl_Player_BalanceLeft() {
 		anim_ID = ANI_PLAYER.BALANCE_2;
 }
 
-function ctrl_Player_BalanceRight() {
-	show_debug_message("Balancing Right");
-	
+function ctrl_Player_BalanceRight() {	
 	if !flipped
 		anim_ID = ANI_PLAYER.BALANCE;
 

@@ -17,7 +17,5 @@ function ctrl_Player_Roll(){
 		anim_ID=ANI_PLAYER.ROLL;
 		y += height_def - height;	// Reposition character according to height change
 		audio_play_sound(sfx_Roll,1,false);
-		
-		//if (gsp==0)  gsp+=2;		// To prevent getting stuck in S tunnels, and the like.
 	}
 }

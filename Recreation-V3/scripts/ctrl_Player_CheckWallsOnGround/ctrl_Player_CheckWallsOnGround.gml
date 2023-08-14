@@ -4,7 +4,7 @@ function ctrl_Player_CheckWallsOnGround() {
 		exit;
 
 	// Otherwise, proceed and get distance from the wall.
-	var _quadrant	= global.angle_data[angle].quad_wall;	// Get collision quadrant
+	var _quadrant	= angle_data.quad_wall;	// Get collision quadrant
 	var _off_y		= (angle < 8 || angle > $F8) ? (!spinning ? 8 : 3) : 0;
 	var _angle_check, _dist;
 	
@@ -61,24 +61,3 @@ function ctrl_Player_CheckWallsOnGround() {
 		}
 	}
 }
-
-/*function ctrl_Player_CheckWallsOnGround() {
-	// Exit if not moving, or if angle is too steep and not a cardinal one (90, 180, 270)
-	if inertia == 0 or ((angle > $40 and angle < $C0) and angle != $80)
-		exit;
-	
-	var _quadrant	= global.angle_data[angle].quad_wall;	// Get collision quadrant
-	var _off_y		= (angle < 8 || angle > $F8) ? (!spinning ? 8 : 3) : 0;
-
-	// If moving left, find walls to your left.
-	if (inertia < 0)
-	{
-		var _angle_check = angle - $40;
-		switch _quadrant
-		{
-			case COL_FLOOR:
-				var _dist = gfunc_collide_dist_leftwall(-width_push, _off_y, _quadrant)[0];
-			break;
-		}
-	}
-}*/

@@ -1,4 +1,6 @@
 function ctrl_Sonic() {
+	angle_data = global.angle_data[angle];
+	
 	if (in_air)
 		ctrl_Sonic_InAir();
 	else {

@@ -7,9 +7,10 @@ function ctrl_Player_Jump(){
 
 	if cINPUT.k_abc_p
 	{
-		var jmp		= jmp_spd; //- 3 * in_water;	// Alter gravity depending on whether underwater or not 
-		xsp			-= jmp * global.angle_data[angle].sine;
-		ysp			-= jmp * global.angle_data[angle].cosine;
+		var jmp		= !in_water ? jmp_spd : (jmp_spd - 3);
+
+		xsp			-= jmp * angle_data.sine;
+		ysp			-= jmp * angle_data.cosine;
 		in_air		= true;
 		pushing		= false;
 		on_obj		= false;

@@ -27,8 +27,8 @@ function ctrl_Sonic_Peelout() {
 			gfunc_audio_sfx_play(SFXs.PEELOUT_REL);
 			
 			// Prevent jumping straight upward
-			xsp = inertia * global.angle_data[angle].cosine;
-			ysp = inertia * -global.angle_data[angle].sine;
+			xsp = inertia * angle_data.cosine;
+			ysp = inertia * -angle_data.sine;
 			
 			return true;
 		}

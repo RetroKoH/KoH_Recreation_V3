@@ -19,8 +19,9 @@ pushing		= false;	// if true, pushing against something
 in_water	= false;	// if true, underwater.
 
 // Collision related
-path		= LAYER_A;	// Collision has two paths
-angle		= 0;		// The angle at which you are moving. (0-$100*) < 360 degrees divided by 256.
+path		= LAYER_A;					// Collision has two paths
+angle		= 0;						// The angle at which you are moving. (0-$100*) < 360 degrees divided by 256.
+angle_data	= global.angle_data[angle];	// Poll the current angle on each frame.
 
 // Control Restriction Variables
 move_lock	= 0;

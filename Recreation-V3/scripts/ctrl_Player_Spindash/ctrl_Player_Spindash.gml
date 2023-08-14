@@ -47,8 +47,8 @@ function ctrl_Player_Spindash() {
 		gfunc_audio_sfx_play(SFXs.SPINDASH_REL);
 		
 		// Prevent jumping straight upward
-		xsp = inertia * global.angle_data[angle].cosine;
-		ysp = inertia * -global.angle_data[angle].sine;
+		xsp = inertia * angle_data.cosine;
+		ysp = inertia * -angle_data.sine;
 	}
 	
 	return false;

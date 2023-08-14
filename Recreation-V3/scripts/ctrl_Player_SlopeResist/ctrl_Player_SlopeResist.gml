@@ -1,10 +1,10 @@
 function ctrl_Player_SlopeResist(_rolling) {
 	
 	// Exit if on ceiling. Angles $60-$A0.
-	if global.angle_data[angle].quad_floor == COL_CEILING
+	if angle_data.quad_floor == COL_CEILING
 		return;
 	
-	var _sine = global.angle_data[angle].sine;
+	var _sine = angle_data.sine;
 
 	/*	gsp-=.078125*a;	// if rolling uphill
 		gsp-=.3125*a;	// if rolling downhill*/

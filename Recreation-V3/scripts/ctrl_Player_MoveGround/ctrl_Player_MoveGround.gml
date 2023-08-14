@@ -5,7 +5,7 @@ function ctrl_Player_MoveGround(){
 	if _dir == -1 {
 		if (inertia > 0) {				// If moving right?
 			inertia -= decel_run;		// Decelerate if moving right.
-			if (global.angle_data[angle].quad_floor == 0) and inertia >= 4 {
+			if (angle_data.quad_floor == 0) and inertia >= 4 {
 				// If character is on Floor angles, and inertia is at/above 4, skid.
 				if anim_ID != ANI_PLAYER.SKID {
 					anim_ID = ANI_PLAYER.SKID;
@@ -33,7 +33,7 @@ function ctrl_Player_MoveGround(){
 	else if _dir == 1 {
 		if (inertia < 0) { 				// If moving left?
 			inertia += decel_run;		// Decelerate if moving left.
-			if (global.angle_data[angle].quad_floor == 0) and inertia <= -4 {
+			if (angle_data.quad_floor == 0) and inertia <= -4 {
 				// If character is on Floor angles, and GSP is at/above 4, skid.
 				if anim_ID != ANI_PLAYER.SKID {
 					anim_ID = ANI_PLAYER.SKID;
@@ -58,7 +58,7 @@ function ctrl_Player_MoveGround(){
 	}
 
 	// If idle on flat ground
-	else if (global.angle_data[angle].quad_floor == 0) and inertia == 0 {
+	else if (angle_data.quad_floor == 0) and inertia == 0 {
 		pushing = false;			// Player is not pushing.
 		anim_ID = ANI_PLAYER.IDLE;	// Set idle animation.
 		
@@ -76,6 +76,6 @@ function ctrl_Player_MoveGround(){
 		inertia -= min(abs(inertia), accel_run) * sign(inertia);
 	
 	// Apply to x and y speeds using the acquired inertia.
-	xsp = inertia * global.angle_data[angle].cosine;
-	ysp = inertia * -global.angle_data[angle].sine;
+	xsp = inertia * angle_data.cosine;
+	ysp = inertia * -angle_data.sine;
 }
