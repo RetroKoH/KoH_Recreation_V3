@@ -35,8 +35,11 @@ function ctrl_Sonic_DropDash(){
 	height		= HEIGHT_ROLL;
 	width		= WIDTH_ROLL;
 	anim_ID		= ANI_PLAYER.ROLL;
+	gfunc_audio_sfx_stop(SFXs.DROPDASH_REV);
 	gfunc_audio_sfx_play(SFXs.DROPDASH_REL);
 	y			+= height_def - height;
+	var _dust	= instance_create_layer(x, y + height, "Instances", obj_DropdashDust);
+	_dust.image_xscale = flipped ? -1 : 1;
 
 	var drop_spd = 8, drop_max = 12;
 

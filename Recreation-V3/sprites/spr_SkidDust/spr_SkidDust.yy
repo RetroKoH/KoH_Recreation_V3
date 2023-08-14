@@ -28,8 +28,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Effects",
-    "path": "folders/Game Objects/Effects.yy",
+    "name": "Skid Dust",
+    "path": "folders/Game Objects/Effects/Skid Dust.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

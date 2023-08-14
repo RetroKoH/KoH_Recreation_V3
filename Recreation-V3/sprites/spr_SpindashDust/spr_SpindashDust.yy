@@ -29,10 +29,10 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"edcb223d-2acf-45bf-ac66-9ca924197b52","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 8,
+  "origin": 9,
   "parent": {
-    "name": "Effects",
-    "path": "folders/Game Objects/Effects.yy",
+    "name": "Spindash",
+    "path": "folders/Game Objects/Effects/Spindash.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -72,7 +72,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 32,
-    "yorigin": 23,
+    "yorigin": 22,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

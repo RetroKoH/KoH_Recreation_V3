@@ -11,8 +11,8 @@ function ctrl_Player_Spindash() {
 			ctrl_Player_AnglePos();
 			
 			// Create dust effect
-			var _dust = instance_create_layer(x, y + height + 1, "Instances", obj_SpindashDust);
-			_dust.parent = id;
+			var _dust		= instance_create_layer(x, y + height, "Instances", obj_SpindashDust);
+			_dust.parent	= id;
 			return true;	// Skip the rest of the Normal Mode Routine
 		}
 	}

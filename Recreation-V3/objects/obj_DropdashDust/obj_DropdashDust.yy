@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_SpindashDust",
+  "name": "obj_DropdashDust",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Spindash",
-    "path": "folders/Game Objects/Effects/Spindash.yy",
+    "name": "Drop Dash",
+    "path": "folders/Game Objects/Effects/Drop Dash.yy",
   },
   "parentObjectId": {
     "name": "obj_GameObj",
@@ -33,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_SpindashDust",
-    "path": "sprites/spr_SpindashDust/spr_SpindashDust.yy",
+    "name": "spr_DropdashDust",
+    "path": "sprites/spr_DropdashDust/spr_DropdashDust.yy",
   },
   "spriteMaskId": null,
   "visible": true,

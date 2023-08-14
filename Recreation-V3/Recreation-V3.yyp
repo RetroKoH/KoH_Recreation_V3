@@ -65,6 +65,9 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Dynamic Level Events","folderPath":"folders/Zones/GHZ/Dynamic Level Events.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Foreground","folderPath":"folders/Zones/GHZ/Foreground.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Zones/GHZ/Tilesets.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Spindash","folderPath":"folders/Game Objects/Effects/Spindash.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Drop Dash","folderPath":"folders/Game Objects/Effects/Drop Dash.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Skid Dust","folderPath":"folders/Game Objects/Effects/Skid Dust.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -89,6 +92,7 @@
     {"id":{"name":"bkg_ghz_00","path":"sprites/bkg_ghz_00/bkg_ghz_00.yy",},},
     {"id":{"name":"spr_mighty_walk","path":"sprites/spr_mighty_walk/spr_mighty_walk.yy",},},
     {"id":{"name":"spr_metal_duck","path":"sprites/spr_metal_duck/spr_metal_duck.yy",},},
+    {"id":{"name":"obj_DropdashDust","path":"objects/obj_DropdashDust/obj_DropdashDust.yy",},},
     {"id":{"name":"spr_mighty_skid","path":"sprites/spr_mighty_skid/spr_mighty_skid.yy",},},
     {"id":{"name":"spr_CardFont","path":"sprites/spr_CardFont/spr_CardFont.yy",},},
     {"id":{"name":"sfx_Jump","path":"sounds/sfx_Jump/sfx_Jump.yy",},},

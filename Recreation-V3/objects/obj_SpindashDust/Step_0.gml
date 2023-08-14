@@ -13,7 +13,7 @@ switch(routine) {
 	{
 		// Follow player
 		x = floor(parent.x);
-		y = floor(parent.y + parent.height + 1);	
+		y = floor(parent.y + parent.height);	
 	
 		// Destroy if player is airborne or not spindashing anymore
 		if parent.in_air or parent.spindash_rev == -1
