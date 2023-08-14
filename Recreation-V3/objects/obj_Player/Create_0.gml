@@ -36,7 +36,7 @@ spindash_pitch			= 1;
 peelout_timer			= -1;
 
 control_modes			= ctrl_Sonic;
-double_jump				= -1;
+double_jump				= ctrl_Sonic_DoubleJump;
 gfunc_player_set_speed();
 jmp_spd					= 6.5;		// Default jump velocity
 
