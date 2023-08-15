@@ -9,6 +9,10 @@ switch(routine) {
 		status		= 0;
 		wing_frame	= 0;
 		flame_frame = 0;
+		
+		// Set direction accordingly
+		anim_direction = image_xscale;
+		image_xscale = 1;
 	}
 	break;
 	

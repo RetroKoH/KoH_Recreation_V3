@@ -7,6 +7,10 @@ switch(routine) {
 		routine++;
 		ysp			= -7;	// Choppers jump up at a speed of 7
 		origin_y	= y;	// Store the starting y position
+		
+		// Set direction accordingly
+		anim_direction = image_xscale;
+		image_xscale = 1;
 	}
 	break;
 	

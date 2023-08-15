@@ -54,7 +54,7 @@ function animtable_CRABMEAT(){
 
 	setup_Animation(global.AnimTable_Crabmeat, "Firing", spr_Crabmeat, spr_Crabmeat, spr_Crabmeat, -1, -1, 0, -1);
 
-	setup_AnimationFrame(global.AnimTable_Crabmeat, 3, 1);
+	setup_AnimationFrame(global.AnimTable_Crabmeat, 6, 1);
 	// ==================================================================================
 
 	array_push(global.AnimsIndex,global.AnimTable_Crabmeat);

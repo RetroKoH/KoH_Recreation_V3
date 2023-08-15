@@ -12,6 +12,10 @@ switch(routine) {
 		path		= 0;
 		time		= 0;
 		smoke_delay	= 0;
+		
+		// Set direction accordingly
+		anim_direction = image_xscale;
+		image_xscale = 1;
 	}
 	break;
 	
@@ -57,7 +61,7 @@ switch(routine) {
 				var _dist = gfunc_collide_dist_floor(width*sign(xsp), height, COL_FLOOR)[0]
 				if _dist >= 12 or _dist < -8 {
 				    routine_2--;
-				    time	= 59;
+				    time	= 60;
 				    xsp		= 0;
 					anim_ID	= 0;
 				}
