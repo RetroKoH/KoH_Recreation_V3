@@ -7,11 +7,13 @@ switch(routine) {
 		routine++;
 		time		= 0;
 		status		= 0;
+		wing_frame	= 0;
+		flame_frame = 0;
 	}
 	break;
 	
 	case 1:
-	// Movement and firing
+	// Firing or Starting Movement
 	{
 		if !--time {
 			if status == 2 {
@@ -31,11 +33,14 @@ switch(routine) {
 				anim_ID = 1;
 			}
 		}
+		
+		// Alternate wings each frame
+		wing_frame^=1;
 	}
 	break;
 	
 	case 2:
-	// Check near player
+	// Movment and Checking near player
 	{
 		if !--time {
 			routine--;
@@ -47,6 +52,7 @@ switch(routine) {
 		}
 		else {
 			gfunc_gameobj_apply_speed(false);
+			flame_frame = (flame_frame + 0.5) mod 2;
 			if !status {
 				if abs(x - cPLAYER.x) <= 64 {
 					status = 2;
@@ -57,6 +63,9 @@ switch(routine) {
 				}
 			}
 		}
+		
+		// Alternate wings each frame
+		wing_frame^=1;
 	}
 	break;
 }
