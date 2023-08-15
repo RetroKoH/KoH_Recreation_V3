@@ -35,10 +35,11 @@ spindash_rev			= -1;
 spindash_pitch			= 1;
 peelout_timer			= -1;
 
-control_modes			= ctrl_Sonic;
-double_jump				= ctrl_Sonic_DoubleJump;
 gfunc_player_set_speed();
 jmp_spd					= 6.5;		// Default jump velocity
+control_modes			= ctrl_Sonic;
+double_jump				= ctrl_Sonic_DoubleJump;
+restart_timer			= 0;
 
 gfunc_gameobj_priority_set(2);
 gfunc_gameobj_OOB_set(OOB_PLAYER);	// Player objects don't get deactivated

@@ -18,8 +18,8 @@ draw_circle(_ax+62,	_ay+16,	5,	cINPUT.k_c_h=false);
 
 draw_roundrect(_ax+44, _ay, _ax+56, _ay+4, cINPUT.k_st_h=false);
 
-if instance_exists(cPLAYER)
-	gfunc_debug_draw_text(_ax,_ay+120,cPLAYER.x);
+
+gfunc_debug_draw_text(_ax,_ay+200,global.p_lives);
 
 // Objects
 _ax=78;

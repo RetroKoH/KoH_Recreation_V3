@@ -140,6 +140,7 @@ function setup_Game_Macros(){
 		GHZ2,
 		BOSS,
 		ACT_CLEAR,
+		GAME_OVER,
 		INVINC,
 		EXTRA_LIFE,
 		TOTAL
@@ -513,6 +514,7 @@ function setup_Game_Audio(){
 	setup_Sound_BGM(bgm_GHZ2,		"GHZ Act 2",		AU_PRIMARY,		14.414,	52.812);
 	setup_Sound_BGM(bgm_Boss,		"Boss",				AU_PRIMARY,		0,		21.333);
 	setup_Sound_BGM(bgm_ActClear,	"Act Clear",		AU_PRIMARY,		-1);
+	setup_Sound_BGM(bgm_GameOver,	"Game Over",		AU_PRIMARY,		-1);
 	setup_Sound_BGM(bgm_Invinc,		"Invincibility",	AU_PRIMARY,		0.916,	11.883);
 	setup_Sound_BGM(bgm_1up,		"1-Up Jingle",		AU_SECONDARY,	-1);
 
@@ -695,7 +697,7 @@ function setup_Game_SyncAnimTimers(){
 function setup_Game_GameVars(){
 	global.p_score = 0;
 	global.p_rings = 0;
-	global.p_lives = 0;
+	global.p_lives = 3;
 	global.p_frames = 0;		// Total frame count.
 	global.p_scorelife=50000;	// Amount of points needed for an extra life
 	global.p_ringlife=0;		// Counter for extra lives per rings

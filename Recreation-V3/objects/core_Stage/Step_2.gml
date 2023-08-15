@@ -1,12 +1,44 @@
 /// @description Process Gameplay
 
 // Process stage time
-if time_enabled
-{
+if time_enabled {
 	if game_time < 36000
 		game_time++;
-//	if (++game_time) == 36000
-//		player_damage(false, false, true);
+	if (game_time) == 36000
+		ctrl_Player_Hurt(true, false);
+}
+
+// Process Player Post-Death Restart
+if cPLAYER.routine == 4 {
+	// If ran out of lives or time, start Game/Time Over event
+	if !restart_timer {
+		if !global.p_lives or game_time == 36000 {
+			restart_event = true;		
+			gfunc_audio_bgm_play(BGMs.GAME_OVER);
+		}
+	}
+	restart_timer++;
+	
+	// Wait for 1 (or 12 if the event was triggered) seconds
+	if restart_timer == restart_event * 660 + 60
+	{
+		gfunc_fade_perform(FADEMODE_INTO, FADEBLEND_BLACK, 1); 
+				
+		gfunc_audio_bgm_stop(AU_PRIMARY, 0.5);
+		gfunc_audio_bgm_stop(AU_SECONDARY, 0.5);
+				
+		// Stop animations and objects
+		cRENDER.update_anims	= false;
+		run_objects				= false;
+	}
+	
+	// Check if we faded out
+	if gfunc_fade_check(FADESTATE_MAX) {
+		if global.p_lives > 0
+			room_restart();
+		else
+			room_goto(screen_Title);
+	}
 }
 
 // Object bounds handling
