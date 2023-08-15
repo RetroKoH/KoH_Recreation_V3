@@ -239,6 +239,7 @@
     {"name":"sfx_MightyUnspin","order":43,"path":"sounds/sfx_MightyUnspin/sfx_MightyUnspin.yy",},
     {"name":"animtable_BADNIKS","order":1,"path":"scripts/animtable_BADNIKS/animtable_BADNIKS.yy",},
     {"name":"ctrl_Player_CheckWallsOnGround","order":7,"path":"scripts/ctrl_Player_CheckWallsOnGround/ctrl_Player_CheckWallsOnGround.yy",},
+    {"name":"obj_BuzzBomber","order":1,"path":"objects/obj_BuzzBomber/obj_BuzzBomber.yy",},
     {"name":"sfx_RingLeft","order":57,"path":"sounds/sfx_RingLeft/sfx_RingLeft.yy",},
     {"name":"sfx_BigExplosion","order":3,"path":"sounds/sfx_BigExplosion/sfx_BigExplosion.yy",},
     {"name":"spr_tails_fall","order":4,"path":"sprites/spr_tails_fall/spr_tails_fall.yy",},

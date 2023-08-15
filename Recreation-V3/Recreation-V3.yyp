@@ -291,6 +291,7 @@
     {"id":{"name":"animtable_BADNIKS","path":"scripts/animtable_BADNIKS/animtable_BADNIKS.yy",},},
     {"id":{"name":"ctrl_Player_CheckWallsOnGround","path":"scripts/ctrl_Player_CheckWallsOnGround/ctrl_Player_CheckWallsOnGround.yy",},},
     {"id":{"name":"aniart_GHZ1","path":"sprites/aniart_GHZ1/aniart_GHZ1.yy",},},
+    {"id":{"name":"obj_BuzzBomber","path":"objects/obj_BuzzBomber/obj_BuzzBomber.yy",},},
     {"id":{"name":"sfx_RingLeft","path":"sounds/sfx_RingLeft/sfx_RingLeft.yy",},},
     {"id":{"name":"sfx_BigExplosion","path":"sounds/sfx_BigExplosion/sfx_BigExplosion.yy",},},
     {"id":{"name":"spr_tails_fall","path":"sprites/spr_tails_fall/spr_tails_fall.yy",},},

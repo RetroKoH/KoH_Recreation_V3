@@ -99,8 +99,7 @@ if run_objects {
 					visible      = oob_data[6];
 							
 					// Reset animation data
-					//image_duration = 0;
-					//image_timer    = 0;
+					gfunc_anims_reset();
 									
 					// Re-initialize variables
 					routine = 0;

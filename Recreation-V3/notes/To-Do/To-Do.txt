@@ -1,5 +1,5 @@
+Replace all instances of obj_Player with cPLAYER, global variable that denotes main player.
+Ensure that pausing doesn't break the Restart routine
 Implement 30 frame move_lock in various movement subroutines.
 Check where to apply the forced +- 2 to inertia when rolling.
-Double check wall collision since we've circumvented jittering bug.
-
-Re-Add mid-air ground collision
+Objects set to mirrored in the Room Editor need to start that way (Motobugs, for example)
