@@ -70,6 +70,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Zones/GHZ/Tilesets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Parents","folderPath":"folders/Game Objects/Parents.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Explosions","folderPath":"folders/Game Objects/Effects/Explosions.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Points","folderPath":"folders/Game Objects/Effects/Points.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -143,6 +144,7 @@
     {"id":{"name":"ctrl_Sonic","path":"scripts/ctrl_Sonic/ctrl_Sonic.yy",},},
     {"id":{"name":"pal_Title","path":"sprites/pal_Title/pal_Title.yy",},},
     {"id":{"name":"gfunc_fade_perform","path":"scripts/gfunc_fade_perform/gfunc_fade_perform.yy",},},
+    {"id":{"name":"obj_Points","path":"objects/obj_Points/obj_Points.yy",},},
     {"id":{"name":"spr_tails_roll","path":"sprites/spr_tails_roll/spr_tails_roll.yy",},},
     {"id":{"name":"spr_tails_tail_type2","path":"sprites/spr_tails_tail_type2/spr_tails_tail_type2.yy",},},
     {"id":{"name":"spr_tails_hurt","path":"sprites/spr_tails_hurt/spr_tails_hurt.yy",},},

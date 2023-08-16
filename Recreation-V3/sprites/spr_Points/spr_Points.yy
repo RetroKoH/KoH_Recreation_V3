@@ -31,8 +31,8 @@
   "nineSlice": null,
   "origin": 4,
   "parent": {
-    "name": "Effects",
-    "path": "folders/Game Objects/Effects.yy",
+    "name": "Points",
+    "path": "folders/Game Objects/Effects/Points.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

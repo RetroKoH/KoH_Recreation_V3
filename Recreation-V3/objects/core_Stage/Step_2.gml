@@ -201,4 +201,3 @@ if !gfunc_fade_check(FADESTATE_ACTIVE) {
 		bound_death = bound_bottom;
 	}
 }
-

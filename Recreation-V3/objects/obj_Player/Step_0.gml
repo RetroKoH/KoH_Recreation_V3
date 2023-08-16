@@ -35,19 +35,17 @@ if _obj != noone {
 				
 				switch(_combo)
 				{
-				    case 0: _combo=100;		break;
-				    case 1: _combo=200;		break;
-				    case 2: _combo=500;		break;
-				    case 3: _combo=1000;	break;
-					case 4: _combo=10000;	break;
+				    case 0: gfunc_score_add(100);	break;
+				    case 1: gfunc_score_add(200);	break;
+				    case 2: gfunc_score_add(500);	break;
+				    case 3: gfunc_score_add(1000);	break;
+					case 4: gfunc_score_add(10000);	break;
 				}
-				
-				gfunc_score_add(_combo);
 				
 				// Destroy badnik (Explosion!)
 				with _obj {
 					var _exp = instance_create_layer(x, y, "Instances", obj_Explosion);
-					_exp.pts = _combo;
+					_exp.pts = _combo+1;
 				} instance_destroy(_obj);
 			}
 			

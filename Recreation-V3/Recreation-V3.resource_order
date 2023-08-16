@@ -56,6 +56,7 @@
     {"name":"Tilesets","order":4,"path":"folders/Zones/GHZ/Tilesets.yy",},
     {"name":"Parents","order":13,"path":"folders/Game Objects/Parents.yy",},
     {"name":"Explosions","order":5,"path":"folders/Game Objects/Effects/Explosions.yy",},
+    {"name":"Points","order":6,"path":"folders/Game Objects/Effects/Points.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -112,6 +113,7 @@
     {"name":"ctrl_Sonic","order":23,"path":"scripts/ctrl_Sonic/ctrl_Sonic.yy",},
     {"name":"pal_Title","order":1,"path":"sprites/pal_Title/pal_Title.yy",},
     {"name":"gfunc_fade_perform","order":8,"path":"scripts/gfunc_fade_perform/gfunc_fade_perform.yy",},
+    {"name":"obj_Points","order":1,"path":"objects/obj_Points/obj_Points.yy",},
     {"name":"spr_tails_roll","order":11,"path":"sprites/spr_tails_roll/spr_tails_roll.yy",},
     {"name":"spr_tails_tail_type2","order":4,"path":"sprites/spr_tails_tail_type2/spr_tails_tail_type2.yy",},
     {"name":"spr_tails_hurt","order":6,"path":"sprites/spr_tails_hurt/spr_tails_hurt.yy",},
@@ -127,7 +129,6 @@
     {"name":"spr_knux_run","order":13,"path":"sprites/spr_knux_run/spr_knux_run.yy",},
     {"name":"spr_mighty_push","order":9,"path":"sprites/spr_mighty_push/spr_mighty_push.yy",},
     {"name":"spr_tails_spindash","order":14,"path":"sprites/spr_tails_spindash/spr_tails_spindash.yy",},
-    {"name":"spr_Points","order":1,"path":"sprites/spr_Points/spr_Points.yy",},
     {"name":"spr_tails_mask","order":4,"path":"sprites/spr_tails_mask/spr_tails_mask.yy",},
     {"name":"bgm_GHZ1","order":1,"path":"sounds/bgm_GHZ1/bgm_GHZ1.yy",},
     {"name":"spr_tails_skid","order":13,"path":"sprites/spr_tails_skid/spr_tails_skid.yy",},
