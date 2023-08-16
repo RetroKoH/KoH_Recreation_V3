@@ -1,20 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_GOEffect",
+  "name": "obj_Newtron",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Parents",
-    "path": "folders/Game Objects/Parents.yy",
+    "name": "Newtron",
+    "path": "folders/Game Objects/Badniks/Newtron.yy",
   },
   "parentObjectId": {
-    "name": "obj_GameObj",
-    "path": "objects/obj_GameObj/obj_GameObj.yy",
+    "name": "obj_GOBadnik",
+    "path": "objects/obj_GOBadnik/obj_GOBadnik.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,7 +31,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_Newtron",
+    "path": "sprites/spr_Newtron/spr_Newtron.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Badniks",
-    "path": "folders/Game Objects/Badniks.yy",
+    "name": "Parents",
+    "path": "folders/Game Objects/Parents.yy",
   },
   "parentObjectId": {
     "name": "obj_GameObj",

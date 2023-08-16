@@ -11,10 +11,7 @@
     "name": "Rings",
     "path": "folders/Game Objects/Rings.yy",
   },
-  "parentObjectId": {
-    "name": "obj_GameObj",
-    "path": "objects/obj_GameObj/obj_GameObj.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

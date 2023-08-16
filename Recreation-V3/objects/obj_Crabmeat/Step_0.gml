@@ -98,16 +98,14 @@ case 0:
 						// Set firing animation
 						anim_ID = 2;
 						{
-							/*
 							var _left=instance_create_layer(x-10,y,"Instances",obj_Missile);
 							_left.xsp=-1;
 							_left.ysp=-4;
-							_left.subtype = 1;
+							_left.type = 1;
 							var _right=instance_create_layer(x+10,y,"Instances",obj_Missile);
 							_right.xsp=1;
 							_right.ysp=-4;
-							_right.subtype = 1;
-							*/
+							_right.type = 1;
 						}
 					}
 					
