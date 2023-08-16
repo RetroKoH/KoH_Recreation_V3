@@ -12,7 +12,10 @@
     "name": "Path Swappers",
     "path": "folders/Game Objects/Path Swappers.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_GameObj",
+    "path": "objects/obj_GameObj/obj_GameObj.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

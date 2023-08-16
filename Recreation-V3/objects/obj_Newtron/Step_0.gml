@@ -6,79 +6,107 @@ switch(routine) {
 	{
 		routine++;
 		routine_2	= 0;
-		height		= $E;
+		xsp			= 0;
+		ysp			= 0;
+		height		= 16;
 		width		= 8;
-		angle		= 0;
-		path		= 0;
-		time		= 0;
-		smoke_delay	= 0;
+		can_hit		= false;
+		can_harm	= false;
+		has_fired	= false;
 		
 		// Set direction accordingly
 		anim_direction = image_xscale;
 		image_xscale = 1;
-	}
-	break;
+	} break;
 	
 	case 1:
 	// Set position on the ground
 	{
-		gfunc_gameobj_apply_speed(true);
-		var _dist = gfunc_collide_dist_floor(0, height, COL_FLOOR)[0];
-		if _dist <= 0
-		{
-			routine++;
-			y				+= _dist;
-			anim_direction	*= -1;
-			ysp				= 0;
-		}
-	}
-	break;
-	
-	case 2:
-	// General Movement - Uses Secondary Routine
-	{
-		switch(routine_2)
-		{
+		switch(routine_2) {
 			case 0:
-			// Waiting, and getting ready to move the motobug when ready
+			// Check Distance to Player
 			{
-				if !--time					// If timer reaches zero...
-				{
-					routine_2++;						// We will run the second routine afterwards.
-					anim_direction	*= -1;				// Reverse the direction.
-					xsp				= -anim_direction;	// Set horizontal speed 1 pixel/step.
-					anim_ID			= 1;
-				}
-			}
-			break;
-			
-			case 1:
-			// Moving the motobug, creating smoke, and checking for when it needs to stop.
-			{
-				gfunc_gameobj_apply_speed(false);
+				// Direct view towards player
+				if (cPLAYER.x > x)	anim_direction = -1;
+				else				anim_direction = 1;
 				
-				// Check for floor. If it doesn't exist, stop and wait, then turn around. For now, set to a timer.
-				var _dist = gfunc_collide_dist_floor(width*sign(xsp), height, COL_FLOOR)[0]
-				if _dist >= 12 or _dist < -8 {
-				    routine_2--;
-				    time	= 60;
-				    xsp		= 0;
-					anim_ID	= 0;
-				}
-				else {
-					// Smoke puff routine. Only occurs when the badnik is moving.
-					if !--smoke_delay
-					{
-					    instance_create_layer(x+(15*anim_direction),y-1,"Instances",obj_MotobugSmoke); // Create smoke puff
-					    smoke_delay=16;		// Reset timer
+				var _dist = abs(cPLAYER.x - x);
+				
+				if (_dist < 128) {
+					if !(type) {
+						// Blue Newtron (Rocket)
+						routine_2 = 1;
+						anim_ID = 1;
 					}
 					
-					// Adhere to the surface
-					y += _dist;
+					else {
+						// Green Newtron (Fire Missile)
+						routine_2 = 4;
+						anim_ID = 3;
+					}
 				}
-			}
-			break;
+			} break;
+			case 1:
+			// Blue Newtron subroutine (Appearing and Falling to the Ground)
+			{
+				// is Newt still "appearing"?
+				if (anim_frame < 4) {
+					if (cPLAYER.x > x)	anim_direction = -1;
+					else				anim_direction = 1;
+				}
+
+				// if animation is finished, let's drop down
+				else {
+					if (anim_frame = 1) {
+						can_hit = true;
+						can_harm = true;
+					}
+					
+					gfunc_gameobj_apply_speed(true);
+					var _dist = gfunc_collide_dist_floor(0, height, COL_FLOOR)[0];
+					
+					if (_dist < 0) {
+						routine_2++;
+				        y		+= _dist;            
+				        ysp		= 0;
+						anim_ID	= 2;
+						xsp		= 2*-anim_direction;
+				    }
+				}
+			} break;
+			case 2:
+			// Blue Newtron subroutine (Following the Terrain)
+			{
+				gfunc_gameobj_apply_speed(false);
+
+				var _dist = gfunc_collide_dist_floor(0, height, COL_FLOOR)[0];
+				if !(_dist < -8 or _dist >= $C)
+					y+=_dist;
+					
+				else routine_2++;
+			} break;
+			case 3:
+			// Blue Newtron subroutine (Moving through the air)
+			{
+				gfunc_gameobj_apply_speed(false);
+			} break;
+			case 4:
+			// Green Newtron subroutine
+			{
+				if (anim_frame == 1) {
+					can_hit = true;
+					can_harm = true;
+				}
+				else if (anim_frame == 2) {
+					if !(has_fired) {
+						has_fired	= true;
+						var _shot	= instance_create_layer(x+($14*-anim_direction),y-8,"Instances",obj_Missile);
+						_shot.type	= 2;
+						_shot.xsp	= 2*-anim_direction;
+						_shot.ysp	= 0;
+					}
+				}
+			} break;
 		}
-	}
-	break;
+	} break;
 }

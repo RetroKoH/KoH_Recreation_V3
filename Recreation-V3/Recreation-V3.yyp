@@ -186,6 +186,7 @@
     {"id":{"name":"spr_sonic_duck","path":"sprites/spr_sonic_duck/spr_sonic_duck.yy",},},
     {"id":{"name":"spr_metal_lookup","path":"sprites/spr_metal_lookup/spr_metal_lookup.yy",},},
     {"id":{"name":"spr_supersonic_death","path":"sprites/spr_supersonic_death/spr_supersonic_death.yy",},},
+    {"id":{"name":"obj_BuzzBomber30","path":"objects/obj_BuzzBomber30/obj_BuzzBomber30.yy",},},
     {"id":{"name":"spr_supersonic_hurt","path":"sprites/spr_supersonic_hurt/spr_supersonic_hurt.yy",},},
     {"id":{"name":"spr_tails_balance","path":"sprites/spr_tails_balance/spr_tails_balance.yy",},},
     {"id":{"name":"spr_CardOval","path":"sprites/spr_CardOval/spr_CardOval.yy",},},

@@ -7,7 +7,7 @@ routine_2	= 0;
 height		= 0;
 width		= 0;
 angle		= 0;
-path		= 0;
+path		= 0;	// Collision has two paths. Crabmeat only uses 0.
 time		= 0;	// Time delay to start.
 move_dir	= 0;
 

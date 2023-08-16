@@ -153,6 +153,7 @@
     {"name":"spr_sonic_duck","order":4,"path":"sprites/spr_sonic_duck/spr_sonic_duck.yy",},
     {"name":"spr_metal_lookup","order":6,"path":"sprites/spr_metal_lookup/spr_metal_lookup.yy",},
     {"name":"spr_supersonic_death","order":3,"path":"sprites/spr_supersonic_death/spr_supersonic_death.yy",},
+    {"name":"obj_BuzzBomber30","order":4,"path":"objects/obj_BuzzBomber30/obj_BuzzBomber30.yy",},
     {"name":"spr_supersonic_hurt","order":5,"path":"sprites/spr_supersonic_hurt/spr_supersonic_hurt.yy",},
     {"name":"spr_tails_balance","order":17,"path":"sprites/spr_tails_balance/spr_tails_balance.yy",},
     {"name":"spr_CardOval","order":3,"path":"sprites/spr_CardOval/spr_CardOval.yy",},

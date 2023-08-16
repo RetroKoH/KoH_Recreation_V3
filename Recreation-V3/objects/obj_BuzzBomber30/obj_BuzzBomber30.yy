@@ -1,16 +1,17 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_Newtron",
+  "name": "obj_BuzzBomber30",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Newtron",
-    "path": "folders/Game Objects/Badniks/Newtron.yy",
+    "name": "Buzz Bomber",
+    "path": "folders/Game Objects/Badniks/Buzz Bomber.yy",
   },
   "parentObjectId": {
     "name": "obj_GOBadnik",
@@ -29,16 +30,11 @@
   "physicsShape": 1,
   "physicsShapePoints": [],
   "physicsStartAwake": true,
-  "properties": [
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"type","filters":[],"listItems":[
-        "0",
-        "1",
-      ],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"0","varType":6,},
-  ],
+  "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_Newtron",
-    "path": "sprites/spr_Newtron/spr_Newtron.yy",
+    "name": "spr_BuzzBomber",
+    "path": "sprites/spr_BuzzBomber/spr_BuzzBomber.yy",
   },
   "spriteMaskId": null,
   "visible": true,
