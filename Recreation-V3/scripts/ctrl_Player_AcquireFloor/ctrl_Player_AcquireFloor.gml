@@ -10,11 +10,11 @@ function ctrl_Player_AcquireFloor() {
 		y			-= height_def - _h;	// Pop y-pos out using stored height
 	}
 
-	pushing	= false;		// Clear push status
-	in_air	= false;		// Clear air status
+	pushing	= false;
+	in_air	= false;
 	// Clear roll jump status
 	jump	= false;
-	// Clear chain bonus counter
+	core_Stage.chain_combo = 0;	// Clear combo counter
 	
 	// Double jump handling
 	if (double_jump_flag) {

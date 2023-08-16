@@ -11,6 +11,7 @@ paused			=  0;
 can_pause		=  false;
 run_objects		=  false;
 level_events	=  noone;
+chain_combo		=  0;
 
 // Set up stage
 switch(room){
