@@ -18,6 +18,6 @@
   "preload": false,
   "sampleRate": 44100,
   "soundFile": "sfx_RingLeft.wav",
-  "type": 1,
+  "type": 0,
   "volume": 1.0,
 }

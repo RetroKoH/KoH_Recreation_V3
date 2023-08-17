@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "gfunc_score_add",
+  "name": "gfunc_score_rings_lives",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

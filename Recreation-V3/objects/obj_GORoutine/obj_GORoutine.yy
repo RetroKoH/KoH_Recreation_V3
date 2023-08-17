@@ -1,20 +1,20 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_Ring",
+  "name": "obj_GORoutine",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Rings",
-    "path": "folders/Game Objects/Rings.yy",
+    "name": "Parents",
+    "path": "folders/Game Objects/Parents.yy",
   },
   "parentObjectId": {
-    "name": "obj_GORoutine",
-    "path": "objects/obj_GORoutine/obj_GORoutine.yy",
+    "name": "obj_GOInteract",
+    "path": "objects/obj_GOInteract/obj_GOInteract.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,10 +31,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_Ring",
-    "path": "sprites/spr_Ring/spr_Ring.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

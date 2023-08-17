@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_Ring",
+  "name": "obj_Ring_Sparkle",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
@@ -13,8 +13,8 @@
     "path": "folders/Game Objects/Rings.yy",
   },
   "parentObjectId": {
-    "name": "obj_GORoutine",
-    "path": "objects/obj_GORoutine/obj_GORoutine.yy",
+    "name": "obj_GOEffect",
+    "path": "objects/obj_GOEffect/obj_GOEffect.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_Ring",
-    "path": "sprites/spr_Ring/spr_Ring.yy",
+    "name": "spr_RingSparkle",
+    "path": "sprites/spr_RingSparkle/spr_RingSparkle.yy",
   },
   "spriteMaskId": null,
   "visible": true,

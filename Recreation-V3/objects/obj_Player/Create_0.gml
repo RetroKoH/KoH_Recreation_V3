@@ -28,6 +28,7 @@ move_lock				= 0;
 convex					= false;
 forced_roll				= false;
 
+shield					= 0;
 jump					= false;
 double_jump_flag		= false;
 double_jump_property	= 0;

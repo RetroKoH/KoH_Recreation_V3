@@ -58,7 +58,12 @@ if _count != 0 {
 			
 				// Damage player
 				else ctrl_Player_Hurt(true, false);
-			}
+			} break;
+			
+			case obj_GORoutine:
+			{
+				_obj.routine++;
+			} break;
 		}
 	}
 }

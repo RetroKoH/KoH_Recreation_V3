@@ -13,6 +13,8 @@ run_objects		=  false;
 level_events	=  noone;
 chain_combo		=  0;
 
+global.p_rings	=  0;
+
 // Set up stage
 switch(room){
 	case stage_GHZ1:

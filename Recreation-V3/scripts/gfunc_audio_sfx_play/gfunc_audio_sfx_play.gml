@@ -22,3 +22,15 @@ function gfunc_audio_sfx_stop(_sound_id) {
 	if audio_is_playing(_sfx)
 		audio_stop_sound(_sfx);
 }
+
+function gfunc_audio_sfx_play_ring() {
+	if global.ring_panning == false
+		gfunc_audio_sfx_play(SFXs.RING_S);
+	
+	else {
+		if cAUDIO.ring_pan == 0
+			gfunc_audio_sfx_play(SFXs.RING_L);
+		else
+			gfunc_audio_sfx_play(SFXs.RING_R);
+	}
+}
