@@ -41,6 +41,8 @@ control_modes			= ctrl_Sonic;
 double_jump				= ctrl_Sonic_DoubleJump;
 restart_timer			= 0;
 
+touch_response_list		= ds_list_create();
+
 gfunc_gameobj_priority_set(2);
 gfunc_gameobj_OOB_set(OOB_PLAYER);	// Player objects don't get deactivated
 gfunc_anims_init(true, global.AnimTable_PlayerSonic, 0);

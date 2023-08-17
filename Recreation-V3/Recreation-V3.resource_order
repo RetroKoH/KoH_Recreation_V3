@@ -205,6 +205,7 @@
     {"name":"spr_StartMenu","order":3,"path":"sprites/spr_StartMenu/spr_StartMenu.yy",},
     {"name":"sfx_GiantRing","order":53,"path":"sounds/sfx_GiantRing/sfx_GiantRing.yy",},
     {"name":"spr_tails_idle","order":7,"path":"sprites/spr_tails_idle/spr_tails_idle.yy",},
+    {"name":"obj_GOInteract","order":4,"path":"objects/obj_GOInteract/obj_GOInteract.yy",},
     {"name":"spr_knux_idle","order":7,"path":"sprites/spr_knux_idle/spr_knux_idle.yy",},
     {"name":"spr_sonic_fall","order":5,"path":"sprites/spr_sonic_fall/spr_sonic_fall.yy",},
     {"name":"spr_knux_transform","order":23,"path":"sprites/spr_knux_transform/spr_knux_transform.yy",},

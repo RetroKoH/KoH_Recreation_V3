@@ -249,6 +249,7 @@
     {"id":{"name":"spr_StartMenu","path":"sprites/spr_StartMenu/spr_StartMenu.yy",},},
     {"id":{"name":"sfx_GiantRing","path":"sounds/sfx_GiantRing/sfx_GiantRing.yy",},},
     {"id":{"name":"spr_tails_idle","path":"sprites/spr_tails_idle/spr_tails_idle.yy",},},
+    {"id":{"name":"obj_GOInteract","path":"objects/obj_GOInteract/obj_GOInteract.yy",},},
     {"id":{"name":"spr_knux_idle","path":"sprites/spr_knux_idle/spr_knux_idle.yy",},},
     {"id":{"name":"spr_sonic_fall","path":"sprites/spr_sonic_fall/spr_sonic_fall.yy",},},
     {"id":{"name":"spr_knux_transform","path":"sprites/spr_knux_transform/spr_knux_transform.yy",},},

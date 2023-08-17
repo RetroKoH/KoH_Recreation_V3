@@ -1,11 +1,8 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_GOHarm",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
-  ],
+  "name": "obj_GOInteract",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
@@ -13,8 +10,8 @@
     "path": "folders/Game Objects/Parents.yy",
   },
   "parentObjectId": {
-    "name": "obj_GOInteract",
-    "path": "objects/obj_GOInteract/obj_GOInteract.yy",
+    "name": "obj_GameObj",
+    "path": "objects/obj_GameObj/obj_GameObj.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

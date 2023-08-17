@@ -13,8 +13,8 @@
     "path": "folders/Game Objects/Parents.yy",
   },
   "parentObjectId": {
-    "name": "obj_GameObj",
-    "path": "objects/obj_GameObj/obj_GameObj.yy",
+    "name": "obj_GOInteract",
+    "path": "objects/obj_GOInteract/obj_GOInteract.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
