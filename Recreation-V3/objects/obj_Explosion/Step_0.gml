@@ -15,8 +15,8 @@ switch(routine) {
 	// Badnik Explosion
 	{
 		routine++;
-		//var = instance_create_layer(x, y, "Instances", obj_Animals);
-		//_ani.type = irandom(6);
+		var _ani = instance_create_layer(x, y, "Instances", obj_Animals);
+		_ani.type = irandom(ANIMAL.ROCKY);
 	    var _pt = instance_create_layer(x, y, "Instances", obj_Points);
 		_pt.pts = pts;
 	} break;

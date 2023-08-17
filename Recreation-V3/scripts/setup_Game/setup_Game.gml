@@ -24,6 +24,7 @@ function setup_Game(){
 	setup_Game_Animations();		// My Recreation Animation system. Execution slightly cleaned up thx to Orbinaut.
 	setup_Game_OscValues();
 	setup_Game_SyncAnimTimers();
+	setup_Game_ObjData_Animals();
 	setup_Game_GameVars();
 	
 	instance_create_layer(room_width/2, room_height/2, "Instances", obj_Splash);
@@ -129,6 +130,18 @@ function setup_Game_Macros(){
 	// Zone indices
 	enum ZONE{
 		GHZ,
+		TOTAL
+	}
+
+	// Animal indices
+	enum ANIMAL{
+		FLICKY,
+		RICKY,
+		POCKY,
+		PECKY,
+		PICKY,
+		CLUCKY,
+		ROCKY,
 		TOTAL
 	}
 
@@ -694,13 +707,87 @@ function setup_Game_SyncAnimTimers(){
 	global.sync3_time=0;	// Timer for Lost Rings
 	global.sync3_frame=0;	// Frame number for Lost Rings
 }
+function setup_Game_ObjData_LostRings(){
+	global.ringspeed[0]		= [-0.78,	-3.92];
+	global.ringspeed[1]		= [ 0.78,	-3.92];
+	global.ringspeed[2]		= [-2.22,	-3.33];
+	global.ringspeed[3]		= [ 2.22,	-3.33];
+	global.ringspeed[4]		= [-3.33,	-2.22];
+	global.ringspeed[5]		= [ 3.33,	-2.22];
+	global.ringspeed[6]		= [-3.92,	-0.78];
+	global.ringspeed[7]		= [ 3.92,	-0.78];
+	global.ringspeed[8]		= [-3.92,	 0.78];
+	global.ringspeed[9]		= [ 3.92,	 0.78];
+	global.ringspeed[10]	= [-3.33,	 2.22];
+	global.ringspeed[11]	= [ 3.33,	 2.22];
+	global.ringspeed[12]	= [-2.22,	 3.33];
+	global.ringspeed[13]	= [ 2.22,	 3.33];
+	global.ringspeed[14]	= [-0.78,	 3.92];
+	global.ringspeed[15]	= [ 0.78,	 3.92];
+	global.ringspeed[16]	= [-0.39,	-1.96];
+	global.ringspeed[17]	= [ 0.39,	-1.96];
+	global.ringspeed[18]	= [-1.11,	-1.66];
+	global.ringspeed[19]	= [ 1.11,	-1.66];
+	global.ringspeed[20]	= [-1.66,	-1.11];
+	global.ringspeed[21]	= [ 1.66,	-1.11];
+	global.ringspeed[22]	= [-1.96,	-0.39];
+	global.ringspeed[23]	= [ 1.96,	-0.39];
+	global.ringspeed[24]	= [-1.96,	 0.39];
+	global.ringspeed[25]	= [ 1.96,	 0.39];
+	global.ringspeed[26]	= [-1.66,	 1.11];
+	global.ringspeed[27]	= [ 1.66,	 1.11];
+	global.ringspeed[28]	= [-1.11,	 1.66];
+	global.ringspeed[29]	= [ 1.11,	 1.66];
+	global.ringspeed[30]	= [-0.39,	 1.96];
+	global.ringspeed[31]	= [ 0.39,	 1.96];
+}
+function setup_Game_ObjData_Animals(){
+	global.animal_sprite = array_create(ANIMAL.TOTAL);
+	global.animal_xsp = array_create(ANIMAL.TOTAL);
+	global.animal_ysp = array_create(ANIMAL.TOTAL);
+	
+	// 0 - Flicky (Bluebird)
+	global.animal_sprite[ANIMAL.FLICKY] = spr_Animal_Flicky;
+	global.animal_xsp[ANIMAL.FLICKY] = -3;
+	global.animal_ysp[ANIMAL.FLICKY] = -4;
+
+	// 1 - Ricky (Squirrel)
+	global.animal_sprite[ANIMAL.RICKY] = spr_Animal_Ricky;
+	global.animal_xsp[ANIMAL.RICKY] = -2.5;
+	global.animal_ysp[ANIMAL.RICKY] = -3.5;
+
+	// 2 - Pocky (Rabbit)
+	global.animal_sprite[ANIMAL.POCKY] = spr_Animal_Pocky;
+	global.animal_xsp[ANIMAL.POCKY] = -2;
+	global.animal_ysp[ANIMAL.POCKY] = -4;
+
+	// 3 - Pecky (Penguin)
+	global.animal_sprite[ANIMAL.PECKY] = spr_Animal_Pecky;
+	global.animal_xsp[ANIMAL.PECKY] = -1.5;
+	global.animal_ysp[ANIMAL.PECKY] = -2.5;
+
+	// 4 - Picky (Pig)
+	global.animal_sprite[ANIMAL.PICKY] = spr_Animal_Picky;
+	global.animal_xsp[ANIMAL.PICKY] = -1.75;
+	global.animal_ysp[ANIMAL.PICKY] = -3;
+
+	// 5 - Clucky (Chicken)
+	global.animal_sprite[ANIMAL.CLUCKY] = spr_Animal_Clucky;
+	global.animal_xsp[ANIMAL.CLUCKY] = -2;
+	global.animal_ysp[ANIMAL.CLUCKY] = -3;
+
+	// 6 - Rocky (Seal)
+	global.animal_sprite[ANIMAL.ROCKY] = spr_Animal_Rocky;
+	global.animal_xsp[ANIMAL.ROCKY] = -1.25;
+	global.animal_ysp[ANIMAL.ROCKY] = -1.5;
+}
 function setup_Game_GameVars(){
-	global.p_score = 0;
-	global.p_rings = 0;
-	global.p_lives = 3;
-	global.p_frames = 0;		// Total frame count.
-	global.p_scorelife=50000;	// Amount of points needed for an extra life
-	global.p_ringlife=0;		// Counter for extra lives per rings
+	global.p_score		= 0;
+	global.p_rings		= 0;
+	global.p_lives		= 3;
+	global.p_frames		= 0;		// Total frame count.
+	global.p_scorelife	= 50000;	// Amount of points needed for an extra life
+	global.p_ringlife	= 0;		// Counter for extra lives per rings
 
 	for (var i = 0; i < 60; i++)
 		global.centiseconds[i] = floor(i / 3 * 5); //round(100*(i/60)); < Same result, except flooring instead of rounding
