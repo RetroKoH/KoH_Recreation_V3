@@ -18,6 +18,8 @@ roll_jump				= false;	// if true, control is locked
 pushing					= false;	// if true, pushing against something
 in_water				= false;	// if true, underwater.
 
+platform_id				= noone;
+
 // Collision related
 path					= LAYER_A;					// Collision has two paths
 angle					= 0;						// The angle at which you are moving. (0-$100*) < 360 degrees divided by 256.

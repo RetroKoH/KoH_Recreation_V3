@@ -65,11 +65,11 @@ function setup_Game_Macros(){
 	#macro FADEBLEND_BLACK	0
 	#macro FADEBLEND_WHITE	1
 	#macro FADEBLEND_FLASH	2
-	
+
 	// Act macro
 	#macro ACT_1			0
 	#macro ACT_2			1
-	
+
 	// Title card routine macro
 	#macro TCARD_INIT		0
 	#macro TCARD_ENTER		1
@@ -77,23 +77,23 @@ function setup_Game_Macros(){
 	#macro TCARD_FADEIN		3
 	#macro TCARD_LEAVE		4
 	#macro TCARD_FINISHED	5
-	
-	// Out-of-bounds Game Object macro
-	#macro OOB_PLAYER		-1
-	#macro OOB_DESTROY		0
-	#macro OOB_PAUSE		1
-	#macro OOB_RESET		2
-	
+
 	// Layer macro
 	#macro LAYER_A			0
 	#macro LAYER_B			1
-	
+
 	// Collision Quadrant macro
 	#macro COL_FLOOR		0
 	#macro COL_WALL_R		1
 	#macro COL_CEILING		2
 	#macro COL_WALL_L		3
-	
+
+	// Out-of-bounds Game Object macro
+	#macro OOB_PLAYER		-1
+	#macro OOB_DESTROY		0
+	#macro OOB_PAUSE		1
+	#macro OOB_RESET		2
+
 	// Player Size macro
 	#macro HEIGHT_MAIN $13	// Standard height
 	#macro HEIGHT_SHORT $F	// Tails' standing height
@@ -102,7 +102,7 @@ function setup_Game_Macros(){
 	#macro WIDTH_MAIN 9		// Standard Width
 	#macro WIDTH_ROLL 7		// Rolling Width
 	#macro WIDTH_GLIDE $A	// Gliding Width
-	
+
 	// Keymap array indices
 	enum KEYMAP{
 		UP,
@@ -143,6 +143,22 @@ function setup_Game_Macros(){
 		CLUCKY,
 		ROCKY,
 		TOTAL
+	}
+
+	// Monitor indices
+	enum MONITOR{
+		EGGMAN,
+		SPEED_UP,
+		SHIELD,
+		INVINC,
+		RINGS,
+		SUPER,
+		GOGGLES,
+		SHIELD_F,
+		SHIELD_B,
+		SHIELD_L,
+		CLOCK,
+		EXTRA_LIFE	// bumped from #1 to the end for easier sprite swapping
 	}
 
 	// BGM indices
@@ -691,8 +707,9 @@ function setup_Game_Animations(){
 	global.AnimsIndex = [];	// Every script below pushes an animation into this index
 	animtable_PLAYERS();
 	animtable_TITLESONIC();
-	animtable_BADNIKS();
 	animtable_RINGS();
+	animtable_MONITORS();
+	animtable_BADNIKS();
 }
 function setup_Game_OscValues(){
 	global.osc_active = false;

@@ -16,6 +16,7 @@ switch(routine) {
 	case 1: // Sonic_Main
 	{
 		script_execute(control_modes);
+		ctrl_Player_TouchResponse();
 	}
 	break;
 	

@@ -1,10 +1,10 @@
 /// @description Init Newtron
 
+event_inherited();
+
 /* Variable Definitions	
 	1. type,     default = 0		
 	*/
-
-event_inherited();
 
 // Object variables
 routine_2	= 0;
