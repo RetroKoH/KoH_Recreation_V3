@@ -28,6 +28,7 @@ switch(routine) {
 		ctrl_Player_LevelBound();			// Keep player inside the view and kill Sonic if he touches the kill plane
 	}
 	break;
+
 	case 3: // Sonic_Death
 	{
 		if (y > camera_get_view_y(GAMECAM) + $120)
@@ -39,6 +40,7 @@ switch(routine) {
 		gfunc_gameobj_apply_speed(true);
 	}
 	break;
+
 	case 4: // Sonic_Restart
 	{
 		// Sonic does nothing, while the stage object handles

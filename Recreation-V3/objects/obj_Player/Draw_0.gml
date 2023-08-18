@@ -1,7 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Render Sprite
 
-event_inherited();
+if !((invuln) and (invuln % 4))
+	gfunc_anims_draw();
 
 if in_air {
 	// Ceiling sensors (Always at x +/- width, y - height)

@@ -40,9 +40,8 @@ function ctrl_Player_Hurt(_x, _fire, _electric, _death, _spiked) {
 				xsp /= 2;
 			}
 		
-			inertia			=	0;
-			anim_ID			=	ANI_PLAYER.HURT;
-			invuln_timer	=	120;
+			inertia			= 0;
+			anim_ID			= ANI_PLAYER.HURT;
 
 	//		if (coolbonus)
 	//			coolbonus -= 1000;		// 1000 is lost for each hit.
@@ -67,6 +66,7 @@ function ctrl_Player_Death(_spiked=false) {
 		xsp				= 0;
 		inertia			= 0;
 		anim_ID			= ANI_PLAYER.DEATH;
+		invuln			= 0;
 	}
 
 	// Cool Bonus = 0. Death removes said point bonus
@@ -84,6 +84,7 @@ function ctrl_Player_Hurt_Stop() {
 		inertia = 0;
 		anim_ID = ANI_PLAYER.WALK;
 		move_lock = false;
+		invuln	= 120;
 		routine--;
 	}
 }

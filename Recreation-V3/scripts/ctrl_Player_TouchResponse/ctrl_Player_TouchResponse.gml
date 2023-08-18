@@ -1,6 +1,6 @@
 ///@ function ctrl_Player_TouchResponse()
 function ctrl_Player_TouchResponse() {
-	// Populate teh Touch Response List
+	// Populate the Touch Response List
 	var _count = instance_place_list(x, y, obj_GOInteract, touch_response_list, false);
 
 	if _count != 0 {
@@ -20,7 +20,7 @@ function ctrl_Player_TouchResponse() {
 					var _chk_action	= false; //Player.FlightState and floor(Player.PosY) > y and Player.Ysp < 0 or Player.GlideState > GlideFall;
 
 					// Damage enemy
-					if _chk_spin or _chk_invinc or _chk_action {
+					if (_chk_spin or _chk_invinc or _chk_action) and _obj.can_hit {
 						// Make player bounce if they are airborne
 						if in_air
 						{
@@ -57,7 +57,8 @@ function ctrl_Player_TouchResponse() {
 					}
 			
 					// Damage player
-					else ctrl_Player_Hurt(_obj.x, false, false, false, false);
+					else if !invuln and _obj.can_harm
+						ctrl_Player_Hurt(_obj.x, false, false, false, false);
 				} break;
 			
 				case obj_GORoutine:

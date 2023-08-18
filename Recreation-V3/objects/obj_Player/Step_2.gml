@@ -1,4 +1,9 @@
-/// @description Animation Handling
+/// @description Post-Object Handling
+
+// Decrement timers
+if invuln		invuln--;
+if invinc		invinc--;
+if speed_up		speed_up--;
 
 // Animation direction
 anim_direction = flipped ? -1 : 1;
