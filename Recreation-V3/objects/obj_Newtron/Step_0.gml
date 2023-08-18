@@ -10,6 +10,7 @@ switch(routine) {
 		ysp			= 0;
 		height		= 16;
 		width		= 8;
+		path		= 0;
 		can_hit		= false;
 		can_harm	= false;
 		has_fired	= false;
@@ -49,19 +50,20 @@ switch(routine) {
 			case 1:
 			// Blue Newtron subroutine (Appearing and Falling to the Ground)
 			{
+				// Activate
+				if (anim_frame == 1) {
+					can_hit = true;
+					can_harm = true;
+				}
+
 				// is Newt still "appearing"?
-				if (anim_frame < 4) {
+				else if (anim_frame < 4) {
 					if (cPLAYER.x > x)	anim_direction = -1;
 					else				anim_direction = 1;
 				}
 
 				// if animation is finished, let's drop down
 				else {
-					if (anim_frame = 1) {
-						can_hit = true;
-						can_harm = true;
-					}
-					
 					gfunc_gameobj_apply_speed(true);
 					var _dist = gfunc_collide_dist_floor(0, height, COL_FLOOR)[0];
 					

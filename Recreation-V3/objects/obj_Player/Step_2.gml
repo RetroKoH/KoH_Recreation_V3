@@ -1,7 +1,8 @@
 /// @description Post-Object Handling
 
 // Decrement timers
-if invuln		invuln--;
+if invuln and routine == 1
+	invuln--;
 if invinc		invinc--;
 if speed_up		speed_up--;
 

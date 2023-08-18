@@ -43,6 +43,7 @@ function ctrl_Player_Hurt(_x, _fire, _electric, _death, _spiked) {
 		
 			inertia			= 0;
 			anim_ID			= ANI_PLAYER.HURT;
+			invuln			= 120;
 
 	//		if (coolbonus)
 	//			coolbonus -= 1000;		// 1000 is lost for each hit.
