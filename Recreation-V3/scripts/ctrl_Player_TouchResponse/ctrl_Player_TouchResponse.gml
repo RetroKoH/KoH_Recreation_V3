@@ -57,10 +57,17 @@ function ctrl_Player_TouchResponse() {
 					}
 			
 					// Damage player
-					else if !invuln and _obj.can_harm
+					else if _obj.can_harm
 						ctrl_Player_Hurt(_obj.x, false, false, false, false);
 				} break;
-			
+
+				case obj_GOHarm:
+				{
+					// Damage player
+					if _obj.can_harm
+						ctrl_Player_Hurt(_obj.x, false, false, false, false);
+				} break;
+
 				case obj_GORoutine:
 				{
 					_obj.routine++;

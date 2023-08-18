@@ -2,6 +2,7 @@
 function ctrl_Player_Hurt(_x, _fire, _electric, _death, _spiked) {
 	with cPLAYER {
 		// Exit if player cannot be hurt now
+		if invuln						exit;
 		if _fire and shield == 2		exit;
 		if _electric and shield == 3	exit;
 	
