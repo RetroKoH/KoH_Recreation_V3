@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_Spikes_Up_1",
-    "path": "sprites/spr_Spikes_Up_1/spr_Spikes_Up_1.yy",
+    "name": "spr_Spikes_Up_3",
+    "path": "sprites/spr_Spikes_Up_3/spr_Spikes_Up_3.yy",
   },
   "spriteMaskId": null,
   "visible": true,

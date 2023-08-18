@@ -28,7 +28,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_Spikes_Up_1",
+    "path": "sprites/spr_Spikes_Up_1/spr_Spikes_Up_1.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }
