@@ -159,7 +159,7 @@ function solid_obj_collide(_width, _height, _prev_x, _sides, _top, _bottom){
 					cPLAYER.pushing = false;
 				}
 			}
-			return 3; // Register Side Collision
+			return (_dist_x > 0) ? 3 : 4; // Register Side Collision (Left side is 3, Right side is 4)
 		}
 	}
 	return 0; // Register no collision

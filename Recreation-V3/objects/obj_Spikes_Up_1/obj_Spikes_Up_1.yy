@@ -1,11 +1,8 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_Spikes_Up",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-  ],
+  "name": "obj_Spikes_Up_1",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
@@ -13,8 +10,8 @@
     "path": "folders/Game Objects/Solid Objects/Spikes.yy",
   },
   "parentObjectId": {
-    "name": "obj_GOSolid",
-    "path": "objects/obj_GOSolid/obj_GOSolid.yy",
+    "name": "obj_Spikes_Up",
+    "path": "objects/obj_Spikes_Up/obj_Spikes_Up.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

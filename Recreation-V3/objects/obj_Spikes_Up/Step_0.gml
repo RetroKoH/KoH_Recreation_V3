@@ -5,8 +5,8 @@ switch(routine)
 	case 0:
 	{
 		routine++;
-		solid_width = 20;
-		solid_height = 16;
+		solid_width = sprite_width;
+		solid_height = sprite_height;
 		on_obj = false;
 		pushed = false;
 	} break;
