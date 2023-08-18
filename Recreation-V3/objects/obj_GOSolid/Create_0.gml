@@ -9,4 +9,4 @@ solid_height = 0;
 on_obj = false;
 pushed = false;
 
-debug_name = "Rock";
+debug_name = "Solid Object";

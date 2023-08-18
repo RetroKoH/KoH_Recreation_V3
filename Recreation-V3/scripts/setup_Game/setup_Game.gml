@@ -708,6 +708,7 @@ function setup_Game_Animations(){
 	animtable_PLAYERS();
 	animtable_TITLESONIC();
 	animtable_RINGS();
+	animtable_SPRINGS();
 	animtable_MONITORS();
 	animtable_BADNIKS();
 }
