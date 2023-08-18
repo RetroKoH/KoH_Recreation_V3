@@ -60,6 +60,8 @@
     {"name":"Dynamic Level Events","order":7,"path":"folders/Zones/GHZ/Dynamic Level Events.yy",},
     {"name":"Foreground","order":2,"path":"folders/Zones/GHZ/Foreground.yy",},
     {"name":"Tilesets","order":4,"path":"folders/Zones/GHZ/Tilesets.yy",},
+    {"name":"Powerups","order":8,"path":"folders/Game Objects/Effects/Powerups.yy",},
+    {"name":"Inv Stars","order":1,"path":"folders/Game Objects/Effects/Powerups/Inv Stars.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -328,6 +330,7 @@
     {"name":"obj_GOEffect","order":1,"path":"objects/obj_GOEffect/obj_GOEffect.yy",},
     {"name":"spr_amy_death","order":13,"path":"sprites/spr_amy_death/spr_amy_death.yy",},
     {"name":"setup_Stage","order":5,"path":"scripts/setup_Stage/setup_Stage.yy",},
+    {"name":"obj_InvincStars","order":1,"path":"objects/obj_InvincStars/obj_InvincStars.yy",},
     {"name":"sh_Palette","order":1,"path":"shaders/sh_Palette/sh_Palette.yy",},
     {"name":"spr_CardActs","order":5,"path":"sprites/spr_CardActs/spr_CardActs.yy",},
     {"name":"spr_HUDLives","order":4,"path":"sprites/spr_HUDLives/spr_HUDLives.yy",},

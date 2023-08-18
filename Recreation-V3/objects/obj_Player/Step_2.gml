@@ -6,6 +6,12 @@ if invuln and routine == 1
 if invinc		invinc--;
 if speed_up		speed_up--;
 
+// Remember player's position for previous 32 frames
+ds_list_delete(pos_record_x, 31);
+ds_list_delete(pos_record_y, 31);
+ds_list_insert(pos_record_x, 0, floor(x));
+ds_list_insert(pos_record_y, 0, floor(y));
+
 // Animation direction
 anim_direction = flipped ? -1 : 1;
 

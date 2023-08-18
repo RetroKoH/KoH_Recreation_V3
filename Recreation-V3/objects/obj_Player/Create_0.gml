@@ -51,6 +51,16 @@ restart_timer			= 0;
 
 touch_response_list		= ds_list_create();
 
+// Initialise recorded position datalist
+pos_record_x = ds_list_create();
+pos_record_y = ds_list_create();
+	
+for (var _i = 0; _i < 32; _i++) 
+{
+	ds_list_add(pos_record_x, x);
+	ds_list_add(pos_record_y, y);
+}
+
 gfunc_gameobj_priority_set(2);
 gfunc_gameobj_OOB_set(OOB_PLAYER);	// Player objects don't get deactivated
 gfunc_anims_init(true, global.AnimTable_PlayerSonic, 0);
