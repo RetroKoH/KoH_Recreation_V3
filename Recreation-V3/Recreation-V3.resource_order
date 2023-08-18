@@ -147,6 +147,7 @@
     {"name":"sfx_Skid","order":23,"path":"sounds/sfx_Skid/sfx_Skid.yy",},
     {"name":"sfx_ShieldFlameDash","order":19,"path":"sounds/sfx_ShieldFlameDash/sfx_ShieldFlameDash.yy",},
     {"name":"ctrl_Player_MoveInAir","order":2,"path":"scripts/ctrl_Player_MoveInAir/ctrl_Player_MoveInAir.yy",},
+    {"name":"spr_Spikes_Up_3","order":1,"path":"sprites/spr_Spikes_Up_3/spr_Spikes_Up_3.yy",},
     {"name":"spr_tails_breathe","order":18,"path":"sprites/spr_tails_breathe/spr_tails_breathe.yy",},
     {"name":"spr_mighty_roll","order":10,"path":"sprites/spr_mighty_roll/spr_mighty_roll.yy",},
     {"name":"sfx_RingRight","order":58,"path":"sounds/sfx_RingRight/sfx_RingRight.yy",},
