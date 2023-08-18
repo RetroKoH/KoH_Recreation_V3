@@ -59,6 +59,7 @@
     {"name":"Tilesets","order":4,"path":"folders/Zones/GHZ/Tilesets.yy",},
     {"name":"Solid Objects","order":14,"path":"folders/Game Objects/Solid Objects.yy",},
     {"name":"Springs","order":2,"path":"folders/Game Objects/Solid Objects/Springs.yy",},
+    {"name":"Spikes","order":3,"path":"folders/Game Objects/Solid Objects/Spikes.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -239,6 +240,7 @@
     {"name":"spr_tails_run","order":12,"path":"sprites/spr_tails_run/spr_tails_run.yy",},
     {"name":"gfunc_palette_get_col","order":12,"path":"scripts/gfunc_palette_get_col/gfunc_palette_get_col.yy",},
     {"name":"core_Stage","order":12,"path":"objects/core_Stage/core_Stage.yy",},
+    {"name":"gfunc_ring_loss","order":29,"path":"scripts/gfunc_ring_loss/gfunc_ring_loss.yy",},
     {"name":"spr_supersonic_push","order":8,"path":"sprites/spr_supersonic_push/spr_supersonic_push.yy",},
     {"name":"gfunc_player_set_speed","order":21,"path":"scripts/gfunc_player_set_speed/gfunc_player_set_speed.yy",},
     {"name":"spr_tails_lookup","order":9,"path":"sprites/spr_tails_lookup/spr_tails_lookup.yy",},

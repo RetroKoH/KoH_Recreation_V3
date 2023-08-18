@@ -24,6 +24,7 @@ function setup_Game(){
 	setup_Game_Animations();		// My Recreation Animation system. Execution slightly cleaned up thx to Orbinaut.
 	setup_Game_OscValues();
 	setup_Game_SyncAnimTimers();
+	setup_Game_ObjData_LostRings();
 	setup_Game_ObjData_Animals();
 	setup_Game_GameVars();
 	

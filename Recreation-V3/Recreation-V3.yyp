@@ -74,6 +74,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Solid Objects","folderPath":"folders/Game Objects/Solid Objects.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rock","folderPath":"folders/Game Objects/Solid Objects/Rock.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Springs","folderPath":"folders/Game Objects/Solid Objects/Springs.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Spikes","folderPath":"folders/Game Objects/Solid Objects/Spikes.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -290,6 +291,7 @@
     {"id":{"name":"gfunc_palette_get_col","path":"scripts/gfunc_palette_get_col/gfunc_palette_get_col.yy",},},
     {"id":{"name":"core_Stage","path":"objects/core_Stage/core_Stage.yy",},},
     {"id":{"name":"sfx_Switch","path":"sounds/sfx_Switch/sfx_Switch.yy",},},
+    {"id":{"name":"gfunc_ring_loss","path":"scripts/gfunc_ring_loss/gfunc_ring_loss.yy",},},
     {"id":{"name":"spr_supersonic_push","path":"sprites/spr_supersonic_push/spr_supersonic_push.yy",},},
     {"id":{"name":"gfunc_player_set_speed","path":"scripts/gfunc_player_set_speed/gfunc_player_set_speed.yy",},},
     {"id":{"name":"spr_tails_lookup","path":"sprites/spr_tails_lookup/spr_tails_lookup.yy",},},

@@ -5,7 +5,7 @@ if time_enabled {
 	if game_time < 36000
 		game_time++;
 	if (game_time) == 36000
-		ctrl_Player_Hurt(true, false);
+		ctrl_Player_Death();
 }
 
 // Process Player Post-Death Restart

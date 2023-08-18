@@ -57,7 +57,7 @@ function ctrl_Player_TouchResponse() {
 					}
 			
 					// Damage player
-					else ctrl_Player_Hurt(true, false);
+					else ctrl_Player_Hurt(_obj.x, false, false, false, false);
 				} break;
 			
 				case obj_GORoutine:

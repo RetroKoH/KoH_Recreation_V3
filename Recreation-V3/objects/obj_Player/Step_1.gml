@@ -22,6 +22,10 @@ switch(routine) {
 	
 	case 2: // Sonic_Hurt
 	{
+		gfunc_gameobj_apply_speed(false);
+		ysp += (in_water) ? .0625 : .1875;	// Apply gravity (Slightly different in this state)
+		ctrl_Player_Hurt_Stop();			// Revert player to Main Routine upon landing
+		ctrl_Player_LevelBound();			// Keep player inside the view and kill Sonic if he touches the kill plane
 	}
 	break;
 	case 3: // Sonic_Death

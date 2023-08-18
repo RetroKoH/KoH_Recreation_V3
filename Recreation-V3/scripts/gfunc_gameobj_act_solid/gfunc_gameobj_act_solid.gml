@@ -113,7 +113,7 @@ function solid_obj_collide(_width, _height, _prev_x, _sides, _top, _bottom){
 					{
 						if abs(_clip_x) >= 12 // Changed this from 16
 						{
-							with(cPLAYER) ctrl_Player_Hurt(true, false);
+							ctrl_Player_Death();
 							return 2; // Register bottom collision
 						}
 					}
