@@ -1,21 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_Monitor_Destroyed",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-  ],
+  "name": "obj_Monitor_Icon",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "Monitors",
     "path": "folders/Game Objects/Solid Objects/Monitors.yy",
   },
-  "parentObjectId": {
-    "name": "obj_GOEffect",
-    "path": "objects/obj_GOEffect/obj_GOEffect.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -32,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_Monitor_Destroyed",
-    "path": "sprites/spr_Monitor_Destroyed/spr_Monitor_Destroyed.yy",
+    "name": "spr_MonIcon",
+    "path": "sprites/spr_MonIcon/spr_MonIcon.yy",
   },
   "spriteMaskId": null,
   "visible": true,

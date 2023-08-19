@@ -12,24 +12,26 @@ switch(routine) {
 	} break;
 	
 	case 1:
-	// Badnik Explosion
+	// Badnik Explosion (Type 0)
 	{
 		routine++;
 		var _ani = instance_create_layer(x, y, "Instances", obj_Animals);
 		_ani.type = irandom(ANIMAL.ROCKY);
-	    var _pt = instance_create_layer(x, y, "Instances", obj_Points);
-		_pt.pts = pts;
+		if pts {
+			var _pt = instance_create_layer(x, y, "Instances", obj_Points);
+			_pt.pts = pts;
+		}
 	} break;
 	
 	case 2:
-	// Monitor Explosion
+	// Monitor Explosion (Type 1)
 	{
 		routine = 4;
 		gfunc_audio_sfx_play(SFXs.EXPLOSION);
 	} break;
 	
 	case 3:
-	// Boss/Bomb Explosion
+	// Boss/Bomb Explosion (Type 2)
 	{
 		routine = 4;
 		gfunc_audio_sfx_play(SFXs.BIG_EXPLOSION);

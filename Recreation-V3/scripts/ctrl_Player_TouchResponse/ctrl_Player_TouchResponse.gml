@@ -15,8 +15,8 @@ function ctrl_Player_TouchResponse() {
 			switch(_ind) {
 				case obj_GOBadnik:
 				{
-					var _chk_spin	= cPLAYER.spinning or cPLAYER.spindash_rev != -1;
-					var _chk_invinc	= false; //Player.SuperState  or Player.InvincibleBonus;
+					var _chk_spin	= spinning or spindash_rev != -1;
+					var _chk_invinc	= super  or invinc;
 					var _chk_action	= false; //Player.FlightState and floor(Player.PosY) > y and Player.Ysp < 0 or Player.GlideState > GlideFall;
 
 					// Damage enemy
@@ -73,7 +73,7 @@ function ctrl_Player_TouchResponse() {
 					_obj.routine++;
 				} break;
 				
-				/*case obj_Monitor:
+				case obj_Monitor:
 				{
 					// Only collide with it in routine #1.
 					if _obj.routine != 1
@@ -81,16 +81,18 @@ function ctrl_Player_TouchResponse() {
 					
 					// Check if player is able to destroy it
 					if ysp < 0 //and !Player.DoubleSpinAttack
-						var _chk = floor(y + 16) >= _obj.y;
-					
-					if _chk and spinning and on_obj != _obj.id {
+						var _chk = floor(y + 16) >= y;
+					else
+						var _chk = true;
+
+					if _chk and spinning and platform_id != _obj.id {
 						// Inverse player's speed
 						if in_air
 							ysp = -ysp;
 					
 						// Create explosion
-						instance_create_layer(_obj.x, _obj.y, "Instances", obj_Explosion);
-						gfunc_audio_sfx_play(SFXs.EXPLOSION);
+						var _exp = instance_create_layer(_obj.x, _obj.y, "Instances", obj_Explosion);
+						_exp.type = 1;
 					
 						// Temporary do not unload the object
 						with _obj gfunc_gameobj_OOB_set(OOB_PLAYER);	
@@ -98,23 +100,17 @@ function ctrl_Player_TouchResponse() {
 						_obj.routine++;
 					}
 					
-					// If not, just collide (Add new functions and reconfigure hitboxes
+					// If not, just check bottom collision
 					else {
-						// Do collision
-						gfunc_gameobj_act_solid(true, true, false, false);
-					
 						// Make itembox fall down
-						if !falling and floor(y) >= floor(_obj.y + 16)
+						if !_obj.falling and floor(y) >= floor(_obj.y + 16)
 						{
-							if object_check_overlap(TypeHitbox)
-							{
-								falling		= true;
-								_obj.ysp	= -1.5;
-								ysp			= -ysp;
-							}
+							_obj.falling	= true;
+							_obj.ysp		= -1.5;
+							ysp				= -ysp;
 						}
 					}
-				} break;*/
+				} break;
 			}
 		}
 	}

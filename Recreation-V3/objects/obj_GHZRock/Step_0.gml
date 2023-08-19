@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Solid Object Routine
 
 switch(routine) {
 	case 0:

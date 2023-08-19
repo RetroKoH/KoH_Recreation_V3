@@ -26,7 +26,7 @@
   "origin": 9,
   "parent": {
     "name": "Monitors",
-    "path": "folders/Game Objects/Monitors.yy",
+    "path": "folders/Game Objects/Solid Objects/Monitors.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

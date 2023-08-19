@@ -12,15 +12,17 @@ switch(routine) {
 			 type = MONITOR.SHIELD;
 
 		// Init other variables
-		xsp		= 0;
-		ysp		= 0;
-		time	= 0;
-		icon	= type;
-		falling	= false;
+		xsp				= 0;
+		ysp				= 0;
+		solid_width		= 15;
+		solid_height	= 15;
+		time			= 0;
+		icon			= type + 1; // Offset to skip the random icon
+		falling			= false;
 	} break;
 	
 	case 1:
-	// Unbroken
+	// Unbroken (Solid Routine)
 	{
 		// Check if itembox is airborne
 		if falling {
@@ -35,10 +37,15 @@ switch(routine) {
 				falling	= false;
 			}
 		}
+		else
+			gfunc_gameobj_act_solid(solid_width, solid_height, solid_height, xprevious, true, true, false);
+	
+		if (anim_spriteframe == 3)
+			anim_spriteframe += icon;	// We don't use framemod here, so it doesn't have to modify the animation every frame.
 	} break;
 	
 	case 2:
-	// Broken
+	// Broken (From TouchResponse)
 	{
 		if (++time) == 12
 			instance_change(obj_Monitor_Destroyed, true);

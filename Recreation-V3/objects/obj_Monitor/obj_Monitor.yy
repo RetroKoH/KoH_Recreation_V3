@@ -10,7 +10,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Monitors",
-    "path": "folders/Game Objects/Monitors.yy",
+    "path": "folders/Game Objects/Solid Objects/Monitors.yy",
   },
   "parentObjectId": {
     "name": "obj_GOInteract",
@@ -29,22 +29,7 @@
   "physicsShape": 1,
   "physicsShapePoints": [],
   "physicsStartAwake": true,
-  "properties": [
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"type","filters":[],"listItems":[
-        "MONITOR.EGGMAN",
-        "MONITOR.SPEED_UP",
-        "MONITOR.SHIELD",
-        "MONITOR.INVINC",
-        "MONITOR.RINGS",
-        "MONITOR.SUPER",
-        "MONITOR.GOGGLES",
-        "MONITOR.SHIELD_F",
-        "MONITOR.SHIELD_B",
-        "MONITOR.SHIELD_L",
-        "MONITOR.CLOCK",
-        "MONITOR.EXTRA_LIFE",
-      ],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"MONITOR.RINGS","varType":6,},
-  ],
+  "properties": [],
   "solid": false,
   "spriteId": {
     "name": "spr_Monitor",
