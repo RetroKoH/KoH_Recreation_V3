@@ -16,7 +16,7 @@ function ctrl_Player_TouchResponse() {
 				case obj_GOBadnik:
 				{
 					var _chk_spin	= spinning or spindash_rev != -1;
-					var _chk_invinc	= super  or invinc;
+					var _chk_invinc	= super or invinc;
 					var _chk_action	= false; //Player.FlightState and floor(Player.PosY) > y and Player.Ysp < 0 or Player.GlideState > GlideFall;
 
 					// Damage enemy
@@ -63,6 +63,8 @@ function ctrl_Player_TouchResponse() {
 
 				case obj_GOHarm:
 				{
+					var _chk_invuln	= super or invinc or invuln;
+					
 					// Damage player
 					if _obj.can_harm
 						ctrl_Player_Hurt(_obj.x, false, false, false, false);

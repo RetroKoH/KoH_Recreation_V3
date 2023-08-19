@@ -12,7 +12,7 @@ function gfunc_powerup_set(_powerup) {
 		{
 			with(cPLAYER) {
 				shield = SHIELD.BLUE;
-				if my_shield!=-1 instance_destroy(my_shield);
+				if my_shield != noone instance_destroy(my_shield);
 				my_shield = instance_create_layer(x, y, "Instances", obj_Shield_Blue);
 			}
 			gfunc_audio_sfx_play(SFXs.SHIELD_BLU);
@@ -23,7 +23,7 @@ function gfunc_powerup_set(_powerup) {
 			if !cPLAYER.super 
 				with(cPLAYER) {
 					invinc = $4B0;
-					if my_stars!=-1 instance_destroy(my_stars);
+					if my_stars != noone instance_destroy(my_stars);
 					my_stars = instance_create_layer(x, y, "Instances", obj_InvincStars);
 					gfunc_audio_bgm_play(BGMs.INVINC);
 				}
@@ -39,7 +39,7 @@ function gfunc_powerup_set(_powerup) {
 		{
 			with(cPLAYER) {
 				shield = SHIELD.FLAME;
-				if my_shield!=-1 instance_destroy(my_shield);
+				if my_shield != noone instance_destroy(my_shield);
 				my_shield = instance_create_layer(x, y, "Instances", obj_Shield_Blue);
 				// Change this to a Flame Shield
 			}
@@ -51,7 +51,7 @@ function gfunc_powerup_set(_powerup) {
 		{
 			with(cPLAYER) {
 				shield = SHIELD.LIGHTNING;
-				if my_shield!=-1 instance_destroy(my_shield);
+				if my_shield != noone instance_destroy(my_shield);
 				my_shield = instance_create_layer(x, y, "Instances", obj_Shield_Blue);
 				// Change this to a Lightning Shield
 			}
@@ -63,7 +63,7 @@ function gfunc_powerup_set(_powerup) {
 		{
 			with(cPLAYER) {
 				shield = SHIELD.BUBBLE;
-				if my_shield!=-1 instance_destroy(my_shield);
+				if my_shield != noone instance_destroy(my_shield);
 				my_shield = instance_create_layer(x, y, "Instances", obj_Shield_Blue);
 				// Change this to a Bubble Shield
 			}

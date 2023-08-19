@@ -3,8 +3,20 @@
 // Decrement timers
 if invuln and routine == 1
 	invuln--;
-if invinc		invinc--;
-if speed_up		speed_up--;
+
+if invinc {
+	invinc--;
+
+	if !invinc
+		gfunc_audio_bgm_play(core_Stage.stage_BGM);
+}
+
+if speed_up {
+	speed_up--;
+
+	if !speed_up
+		gfunc_audio_bgm_play(core_Stage.stage_BGM);
+}
 
 // Remember player's position for previous 32 frames
 ds_list_delete(pos_record_x, 31);

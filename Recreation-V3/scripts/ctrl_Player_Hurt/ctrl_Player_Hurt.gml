@@ -2,9 +2,9 @@
 function ctrl_Player_Hurt(_x, _fire, _electric, _death, _spiked) {
 	with cPLAYER {
 		// Exit if player cannot be hurt now
-		if invuln						exit;
-		if _fire and shield == 2		exit;
-		if _electric and shield == 3	exit;
+		if invuln or invinc							exit;
+		if _fire and shield == SHIELD.FLAME			exit;
+		if _electric and shield == SHIELD.LIGHTNING	exit;
 	
 		// Change this to an array of sounds to stop (Namely, character ability sfx)
 		gfunc_audio_sfx_stop(SFXs.DROPDASH_REV);
@@ -17,7 +17,7 @@ function ctrl_Player_Hurt(_x, _fire, _electric, _death, _spiked) {
 		// Handle Rings or Shield, and decrement cool bonus
 		else {
 			if shield {
-				shield = 0;
+				shield = SHIELD.NONE;
 				if _spiked	gfunc_audio_sfx_play(SFXs.SPIKED);
 				else		gfunc_audio_sfx_play(SFXs.HURT);
 			}

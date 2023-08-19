@@ -43,6 +43,9 @@ invuln					= 0;		// Invulnerability frames
 invinc					= 0;		// Invincinbility timer
 speed_up				= 0;		// Speed Shoes timer
 
+my_shield				= noone;	// Designated slot for Shield object
+my_stars				= noone;	// Designated slot for Stars object
+
 gfunc_player_set_speed();
 jmp_spd					= 6.5;		// Default jump velocity
 control_modes			= ctrl_Sonic;
