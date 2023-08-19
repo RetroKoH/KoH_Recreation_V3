@@ -77,6 +77,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Zones/GHZ/Tilesets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Powerups","folderPath":"folders/Game Objects/Effects/Powerups.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Inv Stars","folderPath":"folders/Game Objects/Effects/Powerups/Inv Stars.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Blue Shield","folderPath":"folders/Game Objects/Effects/Powerups/Blue Shield.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -258,6 +259,7 @@
     {"id":{"name":"sfx_HitSpikes","path":"sounds/sfx_HitSpikes/sfx_HitSpikes.yy",},},
     {"id":{"name":"sfx_RingBox","path":"sounds/sfx_RingBox/sfx_RingBox.yy",},},
     {"id":{"name":"sfx_Emerald","path":"sounds/sfx_Emerald/sfx_Emerald.yy",},},
+    {"id":{"name":"obj_Shield_Blue","path":"objects/obj_Shield_Blue/obj_Shield_Blue.yy",},},
     {"id":{"name":"spr_metal_dash","path":"sprites/spr_metal_dash/spr_metal_dash.yy",},},
     {"id":{"name":"spr_tails_spring","path":"sprites/spr_tails_spring/spr_tails_spring.yy",},},
     {"id":{"name":"spr_amy_spring","path":"sprites/spr_amy_spring/spr_amy_spring.yy",},},
@@ -285,6 +287,7 @@
     {"id":{"name":"spr_tails_tail_fly","path":"sprites/spr_tails_tail_fly/spr_tails_tail_fly.yy",},},
     {"id":{"name":"gfunc_gameobj_priority_set","path":"scripts/gfunc_gameobj_priority_set/gfunc_gameobj_priority_set.yy",},},
     {"id":{"name":"spr_metal_run","path":"sprites/spr_metal_run/spr_metal_run.yy",},},
+    {"id":{"name":"gfunc_powerup_set","path":"scripts/gfunc_powerup_set/gfunc_powerup_set.yy",},},
     {"id":{"name":"spr_sonic_peelout","path":"sprites/spr_sonic_peelout/spr_sonic_peelout.yy",},},
     {"id":{"name":"sfx_KnuxSlide","path":"sounds/sfx_KnuxSlide/sfx_KnuxSlide.yy",},},
     {"id":{"name":"spr_Animal_Micky","path":"sprites/spr_Animal_Micky/spr_Animal_Micky.yy",},},

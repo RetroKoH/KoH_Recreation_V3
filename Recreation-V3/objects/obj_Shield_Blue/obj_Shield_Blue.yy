@@ -1,16 +1,17 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_Monitor_Icon",
+  "name": "obj_Shield_Blue",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Monitors",
-    "path": "folders/Game Objects/Solid Objects/Monitors.yy",
+    "name": "Blue Shield",
+    "path": "folders/Game Objects/Effects/Powerups/Blue Shield.yy",
   },
   "parentObjectId": {
     "name": "obj_GOEffect",
@@ -32,8 +33,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_MonIcon",
-    "path": "sprites/spr_MonIcon/spr_MonIcon.yy",
+    "name": "spr_InvincStars",
+    "path": "sprites/spr_InvincStars/spr_InvincStars.yy",
   },
   "spriteMaskId": null,
   "visible": true,

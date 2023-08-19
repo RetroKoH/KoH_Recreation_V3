@@ -62,6 +62,7 @@
     {"name":"Tilesets","order":4,"path":"folders/Zones/GHZ/Tilesets.yy",},
     {"name":"Powerups","order":8,"path":"folders/Game Objects/Effects/Powerups.yy",},
     {"name":"Inv Stars","order":1,"path":"folders/Game Objects/Effects/Powerups/Inv Stars.yy",},
+    {"name":"Blue Shield","order":2,"path":"folders/Game Objects/Effects/Powerups/Blue Shield.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -238,6 +239,7 @@
     {"name":"spr_supersonic_spring","order":10,"path":"sprites/spr_supersonic_spring/spr_supersonic_spring.yy",},
     {"name":"gfunc_gameobj_priority_set","order":18,"path":"scripts/gfunc_gameobj_priority_set/gfunc_gameobj_priority_set.yy",},
     {"name":"spr_metal_run","order":9,"path":"sprites/spr_metal_run/spr_metal_run.yy",},
+    {"name":"gfunc_powerup_set","order":30,"path":"scripts/gfunc_powerup_set/gfunc_powerup_set.yy",},
     {"name":"spr_sonic_peelout","order":9,"path":"sprites/spr_sonic_peelout/spr_sonic_peelout.yy",},
     {"name":"sfx_KnuxSlide","order":59,"path":"sounds/sfx_KnuxSlide/sfx_KnuxSlide.yy",},
     {"name":"spr_Animal_Micky","order":6,"path":"sprites/spr_Animal_Micky/spr_Animal_Micky.yy",},

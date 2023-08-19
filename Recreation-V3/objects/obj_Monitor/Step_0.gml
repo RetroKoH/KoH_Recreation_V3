@@ -45,7 +45,15 @@ switch(routine) {
 	} break;
 	
 	case 2:
-	// Broken (From TouchResponse)
+	// Broken (TouchResponse)
+	{
+		routine++;
+		var _pow = instance_create_layer(x, y, "Instances", obj_Monitor_Icon);
+		_pow.image_index = icon;
+	}
+	
+	case 3:
+	// Post-Explosion
 	{
 		if (++time) == 12
 			instance_change(obj_Monitor_Destroyed, true);

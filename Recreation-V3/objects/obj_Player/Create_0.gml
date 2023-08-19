@@ -41,7 +41,7 @@ super					= false;	// Super transformation flag
 shield					= 0;		// 0-None, 1-Blue, 2-Flame, 3-Electric, 4-Bubble
 invuln					= 0;		// Invulnerability frames
 invinc					= 0;		// Invincinbility timer
-speed_up				= 0;	// Speed Shoes timer
+speed_up				= 0;		// Speed Shoes timer
 
 gfunc_player_set_speed();
 jmp_spd					= 6.5;		// Default jump velocity

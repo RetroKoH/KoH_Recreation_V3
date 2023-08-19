@@ -161,6 +161,15 @@ function setup_Game_Macros(){
 		CLOCK,
 		EXTRA_LIFE	// bumped from #1 to the end for easier sprite swapping
 	}
+	
+	// Shield indices
+	enum SHIELD{
+		NONE,
+		BLUE,
+		FLAME,
+		LIGHTNING,
+		BUBBLE
+	}
 
 	// BGM indices
 	enum BGMs {
