@@ -18,19 +18,16 @@ function ctrl_Player_AcquireFloor() {
 	
 	// Double jump handling
 	if (double_jump_flag) {
-		/*if (powerups&POW_BUBBLE) scr_bubble_bounce();
-		else if !(powerups&POW_CHKELSHLDS) {
-			if double_jump_property >= 20
-				scr_drop_dash();
-		}*/
 		if double_jump_property >= 20
 			ctrl_Sonic_DropDash();
+		else if (shield == SHIELD.BUBBLE) ctrl_Sonic_BubbleBounce();
+
 		double_jump_flag		= false;
 		double_jump_property	= 0;
 	}
 }
 
-function ctrl_Sonic_DropDash(){
+function ctrl_Sonic_DropDash() {
 	spinning	= true;
 	height		= HEIGHT_ROLL;
 	width		= WIDTH_ROLL;
@@ -56,4 +53,23 @@ function ctrl_Sonic_DropDash(){
 	}
 
 	inertia = clamp(inertia, -drop_max, drop_max);
+}
+
+function ctrl_Sonic_BubbleBounce() {
+	var _bounce = !in_water ? 7.5 : 4;
+	xsp = (inertia * angle_data.cosine - _bounce * angle_data.sine);
+	ysp = (inertia * angle_data.sine - _bounce * angle_data.cosine);
+	//xsp -= bounce * angle_data.sine;
+	//ysp -= bounce * angle_data.cosine;
+	in_air = true;
+	pushing = false;
+	jump = true;
+	convex = false;
+	height = HEIGHT_ROLL;
+	width = WIDTH_ROLL;
+	anim_ID = ANI_PLAYER.ROLL;
+	spinning = true;
+	y -= height_def - height;
+	my_shield.anim_ID = ANI_SHIELD.SHIELD_B3;
+	gfunc_audio_sfx_play(SFXs.SHIELD_BB2);
 }

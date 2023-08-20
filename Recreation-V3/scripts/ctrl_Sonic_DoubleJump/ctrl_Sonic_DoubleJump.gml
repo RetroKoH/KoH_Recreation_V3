@@ -15,19 +15,20 @@ function ctrl_Sonic_DoubleJump(){
 	
 	// If flag is set, check for Drop Dash
 	else {
-		if cINPUT.k_abc_h {
-			if double_jump_property < 20 {
-				double_jump_property++;
-				if double_jump_property == 20 {
-					anim_ID = ANI_PLAYER.DROPDASH;
-					gfunc_audio_sfx_play(SFXs.DROPDASH_REV);
+		if shield < SHIELD.FLAME and double_jump_property >= 0 {
+			if cINPUT.k_abc_h {
+				if double_jump_property < 20 {
+					if ++double_jump_property == 20 {
+						anim_ID = ANI_PLAYER.DROPDASH;
+						gfunc_audio_sfx_play(SFXs.DROPDASH_REV);
+					}
 				}
 			}
-		}
-		else {
-			double_jump_property = -1; // Cancels Drop Dash
-			if anim_ID == ANI_PLAYER.DROPDASH
-				anim_ID = ANI_PLAYER.ROLL;
+			else {
+				double_jump_property = -1; // Cancels Drop Dash
+				if anim_ID == ANI_PLAYER.DROPDASH
+					anim_ID = ANI_PLAYER.ROLL;
+			}
 		}
 	}
 }
@@ -47,7 +48,7 @@ function ctrl_Sonic_LightningShield() {
 	jump = false;	// Clear flag to avoid variable jump height
 	gfunc_audio_sfx_play(SFXs.SHIELD_LT2);
 }
-function ctrl_Sonic_BubbleShield(){
+function ctrl_Sonic_BubbleShield() {
 /*On steep slopes, the bubble shield is unlikely to bounce at the right angle.
 That's because this bounce happens AFTER Sonic lands and has calculated his new Ground Speeds
 and new X Speed and Y Speed from landing on the ground. On steep slopes, this landing Y Speed
