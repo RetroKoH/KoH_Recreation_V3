@@ -51,8 +51,10 @@ function ctrl_Player_CheckFloor(){
 					
 				y += _dist_real;
 				angle = _angle_real;
+				angle_data = global.angle_data[angle];
+				
 				// This section recoded courtesy of Orbinaut Framework
-				if (global.angle_data[angle].quad_floor != COL_FLOOR) {
+				if (angle_data.quad_floor != COL_FLOOR) {
 					// Steep slope (If floor is greater than 45 degrees, use full vertical velocity (capped at 15.75))
 					if ysp > 15.75
 						ysp = 15.75;
@@ -136,6 +138,7 @@ function ctrl_Player_CheckFloor(){
 						show_debug_message("Caught Floor "+t_dir+" in R.Wall Mode: "+string(y+height));
 						y += _dist_real;
 						angle = _angle_real;
+						angle_data = global.angle_data[angle];
 						ysp = 0;
 						inertia = xsp;
 						ctrl_Player_AcquireFloor();
@@ -184,6 +187,7 @@ function ctrl_Player_CheckFloor(){
 					show_debug_message("Caught Ceiling "+t_dir+" in Ceiling Mode: "+string(y-height));
 					y -= _dist_real;
 					angle	= _angle_real;
+					angle_data = global.angle_data[angle];
 					inertia	= _angle_real < $80 ? -ysp : ysp;
 					ctrl_Player_AcquireFloor();
 				}
@@ -258,6 +262,7 @@ function ctrl_Player_CheckFloor(){
 						show_debug_message("Caught Floor "+t_dir+" in L.Wall Mode: "+string(y-_dist_real));
 						y += _dist_real;
 						angle = _angle_real;
+						angle_data = global.angle_data[angle];
 						ysp = 0;
 						inertia = xsp;
 						ctrl_Player_AcquireFloor();
