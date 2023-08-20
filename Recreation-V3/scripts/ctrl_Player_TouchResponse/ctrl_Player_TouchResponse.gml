@@ -77,6 +77,7 @@ function ctrl_Player_TouchResponse() {
 				
 				case obj_Monitor:
 				{
+					break;
 					// Only collide with it in routine #1.
 					if _obj.routine != 1
 						break;
