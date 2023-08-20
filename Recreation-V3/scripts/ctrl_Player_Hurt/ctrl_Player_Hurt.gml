@@ -18,6 +18,7 @@ function ctrl_Player_Hurt(_x, _fire, _electric, _death, _spiked) {
 		else {
 			if shield {
 				shield = SHIELD.NONE;
+				if my_shield != noone instance_destroy(my_shield);
 				if _spiked	gfunc_audio_sfx_play(SFXs.SPIKED);
 				else		gfunc_audio_sfx_play(SFXs.HURT);
 			}

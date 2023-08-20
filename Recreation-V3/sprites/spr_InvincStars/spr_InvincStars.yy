@@ -29,7 +29,7 @@
   "origin": 4,
   "parent": {
     "name": "Inv Stars",
-    "path": "folders/Game Objects/Effects/Powerups/Inv Stars.yy",
+    "path": "folders/Game Objects/Effects/Shields/Inv Stars.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

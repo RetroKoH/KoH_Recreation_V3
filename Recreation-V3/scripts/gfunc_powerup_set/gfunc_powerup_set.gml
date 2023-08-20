@@ -14,6 +14,7 @@ function gfunc_powerup_set(_powerup) {
 				shield = SHIELD.BLUE;
 				if my_shield != noone instance_destroy(my_shield);
 				my_shield = instance_create_layer(x, y, "Instances", obj_Shield_Blue);
+				my_shield.parent = cPLAYER;
 			}
 			gfunc_audio_sfx_play(SFXs.SHIELD_BLU);
 		} break;
@@ -40,8 +41,8 @@ function gfunc_powerup_set(_powerup) {
 			with(cPLAYER) {
 				shield = SHIELD.FLAME;
 				if my_shield != noone instance_destroy(my_shield);
-				my_shield = instance_create_layer(x, y, "Instances", obj_Shield_Blue);
-				// Change this to a Flame Shield
+				my_shield = instance_create_layer(x, y, "Instances", obj_Shield_Flame);
+				my_shield.parent = cPLAYER;
 			}
 			gfunc_audio_sfx_play(SFXs.SHIELD_FL);
 		}
@@ -52,8 +53,8 @@ function gfunc_powerup_set(_powerup) {
 			with(cPLAYER) {
 				shield = SHIELD.LIGHTNING;
 				if my_shield != noone instance_destroy(my_shield);
-				my_shield = instance_create_layer(x, y, "Instances", obj_Shield_Blue);
-				// Change this to a Lightning Shield
+				my_shield = instance_create_layer(x, y, "Instances", obj_Shield_Lightning);
+				my_shield.parent = cPLAYER;
 			}
 			gfunc_audio_sfx_play(SFXs.SHIELD_LT);
 		}
@@ -64,8 +65,8 @@ function gfunc_powerup_set(_powerup) {
 			with(cPLAYER) {
 				shield = SHIELD.BUBBLE;
 				if my_shield != noone instance_destroy(my_shield);
-				my_shield = instance_create_layer(x, y, "Instances", obj_Shield_Blue);
-				// Change this to a Bubble Shield
+				my_shield = instance_create_layer(x, y, "Instances", obj_Shield_Bubble);
+				my_shield.parent = cPLAYER;
 			}
 			gfunc_audio_sfx_play(SFXs.SHIELD_BB);
 		}

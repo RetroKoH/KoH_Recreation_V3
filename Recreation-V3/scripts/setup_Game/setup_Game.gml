@@ -716,11 +716,12 @@ function setup_Game_TitleCards(){
 function setup_Game_Animations(){
 	global.AnimsIndex = [];	// Every script below pushes an animation into this index
 	animtable_PLAYERS();
-	animtable_TITLESONIC();
+	animtable_SHIELDS();
 	animtable_RINGS();
 	animtable_SPRINGS();
 	animtable_MONITORS();
 	animtable_BADNIKS();
+	animtable_TITLESONIC();
 }
 function setup_Game_OscValues(){
 	global.osc_active = false;

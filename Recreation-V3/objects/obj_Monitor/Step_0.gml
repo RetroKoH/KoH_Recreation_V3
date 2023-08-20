@@ -6,10 +6,10 @@ switch(routine) {
 	{
 		routine++;
 		// Change Elemental shields to Blue Shields if necessary
-		if	(type == MONITOR.SHIELD_F or
+	/*	if	(type == MONITOR.SHIELD_F or
 			 type == MONITOR.SHIELD_B or
-			 type == MONITOR.SHIELD_L and global.str_opt_shld == 0)
-			 type = MONITOR.SHIELD;
+			 type == MONITOR.SHIELD_L) and global.str_opt_shld == 0
+			 type = MONITOR.SHIELD;*/
 
 		// Init other variables
 		xsp				= 0;

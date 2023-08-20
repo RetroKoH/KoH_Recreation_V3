@@ -4,18 +4,16 @@
   "name": "obj_Shield_Blue",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "Blue Shield",
-    "path": "folders/Game Objects/Effects/Powerups/Blue Shield.yy",
+    "path": "folders/Game Objects/Effects/Shields/Blue Shield.yy",
   },
   "parentObjectId": {
-    "name": "obj_GOEffect",
-    "path": "objects/obj_GOEffect/obj_GOEffect.yy",
+    "name": "obj_GOShield",
+    "path": "objects/obj_GOShield/obj_GOShield.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -33,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_InvincStars",
-    "path": "sprites/spr_InvincStars/spr_InvincStars.yy",
+    "name": "spr_Shield",
+    "path": "sprites/spr_Shield/spr_Shield.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -12,7 +12,7 @@ switch(routine) {
 	case 1:
 	// Synchronized Animation/Idle
 	{
-		if cPLAYER.shield == 2 and distance_to_object(cPLAYER) <= 64 // SH_LIGHTNING = 2
+		if cPLAYER.shield == SHIELD.LIGHTNING and distance_to_object(cPLAYER) <= 64 // SH_LIGHTNING = 2
 		{
 			// Increment state
 			routine = 3;
@@ -26,7 +26,7 @@ switch(routine) {
 	// Magnetized
 	{
 		// If player has lost the barrier, replace the ring
-		if cPLAYER.shield != 2//SH_LIGHTNING
+		if cPLAYER.shield != SHIELD.LIGHTNING
 			routine = 5;
 		
 		else {
@@ -40,8 +40,8 @@ switch(routine) {
 			var _moveY     = (sign(ysp) == _relativeY);
 			
 			// Increase speed and move the ring
-			Xsp  += (_x_vel * _relativeX);
-			Ysp  += (_y_vel * _relativeY);
+			xsp  += (_x_vel * _relativeX);
+			ysp  += (_y_vel * _relativeY);
 			gfunc_gameobj_apply_speed(false);
 		}
 	} break;
