@@ -77,40 +77,50 @@ function ctrl_Player_TouchResponse() {
 				
 				case obj_Monitor:
 				{
-					break;
 					// Only collide with it in routine #1.
 					if _obj.routine != 1
 						break;
 					
-					// Check if player is able to destroy it
-					if ysp < 0 //and !Player.DoubleSpinAttack
-						var _chk = floor(y + 16) >= y;
-					else
-						var _chk = true;
-
-					if _chk and spinning and platform_id != _obj.id {
-						// Inverse player's speed
-						if in_air
-							ysp = -ysp;
+					if ysp >= 0 {
+						if spinning {
+							// Inverse player's speed
+							if in_air
+								ysp = -ysp;
+							
+							// Create explosion
+							var _exp = instance_create_layer(_obj.x, _obj.y, "Instances", obj_Explosion);
+							_exp.type = 1;
 					
-						// Create explosion
-						var _exp = instance_create_layer(_obj.x, _obj.y, "Instances", obj_Explosion);
-						_exp.type = 1;
+							// Temporary do not unload the object
+							with _obj gfunc_gameobj_OOB_set(OOB_PLAYER);	
 					
-						// Temporary do not unload the object
-						with _obj gfunc_gameobj_OOB_set(OOB_PLAYER);	
-					
-						_obj.routine++;
+							_obj.routine++;
+						}
+						// Else, if not spinning, it just acts solid
 					}
-					
-					// If not, just check bottom collision
 					else {
-						// Make itembox fall down
-						if !_obj.falling and floor(y) >= floor(_obj.y + 16)
-						{
-							_obj.falling	= true;
-							_obj.ysp		= -1.5;
-							ysp				= -ysp;
+						// Under certain conditions, bump it and make it fall
+						if y >= _obj.y+16 {
+							_obj.falling = true;
+							_obj.ysp = -1.5;
+							ysp = -ysp;
+						}
+						// Otherwise, break the monitor if spinning
+						else {
+							if spinning {
+								// Inverse player's speed
+								if in_air
+									ysp = -ysp;
+							
+								// Create explosion
+								var _exp = instance_create_layer(_obj.x, _obj.y, "Instances", obj_Explosion);
+								_exp.type = 1;
+					
+								// Temporary do not unload the object
+								with _obj gfunc_gameobj_OOB_set(OOB_PLAYER);	
+					
+								_obj.routine++;
+							}
 						}
 					}
 				} break;

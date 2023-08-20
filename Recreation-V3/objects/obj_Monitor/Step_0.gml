@@ -38,7 +38,7 @@ switch(routine) {
 			}
 		}
 		else
-			gfunc_monitor_act_solid(solid_width, solid_height, solid_height, xprevious, true, true, true);
+			gfunc_monitor_act_solid(solid_width, solid_height, solid_height, xprevious, true, true);
 	
 		if (anim_spriteframe == 3)
 			anim_spriteframe += icon;	// We don't use framemod here, so it doesn't have to modify the animation every frame.
