@@ -5,7 +5,7 @@ function gfunc_powerup_set(_powerup) {
 		{
 			cPLAYER.speed_up = $4B0;
 			with(cPLAYER) gfunc_player_set_speed();
-			gfunc_audio_bgm_play(BGMs.INVINC); // Change to Speed Up Music
+			gfunc_audio_bgm_play(BGMs.SPEED_UP);
 		} break;
 		
 		case MONITOR.SHIELD:

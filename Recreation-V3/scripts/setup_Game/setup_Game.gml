@@ -181,6 +181,7 @@ function setup_Game_Macros(){
 		ACT_CLEAR,
 		GAME_OVER,
 		INVINC,
+		SPEED_UP,
 		EXTRA_LIFE,
 		TOTAL
 	}
@@ -555,6 +556,7 @@ function setup_Game_Audio(){
 	setup_Sound_BGM(bgm_ActClear,	"Act Clear",		AU_PRIMARY,		-1);
 	setup_Sound_BGM(bgm_GameOver,	"Game Over",		AU_PRIMARY,		-1);
 	setup_Sound_BGM(bgm_Invinc,		"Invincibility",	AU_PRIMARY,		0.916,	11.883);
+	setup_Sound_BGM(bgm_SpeedUp,	"Speed Up",			AU_PRIMARY,		-1);
 	setup_Sound_BGM(bgm_1up,		"1-Up Jingle",		AU_SECONDARY,	-1);
 
 // This array will only be used for the Sound Test

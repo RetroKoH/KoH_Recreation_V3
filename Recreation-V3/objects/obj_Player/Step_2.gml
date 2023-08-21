@@ -7,15 +7,18 @@ if invuln and routine == 1
 if invinc {
 	invinc--;
 
-	if !invinc
+	if (!invinc) and (audio_is_playing(global.BGM_list[BGMs.INVINC].ID))
 		gfunc_audio_bgm_play(core_Stage.stage_BGM);
 }
 
 if speed_up {
 	speed_up--;
 
-	if !speed_up
-		gfunc_audio_bgm_play(core_Stage.stage_BGM);
+	if (!speed_up) {
+		if audio_is_playing(global.BGM_list[BGMs.SPEED_UP].ID)
+			gfunc_audio_bgm_play(core_Stage.stage_BGM);
+		gfunc_player_set_speed();
+	}
 }
 
 // Remember player's position for previous 32 frames

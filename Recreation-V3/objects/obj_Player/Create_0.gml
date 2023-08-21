@@ -45,6 +45,8 @@ speed_up				= 0;		// Speed Shoes timer
 
 my_shield				= noone;	// Designated slot for Shield object
 my_stars				= noone;	// Designated slot for Stars object
+pos_offsets				= [0, 6, 12, 18];
+alphas					= [1, .85, .7, .55];	// Used for speed shoes
 
 gfunc_player_set_speed();
 jmp_spd					= 6.5;		// Default jump velocity

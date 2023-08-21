@@ -381,6 +381,7 @@
     {"id":{"name":"spr_ray_airglide","path":"sprites/spr_ray_airglide/spr_ray_airglide.yy",},},
     {"id":{"name":"setup_Sounds","path":"scripts/setup_Sounds/setup_Sounds.yy",},},
     {"id":{"name":"bkg_ghz_05","path":"sprites/bkg_ghz_05/bkg_ghz_05.yy",},},
+    {"id":{"name":"bgm_SpeedUp","path":"sounds/bgm_SpeedUp/bgm_SpeedUp.yy",},},
     {"id":{"name":"spr_Animal_Clucky","path":"sprites/spr_Animal_Clucky/spr_Animal_Clucky.yy",},},
     {"id":{"name":"Chunks_GHZ_High","path":"sprites/Chunks_GHZ_High/Chunks_GHZ_High.yy",},},
     {"id":{"name":"pal_GHZ","path":"sprites/pal_GHZ/pal_GHZ.yy",},},
