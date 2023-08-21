@@ -27,6 +27,7 @@ function gfunc_powerup_set(_powerup) {
 					if my_stars != noone instance_destroy(my_stars);
 					my_stars = instance_create_layer(x, y, "Instances", obj_InvincStars);
 					gfunc_audio_bgm_play(BGMs.INVINC);
+					my_stars.parent = cPLAYER;
 				}
 		} break;
 		

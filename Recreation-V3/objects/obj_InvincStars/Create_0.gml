@@ -4,9 +4,7 @@ event_inherited();
 
 // Initialise variables
 pos_offsets	= [0, 6, 12, 18];
-ID			= 0;
-time		= 0;
-frame		= 0;
+alphas		= [1, .85, .7, .55];
 
-gfunc_gameobj_priority_set(1);
+anim_ID = ANI_SHIELD.STARS;
 debug_name = "Invincibility Stars";	// Name displayed when being observed
