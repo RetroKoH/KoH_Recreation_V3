@@ -41,8 +41,10 @@ if cPLAYER.routine == 4 {
 	}
 }
 
-// Object bounds handling
+// Object bounds handling (and osc numbers)
 if run_objects {
+	gfunc_osc_num_do();
+	
 	// Get active bounds
 	var _left  = (cCAMERA.view_x - 128) & -128;
 	var _right = _left + (((global.win_width + 128) & -128) + 256);
@@ -124,8 +126,8 @@ if run_objects {
 gfunc_gameobj_activate_range(cCAMERA.view_x);
 
 // Process DLEs (Changing of boundaries)
-	if script_exists(level_events)
-		script_execute(level_events);
+if script_exists(level_events)
+	script_execute(level_events);
 
 // Process boundaries
 if !gfunc_fade_check(FADESTATE_ACTIVE) {

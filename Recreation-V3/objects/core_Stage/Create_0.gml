@@ -15,6 +15,8 @@ chain_combo		=  0;
 
 global.p_rings	=  0;
 
+gfunc_osc_num_reset();
+
 // Set up stage
 switch(room){
 	case stage_GHZ1:

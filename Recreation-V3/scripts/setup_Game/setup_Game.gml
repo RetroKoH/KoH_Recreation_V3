@@ -727,6 +727,24 @@ function setup_Game_Animations(){
 }
 function setup_Game_OscValues(){
 	global.osc_active = false;
+	global.osc = [];
+
+	// Oscillitary Variables - These dictate movement of some objects/graphics. NOT all are running in all levels. You can change this in gfunc_osc_num_do()
+	array_push(global.osc, setup_Oscillation(0.5,		0,			0.0078125,	0.4921875));	// +2 - MZ & LZ
+	array_push(global.osc, setup_Oscillation(0.5,		0,			0.0078125,	0.609375));		// +6 - MZ & SBZ
+	array_push(global.osc, setup_Oscillation(0.5,		0,			0.0078125,	0.703125));		// +$A - MZ, SYZ, LZ, SLZ
+	array_push(global.osc, setup_Oscillation(0.5,		0,			0.0078125,	0.859375));		// +$E - GHZ, MZ, SYZ, LZ, SLZ, SBZ
+	array_push(global.osc, setup_Oscillation(0.5,		0,			0.015625,	0.984375));		// +$12 - MZ
+	array_push(global.osc, setup_Oscillation(0.5,		0,			0.03125,	0.6875));		// +$16 - MZ
+	array_push(global.osc, setup_Oscillation(0.5,		0,			0.03125,	2));			// +$1A - GHZ, MZ, SYZ, SLZ, SBZ
+	array_push(global.osc, setup_Oscillation(0.5,		0,			0.015625,	1.40625));		// +$1E - MZ, SYZ, LZ, SLZ, SBZ
+	array_push(global.osc, setup_Oscillation(0.5,		0,			0.0078125,	1.1171875));	// +$22 - SLZ
+	array_push(global.osc, setup_Oscillation(50.9375,	1.1171875,	0.0078125,	1.1171875));	// +$26 - SLZ
+	array_push(global.osc, setup_Oscillation(20.5,		0.703125,	0.0078125,	0.703125));		// +$2A - MZ, SYZ, LZ, SLZ
+	array_push(global.osc, setup_Oscillation(30.5,		1.0546875,	0.01171875,	1.0546875));	// +$2E - MZ, SYZ, LZ, SLZ
+	array_push(global.osc, setup_Oscillation(50.5,		1.7578125,	0.01953125,	1.7578125));	// +$32 - MZ, SYZ, LZ, SLZ
+	array_push(global.osc, setup_Oscillation(70.5,		2.4609375,	0.02734375,	2.4609375));	// +$36 - MZ, SYZ, LZ, SLZ
+	array_push(global.osc, setup_Oscillation(0.5,		0,			0.0078125,	0.4921875));	// +$3A - UNUSED ($3E is identical. Omitted)
 }
 function setup_Game_SyncAnimTimers(){
 	global.sync0_time=0;	// Timer for GHZ Spiked Log
