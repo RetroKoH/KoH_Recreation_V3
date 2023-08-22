@@ -1,9 +1,8 @@
-Change Bounding Boxes
 Resetting an object should reset its animation data
 
-Falling Platforms need to have the Player exit correctly. Otherwise, the Player falls through the floor.
+There is likely an error w/ Solids and Platforms pertaining to how on_obj flag works for IT and the Player.
 Replace all instances of obj_Player with cPLAYER, global variable that denotes main player.
 Ensure that pausing doesn't break the Restart routine
 Implement 30 frame move_lock in various movement subroutines.
 Check where to apply the forced +- 2 to inertia when rolling.
-Adjust positioning of missile objects.
+Adjust positioning of badnik missile objects.

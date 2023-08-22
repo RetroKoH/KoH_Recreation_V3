@@ -68,6 +68,7 @@
     {"name":"Dynamic Level Events","order":7,"path":"folders/Zones/GHZ/Dynamic Level Events.yy",},
     {"name":"Foreground","order":2,"path":"folders/Zones/GHZ/Foreground.yy",},
     {"name":"Tilesets","order":4,"path":"folders/Zones/GHZ/Tilesets.yy",},
+    {"name":"Bridges","order":5,"path":"folders/Game Objects/Solid Objects/Bridges.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -235,6 +236,7 @@
     {"name":"spr_supersonic_skid","order":9,"path":"sprites/spr_supersonic_skid/spr_supersonic_skid.yy",},
     {"name":"spr_ray_roll","order":10,"path":"sprites/spr_ray_roll/spr_ray_roll.yy",},
     {"name":"spr_LivesNumbers","order":10,"path":"sprites/spr_LivesNumbers/spr_LivesNumbers.yy",},
+    {"name":"spr_Bridge_Post_GHZ","order":1,"path":"sprites/spr_Bridge_Post_GHZ/spr_Bridge_Post_GHZ.yy",},
     {"name":"sfx_Signpost","order":22,"path":"sounds/sfx_Signpost/sfx_Signpost.yy",},
     {"name":"spr_StartMenu","order":3,"path":"sprites/spr_StartMenu/spr_StartMenu.yy",},
     {"name":"sfx_GiantRing","order":53,"path":"sounds/sfx_GiantRing/sfx_GiantRing.yy",},
@@ -265,6 +267,7 @@
     {"name":"gfunc_player_set_speed","order":21,"path":"scripts/gfunc_player_set_speed/gfunc_player_set_speed.yy",},
     {"name":"spr_tails_lookup","order":9,"path":"sprites/spr_tails_lookup/spr_tails_lookup.yy",},
     {"name":"core_Camera","order":3,"path":"objects/core_Camera/core_Camera.yy",},
+    {"name":"obj_Bridge","order":2,"path":"objects/obj_Bridge/obj_Bridge.yy",},
     {"name":"sfx_RaySwoop","order":66,"path":"sounds/sfx_RaySwoop/sfx_RaySwoop.yy",},
     {"name":"sfx_ShieldBubbleBounce","order":69,"path":"sounds/sfx_ShieldBubbleBounce/sfx_ShieldBubbleBounce.yy",},
     {"name":"setup_LvlLayout","order":6,"path":"scripts/setup_LvlLayout/setup_LvlLayout.yy",},
