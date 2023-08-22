@@ -85,6 +85,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Foreground","folderPath":"folders/Zones/GHZ/Foreground.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Zones/GHZ/Tilesets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Bridges","folderPath":"folders/Game Objects/Solid Objects/Bridges.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Column Platforms","folderPath":"folders/Game Objects/Solid Objects/Platforms/Column Platforms.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -150,6 +151,7 @@
     {"id":{"name":"sfx_DropdashRev","path":"sounds/sfx_DropdashRev/sfx_DropdashRev.yy",},},
     {"id":{"name":"sfx_ShieldLightningJump","path":"sounds/sfx_ShieldLightningJump/sfx_ShieldLightningJump.yy",},},
     {"id":{"name":"sfx_Bumper","path":"sounds/sfx_Bumper/sfx_Bumper.yy",},},
+    {"id":{"name":"obj_GHZColumn","path":"objects/obj_GHZColumn/obj_GHZColumn.yy",},},
     {"id":{"name":"gfunc_gameobj_act_solid","path":"scripts/gfunc_gameobj_act_solid/gfunc_gameobj_act_solid.yy",},},
     {"id":{"name":"spr_Bridge_GHZ","path":"sprites/spr_Bridge_GHZ/spr_Bridge_GHZ.yy",},},
     {"id":{"name":"spr_MotobugSmoke","path":"sprites/spr_MotobugSmoke/spr_MotobugSmoke.yy",},},
@@ -471,6 +473,7 @@
     {"id":{"name":"obj_GameObj","path":"objects/obj_GameObj/obj_GameObj.yy",},},
     {"id":{"name":"ctrl_Player_CheckFloor","path":"scripts/ctrl_Player_CheckFloor/ctrl_Player_CheckFloor.yy",},},
     {"id":{"name":"spr_SuperStar","path":"sprites/spr_SuperStar/spr_SuperStar.yy",},},
+    {"id":{"name":"spr_Column_GHZ","path":"sprites/spr_Column_GHZ/spr_Column_GHZ.yy",},},
     {"id":{"name":"gfunc_gameobj_onscreen","path":"scripts/gfunc_gameobj_onscreen/gfunc_gameobj_onscreen.yy",},},
     {"id":{"name":"gfunc_debug_draw_text","path":"scripts/gfunc_debug_draw_text/gfunc_debug_draw_text.yy",},},
     {"id":{"name":"sfx_MetalDash","path":"sounds/sfx_MetalDash/sfx_MetalDash.yy",},},

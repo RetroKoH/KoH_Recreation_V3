@@ -290,6 +290,10 @@
     {"name":"inst_231EEED0","path":"rooms/stage_GHZ1/stage_GHZ1.yy",},
     {"name":"inst_630755C3","path":"rooms/stage_GHZ1/stage_GHZ1.yy",},
     {"name":"inst_70045DB4","path":"rooms/stage_GHZ1/stage_GHZ1.yy",},
+    {"name":"inst_11187891","path":"rooms/stage_GHZ1/stage_GHZ1.yy",},
+    {"name":"inst_2F5C9963","path":"rooms/stage_GHZ1/stage_GHZ1.yy",},
+    {"name":"inst_2D79751","path":"rooms/stage_GHZ1/stage_GHZ1.yy",},
+    {"name":"inst_4D43E1CF","path":"rooms/stage_GHZ1/stage_GHZ1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -606,6 +610,10 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_231EEED0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_Bridge","path":"objects/obj_Bridge/obj_Bridge.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":9120.0,"y":792.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_630755C3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_Bridge","path":"objects/obj_Bridge/obj_Bridge.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":10400.0,"y":1048.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_70045DB4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_Bridge","path":"objects/obj_Bridge/obj_Bridge.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":13984.0,"y":1048.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_11187891","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_GHZColumn","path":"objects/obj_GHZColumn/obj_GHZColumn.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":11936.0,"y":1224.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2F5C9963","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_GHZColumn","path":"objects/obj_GHZColumn/obj_GHZColumn.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":12256.0,"y":1224.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_2D79751","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_GHZColumn","path":"objects/obj_GHZColumn/obj_GHZColumn.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":12384.0,"y":1224.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4D43E1CF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_GHZColumn","path":"objects/obj_GHZColumn/obj_GHZColumn.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":12704.0,"y":1224.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRLayer","resourceVersion":"1.0","name":"Collision","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
         {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Collision_A","depth":400,"effectEnabled":true,"effectType":"_filter_tintfilter","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[

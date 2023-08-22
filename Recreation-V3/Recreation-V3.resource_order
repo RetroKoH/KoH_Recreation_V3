@@ -69,6 +69,7 @@
     {"name":"Foreground","order":2,"path":"folders/Zones/GHZ/Foreground.yy",},
     {"name":"Tilesets","order":4,"path":"folders/Zones/GHZ/Tilesets.yy",},
     {"name":"Bridges","order":5,"path":"folders/Game Objects/Solid Objects/Bridges.yy",},
+    {"name":"Column Platforms","order":2,"path":"folders/Game Objects/Solid Objects/Platforms/Column Platforms.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -116,6 +117,7 @@
     {"name":"sfx_DropdashRev","order":9,"path":"sounds/sfx_DropdashRev/sfx_DropdashRev.yy",},
     {"name":"sfx_ShieldLightningJump","order":68,"path":"sounds/sfx_ShieldLightningJump/sfx_ShieldLightningJump.yy",},
     {"name":"sfx_Bumper","order":73,"path":"sounds/sfx_Bumper/sfx_Bumper.yy",},
+    {"name":"obj_GHZColumn","order":1,"path":"objects/obj_GHZColumn/obj_GHZColumn.yy",},
     {"name":"gfunc_gameobj_act_solid","order":28,"path":"scripts/gfunc_gameobj_act_solid/gfunc_gameobj_act_solid.yy",},
     {"name":"spr_MotobugSmoke","order":1,"path":"sprites/spr_MotobugSmoke/spr_MotobugSmoke.yy",},
     {"name":"obj_Spring_Up_R","order":4,"path":"objects/obj_Spring_Up_R/obj_Spring_Up_R.yy",},
