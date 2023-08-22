@@ -1,4 +1,4 @@
-/// @description draw Bridge (Imported from Orbinaut Framework)
+/// @description Draw Bridge (Imported from Orbinaut Framework)
 
 // Draw logs
 for (var _i = 0; _i < length; _i++)
@@ -21,4 +21,11 @@ for (var _i = 0; _i < length; _i++)
 		
 	// Draw log
 	draw_sprite(sprite_data[0], 0, _logX, _logY);
+}
+
+// Draw posts
+if posts
+{
+	draw_sprite(sprite_data[1],     0, x - length / 2 * 16 - 18, y_base - 15);
+	draw_sprite_ext(sprite_data[1], 0, x + length / 2 * 16 + 18, y_base - 15, -1, 1, 0, c_white, 1);
 }
