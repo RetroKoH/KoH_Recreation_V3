@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Init solid object
 
 event_inherited();
 gfunc_gameobj_OOB_set(OOB_PAUSE);

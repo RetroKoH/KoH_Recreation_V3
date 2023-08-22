@@ -58,7 +58,7 @@ function solid_move_player(_p, _height, _prev_x){
 	
 	var _top	= y - _height - 1;
 	_p.y		= _top - _p.height;
-	_p.x		-= (_prev_x - x)
+	_p.x		-= (_prev_x - x);
 }
 
 // Fall off the solid object (Feels slightly wonky, but it works)
