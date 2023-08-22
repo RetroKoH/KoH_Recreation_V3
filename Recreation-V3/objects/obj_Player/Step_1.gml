@@ -1,5 +1,7 @@
 /// @description Routine Handling
 
+mask_index=anim_mask[(anim_direction==-1)];
+
 if !core_Stage.can_pause
 	exit;
 

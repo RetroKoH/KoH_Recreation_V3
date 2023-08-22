@@ -19,6 +19,10 @@ if !((invuln) and (invuln % 4)) {
 	}
 }
 
+draw_set_alpha(0.6);
+draw_rectangle_color(bbox_left, bbox_top, bbox_right, bbox_bottom, c_fuchsia, c_fuchsia,c_fuchsia,c_fuchsia, false);
+draw_set_alpha(1);
+
 if in_air {
 	// Ceiling sensors (Always at x +/- width, y - height)
 	draw_sprite_ext(spr_debug_line, 0,	floor(x)-width, floor(y),		1,-height,0, #0088EE,1);	// Sensor A

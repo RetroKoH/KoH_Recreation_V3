@@ -47,7 +47,7 @@ switch(routine) {
 	
 	case 3:
 	{
-		gfunc_gameobj_act_solid(solid_width, solid_height, solid_height, xprevious, false, true, false);
+		gfunc_gameobj_act_solid(solid_width, solid_height, solid_height, prev_x, false, true, false);
 		gfunc_gameobj_apply_speed(true);
 	} break;
 }

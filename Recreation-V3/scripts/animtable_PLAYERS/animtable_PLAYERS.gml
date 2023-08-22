@@ -100,7 +100,7 @@ function animtable_SONIC() {
 	setup_AnimationFrame(global.AnimTable_PlayerSonic, 1, sp);
 	// ==================================================================================
 
-	setup_Animation(global.AnimTable_PlayerSonic, "Duck", spr_sonic_duck, spr_spin_mask, spr_spin_mask, -1, -1, 1, -1);
+	setup_Animation(global.AnimTable_PlayerSonic, "Duck", spr_sonic_duck, spr_duck_mask, spr_duck_mask, -1, -1, 1, -1);
 
 	setup_AnimationFrame(global.AnimTable_PlayerSonic, 0, sp);
 	setup_AnimationFrame(global.AnimTable_PlayerSonic, 1, sp);

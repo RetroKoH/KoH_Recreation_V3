@@ -1,8 +1,8 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_sonic_mask",
-  "bbox_bottom": 32,
+  "name": "spr_duck_mask",
+  "bbox_bottom": 20,
   "bbox_left": 0,
   "bbox_right": 16,
   "bbox_top": 0,
@@ -13,11 +13,11 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"489f235f-3ba0-4bac-8547-2d9b698c66af",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a1a5857a-88c6-4337-9abf-11fdcd215019",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 33,
+  "height": 21,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3304f7c4-9548-4e42-8849-80dea9b2f5fc","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_sonic_mask",
+    "name": "spr_duck_mask",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,13 +54,13 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"489f235f-3ba0-4bac-8547-2d9b698c66af","path":"sprites/spr_sonic_mask/spr_sonic_mask.yy",},},},"Disabled":false,"id":"10e5fb9b-4943-4f15-94f5-49f25a373eb8","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a1a5857a-88c6-4337-9abf-11fdcd215019","path":"sprites/spr_duck_mask/spr_duck_mask.yy",},},},"Disabled":false,"id":"2ae01ab2-5ecc-401e-b8c8-bf6defb4586e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 8,
-    "yorigin": 16,
+    "yorigin": 4,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,
