@@ -71,6 +71,7 @@
     {"name":"Bridges","order":5,"path":"folders/Game Objects/Solid Objects/Bridges.yy",},
     {"name":"Column Platforms","order":2,"path":"folders/Game Objects/Solid Objects/Platforms/Column Platforms.yy",},
     {"name":"Swings","order":6,"path":"folders/Game Objects/Solid Objects/Swings.yy",},
+    {"name":"Breakable Walls","order":7,"path":"folders/Game Objects/Solid Objects/Breakable Walls.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -266,6 +267,7 @@
     {"name":"spr_tails_run","order":12,"path":"sprites/spr_tails_run/spr_tails_run.yy",},
     {"name":"gfunc_palette_get_col","order":12,"path":"scripts/gfunc_palette_get_col/gfunc_palette_get_col.yy",},
     {"name":"core_Stage","order":12,"path":"objects/core_Stage/core_Stage.yy",},
+    {"name":"obj_BreakWall","order":1,"path":"objects/obj_BreakWall/obj_BreakWall.yy",},
     {"name":"gfunc_ring_loss","order":29,"path":"scripts/gfunc_ring_loss/gfunc_ring_loss.yy",},
     {"name":"spr_supersonic_push","order":8,"path":"sprites/spr_supersonic_push/spr_supersonic_push.yy",},
     {"name":"gfunc_player_set_speed","order":21,"path":"scripts/gfunc_player_set_speed/gfunc_player_set_speed.yy",},
@@ -433,6 +435,7 @@
     {"name":"spr_tails_tail_type3","order":5,"path":"sprites/spr_tails_tail_type3/spr_tails_tail_type3.yy",},
     {"name":"core_Debug","order":7,"path":"objects/core_Debug/core_Debug.yy",},
     {"name":"spr_supersonic_walk","order":12,"path":"sprites/spr_supersonic_walk/spr_supersonic_walk.yy",},
+    {"name":"obj_Fragment","order":9,"path":"objects/obj_Fragment/obj_Fragment.yy",},
     {"name":"gfunc_anims_draw","order":9,"path":"scripts/gfunc_anims_draw/gfunc_anims_draw.yy",},
     {"name":"spr_Animal_Ricky","order":9,"path":"sprites/spr_Animal_Ricky/spr_Animal_Ricky.yy",},
     {"name":"ctrl_Player_ResetAngle","order":6,"path":"scripts/ctrl_Player_ResetAngle/ctrl_Player_ResetAngle.yy",},
