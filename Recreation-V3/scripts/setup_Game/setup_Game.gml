@@ -722,6 +722,7 @@ function setup_Game_Animations(){
 	animtable_RINGS();
 	animtable_SPRINGS();
 	animtable_MONITORS();
+	animtable_LAMPPOSTS();
 	animtable_BADNIKS();
 	animtable_TITLESONIC();
 }
@@ -832,10 +833,27 @@ function setup_Game_GameVars(){
 	global.p_score		= 0;
 	global.p_rings		= 0;
 	global.p_lives		= 3;
-	global.p_frames		= 0;		// Total frame count.
-	global.p_scorelife	= 50000;	// Amount of points needed for an extra life
-	global.p_ringlife	= 0;		// Counter for extra lives per rings
+	global.p_frames		= 0;			// Total frame count.
+	global.p_scorelife	= 50000;		// Amount of points needed for an extra life
+	global.p_ringlife	= 0;			// Counter for extra lives per rings
 
 	for (var i = 0; i < 60; i++)
 		global.centiseconds[i] = floor(i / 3 * 5); //round(100*(i/60)); < Same result, except flooring instead of rounding
+
+	global.level_restart	= false;	// True if restarting a level from death
+	// Lamppost related values
+	global.lamp_last		= 0;		// ID (subtype) of the last lamp hit.
+	global.lamp_xpos		= 0;		// x-axis for Sonic to respawn at lamppost
+	global.lamp_ypos		= 0;		// y-axis for Sonic to respawn at lamppost
+	global.lamp_rings		= 0;		// rings count stored at lamppost
+	global.lamp_time		= 0;		// time stored at lamppost
+	global.lamp_dle			= 0;		// dynamic level event routine counter at lamppost
+	global.lamp_boundary	= 0;		// level bottom boundary at lamppost
+	global.lamp_scrx		= 0;		// x-axis screen at lamppost
+	global.lamp_scry		= 0;		// y-axis screen at lamppost
+	global.lamp_wtrpos		= 0;		// water position at lamppost
+	global.lamp_wtrrout		= 0;		// water routine at lamppost
+	global.lamp_wtrstat		= 0;		// water state at lamppost
+	global.lamp_lives		= 0;		// lives count stored at lamppost
+	global.start_score		= 0;		// score saved at start of level, or at lamppost
 }

@@ -13,15 +13,13 @@ run_objects		=  false;
 level_events	=  noone;
 chain_combo		=  0;
 
-global.p_rings	=  0;
-
 gfunc_osc_num_reset();
 gfunc_anim_sync_reset();
 
 // Set up stage
 switch(room){
 	case stage_GHZ1:
-		setup_Stage(ZONE.GHZ, 0, false, 0, BGMs.GHZ1, 0, 0, room_width, 988, 90, 944);
+		setup_Stage(ZONE.GHZ, 0, false, 0, BGMs.GHZ1, 0, 0, room_width, 988, 90, 943);
 		level_events = dle_GHZ1;
 	break;
 	case stage_GHZ2:
@@ -30,6 +28,25 @@ switch(room){
 }
 
 gfunc_audio_bgm_play(stage_BGM);
+
+// Spawn Water Surface object if there is water
+
+// Lamppost data - Returning from lamppost or Giant Ring
+if (global.lamp_last > 0) gfunc_lamp_data_load();
+	
+// Starting a level
+else {
+	global.p_time = 0;
+	global.p_rings = 0;
+	global.p_score = global.start_score;
+		
+	// Reset bonuses (Should only do on fresh level start)
+	if !global.level_restart {
+		global.timebonus=50000;
+		global.ringbonus=0;
+		global.coolbonus=10000;
+	}
+}
 
 // Set stage boundaries
 target_bound_left	= bound_left;

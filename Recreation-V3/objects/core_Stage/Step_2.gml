@@ -34,8 +34,10 @@ if cPLAYER.routine == 4 {
 	
 	// Check if we faded out
 	if gfunc_fade_check(FADESTATE_MAX) {
-		if global.p_lives > 0
+		if global.p_lives > 0 {
 			room_restart();
+			global.level_restart = true;
+		}
 		else
 			room_goto(screen_Title);
 	}

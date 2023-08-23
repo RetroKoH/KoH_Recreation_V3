@@ -1,4 +1,4 @@
-/// @function setup_Stage(zoneID, actID, waterFlag, waterLevel, BGM, boundL, boundT, boundR, boundB)
+/// @function setup_Stage(zoneID, actID, waterFlag, waterLevel, BGM, boundL, boundT, boundR, boundB, PlayerX, PlayerY)
 function setup_Stage(_zone, _act, _waterFlag, _waterLevel, _BGM, _left, _top, _right, _bottom, _playerX, _playerY){
 	// Set up layer IDs
 	var layer_id = layer_get_id("Collision_A");

@@ -28,8 +28,8 @@
   "nineSlice": null,
   "origin": 1,
   "parent": {
-    "name": "Path Swappers",
-    "path": "folders/Game Objects/Path Swappers.yy",
+    "name": "Triggers",
+    "path": "folders/Game Objects/Triggers.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
