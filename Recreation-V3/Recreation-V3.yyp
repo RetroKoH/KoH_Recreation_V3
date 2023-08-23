@@ -253,7 +253,7 @@
     {"id":{"name":"bgm_GHZ2","path":"sounds/bgm_GHZ2/bgm_GHZ2.yy",},},
     {"id":{"name":"spr_mighty_bounce","path":"sprites/spr_mighty_bounce/spr_mighty_bounce.yy",},},
     {"id":{"name":"spr_Animal_Wocky","path":"sprites/spr_Animal_Wocky/spr_Animal_Wocky.yy",},},
-    {"id":{"name":"gfunc_anim_sync","path":"scripts/gfunc_anim_sync/gfunc_anim_sync.yy",},},
+    {"id":{"name":"gfunc_anims_sync","path":"scripts/gfunc_anims_sync/gfunc_anims_sync.yy",},},
     {"id":{"name":"spr_Shield_BBounce","path":"sprites/spr_Shield_BBounce/spr_Shield_BBounce.yy",},},
     {"id":{"name":"spr_knux_hurt","path":"sprites/spr_knux_hurt/spr_knux_hurt.yy",},},
     {"id":{"name":"spr_knux_hover","path":"sprites/spr_knux_hover/spr_knux_hover.yy",},},

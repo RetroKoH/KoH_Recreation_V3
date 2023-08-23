@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "gfunc_anim_sync",
+  "name": "gfunc_anims_sync",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

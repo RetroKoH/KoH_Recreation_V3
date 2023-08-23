@@ -750,9 +750,9 @@ function setup_Game_SyncAnimTimers(){
 	global.sync_anim = [];
 	
 	array_push(global.sync_anim, setup_AnimTimer($B, 7));	// Timer for GHZ Spiked Log
-	array_push(global.sync_anim, setup_AnimTimer(7, 3));	// Timer for Rings & Giant Rings
+	array_push(global.sync_anim, setup_AnimTimer(3, 7));	// Timer for Rings & Giant Rings
 	array_push(global.sync_anim, setup_AnimTimer(7, 7));	// Unused
-	array_push(global.sync_anim, setup_AnimTimer($B, 3));	// Timer for Lost Rings
+	array_push(global.sync_anim, setup_AnimTimer($B, 7));	// Timer for Lost Rings
 }
 function setup_Game_ObjData_LostRings(){
 	global.ringspeed[0]		= [-0.78,	-3.92];

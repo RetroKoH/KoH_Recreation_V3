@@ -12,14 +12,15 @@ switch(routine) {
 	case 1:
 	// Synchronized Animation/Idle
 	{
-		if cPLAYER.shield == SHIELD.LIGHTNING and distance_to_object(cPLAYER) <= 64 // SH_LIGHTNING = 2
+		if (cPLAYER.shield == SHIELD.LIGHTNING and distance_to_object(cPLAYER) <= 64)
 		{
 			// Increment state
 			routine = 3;
 			gfunc_gameobj_priority_set(0);
 		}
 		
-		// Implement sync animations
+		// Sync animation of all rings
+		image_index = global.sync_anim[1].frame;
 	} break;
 
 	case 3:
