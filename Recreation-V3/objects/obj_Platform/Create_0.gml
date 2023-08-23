@@ -9,9 +9,9 @@ time	= 0;		// Used for falling platforms
 y_sink	= 0;		// Used to emulate nudging the platform downward
 orig_x	= x;
 orig_y	= y;
+prev_x	= orig_x;
 y_base	= orig_y;
 angle	= $80;		// Not really an angle. Used for positioning
-prev_x	= x;
 
 /* Variable Definitions	
 	1. Type        default = 0
