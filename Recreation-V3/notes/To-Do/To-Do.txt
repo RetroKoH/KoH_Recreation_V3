@@ -1,5 +1,7 @@
 Resetting an object should reset its animation data
 
+Configure rings to use Sync animations and have Lost Rings disappear.
+Fix Magnetized rings.
 There is likely an error w/ Solids and Platforms pertaining to how on_obj flag works for IT and the Player.
 Replace all instances of obj_Player with cPLAYER, global variable that denotes main player.
 Ensure that pausing doesn't break the Restart routine

@@ -44,6 +44,7 @@ if cPLAYER.routine == 4 {
 // Object bounds handling (and osc numbers)
 if run_objects {
 	gfunc_osc_num_do();
+	gfunc_anim_sync_run();
 	
 	// Get active bounds
 	var _left  = (cCAMERA.view_x - 128) & -128;

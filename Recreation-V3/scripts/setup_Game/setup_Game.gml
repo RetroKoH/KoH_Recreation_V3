@@ -747,14 +747,12 @@ function setup_Game_OscValues(){
 	array_push(global.osc, setup_Oscillation(0.5,		0,			0.0078125,	0.4921875));	// +$3A - UNUSED ($3E is identical. Omitted)
 }
 function setup_Game_SyncAnimTimers(){
-	global.sync0_time=0;	// Timer for GHZ Spiked Log
-	global.sync0_frame=0;	// Frame number for GHZ Spiked Log
-	global.sync1_time=0;	// Timer for Rings & Giant Rings
-	global.sync1_frame=0;	// Frame number for Rings & Giant Rings
-	global.sync2_time=0;	// Timer for ???
-	global.sync2_frame=0;	// Frame number for ???
-	global.sync3_time=0;	// Timer for Lost Rings
-	global.sync3_frame=0;	// Frame number for Lost Rings
+	global.sync_anim = [];
+	
+	array_push(global.sync_anim, setup_AnimTimer($B, 7));	// Timer for GHZ Spiked Log
+	array_push(global.sync_anim, setup_AnimTimer(7, 3));	// Timer for Rings & Giant Rings
+	array_push(global.sync_anim, setup_AnimTimer(7, 7));	// Unused
+	array_push(global.sync_anim, setup_AnimTimer($B, 3));	// Timer for Lost Rings
 }
 function setup_Game_ObjData_LostRings(){
 	global.ringspeed[0]		= [-0.78,	-3.92];

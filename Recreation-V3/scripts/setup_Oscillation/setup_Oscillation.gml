@@ -8,3 +8,12 @@ function setup_Oscillation(_value, _add, _inc, _limit){
 		polarity	: 1				// Polarity of var "b".
 	}
 }
+
+function setup_AnimTimer(_time, _frame){
+	return {
+		time		: 0,		// Animation Timer
+		frame		: 0,		// Frame Number
+		reset_time	: _time,	// Timer is reset to this value
+		frame_cap	: _frame	// Max frame index
+	}
+}

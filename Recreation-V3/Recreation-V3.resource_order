@@ -73,6 +73,7 @@
     {"name":"Swings","order":6,"path":"folders/Game Objects/Solid Objects/Swings.yy",},
     {"name":"Breakable Walls","order":7,"path":"folders/Game Objects/Solid Objects/Breakable Walls.yy",},
     {"name":"Fragments","order":10,"path":"folders/Game Objects/Effects/Fragments.yy",},
+    {"name":"Log Helix","order":1,"path":"folders/Game Objects/Zone Objects/01 GHZ/Log Helix.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -207,6 +208,7 @@
     {"name":"gfunc_fade_check","order":14,"path":"scripts/gfunc_fade_check/gfunc_fade_check.yy",},
     {"name":"bgm_GHZ2","order":2,"path":"sounds/bgm_GHZ2/bgm_GHZ2.yy",},
     {"name":"spr_Animal_Wocky","order":12,"path":"sprites/spr_Animal_Wocky/spr_Animal_Wocky.yy",},
+    {"name":"gfunc_anim_sync","order":33,"path":"scripts/gfunc_anim_sync/gfunc_anim_sync.yy",},
     {"name":"spr_Shield_BBounce","order":2,"path":"sprites/spr_Shield_BBounce/spr_Shield_BBounce.yy",},
     {"name":"spr_knux_hurt","order":6,"path":"sprites/spr_knux_hurt/spr_knux_hurt.yy",},
     {"name":"spr_knux_hover","order":5,"path":"sprites/spr_knux_hover/spr_knux_hover.yy",},
@@ -354,6 +356,7 @@
     {"name":"bgm_GameOver","order":8,"path":"sounds/bgm_GameOver/bgm_GameOver.yy",},
     {"name":"spr_knux_death","order":2,"path":"sprites/spr_knux_death/spr_knux_death.yy",},
     {"name":"sfx_KnuxLand","order":47,"path":"sounds/sfx_KnuxLand/sfx_KnuxLand.yy",},
+    {"name":"obj_SpikeLogHelix","order":1,"path":"objects/obj_SpikeLogHelix/obj_SpikeLogHelix.yy",},
     {"name":"spr_ray_fall","order":4,"path":"sprites/spr_ray_fall/spr_ray_fall.yy",},
     {"name":"obj_Monitor_Icon","order":5,"path":"objects/obj_Monitor_Icon/obj_Monitor_Icon.yy",},
     {"name":"sfx_SEGA","order":2,"path":"sounds/sfx_SEGA/sfx_SEGA.yy",},
