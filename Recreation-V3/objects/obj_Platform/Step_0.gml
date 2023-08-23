@@ -12,10 +12,6 @@ switch(routine) {
 		falling			= false;
 		time			= 0;
 		y_sink			= 0;
-		orig_x			= x;
-		orig_y			= y;
-		y_base			= orig_y;
-		angle			= $80;	// Not really an angle. Used for positioning
 	} break;
 	
 	case 1:

@@ -7,6 +7,10 @@ gfunc_gameobj_priority_set(4);
 falling = false;
 time	= 0;		// Used for falling platforms
 y_sink	= 0;		// Used to emulate nudging the platform downward
+orig_x	= x;
+orig_y	= y;
+y_base	= orig_y;
+angle	= $80;		// Not really an angle. Used for positioning
 prev_x	= x;
 
 /* Variable Definitions	
