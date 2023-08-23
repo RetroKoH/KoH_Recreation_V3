@@ -19,8 +19,8 @@ switch(routine) {
 			anim_ID = routine;
 		}
 		else {
-			// Chkhit
-			if (abs(cPLAYER.x-x+8) <= 16) and (abs(cPLAYER.y - y + 64) <= 104) {
+			// Chkhit (Within 16 px horizontally and 52 px vertically)
+			if (abs(cPLAYER.x-x+8) <= 16) and (abs(cPLAYER.y - y + 52) <= 104) {
 				gfunc_audio_sfx_play(SFXs.LAMPPOST);
 				routine++;	// Go to twirling lamppost routine
 				anim_ID++;	// Twirling animation
