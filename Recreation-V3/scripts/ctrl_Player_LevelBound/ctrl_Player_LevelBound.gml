@@ -13,6 +13,12 @@ function ctrl_Player_LevelBound() {
 	}
 	
 	// Kill the player if below the death boundary
-	if y > core_Stage.bound_bottom
+	var _btm;
+	if core_Stage.bound_bottom < core_Stage.target_bound_bottom
+		_btm = core_Stage.target_bound_bottom;
+	else
+		_btm = core_Stage.bound_bottom;
+	
+	if y > _btm
 		ctrl_Player_Death();
 }
