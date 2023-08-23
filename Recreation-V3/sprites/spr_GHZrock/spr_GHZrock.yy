@@ -26,7 +26,7 @@
   "origin": 4,
   "parent": {
     "name": "Rock",
-    "path": "folders/Game Objects/Solid Objects/Rock.yy",
+    "path": "folders/Game Objects/Zone Objects/01 GHZ/Rock.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
