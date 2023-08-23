@@ -88,6 +88,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Column Platforms","folderPath":"folders/Game Objects/Solid Objects/Platforms/Column Platforms.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Swings","folderPath":"folders/Game Objects/Solid Objects/Swings.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Breakable Walls","folderPath":"folders/Game Objects/Solid Objects/Breakable Walls.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Fragments","folderPath":"folders/Game Objects/Effects/Fragments.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -335,6 +336,7 @@
     {"id":{"name":"sfx_RaySwoop","path":"sounds/sfx_RaySwoop/sfx_RaySwoop.yy",},},
     {"id":{"name":"spr_tails_actclear","path":"sprites/spr_tails_actclear/spr_tails_actclear.yy",},},
     {"id":{"name":"sfx_ShieldBubbleBounce","path":"sounds/sfx_ShieldBubbleBounce/sfx_ShieldBubbleBounce.yy",},},
+    {"id":{"name":"spr_Fragment","path":"sprites/spr_Fragment/spr_Fragment.yy",},},
     {"id":{"name":"setup_LvlLayout","path":"scripts/setup_LvlLayout/setup_LvlLayout.yy",},},
     {"id":{"name":"spr_ray_duck","path":"sprites/spr_ray_duck/spr_ray_duck.yy",},},
     {"id":{"name":"setup_Animation","path":"scripts/setup_Animation/setup_Animation.yy",},},

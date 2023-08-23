@@ -72,6 +72,7 @@
     {"name":"Column Platforms","order":2,"path":"folders/Game Objects/Solid Objects/Platforms/Column Platforms.yy",},
     {"name":"Swings","order":6,"path":"folders/Game Objects/Solid Objects/Swings.yy",},
     {"name":"Breakable Walls","order":7,"path":"folders/Game Objects/Solid Objects/Breakable Walls.yy",},
+    {"name":"Fragments","order":10,"path":"folders/Game Objects/Effects/Fragments.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_sonic_spindash","order":14,"path":"sprites/spr_sonic_spindash/spr_sonic_spindash.yy",},
@@ -276,6 +277,7 @@
     {"name":"obj_Bridge","order":2,"path":"objects/obj_Bridge/obj_Bridge.yy",},
     {"name":"sfx_RaySwoop","order":66,"path":"sounds/sfx_RaySwoop/sfx_RaySwoop.yy",},
     {"name":"sfx_ShieldBubbleBounce","order":69,"path":"sounds/sfx_ShieldBubbleBounce/sfx_ShieldBubbleBounce.yy",},
+    {"name":"spr_Fragment","order":1,"path":"sprites/spr_Fragment/spr_Fragment.yy",},
     {"name":"setup_LvlLayout","order":6,"path":"scripts/setup_LvlLayout/setup_LvlLayout.yy",},
     {"name":"spr_ray_duck","order":3,"path":"sprites/spr_ray_duck/spr_ray_duck.yy",},
     {"name":"setup_Animation","order":2,"path":"scripts/setup_Animation/setup_Animation.yy",},
@@ -435,7 +437,6 @@
     {"name":"spr_tails_tail_type3","order":5,"path":"sprites/spr_tails_tail_type3/spr_tails_tail_type3.yy",},
     {"name":"core_Debug","order":7,"path":"objects/core_Debug/core_Debug.yy",},
     {"name":"spr_supersonic_walk","order":12,"path":"sprites/spr_supersonic_walk/spr_supersonic_walk.yy",},
-    {"name":"obj_Fragment","order":9,"path":"objects/obj_Fragment/obj_Fragment.yy",},
     {"name":"gfunc_anims_draw","order":9,"path":"scripts/gfunc_anims_draw/gfunc_anims_draw.yy",},
     {"name":"spr_Animal_Ricky","order":9,"path":"sprites/spr_Animal_Ricky/spr_Animal_Ricky.yy",},
     {"name":"ctrl_Player_ResetAngle","order":6,"path":"scripts/ctrl_Player_ResetAngle/ctrl_Player_ResetAngle.yy",},

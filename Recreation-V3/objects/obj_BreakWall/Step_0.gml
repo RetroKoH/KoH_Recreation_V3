@@ -19,8 +19,28 @@ switch(routine){
 				cPLAYER.xsp		= _sp;
 				cPLAYER.x		+= _sp; //if (player.x<x) player.x+=sp; else player.x-=sp;
 				cPLAYER.inertia	= cPLAYER.xsp;
+				
+				// Create pieces
+				for (var _i = 0; _i < sprite_width div 16; _i++)
+					for (var _j = 0; _j < sprite_height div 16; _j++)
+					{
+						var _obj = instance_create_layer(x - 8 + _i * 16, y - 24 + _j * 16, "Instances", obj_Fragment);
+						_obj.sprite_index = sprite_index;
+						_obj.image_index  = image_index;
+						_obj.xsp = (_i ? 6 : 4) * sign(_sp);
+						switch _j {
+							case 0: _obj.ysp = _i ? -6 : -5; break;
+							case 1: _obj.ysp = _i ? -2 : -1; break;
+							case 2: _obj.ysp = _i ?  2 :  1; break;
+							case 3: _obj.ysp = _i ?  6 :  5; break;
+						}
+						
+						// Sub sprite indices
+						_obj.index_x = _i;
+						_obj.index_y = _j;
+					}
+				// Destroy the wall
 				instance_destroy();
-				//gfunc_gameobj_smash(8, sign(_sp));
 			}
 		}
 	}
