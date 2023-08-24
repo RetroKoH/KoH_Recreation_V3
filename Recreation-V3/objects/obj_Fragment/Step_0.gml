@@ -1,3 +1,6 @@
 /// @description Move object
 
-gfunc_gameobj_apply_speed(true);
+if time > 0
+	time--;
+else
+	gfunc_gameobj_apply_speed(true);

@@ -26,6 +26,7 @@ function setup_Game(){
 	setup_Game_SyncAnimTimers();
 	setup_Game_ObjData_LostRings();
 	setup_Game_ObjData_Animals();
+	setup_Game_ObjData_HeightMaps();
 	setup_Game_GameVars();
 	
 	instance_create_layer(room_width/2, room_height/2, "Instances", obj_Splash);
@@ -828,6 +829,20 @@ function setup_Game_ObjData_Animals(){
 	global.animal_sprite[ANIMAL.ROCKY] = spr_Animal_Rocky;
 	global.animal_xsp[ANIMAL.ROCKY] = -1.25;
 	global.animal_ysp[ANIMAL.ROCKY] = -1.5;
+}
+function setup_Game_ObjData_HeightMaps(){
+	global.heightmap_GHZLedge[0] = [	32, 32, 32, 32, 32, 32,
+										32, 32, 32, 32, 32, 32, 32, 32, 33, 33, 34, 34, 35, 35, 36, 36,
+										37, 37, 38, 38, 39, 39, 40, 40, 41, 41, 42, 42, 43, 43, 44, 44,
+										45, 45, 46, 46, 47, 47, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48,
+										48, 48, 48, 48, 48, 48]; // 6 Extra byte at the beginning and 6 at the end
+
+	// Height Map for reversed ledges
+	global.heightmap_GHZLedge[1] = [];
+	var _ar = global.heightmap_GHZLedge[0];
+	for (var _i = array_length(_ar) - 1; _i >= 0; _i--)
+		array_push(global.heightmap_GHZLedge[1], _ar[_i]);
+
 }
 function setup_Game_GameVars(){
 	global.p_score		= 0;

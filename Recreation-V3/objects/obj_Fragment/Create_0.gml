@@ -10,4 +10,6 @@ frag_hgt = sprite_height;
 index_x = 0;
 index_y = 0;
 
+time = -1;	// If time is set, delay movement/falling
+
 debug_name = "Fragment";	// Name displayed when being observed

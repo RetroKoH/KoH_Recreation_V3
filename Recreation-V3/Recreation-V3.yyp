@@ -91,6 +91,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Foreground","folderPath":"folders/Zones/GHZ/Foreground.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Zones/GHZ/Tilesets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Edge Walls","folderPath":"folders/Game Objects/Zone Objects/01 GHZ/Edge Walls.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ledges","folderPath":"folders/Game Objects/Zone Objects/01 GHZ/Ledges.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"anglemap.bin","CopyToMask":-1,"filePath":"datafiles/tiledata",},
@@ -128,6 +129,7 @@
     {"id":{"name":"spr_mighty_death","path":"sprites/spr_mighty_death/spr_mighty_death.yy",},},
     {"id":{"name":"obj_Explosion","path":"objects/obj_Explosion/obj_Explosion.yy",},},
     {"id":{"name":"spr_BuzzBomber","path":"sprites/spr_BuzzBomber/spr_BuzzBomber.yy",},},
+    {"id":{"name":"obj_GHZLedge","path":"objects/obj_GHZLedge/obj_GHZLedge.yy",},},
     {"id":{"name":"spr_InstaShield","path":"sprites/spr_InstaShield/spr_InstaShield.yy",},},
     {"id":{"name":"bgm_Title","path":"sounds/bgm_Title/bgm_Title.yy",},},
     {"id":{"name":"sfx_ShieldLightning","path":"sounds/sfx_ShieldLightning/sfx_ShieldLightning.yy",},},
@@ -263,6 +265,7 @@
     {"id":{"name":"spr_sonic_skid","path":"sprites/spr_sonic_skid/spr_sonic_skid.yy",},},
     {"id":{"name":"spr_MenuFont","path":"sprites/spr_MenuFont/spr_MenuFont.yy",},},
     {"id":{"name":"spr_collision_old","path":"sprites/spr_collision_old/spr_collision_old.yy",},},
+    {"id":{"name":"spr_GHZLedge","path":"sprites/spr_GHZLedge/spr_GHZLedge.yy",},},
     {"id":{"name":"sfx_UnderwaterChime","path":"sounds/sfx_UnderwaterChime/sfx_UnderwaterChime.yy",},},
     {"id":{"name":"spr_PathSwapperV","path":"sprites/spr_PathSwapperV/spr_PathSwapperV.yy",},},
     {"id":{"name":"core_Palette","path":"objects/core_Palette/core_Palette.yy",},},
