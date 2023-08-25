@@ -36,7 +36,7 @@
   "origin": 4,
   "parent": {
     "name": "Signpost",
-    "path": "folders/Game Objects/Signpost.yy",
+    "path": "folders/Game Objects/Triggers/Signpost.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

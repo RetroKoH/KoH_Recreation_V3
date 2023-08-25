@@ -89,5 +89,6 @@ switch(routine)
 		// Play Music
 		gfunc_audio_bgm_play(BGMs.ACT_CLEAR);
 		core_Stage.finished = 2;
+		gfunc_gameobj_OOB_set(OOB_DESTROY);
 	} break;
 }

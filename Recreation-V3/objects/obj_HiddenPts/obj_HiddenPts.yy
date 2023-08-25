@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_Signpost",
+  "name": "obj_HiddenPts",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
@@ -9,14 +9,14 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Signpost",
-    "path": "folders/Game Objects/Triggers/Signpost.yy",
+    "name": "Points Flags",
+    "path": "folders/Game Objects/Triggers/Points Flags.yy",
   },
   "parentObjectId": {
-    "name": "obj_GameObj",
-    "path": "objects/obj_GameObj/obj_GameObj.yy",
+    "name": "obj_GORoutine",
+    "path": "objects/obj_GORoutine/obj_GORoutine.yy",
   },
-  "persistent": true,
+  "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
   "physicsFriction": 0.2,
@@ -29,13 +29,11 @@
   "physicsShape": 1,
   "physicsShapePoints": [],
   "physicsStartAwake": true,
-  "properties": [
-    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"index","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"0","varType":1,},
-  ],
+  "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_Signpost",
-    "path": "sprites/spr_Signpost/spr_Signpost.yy",
+    "name": "spr_HiddenPts",
+    "path": "sprites/spr_HiddenPts/spr_HiddenPts.yy",
   },
   "spriteMaskId": null,
   "visible": true,

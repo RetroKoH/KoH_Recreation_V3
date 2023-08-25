@@ -14,6 +14,7 @@ function ctrl_Player_Jump(){
 		in_air		= true;
 		pushing		= false;
 		on_obj		= false;
+		platform_ID	= noone;	// Handling this should fix quite a few bugs
 		jump		= true;
 		convex		= false;
 		move_lock	= false;
