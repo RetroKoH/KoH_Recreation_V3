@@ -27,6 +27,7 @@ function setup_Game(){
 	setup_Game_ObjData_LostRings();
 	setup_Game_ObjData_Animals();
 	setup_Game_ObjData_HeightMaps();
+	setup_Game_ObjData_Signpost();
 	setup_Game_GameVars();
 	
 	instance_create_layer(room_width/2, room_height/2, "Instances", obj_Splash);
@@ -725,6 +726,7 @@ function setup_Game_Animations(){
 	animtable_MONITORS();
 	animtable_LAMPPOSTS();
 	animtable_BADNIKS();
+	animtable_SIGNPOSTS();
 	animtable_TITLESONIC();
 }
 function setup_Game_OscValues(){
@@ -843,6 +845,19 @@ function setup_Game_ObjData_HeightMaps(){
 	for (var _i = array_length(_ar) - 1; _i >= 0; _i--)
 		array_push(global.heightmap_GHZLedge[1], _ar[_i]);
 
+}
+function setup_Game_ObjData_Signpost(){
+	// Data Structure for locations of ring sparkles. Each value is added to signpost's
+	// position, and a ring object is created, in its sparkle routine.
+	global.sparkpos = [];
+	global.sparkpos[0,0]=-$18; global.sparkpos[0,1]=-$10;
+	global.sparkpos[1,0]=8;    global.sparkpos[1,1]=8;
+	global.sparkpos[2,0]=-$10; global.sparkpos[2,1]=0;
+	global.sparkpos[3,0]=$18;  global.sparkpos[3,1]=-8;
+	global.sparkpos[4,0]=0;    global.sparkpos[4,1]=-8;
+	global.sparkpos[5,0]=$10;  global.sparkpos[5,1]=0;
+	global.sparkpos[6,0]=-$18; global.sparkpos[6,1]=8;
+	global.sparkpos[7,0]=$18;  global.sparkpos[7,1]=$10;
 }
 function setup_Game_GameVars(){
 	global.p_score		= 0;

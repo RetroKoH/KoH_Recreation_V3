@@ -14,7 +14,7 @@ function dle_GHZ1(){
 		else if obj_Player.x < 13550
 			core_Stage.target_bound_bottom = 1248;
 // Increase again to allow access to the bottom path
-		else if obj_Player.x < 15416
+		else if obj_Player.x < 15410
 			core_Stage.target_bound_bottom = 1760;
 // Final bottom boundary headed to the signpost
 		else
