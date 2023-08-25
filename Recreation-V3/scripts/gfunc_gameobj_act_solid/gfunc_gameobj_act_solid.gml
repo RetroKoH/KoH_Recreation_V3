@@ -1,12 +1,29 @@
-// If player is standing on this object, collide only with its top side
 function gfunc_gameobj_act_solid(_width, _height, _height_air, _prev_x, _sides, _top, _bottom) {
 	// Don't collide if dead
 	if cPLAYER.routine > 2	return 0;
-	
+
+	var _offset;
+		// Get height array
+		if solid_heightmap != false {
+			var _array_height;
+		
+			if image_xscale
+				_array_height = floor(cPLAYER.x) - (x - solid_width);
+			else
+				_array_height = (x + solid_width - 1) - floor(cPLAYER.x);
+			_array_height = clamp(_array_height, 0, array_length(solid_heightmap) - 1);
+		
+			// Calculate height difference
+			_offset = solid_heightmap[_array_height]; //(_height * 2 - solid_heightmap[_array_height]) * image_yscale;
+		}
+		else
+			_offset = _height;
+
 	if _top {
 		// First, check if the Player is standing on the object.
 		if (cPLAYER.on_obj and cPLAYER.platform_id == id)
 		{
+			// If player is standing on this object, collide only with its top side
 			var _total_x_radius = _width + cPLAYER.width + 1;
 			var _comp_x = (cPLAYER.x - x) + _total_x_radius; // get the position difference
 			if(cPLAYER.in_air || _comp_x < 0 || _comp_x >= _total_x_radius*2)
@@ -16,15 +33,15 @@ function gfunc_gameobj_act_solid(_width, _height, _height_air, _prev_x, _sides, 
 			}
 			else
 			{
-				solid_move_player(cPLAYER, _height, _prev_x);
+				solid_move_player(cPLAYER, _offset, _prev_x);
 				return 1; // Register top collision
 			}
 		}
 		// If not, proceed with checking for collision, assuming top-solidity
-		else return solid_obj_collide(_width, _height_air, _prev_x, _sides, true, _bottom);
+		else return solid_obj_collide(_width, _offset, _prev_x, _sides, true, _bottom);
 	}
 	// Proceed with checking for collision, assuming no top-solidity
-	else return solid_obj_collide(_width, _height_air, _prev_x, _sides, false, _bottom);
+	else return solid_obj_collide(_width, _offset, _prev_x, _sides, false, _bottom);
 }
 
 function gfunc_monitor_act_solid(_width, _height, _height_air, _prev_x, _sides, _top) {
@@ -69,18 +86,18 @@ function solid_exit_platform(){
 	cPLAYER.in_air		= true;
 }
 
-// Solid object collision
+// Solid object collision (Now includes heightmap support)
 function solid_obj_collide(_width, _height, _prev_x, _sides, _top, _bottom) {
 	var _px = cPLAYER.x,	_py = cPLAYER.y;
 
 	// First, the Player will check if they are overlapping the object on the x-axis.
 	var _total_x_radius = _width + cPLAYER.width_push+1;
-	var _left_diff = (_px - x) + _total_x_radius;						// difference between the Player's X Position and the left edge of the combined box.
+	var _left_diff = _px - x + _total_x_radius;							// difference between the Player's X Position and the left edge of the combined box.
 	if (_left_diff < 0) or (_left_diff > _total_x_radius*2)	return 0;	// if too far to the left OR right, no collision
 	
 	// Then, check for an overlap on the y-axis (extend the top of the object 4 pixels for extra overlap. This is subtracted later).
 	var _total_y_radius = _height + cPLAYER.height+1;
-	var _top_diff = (_py - y) + 4 + _total_y_radius;					// difference between the Player's Y Position and the top edge of the combined box.
+	var _top_diff = _py - y + _total_y_radius + 4;						// difference between the Player's Y Position and the top edge of the combined box.
 	if (_top_diff < 0) or (_top_diff > _total_y_radius*2) return 0;		// if (_top_diff < 0) = too far above; if (_top_diff > _total_y_radius*2) = too far below
 
 	// If overlapping, both distances MUST be 0 or positive, and within the diameter
@@ -92,7 +109,7 @@ function solid_obj_collide(_width, _height, _prev_x, _sides, _top, _bottom) {
 	else							// If player is to the left of object (positive value)
 		_dist_x = _left_diff;
 	var _clip_x = abs(_dist_x);		// # of pixels player is within the object
-		
+
 	if (_py > y)					// If player is under the object (negative value)
 		_dist_y = _top_diff - 4	- _total_y_radius*2;
 	else							// If player is on top of the object (positive value)
