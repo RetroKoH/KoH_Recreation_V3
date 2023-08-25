@@ -39,7 +39,9 @@ switch(routine){
 						_obj.index_x = _i;
 						_obj.index_y = _j;
 					}
+
 				// Destroy the wall
+				gfunc_audio_sfx_play(SFXs.CRUMBLING);
 				instance_destroy();
 			}
 		}

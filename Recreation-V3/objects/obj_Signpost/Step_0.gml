@@ -15,6 +15,8 @@ switch(routine)
 		if gfunc_gameobj_onscreen() {
 			routine++;
 			//if floor(Player.PosX) > (x - Game.Width * 1.5 + 64) + Game.Width / 2
+			
+			// Update screen boundaries
 			core_Stage.target_bound_left  = x - global.win_width * 1.5 + 64;
 			core_Stage.target_bound_right = x + global.win_width / 2;
 		}
@@ -29,6 +31,8 @@ switch(routine)
 	        routine++;
 	        core_Stage.time_enabled = false;		// Stop timer
 			core_Stage.finished		= 1;			// Level is finished
+			
+			// Lock screen
 			core_Stage.target_bound_left = x - (global.win_width / 2);
 			anim_ID++;								// Start the first animation.
 			gfunc_audio_sfx_play(SFXs.SIGNPOST);
@@ -62,6 +66,7 @@ switch(routine)
 	case 4: // Sign_SonicRun
 	{
 		routine++;
+		gfunc_audio_bgm_play(BGMs.ACT_CLEAR);
 		//scr_got_through_act(x,y);
 	} break;
 }

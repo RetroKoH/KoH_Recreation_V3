@@ -19,7 +19,11 @@ if paused
 		{
 			// Resume
 			paused					= false;
-			time_enabled			= true;
+			
+			// Only resume time if the level is still ongoing
+			if !finished
+				time_enabled			= true;
+			
 			run_objects				= true;
 			cCAMERA.enabled			= true;
 			cRENDER.update_anims	= true;
