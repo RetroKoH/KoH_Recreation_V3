@@ -32,14 +32,23 @@ if HUD_enabled {
 		_sec	= 59;
 		_centi	= 99;
 	}
-	
+
+	if global.framecount%8 == 0
+		HUD_blinking^=1;
+
 	if !global.debugmode
-	{
+	{	
 		// SCORE TIME RINGS
 		draw_sprite(spr_HUD, 0, _xx, _yy); // SCORE
-		draw_sprite(spr_HUD, 1, _xx, _yy + 16); // TIME
-		draw_sprite(spr_HUD, 2, _xx, _yy + 32); // RINGS
-	
+		
+		if _min == 9
+				draw_sprite(spr_HUD, 1 + HUD_blinking,	_xx, _yy + 16); // TIME (Blinking)
+		else	draw_sprite(spr_HUD, 1,					_xx, _yy + 16); // TIME
+		
+		if global.p_rings == 0
+				draw_sprite(spr_HUD, 3 + HUD_blinking,	_xx, _yy + 32); // RINGS (Blinking)
+		else	draw_sprite(spr_HUD, 3,					_xx, _yy + 32); // RINGS
+
 		draw_set_font(FONT.HUDNum);	draw_set_halign(fa_right);
 		var _time_str = string(_min) + ":" + (_sec > 9 ? string(_sec) : "0" + string(_sec));
 		if global.opt_gameplay[7]

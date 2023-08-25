@@ -863,9 +863,10 @@ function setup_Game_GameVars(){
 	global.p_score		= 0;
 	global.p_rings		= 0;
 	global.p_lives		= 3;
-	global.p_frames		= 0;			// Total frame count.
 	global.p_scorelife	= 50000;		// Amount of points needed for an extra life
 	global.p_ringlife	= 0;			// Counter for extra lives per rings
+
+	global.framecount	= 0;			// Total frame count.
 
 	for (var i = 0; i < 60; i++)
 		global.centiseconds[i] = floor(i / 3 * 5); //round(100*(i/60)); < Same result, except flooring instead of rounding

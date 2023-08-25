@@ -8,6 +8,12 @@ if time_enabled {
 		ctrl_Player_Death();
 }
 
+// Add 1 to frame-by-frame timer
+if !paused {
+	global.framecount++;
+	global.framecount%=$10000;
+}
+
 // Process Player Post-Death Restart
 if cPLAYER.routine == 4 {
 	// If ran out of lives or time, start Game/Time Over event
