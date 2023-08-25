@@ -42,7 +42,7 @@ else {
 		
 	// Reset bonuses (Should only do on fresh level start)
 	if !global.level_restart {
-		global.timebonus=50000;
+		global.timebonus=0;
 		global.ringbonus=0;
 		global.coolbonus=10000;
 	}

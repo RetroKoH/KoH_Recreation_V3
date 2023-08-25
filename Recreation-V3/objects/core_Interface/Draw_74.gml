@@ -63,6 +63,140 @@ if HUD_enabled {
 
 // =========================
 
+// Results Card Drawing
+if core_Stage.finished == 2 {
+	if !core_Stage.paused {
+		var _speed = 16 * (global.win_width / 320);
+		switch(rcard_routine) {
+			case TCARD_INIT:
+			{
+				rcard_routine++;
+				
+				// Set positions for each subsprite
+				rcard_xpos[0] = -((string_length(char_name)*16)+16);
+				rcard_start_x[0] = rcard_xpos[0];
+				rcard_main_x[0] = rcard_char.mainx;
+				rcard_ypos[0] = rcard_char.mainy;
+				
+				/*	1-PASSED
+					2-ACT X
+					3-OVAL
+					4-SCORE
+					5-TIME BONUS
+					6-RING BONUS
+					7-COOL BONUS
+				*/
+				for (var _i = 1; _i <= 7; _i++) {
+					if _i == 1
+						rcard_xpos[_i] = -((string_length("PASSED")*16)+16);
+					else
+						rcard_xpos[_i] = (global.win_width)+32;
+
+					rcard_start_x[_i] = rcard_xpos[_i];
+					rcard_main_x[_i]  = global.GotCard_ConData[PLMODE.TOTAL+(_i-1)].mainx;
+					rcard_ypos[_i]    = global.GotCard_ConData[PLMODE.TOTAL+(_i-1)].mainy; 
+				}
+			} break;
+			
+			case TCARD_ENTER:
+			{
+				for (var i = 0; i <= 7; i++) {
+					var _diff = rcard_main_x[i] - rcard_xpos[i];
+
+					if (_diff != 0){
+						if (abs(_diff) < _speed) rcard_xpos[i] = rcard_main_x[i];
+						else if (_diff < 0) rcard_xpos[i] -= _speed;
+						else rcard_xpos[i] += _speed;
+					}
+					else rcard_finished[i] = true;
+				}
+				if (rcard_finished[0] and rcard_finished[1] and rcard_finished[2] and rcard_finished[3] and
+					rcard_finished[4] and rcard_finished[5] and rcard_finished[6] and rcard_finished[7])
+						rcard_routine++;
+			} break;
+			
+			case TCARD_WAIT:
+			{
+				if !audio_is_playing(global.BGM_list[BGMs.ACT_CLEAR].ID)
+					rcard_routine++;
+			} break;
+			
+			case 3:
+			{
+				// Quickly apply score bonuses
+				rcard_routine++;
+				rcard_timer = 120;
+				
+				gfunc_score_add(global.timebonus + global.ringbonus + global.coolbonus)
+				global.timebonus = 0;
+				global.ringbonus = 0;
+				global.coolbonus = 0;
+				audio_play_sound(sfx_EndTally,1,false);
+			} break;
+			
+			case 4:
+			{
+				// Timer to go away
+				if !--rcard_timer {
+					rcard_routine++;
+					for (var _i = 0; _i <= 7; _i++) rcard_finished[_i] = false;
+				}
+			} break;
+			
+			case 5:
+			{
+				_speed += _speed;
+				for (var i = 0; i <= 7; i++) {
+					var _diff = rcard_start_x[i] - rcard_xpos[i];
+				
+					if (_diff != 0) {
+						if (abs(_diff) < _speed)
+							rcard_xpos[i] = rcard_start_x[i];
+						else if (_diff > 0)
+							rcard_xpos[i] += _speed;
+						else
+							rcard_xpos[i] -= _speed;
+					}
+				
+					else rcard_finished[i] = true;
+				}
+				if (rcard_finished[0] and rcard_finished[1] and rcard_finished[2] and rcard_finished[3] and
+					rcard_finished[4] and rcard_finished[5] and rcard_finished[6] and rcard_finished[7])
+						rcard_routine++;
+			} break;
+		}
+	}
+	
+	draw_sprite(spr_CardBonus,	3,				rcard_xpos[7],	rcard_ypos[7]);
+	draw_sprite(spr_CardBonus,	2,				rcard_xpos[6],	rcard_ypos[6]);
+	draw_sprite(spr_CardBonus,	1,				rcard_xpos[5],	rcard_ypos[5]);
+	draw_sprite(spr_CardBonus,	0,				rcard_xpos[4],	rcard_ypos[4]);
+	draw_sprite(spr_CardOval,	0,				rcard_xpos[3],	rcard_ypos[3]);
+	if (act_flag)
+		draw_sprite(spr_CardActs,	act_num,	rcard_xpos[2],	rcard_ypos[2]);
+	draw_surface(surf_pass,						rcard_xpos[1],	rcard_ypos[1]);
+	draw_surface(surf_char,						rcard_xpos[0],	rcard_ypos[0]);
+	
+	{
+		// Draw the text
+		var _f = draw_get_font();		draw_set_font(FONT.HUDNum);
+		var _ha = draw_get_halign();	draw_set_halign(fa_right);
+		var _va = draw_get_valign();	draw_set_valign(fa_middle);
+
+		var _dist = 152;
+		draw_text_ext_transformed(rcard_xpos[4]+_dist,	rcard_ypos[4],	global.p_score,		0,56,1,1,0);	// Score
+		draw_text_ext_transformed(rcard_xpos[5]+_dist,	rcard_ypos[5],	global.timebonus,	0,56,1,1,0);	// Time Bonus
+		draw_text_ext_transformed(rcard_xpos[6]+_dist,	rcard_ypos[6],	global.ringbonus,	0,56,1,1,0);	// Ring Bonus
+		draw_text_ext_transformed(rcard_xpos[7]+_dist,	rcard_ypos[7],	global.coolbonus,	0,56,1,1,0);	// Cool Bonus
+
+		draw_set_font(_f);
+		draw_set_halign(_ha);
+		draw_set_valign(_va);
+	}
+}
+
+// =========================
+
 // Title Card Drawing
 if tcard_routine < TCARD_FINISHED {
 
@@ -171,11 +305,11 @@ if tcard_routine < TCARD_FINISHED {
 		}
 	}
 
-		draw_sprite(spr_CardOval,	0,			tcard_xpos[3],	tcard_ypos[3]);
+	draw_sprite(spr_CardOval,	0,			tcard_xpos[3],	tcard_ypos[3]);
 	if (act_flag)
 		draw_sprite(spr_CardActs,	act_num,	tcard_xpos[2],	tcard_ypos[2]);
-		draw_surface(surf_zone,					tcard_xpos[1],	tcard_ypos[1]);
-		draw_surface(surf_name,					tcard_xpos[0],	tcard_ypos[0]);
+	draw_surface(surf_zone,					tcard_xpos[1],	tcard_ypos[1]);
+	draw_surface(surf_name,					tcard_xpos[0],	tcard_ypos[0]);
 }
 
 // =========================

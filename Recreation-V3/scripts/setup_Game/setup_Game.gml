@@ -716,6 +716,88 @@ function setup_Game_TitleCards(){
 		acts_mainx	:	 244,
 		oval_mainx	:	 236
 	}
+
+	global.GotCard_ConData = array_create(14);
+	
+	// "<PLAYER> HAS"
+	var _char_y = 56
+	global.GotCard_ConData[PLMODE.SONIC] = {
+		text	: "SONIC HAS",
+		mainx	:	 144,
+		mainy	:	  _char_y
+	}
+	global.GotCard_ConData[PLMODE.TAILS] = {
+		text	: "TAILS HAS",
+		mainx	:	 148,
+		mainy	:	  _char_y
+	}
+	global.GotCard_ConData[PLMODE.KNUCKLES] = {
+		text	: "KNUCKLES HAS",
+		mainx	:	 138,
+		mainy	:	  _char_y
+	}
+	global.GotCard_ConData[PLMODE.AMY] = {
+		text	: "AMY HAS",
+		mainx	:	 150,
+		mainy	:	  _char_y
+	}
+	global.GotCard_ConData[PLMODE.MIGHTY] = {
+		text	: "MIGHTY HAS",
+		mainx	:	 140,
+		mainy	:	  _char_y
+	}
+	global.GotCard_ConData[PLMODE.RAY] = {
+		text	: "RAY HAS",
+		mainx	:	 150,
+		mainy	:	  _char_y
+	}
+	global.GotCard_ConData[PLMODE.METAL] = {
+		text	: "METAL HAS",
+		mainx	:	 144,
+		mainy	:	  _char_y
+	}
+	// "PASSED"
+	global.GotCard_ConData[PLMODE.TOTAL] = {
+		text	:	  "",
+		mainx	:	 164,
+		mainy	:	  76
+	}
+	// ACT X
+	global.GotCard_ConData[PLMODE.TOTAL+1] = {
+		text	:	  "",
+		mainx	:	 232,
+		mainy	:	  78
+	}
+	// OVAL
+	global.GotCard_ConData[PLMODE.TOTAL+2] = {
+		text	:	  "",
+		mainx	:	 232,
+		mainy	:	  48
+	}
+	// SCORE
+	global.GotCard_ConData[PLMODE.TOTAL+3] = {
+		text	:	  "",
+		mainx	:	 132,
+		mainy	:	 108
+	}
+	// TIME BONUS
+	global.GotCard_ConData[PLMODE.TOTAL+4] = {
+		text	:	  "",
+		mainx	:	 132,
+		mainy	:	 124
+	}
+	// RING BONUS
+	global.GotCard_ConData[PLMODE.TOTAL+5] = {
+		text	:	  "",
+		mainx	:	 132,
+		mainy	:	 140
+	}
+	// COOL BONUS
+	global.GotCard_ConData[PLMODE.TOTAL+6] = {
+		text	:	  "",
+		mainx	:	 132,
+		mainy	:	 156
+	}
 }
 function setup_Game_Animations(){
 	global.AnimsIndex = [];	// Every script below pushes an animation into this index

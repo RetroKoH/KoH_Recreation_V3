@@ -66,7 +66,28 @@ switch(routine)
 	case 4: // Sign_SonicRun
 	{
 		routine++;
+		cPLAYER.invinc = 0;
+		// Shoes cleared upon hitting signpost
+		global.ringbonus = global.p_rings*100;
+		
+		// Calculate Time Bonus
+		var _time = global.p_time, _bonus = 50000;
+		if (_time < 3600)		_bonus=50000;	// Under 1:00
+		else if (_time < 5400)	_bonus=10000;	// Under 1:30
+		else if (_time < 7200)	_bonus=5000;	// Under 2:00
+		else if (_time < 9000)	_bonus=4000;	// Under 2:30
+		else if (_time < 10800)	_bonus=3000;	// Under 3:00
+		else if (_time < 12600)	_bonus=2000;	// Under 3:30
+		else if (_time < 14400)	_bonus=1000;	// Under 4:00
+		else if (_time < 18000)	_bonus=100;		// Under 5:00
+		else _bonus = 0;
+		
+		global.timebonus = _bonus;
+		
+		// Cool Bonus is already determined
+		
+		// Play Music
 		gfunc_audio_bgm_play(BGMs.ACT_CLEAR);
-		//scr_got_through_act(x,y);
+		core_Stage.finished = 2;
 	} break;
 }

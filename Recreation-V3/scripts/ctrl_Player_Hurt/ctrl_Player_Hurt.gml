@@ -46,8 +46,8 @@ function ctrl_Player_Hurt(_x, _fire, _electric, _death, _spiked) {
 			anim_ID			= ANI_PLAYER.HURT;
 			invuln			= 120;
 
-	//		if (coolbonus)
-	//			coolbonus -= 1000;		// 1000 is lost for each hit.
+			if (global.coolbonus)
+				global.coolbonus -= 1000;		// 1000 is lost for each hit.
 
 			angle			= 0;	// Angle is set to rotate back to 0
 			move_lock		= true;	// We cannot enter any input while hurt
@@ -72,7 +72,7 @@ function ctrl_Player_Death(_spiked=false) {
 		invuln			= 0;
 	}
 
-	// Cool Bonus = 0. Death removes said point bonus
+	global.coolbonus = 0;	// Death removes this point bonus
 	if (_spiked) gfunc_audio_sfx_play(SFXs.SPIKED);
 	else gfunc_audio_sfx_play(SFXs.HURT);
 }
