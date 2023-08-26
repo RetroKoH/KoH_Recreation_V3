@@ -36,10 +36,10 @@ if (global.lamp_last > 0) gfunc_lamp_data_load();
 	
 // Starting a level
 else {
-	global.p_time = 0;
 	global.p_rings = 0;
 	global.p_score = global.start_score;
-		
+	// Time is handled above w/ a local variable.
+	
 	// Reset bonuses (Should only do on fresh level start)
 	if !global.level_restart {
 		global.timebonus=0;

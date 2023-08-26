@@ -71,7 +71,7 @@ switch(routine)
 		global.ringbonus = global.p_rings*100;
 		
 		// Calculate Time Bonus
-		var _time = global.p_time, _bonus = 50000;
+		var _time = core_Stage.game_time, _bonus;
 		if (_time < 3600)		_bonus=50000;	// Under 1:00
 		else if (_time < 5400)	_bonus=10000;	// Under 1:30
 		else if (_time < 7200)	_bonus=5000;	// Under 2:00
