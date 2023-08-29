@@ -212,3 +212,31 @@ if !gfunc_fade_check(FADESTATE_ACTIVE) {
 		bound_death = bound_bottom;
 	}
 }
+
+// Act Transitions
+// Wait until flag is set
+if finished != 3
+	return;
+
+ds_list_destroy(cPLAYER.pos_record_x);
+ds_list_destroy(cPLAYER.pos_record_y);
+
+// Buffer and reset data
+global.start_score = global.p_score;
+global.p_ringlife = 0;
+gfunc_lamp_data_reset();
+
+// Transition data
+global.transition_data[0] = floor(cPLAYER.x) - (cCAMERA.view_x + global.win_width / 2);
+global.transition_data[1] = floor(obj_Signpost.y + sprite_get_height(obj_Signpost.sprite_index) div 2 - cCAMERA.view_y);
+global.transition_data[2] = cPLAYER.shield;
+var _len = array_length(cBKG.layers);
+for (var i = 0; i < _len; i++)
+	global.transition_data[3][i] = cBKG.layers[i].x_offset;
+
+// Load into the next stage
+if next_stage != noone
+	room_goto(next_stage);
+
+else
+	room_goto(screen_Title);

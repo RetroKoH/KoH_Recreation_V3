@@ -11,6 +11,7 @@ paused			=  0;
 can_pause		=  false;
 run_objects		=  false;
 level_events	=  noone;
+next_stage		=  noone;
 chain_combo		=  0;
 
 gfunc_osc_num_reset();
@@ -21,6 +22,7 @@ switch(room){
 	case stage_GHZ1:
 		setup_Stage(ZONE.GHZ, 0, false, 0, BGMs.GHZ1, 0, 0, room_width, 988, 90, 943);
 		level_events = dle_GHZ1;
+		next_stage = stage_GHZ2;
 	break;
 	case stage_GHZ2:
 		setup_Stage(ZONE.GHZ, 1, false, 0, BGMs.GHZ2, 0, 0, room_width, 988, 90, 944);

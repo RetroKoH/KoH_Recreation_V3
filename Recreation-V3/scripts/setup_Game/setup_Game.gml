@@ -81,6 +81,15 @@ function setup_Game_Macros(){
 	#macro TCARD_LEAVE		4
 	#macro TCARD_FINISHED	5
 
+	// Results card routine macro
+	#macro RCARD_INIT		0
+	#macro RCARD_ENTER		1
+	#macro RCARD_WAIT		2
+	#macro RCARD_SCORETALLY	3
+	#macro RCARD_WAITOUT	4
+	#macro RCARD_LEAVE		5
+	#macro RCARD_FINISHED	6
+
 	// Layer macro
 	#macro LAYER_A			0
 	#macro LAYER_B			1
@@ -954,6 +963,8 @@ function setup_Game_GameVars(){
 		global.centiseconds[i] = floor(i / 3 * 5); //round(100*(i/60)); < Same result, except flooring instead of rounding
 
 	global.level_restart	= false;	// True if restarting a level from death
+	global.transition_type	= 1;		// 0 - Fade out; 1 - S3K Act transition; 2 - New Zone transition
+	global.transition_data	= [];		// Stored data for zone transitions
 	// Lamppost related values
 	global.lamp_last		= 0;		// ID (subtype) of the last lamp hit.
 	global.lamp_xpos		= 0;		// x-axis for Sonic to respawn at lamppost

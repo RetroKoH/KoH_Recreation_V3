@@ -1,0 +1,13 @@
+Occurs on level transition
+___________________________________________
+############################################################################################
+ERROR in
+action number 1
+of Other Event: Room Start
+for object core_Background:
+
+Variable Index [12] out of range [12]
+ at gml_Script_setup_Background_Layer (line 7) -                      _offset = global.transition_data[3][array_length(layers)];
+############################################################################################
+gml_Script_setup_Background_Layer (line 7)
+gml_Object_core_Background_Other_4 (line 7) -               setup_Background_Layer(bkg_ghz_00, 0, -8,  0.375, 0, -1,    0);

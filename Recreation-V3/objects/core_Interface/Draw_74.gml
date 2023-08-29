@@ -65,10 +65,11 @@ if HUD_enabled {
 
 // Results Card Drawing
 if core_Stage.finished == 2 {
+
 	if !core_Stage.paused {
 		var _speed = 16 * (global.win_width / 320);
 		switch(rcard_routine) {
-			case TCARD_INIT:
+			case RCARD_INIT:
 			{
 				rcard_routine++;
 				
@@ -97,8 +98,8 @@ if core_Stage.finished == 2 {
 					rcard_ypos[_i]    = global.GotCard_ConData[PLMODE.TOTAL+(_i-1)].mainy; 
 				}
 			} break;
-			
-			case TCARD_ENTER:
+
+			case RCARD_ENTER:
 			{
 				for (var i = 0; i <= 7; i++) {
 					var _diff = rcard_main_x[i] - rcard_xpos[i];
@@ -115,13 +116,13 @@ if core_Stage.finished == 2 {
 						rcard_routine++;
 			} break;
 			
-			case TCARD_WAIT:
+			case RCARD_WAIT:
 			{
 				if !audio_is_playing(global.BGM_list[BGMs.ACT_CLEAR].ID)
 					rcard_routine++;
 			} break;
 			
-			case 3:
+			case RCARD_SCORETALLY:
 			{
 				// Quickly apply score bonuses
 				rcard_routine++;
@@ -134,7 +135,7 @@ if core_Stage.finished == 2 {
 				audio_play_sound(sfx_EndTally,1,false);
 			} break;
 			
-			case 4:
+			case RCARD_WAITOUT:
 			{
 				// Timer to go away
 				if !--rcard_timer {
@@ -143,7 +144,7 @@ if core_Stage.finished == 2 {
 				}
 			} break;
 			
-			case 5:
+			case RCARD_LEAVE:
 			{
 				_speed += _speed;
 				for (var i = 0; i <= 7; i++) {
@@ -161,12 +162,14 @@ if core_Stage.finished == 2 {
 					else rcard_finished[i] = true;
 				}
 				if (rcard_finished[0] and rcard_finished[1] and rcard_finished[2] and rcard_finished[3] and
-					rcard_finished[4] and rcard_finished[5] and rcard_finished[6] and rcard_finished[7])
+					rcard_finished[4] and rcard_finished[5] and rcard_finished[6] and rcard_finished[7]) {
 						rcard_routine++;
+						core_Stage.finished = 3;
+					}
 			} break;
 		}
 	}
-	
+
 	draw_sprite(spr_CardBonus,	3,				rcard_xpos[7],	rcard_ypos[7]);
 	draw_sprite(spr_CardBonus,	2,				rcard_xpos[6],	rcard_ypos[6]);
 	draw_sprite(spr_CardBonus,	1,				rcard_xpos[5],	rcard_ypos[5]);
@@ -176,23 +179,21 @@ if core_Stage.finished == 2 {
 		draw_sprite(spr_CardActs,	act_num,	rcard_xpos[2],	rcard_ypos[2]);
 	draw_surface(surf_pass,						rcard_xpos[1],	rcard_ypos[1]);
 	draw_surface(surf_char,						rcard_xpos[0],	rcard_ypos[0]);
-	
-	{
-		// Draw the text
-		var _f = draw_get_font();		draw_set_font(FONT.HUDNum);
-		var _ha = draw_get_halign();	draw_set_halign(fa_right);
-		var _va = draw_get_valign();	draw_set_valign(fa_middle);
 
-		var _dist = 152;
-		draw_text_ext_transformed(rcard_xpos[4]+_dist,	rcard_ypos[4],	global.p_score,		0,56,1,1,0);	// Score
-		draw_text_ext_transformed(rcard_xpos[5]+_dist,	rcard_ypos[5],	global.timebonus,	0,56,1,1,0);	// Time Bonus
-		draw_text_ext_transformed(rcard_xpos[6]+_dist,	rcard_ypos[6],	global.ringbonus,	0,56,1,1,0);	// Ring Bonus
-		draw_text_ext_transformed(rcard_xpos[7]+_dist,	rcard_ypos[7],	global.coolbonus,	0,56,1,1,0);	// Cool Bonus
+	// Draw the text
+	var _f = draw_get_font();		draw_set_font(FONT.HUDNum);
+	var _ha = draw_get_halign();	draw_set_halign(fa_right);
+	var _va = draw_get_valign();	draw_set_valign(fa_middle);
 
-		draw_set_font(_f);
-		draw_set_halign(_ha);
-		draw_set_valign(_va);
-	}
+	var _dist = 152;
+	draw_text_ext_transformed(rcard_xpos[4]+_dist,	rcard_ypos[4],	global.p_score,		0,56,1,1,0);	// Score
+	draw_text_ext_transformed(rcard_xpos[5]+_dist,	rcard_ypos[5],	global.timebonus,	0,56,1,1,0);	// Time Bonus
+	draw_text_ext_transformed(rcard_xpos[6]+_dist,	rcard_ypos[6],	global.ringbonus,	0,56,1,1,0);	// Ring Bonus
+	draw_text_ext_transformed(rcard_xpos[7]+_dist,	rcard_ypos[7],	global.coolbonus,	0,56,1,1,0);	// Cool Bonus
+
+	draw_set_font(_f);
+	draw_set_halign(_ha);
+	draw_set_valign(_va);
 }
 
 // =========================
