@@ -456,6 +456,7 @@
     {"name":"ctrl_Player_ResetAngle","order":6,"path":"scripts/ctrl_Player_ResetAngle/ctrl_Player_ResetAngle.yy",},
     {"name":"spr_ray_walk","order":15,"path":"sprites/spr_ray_walk/spr_ray_walk.yy",},
     {"name":"stage_GHZ1","order":1,"path":"rooms/stage_GHZ1/stage_GHZ1.yy",},
+    {"name":"ctrl_Tails","order":21,"path":"scripts/ctrl_Tails/ctrl_Tails.yy",},
     {"name":"bgm_Invinc","order":5,"path":"sounds/bgm_Invinc/bgm_Invinc.yy",},
     {"name":"spr_sonic_walk","order":16,"path":"sprites/spr_sonic_walk/spr_sonic_walk.yy",},
     {"name":"bgm_1up","order":7,"path":"sounds/bgm_1up/bgm_1up.yy",},
