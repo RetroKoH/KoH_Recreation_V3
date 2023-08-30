@@ -31,4 +31,22 @@ function ctrl_Tails_MoveFlight() {
 
 	// Tails_FlyCamera
 	ctrl_Tails_SetFlightAnim();
+	
+	// Flight Cancel
+	if cINPUT.k_d_h and cINPUT.k_abc_p
+	{
+		// Stop sounds
+		gfunc_audio_sfx_play(SFXs.FLYING);
+		gfunc_audio_sfx_play(SFXs.FLY_TIRED);
+		
+		// Update collision radiuses and shift camera
+		width		= WIDTH_ROLL;
+		height		= HEIGHT_ROLL;
+		//cCAMERA.view_y += height_def - width;
+		
+		// Set flags
+		double_jump_flag	= -1;		// -1 - Cannot re-enter Fly state
+		spinning			= true;
+		anim_ID				= ANI_PLAYER.ROLL;
+	}
 }

@@ -1,4 +1,11 @@
 function ctrl_Player_AcquireFloor() {
+	switch(object_index) {
+		case obj_Sonic:	ctrl_Sonic_AcquireFloor();	break;
+		default:		ctrl_Others_AcquireFloor();	break;
+	}
+}
+
+function ctrl_Sonic_AcquireFloor() {
 	var _h = height;		// Store current height
 	height=height_def;		// Reset collision box
 	width=WIDTH_MAIN;
@@ -25,6 +32,28 @@ function ctrl_Player_AcquireFloor() {
 		double_jump_flag		= false;
 		double_jump_property	= 0;
 	}
+}
+
+function ctrl_Others_AcquireFloor() {
+	var _h = height;		// Store current height
+	height=height_def;		// Reset collision box
+	width=WIDTH_MAIN;
+
+	if (spinning)			// If Player is spinning
+	{
+		spinning	= false;			// Clear spin status
+		anim_ID		= ANI_PLAYER.WALK;
+		y			-= height_def - _h;	// Pop y-pos out using stored height
+	}
+
+	pushing	= false;
+	in_air	= false;
+	// Clear roll jump status
+	jump	= false;
+	core_Stage.chain_combo = 0;	// Clear combo counter
+
+	double_jump_flag		= false;
+	double_jump_property	= 0;
 }
 
 function ctrl_Sonic_DropDash() {
