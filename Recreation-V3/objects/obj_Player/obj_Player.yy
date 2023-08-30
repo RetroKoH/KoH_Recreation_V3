@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Player",
-    "path": "folders/Game Objects/Player.yy",
+    "name": "Parents",
+    "path": "folders/Game Objects/Parents.yy",
   },
   "parentObjectId": {
     "name": "obj_GameObj",
@@ -34,10 +34,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_sonic_idle",
-    "path": "sprites/spr_sonic_idle/spr_sonic_idle.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

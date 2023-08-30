@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_supersonic_transform",
+  "name": "spr_sonic_transform",
   "bbox_bottom": 47,
   "bbox_left": 0,
   "bbox_right": 30,
@@ -29,14 +29,14 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "Super Sonic",
-    "path": "folders/Game Objects/Player/1. Sonic/Super Sonic.yy",
+    "name": "1. Sonic",
+    "path": "folders/Game Objects/Player/1. Sonic.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_supersonic_transform",
+    "name": "spr_sonic_transform",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -58,11 +58,11 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f6e0e41a-7f9c-4c31-a7ca-5d69da3865b6","path":"sprites/spr_supersonic_transform/spr_supersonic_transform.yy",},},},"Disabled":false,"id":"bae8ff9d-d94d-4d4a-b069-cf0679f5150e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"57568aaf-b09c-4891-877b-fe35dde23cd2","path":"sprites/spr_supersonic_transform/spr_supersonic_transform.yy",},},},"Disabled":false,"id":"107ba177-f8ba-4e7e-bc73-5bb9e7b3b4f3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2f8f3f26-01fe-4fb2-be4a-f6ef1f8f7060","path":"sprites/spr_supersonic_transform/spr_supersonic_transform.yy",},},},"Disabled":false,"id":"4c1a9bc6-e45f-4673-b9e7-5a571ebb7334","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7d032b03-f267-49d5-bf75-c05aa7e376fb","path":"sprites/spr_supersonic_transform/spr_supersonic_transform.yy",},},},"Disabled":false,"id":"37b03410-afa2-4ae1-b5d8-b28529911232","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cda10a10-d6b9-478d-afb7-b05fc490cf0b","path":"sprites/spr_supersonic_transform/spr_supersonic_transform.yy",},},},"Disabled":false,"id":"bbcf7932-aac9-439a-90b7-52a040459e81","IsCreationKey":false,"Key":4.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f6e0e41a-7f9c-4c31-a7ca-5d69da3865b6","path":"sprites/spr_sonic_transform/spr_sonic_transform.yy",},},},"Disabled":false,"id":"bae8ff9d-d94d-4d4a-b069-cf0679f5150e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"57568aaf-b09c-4891-877b-fe35dde23cd2","path":"sprites/spr_sonic_transform/spr_sonic_transform.yy",},},},"Disabled":false,"id":"107ba177-f8ba-4e7e-bc73-5bb9e7b3b4f3","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2f8f3f26-01fe-4fb2-be4a-f6ef1f8f7060","path":"sprites/spr_sonic_transform/spr_sonic_transform.yy",},},},"Disabled":false,"id":"4c1a9bc6-e45f-4673-b9e7-5a571ebb7334","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7d032b03-f267-49d5-bf75-c05aa7e376fb","path":"sprites/spr_sonic_transform/spr_sonic_transform.yy",},},},"Disabled":false,"id":"37b03410-afa2-4ae1-b5d8-b28529911232","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cda10a10-d6b9-478d-afb7-b05fc490cf0b","path":"sprites/spr_sonic_transform/spr_sonic_transform.yy",},},},"Disabled":false,"id":"bbcf7932-aac9-439a-90b7-52a040459e81","IsCreationKey":false,"Key":4.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

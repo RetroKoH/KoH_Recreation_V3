@@ -46,6 +46,7 @@ function animtable_PLAYERS() {
 	
 	// Anim Tables
 	animtable_SONIC();
+	animtable_TAILS();
 }
 
 // Database of sprite animations for Sonic
@@ -191,4 +192,199 @@ function animtable_SONIC() {
 	// ==================================================================================
 	
 	array_push(global.AnimsIndex, global.AnimTable_PlayerSonic);
+}
+
+// Database of sprite animations for Tails
+function animtable_TAILS() {
+	global.AnimTable_PlayerTails = [];
+	// ==================================================================================
+	
+	setup_Animation(global.AnimTable_PlayerTails, "Idle", spr_tails_idle, spr_tails_mask, spr_tails_maskL, -1, -1, 16, -1);
+	
+	var sp = 1/8, sp_2 = 1/72, sp_3 = 1/128;
+	repeat(2) {	// Tails is standing and blinking.
+		setup_AnimationFrame(global.AnimTable_PlayerTails, 0, sp_2);	// Tails will stand still for roughly 4 seconds. He blinks twice before waiting.
+		setup_AnimationFrame(global.AnimTable_PlayerTails, 1, sp);
+		setup_AnimationFrame(global.AnimTable_PlayerTails, 2, sp);
+	}
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 0, sp_2);		// Tails goes back to standing for a short time, before looking at you.
+	repeat(3) {
+		// 13 frames each
+		setup_AnimationFrame(global.AnimTable_PlayerTails, 3, sp_3);	// #7 - Staring at you
+		setup_AnimationFrame(global.AnimTable_PlayerTails, 4, sp);
+		repeat(5) {
+			// Tails is yawning.
+			setup_AnimationFrame(global.AnimTable_PlayerTails, 5, sp);
+			setup_AnimationFrame(global.AnimTable_PlayerTails, 6, sp);
+		}
+		setup_AnimationFrame(global.AnimTable_PlayerTails, 4, sp);
+	}
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 7, sp_3);		// #40 - Staring at you, annoyed
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 8, sp);
+	repeat(2) {
+		// Tails is sitting and blinking.
+		setup_AnimationFrame(global.AnimTable_PlayerTails, 9, sp_2);
+		setup_AnimationFrame(global.AnimTable_PlayerTails, 10, sp);
+		setup_AnimationFrame(global.AnimTable_PlayerTails, 11, sp);
+	}
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 9, sp_2);		// #48 - Sitting bored (Loop point)
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 12, sp);
+	repeat(5) {
+		setup_AnimationFrame(global.AnimTable_PlayerTails, 13, sp);
+		setup_AnimationFrame(global.AnimTable_PlayerTails, 14, sp);
+	}
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 12, sp);
+	// ==================================================================================
+	
+	setup_Animation(global.AnimTable_PlayerTails, "Walk", spr_tails_walk, spr_tails_mask, spr_tails_maskL, -1, -1, 0, -1);
+
+	for (var i = 0; i < 8; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, 1);
+	// ==================================================================================
+	
+	setup_Animation(global.AnimTable_PlayerTails, "Jog", spr_tails_jog, spr_tails_mask, spr_tails_maskL, -1, -1, 0, -1);
+
+	for (var i = 0; i < 8; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, 1);
+	// ==================================================================================
+	
+	setup_Animation(global.AnimTable_PlayerTails, "Run", spr_tails_run, spr_tails_mask, spr_tails_maskL, -1, -1, 0, -1);
+
+	for (var i = 0; i < 8; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, 1);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Dash", spr_tails_dash, spr_tails_mask, spr_tails_maskL, -1, -1, 0, -1);
+
+	for (var i = 0; i < 4; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, 1);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Spin Dash", spr_tails_spindash, spr_spin_mask, spr_spin_maskL, -1, -1, 0, -1);
+
+	for (var i = 0; i < 3; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, 1);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Look Up", spr_tails_lookup, spr_tails_mask, spr_tails_maskL, -1, -1, 1, -1);
+
+	sp = 1/2;
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 0, sp);
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 1, sp);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Duck", spr_tails_duck, spr_duck_mask, spr_duck_mask, -1, -1, 1, -1);
+
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 0, sp);
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 1, sp);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Roll", spr_tails_roll, spr_spin_mask, spr_spin_mask, -1, -1, 0, -1);
+
+	for (var i = 0; i < 6; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, 1);
+	// ==================================================================================
+	
+	setup_Animation(global.AnimTable_PlayerTails, "Skid", spr_tails_skid, spr_tails_mask, spr_tails_mask, -1, -1, 4, -1);
+
+	sp = 1/4;
+	for (var i = 0; i < 6; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, sp);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Balance", spr_tails_balance, spr_tails_mask, spr_tails_mask, -1, -1, 0, -1);
+
+	sp = 1/12;
+	for (var i = 0; i < 2; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, sp);
+	// ==================================================================================
+	
+	setup_Animation(global.AnimTable_PlayerTails, "Balance Flip", spr_tails_balance_flip, spr_tails_mask, spr_tails_mask, -1, -1, 0, -1);
+
+	for (var i = 0; i < 2; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, sp);
+	// ==================================================================================
+	setup_Animation(global.AnimTable_PlayerTails, "Push", spr_tails_push, spr_tails_mask, spr_tails_mask, -1, -1, 0, -1);
+
+	sp = 1/16;
+	for (var i = 0; i < 4; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, sp);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Spring", spr_tails_spring, spr_tails_mask, spr_tails_mask, -1, -1, 0, -1);
+	
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 0, 1);
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 1, 1);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Fall", spr_tails_fall, spr_tails_mask, spr_tails_mask, -1, -1, 0, -1);
+
+	sp = 1/4;
+	for (var i = 0; i < 2; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, sp);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Hurt", spr_tails_hurt, spr_tails_mask, spr_tails_mask, -1, -1, 0, -1);
+	
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 0, 1);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Death", spr_tails_death, spr_tails_mask, spr_tails_mask, -1, -1, 0, -1);
+	
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 0, 1);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Drown", spr_tails_death, spr_tails_mask, spr_tails_mask, -1, -1, 0, -1);
+	
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 1, 1);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Peelout - NULL", spr_char_null, spr_char_null, spr_char_null, -1, -1, 0, -1);
+	
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 0, 1);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Drop Dash - NULL", spr_char_null, spr_char_null, spr_char_null, -1, -1, 0, -1);
+	
+	setup_AnimationFrame(global.AnimTable_PlayerTails, 0, 1);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Fly", spr_tails_fly, spr_tails_mask, spr_tails_maskL, -1, -1, 0, -1);
+
+	sp = 1/2;
+	for (var i = 0; i < 2; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, sp);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Fly Fast", spr_tails_fly, spr_tails_mask, spr_tails_maskL, -1, -1, 0, -1);
+
+	for (var i = 2; i < 4; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, sp);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Fly Tired", spr_tails_fly, spr_tails_mask, spr_tails_maskL, -1, -1, 0, -1);
+
+	for (var i = 4; i < 8; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, sp);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Swim", spr_tails_swim, spr_tails_mask, spr_tails_maskL, -1, -1, 0, -1);
+
+	for (var i = 0; i < 5; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, sp);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Swim Up", spr_tails_swim, spr_tails_mask, spr_tails_maskL, -1, -1, 0, -1);
+
+	for (var i = 0; i < 5; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, sp);
+	// ==================================================================================
+
+	setup_Animation(global.AnimTable_PlayerTails, "Swim Tired", spr_tails_swim_tired, spr_tails_mask, spr_tails_maskL, -1, -1, 0, -1);
+
+	for (var i = 0; i < 3; i++)
+		setup_AnimationFrame(global.AnimTable_PlayerTails, i, sp);
+	// ==================================================================================
+
+	array_push(global.AnimsIndex, global.AnimTable_PlayerTails);
 }
