@@ -22,8 +22,6 @@ function ctrl_Player_AnglePos() {
 			_angle_real	= _tile_right[1];
 		}
 		
-		var collided = false;
-		
 		if !convex {
 			// S2 Floor Collision
 			var _fall_dist;
