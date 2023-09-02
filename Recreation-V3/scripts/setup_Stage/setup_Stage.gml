@@ -25,5 +25,5 @@ function setup_Stage(_zone, _act, _waterFlag, _waterLevel, _BGM, _left, _top, _r
 	setup_LvlLayout(_zone);		// Setup layout Level
 
 	// In the future, load object index from array of obj_Players
-	cPLAYER = instance_create_layer(_playerX, _playerY, "Instances", obj_Tails);
+	cPLAYER = instance_create_layer(_playerX, _playerY, "Instances", obj_Sonic);
 }

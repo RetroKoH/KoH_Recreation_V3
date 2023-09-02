@@ -33,8 +33,7 @@ function ctrl_Tails_MoveFlight() {
 	ctrl_Tails_SetFlightAnim();
 	
 	// Flight Cancel
-	if cINPUT.k_d_h and cINPUT.k_abc_p
-	{
+	if cINPUT.k_d_h and cINPUT.k_abc_p {
 		// Stop sounds
 		gfunc_audio_sfx_play(SFXs.FLYING);
 		gfunc_audio_sfx_play(SFXs.FLY_TIRED);
